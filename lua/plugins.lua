@@ -5,75 +5,28 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function()
-	use "wbthomason/packer.nvim"
-	use {
-    		"kyazdani42/nvim-tree.lua",
-    		requires = {
-      			"kyazdani42/nvim-web-devicons", 
-    		},
-    		config = function() require"nvim-tree".setup {} end
-	}
-  use {"akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
+  use "wbthomason/packer.nvim"
+  use "navarasu/onedark.nvim"
   use "shaeinst/roshnivim-cs"
   use "akinsho/toggleterm.nvim"
+  use "folke/which-key.nvim"
+  use "terrortylor/nvim-comment"
+  use "hrsh7th/nvim-compe"
+  use "windwp/nvim-autopairs"
+  use "glepnir/dashboard-nvim" 
+  use { "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }
+  use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", }
+  use { "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons", }
+  use { "akinsho/bufferline.nvim", requires = "kyazdani42/nvim-web-devicons"}
+  use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } }
+  use { "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } }
+  use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
   use {
-    "windwp/nvim-autopairs", 
-    config = function() require("nvim-autopairs").setup{} end
-  }
-  use {
-    "nvim-telescope/telescope.nvim",
-    requires = { {"nvim-lua/plenary.nvim"} }
-  }
-  use "xiyaowong/nvim-transparent"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup { }
-    end
-  }
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-  }
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-  }
-  use {
-      "iamcco/markdown-preview.nvim",
+    "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     ft = "markdown",
     config = function()
       vim.g.mkdp_auto_start = 1
     end,
   }
-  use {
-    'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer',
-  }
-  use "hrsh7th/nvim-compe"
-  use {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup { }
-    end
-  }
-  use {
-    "terrortylor/nvim-comment",
-    config = function() 
-      require("nvim_comment").setup { }
-    end 
-  }
-
-
 end)

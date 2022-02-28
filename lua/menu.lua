@@ -1,17 +1,5 @@
 local menu = require("which-key")
 
---[[
-menu.register({
-  ["<Leader>"] = {
-    c = {
-      name = "+Comment",
-      l = {":CommentToggle<CR>", "Comment Line"},
-      p = {":'<,'>CommentToggle<CR>", "Comment Selection"},
-    }
-  }
-})
-]]--
-
 menu.register({
   ["<Leader>"] = {
     d = {
@@ -46,7 +34,8 @@ menu.register({
   ["<Leader>"] = {
     b = {
       name = "+Buffer (Tabs)", 
-      c = {":BufferLinePickClose<CR>", "Close Selection"},
+      c = {":bdelete<CR>", "Close"},
+      d = {":BufferLinePickClose<CR>", "Close Selection"},
       o = {":BufferLinePick<CR>", "GoTo Selection"},
       n = {":BufferLineMoveNext<CR>", "Move Next"},
       p = {":BufferLineMovePrev<CR>", "Move Prev"},
@@ -71,7 +60,7 @@ menu.register({
       f = {":Telescope find_files<CR>", "Files"},
       l = {":Telescope live_grep<CR>", "Live Grep"},
       t = {":Telescope buffers<CR>", "Open Editors"},
-      p = {":Telescope planets<CR>", "Secret"},
+      p = {":Telescope planets<CR>", "Planets"},
     }
   }
 })
