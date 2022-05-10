@@ -1,3 +1,5 @@
+vim.g.nvim_tree_highlight_opened_files = 1
+
 require'nvim-tree'.setup {
   disable_netrw = true,
   hijack_netrw = true,
@@ -13,11 +15,6 @@ require'nvim-tree'.setup {
     enable = true,
     auto_open = true,
   },
-  update_to_buf_dir = {
-    enable = true,
-    auto_open = true,
-  },
-  auto_close = false,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = false,
@@ -49,7 +46,6 @@ require'nvim-tree'.setup {
     height = 30,
     hide_root_folder = false,
     side = "left",
-    auto_resize = false,
     mappings = {
       custom_only = false,
       list = {
@@ -57,7 +53,7 @@ require'nvim-tree'.setup {
           { key = "L", action = "vsplit_preview", action_cb = vsplit_preview },
           { key = "h", action = "close_node" },
           { key = "H", action = "collapse_all", action_cb = collapse_all }
-      } 
+      }
     },
     number = false,
     relativenumber = false,
@@ -77,11 +73,6 @@ require'nvim-tree'.setup {
     },
     open_file = {
       quit_on_open = true,
-    },
-    window_picker = {
-      enable = false,
-      chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-      exclude = {},
     },
   },
 }

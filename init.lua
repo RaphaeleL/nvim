@@ -10,5 +10,6 @@ require("git")
 require("language-server")
 require("nv-compe")
 require("board")
-
-
+require("comment")
+require("pairs")
+require("tree")

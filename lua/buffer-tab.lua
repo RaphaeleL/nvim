@@ -38,25 +38,23 @@ require('bufferline').setup {
           text = "Undotree",
           highlight = "PanelHeading",
           padding = 1,
-        },
-        {
+        }, {
           filetype = "NvimTree",
-          text = "Explorer",
-          highlight = "PanelHeading",
-          padding = 1,
-        },
-        {
+          text = function()
+            return vim.fn.getcwd()
+          end,
+          highlight = "Directory",
+          text_align = "left"
+        }, {
           filetype = "DiffviewFiles",
           text = "Diff View",
           highlight = "PanelHeading",
           padding = 1,
-        },
-        {
+        }, {
           filetype = "flutterToolsOutline",
           text = "Flutter Outline",
           highlight = "PanelHeading",
-        },
-        {
+        }, {
           filetype = "packer",
           text = "Packer",
           highlight = "PanelHeading",
@@ -70,7 +68,7 @@ require('bufferline').setup {
       persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
       -- can also be a table containing 2 custom separators
       -- [focused and unfocused]. eg: { '|', '|' }
-      separator_style = "thin",
+      separator_style = "thick",
       enforce_regular_tabs = false,
       always_show_bufferline = false,
       sort_by = "id",
