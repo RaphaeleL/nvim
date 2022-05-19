@@ -2,6 +2,9 @@
 vim.api.nvim_set_keymap("i", "kj", "<ESC>", {silent=true})
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", {silent=true})
 
+-- Quick Close  
+vim.api.nvim_set_keymap("n", "zZ", ":qa!<CR>", {noremap=true, silent=true})
+
 -- Delete word
 vim.api.nvim_set_keymap("n", "o", "dw", {noremap=true, silent=true})
 

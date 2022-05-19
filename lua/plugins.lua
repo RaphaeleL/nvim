@@ -13,7 +13,7 @@ return require("packer").startup(function()
   use "tribela/vim-transparent"
   use "folke/which-key.nvim"
   use "terrortylor/nvim-comment"
-  
+
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
@@ -22,10 +22,9 @@ return require("packer").startup(function()
   use "rafamadriz/friendly-snippets"
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/cmp-nvim-lsp"
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-
+  use "tamago324/nlsp-settings.nvim" 
+  use "jose-elias-alvarez/null-ls.nvim" 
+  
   use "windwp/nvim-autopairs"
   use "glepnir/dashboard-nvim"
   use "Chiel92/vim-autoformat"
