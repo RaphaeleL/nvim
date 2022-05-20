@@ -72,6 +72,9 @@ return require("packer").startup(function()
     branch = 'master',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-
+  use {
+    "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter"
+  }
 
 end)
