@@ -75,6 +75,7 @@ menu.register({
   ["<leader>c"] = { ":bdelete<cr>", "Close Tab" },
   ["<leader>;"] = { ":Dashboard<cr>", "Dashboard" },
   ["<leader>T"] = { ":Tetris<cr>", "Tetris" },
+  ["<leader>r"] = { ":lua require('renamer').rename()<cr>", "Rename" },
 })
 
 menu.register({
@@ -151,7 +152,3 @@ menu.register({
     }
   }
 })
-
-
-
-

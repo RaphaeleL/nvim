@@ -67,5 +67,11 @@ return require("packer").startup(function()
       })
     end
   }
+  use {
+    'filipdutescu/renamer.nvim',
+    branch = 'master',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
 
 end)
