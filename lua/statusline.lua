@@ -10,13 +10,8 @@ require("lualine").setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = {
-      {
-        "mode",
-        fmt = function(str) return " " end
-      }
-    },
-    lualine_b = {"filename"},--"branch", "diff", "diagnostics"},
+    lualine_a = { { "mode", fmt = function() return " " end } },
+    lualine_b = {"filename"},
     lualine_c = { {gps.get_location, cond = gps.is_available} },
     lualine_x = {"filetype"},
     lualine_y = {"progress"},
