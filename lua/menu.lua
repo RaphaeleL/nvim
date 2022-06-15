@@ -70,12 +70,13 @@ menu.register({
   ["<leader>r"] = { ":redo<cr>", "Redo" },
   ["<leader>u"] = { ":undo<cr>", "Undo" },
   ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer" },
-  ["<leader>z"] = { ":Telescope find_files<cr>", "Filesystem" },
+  ["<leader>s"] = { ":Telescope find_files<cr>", "Filesystem" },
   ["<leader>n"] = { ":noh<cr>", "No Highlighting" },
   ["<leader>c"] = { ":bdelete<cr>", "Close Tab" },
   ["<leader>;"] = { ":Dashboard<cr>", "Dashboard" },
   ["<leader>T"] = { ":Tetris<cr>", "Tetris" },
   ["<leader>r"] = { ":lua require('renamer').rename()<cr>", "Rename" },
+  ["<leader>k"] = { ":CommentToggle<cr>", "Comment Line Toggle" },
 })
 
 menu.register({
@@ -97,7 +98,7 @@ menu.register({
 
 menu.register({
   ["<Leader>"] = {
-    w = {
+    f = {
       name = "+Formatting",
       a = {":Autoformat<cr>", "Format File"},
       b = {":AutoformatLine<cr>", "Format Line"},
@@ -108,7 +109,7 @@ menu.register({
 
 menu.register({
   ["<Leader>"] = {
-    f = {
+    t = {
       name = "+Terminal",
       t = {":ToggleTerm direction=float<cr>", "Floating Terminal"},
       b = {":ToggleTerm<cr>", "Terminal on the bottom"},
@@ -128,23 +129,9 @@ menu.register({
 
 menu.register({
   ["<Leader>"] = {
-    b = {
-      name = "+File",
-      c = {":bdelete<cr>", "Close"},
-      d = {":BufferLinePickClose<cr>", "Close Selection"},
-      o = {":BufferLinePick<cr>", "GoTo Selection"},
-      n = {":BufferLineMoveNext<cr>", "Move Next"},
-      p = {":BufferLineMovePrev<cr>", "Move Prev"},
-      l = {":Telescope live_grep<cr>", "Live Grep"},
-      t = {":Telescope buffers<cr>", "Show open files"},
-    }
-  }
-})
-
-menu.register({
-  ["<Leader>"] = {
     g = {
       name = "+Git",
+      g = {":Copilot panel<cr>", "Github Copilot Suggestions"},
       l = {":Gitsigns toggle_signs<cr>", "Toggle Git Changes Sign"},
       s = {":Telescope git_status<cr>", "Git Status"},
       c = {":Telescope git_commits<cr>", "Git Commits"},
