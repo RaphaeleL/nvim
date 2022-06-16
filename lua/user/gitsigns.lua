@@ -34,14 +34,13 @@ require('gitsigns').setup {
       numhl = false,
       linehl = false,
       keymaps = {
-        -- Default keymap options
         noremap = true,
         buffer = true,
       },
       signcolumn = true,
       word_diff = false,
       attach_to_untracked = true,
-      current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame = false, 
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
@@ -53,7 +52,6 @@ require('gitsigns').setup {
       },
       max_file_length = 40000,
       preview_config = {
-        -- Options passed to nvim_open_win
         border = "rounded",
         style = "minimal",
         relative = "cursor",
@@ -66,5 +64,5 @@ require('gitsigns').setup {
       },
       sign_priority = 6,
       update_debounce = 200,
-      status_formatter = nil, -- Use default
+      status_formatter = nil, 
 }

@@ -69,20 +69,34 @@ menu.setup({
 menu.register({
   ["<leader>r"] = { ":redo<cr>", "Redo" },
   ["<leader>u"] = { ":undo<cr>", "Undo" },
+  ["<leader>U"] = { ":UndotreeToggle<cr>", "Undotree" },
   ["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer" },
   ["<leader>s"] = { ":Telescope find_files<cr>", "Filesystem" },
   ["<leader>n"] = { ":noh<cr>", "No Highlighting" },
   ["<leader>c"] = { ":bdelete<cr>", "Close Tab" },
-  ["<leader>;"] = { ":Dashboard<cr>", "Dashboard" },
-  ["<leader>T"] = { ":Tetris<cr>", "Tetris" },
+  ["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
   ["<leader>k"] = { ":CommentToggle<cr>", "Comment Line Toggle" },
+  ["<leader>h"] = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
+})
+
+menu.register({
+  ["<Leader>"] = {
+    f = {
+      name = "+File",
+      g = {":lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep For > \")})<cr>", "Grep Word"},
+      b = {":lua require('telescope.builtin').buffers()<cr>", "Show Buffers"},
+      w = {":Autoformat<cr>", "Format File"},
+      l = {":AutoformatLine<cr>", "Format Line"},
+      f = {":RemoveTrailingSpaces<cr>", "Remove Trailing Spaces"},
+    }
+  }
 })
 
 menu.register({
   ["<Leader>"] = {
     d = {
       name = "+Diagnostics",
-      d = {":TroubleToggle<cr>", "Show Diagnostics Menu"},
+      --d = {":TroubleToggle<cr>", "Show Diagnostics Menu"},
       D = {":lua vim.lsp.buf.definition()<cr>", "Show Definition"},
       i = {":lua vim.lsp.buf.implementation()<cr>", "Show Implementation"},
       r = {":lua vim.lsp.buf.rename()<cr>", "Rename"},
@@ -91,17 +105,6 @@ menu.register({
       N = {":lua vim.lsp.diagnostic.goto_prev()<cr>", "Show previous Diagnostic"},
       l = {":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Show Line Diagnostic"},
       p = {":lua vim.lsp.diagnostic.show_position_diagnostics()<cr>", "Show Position Diagnostic"},
-    }
-  }
-})
-
-menu.register({
-  ["<Leader>"] = {
-    f = {
-      name = "+Formatting",
-      a = {":Autoformat<cr>", "Format File"},
-      b = {":AutoformatLine<cr>", "Format Line"},
-      f = {":RemoveTrailingSpaces<cr>", "Remove Trailing Spaces"},
     }
   }
 })
