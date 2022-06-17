@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -143,11 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
@@ -159,15 +159,30 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  ["numb.nvim"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/numb.nvim",
+    url = "https://github.com/nacro90/numb.nvim"
+  },
   ["nvcode-color-schemes.vim"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim",
     url = "https://github.com/christianchiarulli/nvcode-color-schemes.vim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
   },
   ["nvim-gps"] = {
     loaded = true,
@@ -224,16 +239,6 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
-  ["trouble.nvim"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/trouble.nvim",
-    url = "https://github.com/folke/trouble.nvim"
-  },
   undotree = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/undotree",
@@ -243,6 +248,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/vim-autoformat",
     url = "https://github.com/Chiel92/vim-autoformat"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["vim-sensible"] = {
     loaded = true,

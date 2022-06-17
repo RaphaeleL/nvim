@@ -5,13 +5,15 @@ end
 
 return require("packer").startup(function()
     use { "wbthomason/packer.nvim" }
-    
+
     -- Plugins
     use { "mbbill/undotree" }
     use { "Chiel92/vim-autoformat" }
     use { "lewis6991/impatient.nvim" }
-    use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
     use { "terrortylor/nvim-comment" }
+    use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
+    use { "lukas-reineke/indent-blankline.nvim" }
+    use { "windwp/nvim-autopairs" }
 
     -- UI
     use { "akinsho/toggleterm.nvim" }
@@ -28,7 +30,8 @@ return require("packer").startup(function()
     use { "onsails/lspkind.nvim" }
     use { "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }
     use { "jose-elias-alvarez/null-ls.nvim" }
-    
+    use { "RRethy/vim-illuminate" }
+
     -- Auto Completion
     use { "hrsh7th/nvim-cmp" }
     use { "hrsh7th/cmp-buffer" }
@@ -37,22 +40,22 @@ return require("packer").startup(function()
 
     use { "github/copilot.vim" }
     use { "tpope/vim-sensible" }
-    
+
     use { "tzachar/cmp-tabnine", run="./install.sh", requires = "hrsh7th/nvim-cmp"}
-    
+
     use { "hrsh7th/cmp-nvim-lsp" }
     use { "tamago324/nlsp-settings.nvim" }
-    
+
     -- Colorscheme
     use { "christianchiarulli/nvcode-color-schemes.vim" }
     use { "shaeinst/roshnivim-cs" }
 
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter" }
-    
+
     -- Snippets
     use { "L3MON4D3/LuaSnip" }
     use { "rafamadriz/friendly-snippets" }
     use { "saadparwaiz1/cmp_luasnip" }
-    
+
 end)

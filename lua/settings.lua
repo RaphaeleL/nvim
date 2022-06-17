@@ -41,6 +41,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
