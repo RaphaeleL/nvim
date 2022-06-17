@@ -11,7 +11,8 @@ return require("packer").startup(function()
     use { "Chiel92/vim-autoformat" }
     use { "lewis6991/impatient.nvim" }
     use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } }
-    
+    use { "terrortylor/nvim-comment" }
+
     -- UI
     use { "akinsho/toggleterm.nvim" }
     use { "folke/which-key.nvim" }
@@ -54,6 +55,4 @@ return require("packer").startup(function()
     use { "rafamadriz/friendly-snippets" }
     use { "saadparwaiz1/cmp_luasnip" }
     
-
-
 end)
