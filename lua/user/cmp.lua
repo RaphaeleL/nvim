@@ -67,6 +67,19 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
+  window = {
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
+    completion = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
+    },
+  },
+  experimental = {
+    ghost_text = true,
+  },
   formatting = {
     format = lspkind.cmp_format({
       mode = "symbol_text", 

@@ -77,6 +77,7 @@ menu.register({
   ["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
   ["<leader>k"] = { ":CommentToggle<cr>", "Comment Line Toggle" },
   ["<leader>h"] = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
+  ["<leader>d"] = { ":'<,'>CommentToggle<cr>", "Comment Selection" },
 })
 
 menu.register({
