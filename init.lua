@@ -17,8 +17,11 @@ require("user.numb")
 require("user.nvim_comment")
 require("user.indentline")
 require("user.nvim-autopairs")
+require("user.toggleterm")
 --require("user.nvim-lsp-installer")
 require("user.lsp")
+require("user.lualine")
+require("user.cheatsheet")
 
 
 
