@@ -39,7 +39,3 @@ In addition, the following command can be used to run a series of diagnostic tes
 ## Fonts 
 
 You'll need the [Nerd Fonts](https://www.nerdfonts.com).
-
-
-
-
