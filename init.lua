@@ -4,6 +4,7 @@ require("settings")
 require("keymappings")
 require("autocommands")
 require("colors")
+
 -- Plugin Settings
 require("user.bufferline")
 require("user.nvim-gps")
