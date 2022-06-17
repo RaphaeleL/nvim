@@ -1,5 +1,3 @@
--- Lua
-
 -- Customized config
 require("nvim-gps").setup({
 

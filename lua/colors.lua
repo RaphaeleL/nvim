@@ -1,1 +1,4 @@
 vim.cmd [[colorscheme aurora]]
+
+
+
