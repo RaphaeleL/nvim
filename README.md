@@ -103,7 +103,7 @@ Managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ## Showcase
 
-[Demo-1](./assets/Demo-1.png)
-[Demo-2](./assets/Demo-2.png)
-[Demo-3](./assets/Demo-3.png)
-[Demo-4](./assets/Demo-4.png)
+![Demo-1](./assets/Demo-1.png)
+![Demo-2](./assets/Demo-2.png)
+![Demo-3](./assets/Demo-3.png)
+![Demo-4](./assets/Demo-4.png)
