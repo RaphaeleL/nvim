@@ -59,7 +59,7 @@ require("lualine").setup({
 			{
 				"b:gitsigns_head",
 				icon = " ",
-				color = { gui = "bold" },
+				color = {},
 				cond = conditions.hide_in_width,
 			},
 			{

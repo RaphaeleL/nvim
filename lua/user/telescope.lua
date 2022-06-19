@@ -49,7 +49,6 @@ require("telescope").setup({
 				find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
 			},
 			live_grep = {
-				--@usage don't include the filename in the search results
 				only_sort_text = true,
 			},
 		},
