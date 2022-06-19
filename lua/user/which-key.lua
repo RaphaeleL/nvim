@@ -56,6 +56,8 @@ menu.setup({
 })
 
 menu.register({
+	["<leader>v"] = { ":vsplit<cr>", "Vertical Split" },
+	["<leader>h"] = { ":split<cr>", "Horizontal Split" },
 	["<leader>r"] = { ":redo<cr>", "Redo" },
 	["<leader>u"] = { ":undo<cr>", "Undo" },
 	["<leader>U"] = { ":UndotreeToggle<cr>", "Undotree" },
@@ -63,7 +65,7 @@ menu.register({
 	["<leader>n"] = { ":noh<cr>", "No Highlighting" },
 	["<leader>c"] = { ":bdelete<cr>", "Close Tab" },
 	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
-	["<leader>h"] = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
+	["<leader>H"] = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
 	["<leader>a"] = { ":call append(line('.'), '')<cr>", "Add Line Below" },
 	["<leader>b"] = { ":call append(line('.')-1, '')<cr>", "Add Line Above" },
 	["<leader>s"] = { ":Telescope find_files<cr>", "Files" },
@@ -107,11 +109,9 @@ menu.register({
 			o = { ":LspInstallInfo<cr>", "Installer Info" },
 			n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Show next Diagnostic" },
 			N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Show previous Diagnostic" },
-			q = { ":lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 			s = { ":Telescope lsp_document_symbols<cr>", "Symbols Document" },
 			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
-			-- Lunarvim
-			P = {
+			P = { -- Lunarvim
 				name = "Peek",
 				d = { ":lua require('user.lsp.peek').Peek('definition')<cr>", "Definition" },
 				t = { ":lua require('user.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
