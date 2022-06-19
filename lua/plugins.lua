@@ -14,9 +14,7 @@ return require("packer").startup(function()
 	use({ "wbthomason/packer.nvim" })
 
 	-- Basic Plugins
-	use({ "sudormrfbin/cheatsheet.nvim" })
 	use({ "mbbill/undotree" })
-	use({ "Chiel92/vim-autoformat" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "terrortylor/nvim-comment" })
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
@@ -33,6 +31,7 @@ return require("packer").startup(function()
 	use({ "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use({ "nacro90/numb.nvim" })
+	use({ "rcarriga/nvim-notify" })
 
 	-- LSP
 	use({ "onsails/lspkind.nvim" })
@@ -55,6 +54,7 @@ return require("packer").startup(function()
 	-- Colorscheme
 	use({ "christianchiarulli/nvcode-color-schemes.vim" })
 	use({ "shaeinst/roshnivim-cs" })
+	use({ "Lunarvim/colorschemes" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })

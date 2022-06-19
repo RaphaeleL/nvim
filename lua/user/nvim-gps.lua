@@ -4,7 +4,8 @@ require("nvim-gps").setup({
 		["class-name"] = ' ',
 		["function-name"] = ' ',
 		["method-name"] = ' ',
-		["container-name"] = '⛶ ',
+		--["container-name"] = '⛶ ',
+		["container-name"] = '',
 		["tag-name"] = '炙'
 	},
 	languages = {
