@@ -55,6 +55,7 @@ return require("packer").startup(function()
 	use({ "christianchiarulli/nvcode-color-schemes.vim" })
 	use({ "shaeinst/roshnivim-cs" })
 	use({ "Lunarvim/colorschemes" })
+	use({ "Lunarvim/darkplus.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
