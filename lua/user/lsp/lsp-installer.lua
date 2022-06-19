@@ -4,27 +4,15 @@ if not status_ok then
 end
 
 local servers = {
+	"rust_analyzer",
+	"gopls",
 	"bashls",
-	"ccls",
 	"clangd",
-	"cmake",
-	"cssls",
-	"cssmodules_ls",
-	"emmet_ls",
 	"golangci_lint_ls",
-	"html",
-	"jsonls",
-	"lemminx",
-	"ltex",
-	"pylsp",
 	"pyright",
-	"solc",
-	"sourcekit",
-	"sqlls",
 	"sumneko_lua",
-	"tflint",
 	"tsserver",
-	"yamlls",
+	"jsonls",
 }
 
 lsp_installer.setup()
