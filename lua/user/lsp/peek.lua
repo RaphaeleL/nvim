@@ -129,6 +129,7 @@ function M.Peek(what)
 			{ noremap = true, silent = true }
 		)
 	else
+        message("You cannot Peek here", "warn")
 		local params = vim.lsp.util.make_position_params()
 		local preview_callback = preview_location_callback_new_signature
 		local success, _ = pcall(vim.lsp.buf_request, 0, "textDocument/" .. what, params, preview_callback)
