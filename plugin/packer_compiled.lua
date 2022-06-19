@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/Lunarvim/darkplus.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/friendly-snippets",
