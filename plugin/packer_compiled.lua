@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  colorschemes = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/colorschemes",
+    url = "https://github.com/Lunarvim/colorschemes"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -199,6 +204,11 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -243,11 +253,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
-  },
-  ["vim-autoformat"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/vim-autoformat",
-    url = "https://github.com/Chiel92/vim-autoformat"
   },
   ["vim-illuminate"] = {
     loaded = true,

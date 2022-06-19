@@ -1,4 +1,5 @@
 vim.opt.backup = false
+vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
