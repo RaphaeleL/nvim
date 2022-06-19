@@ -1,3 +1,6 @@
+-- Notifications with Notify
+local n = require("user.notify")
+
 -- Set wrap and spell in markdown
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "markdown" },
@@ -11,8 +14,8 @@ vim.api.nvim_create_autocmd({ "User" }, {
 	pattern = { "AlphaReady" },
 	callback = function()
 		vim.cmd([[
-        set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
-        set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
+            set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+            set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
         ]])
 	end,
 })
@@ -29,11 +32,25 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
 	callback = function()
 		vim.cmd([[
-        nnoremap <silent> <buffer> q :close <cr>
-        set nobuflisted
+            nnoremap <silent> <buffer> q :close <cr>
+            set nobuflisted
         ]])
 	end,
 })
 
 -- Autoformat on Save
-vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]])
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	callback = function()
+		n.message("Format the current buffer", "Auto Format", "info")
+		vim.lsp.buf.formatting()
+	end,
+})
+
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	pattern = { "plugins.lua" },
+	callback = function()
+		n.message("Packer is reloading", "Reload Packer", "info")
+		vim.cmd([[source <afile> | PackerSync]])
+	end,
+})

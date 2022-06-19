@@ -1,18 +1,10 @@
+local n = require("user.notify")
+
 local M = {
 	floating_buf = nil,
 	floating_win = nil,
 	prev_result = nil,
 }
-
-local function message(msg, type)
-	vim.notify(msg, type, {
-		title = "Peek",
-		on_open = function(win)
-			local buf = vim.api.nvim_win_get_buf(win)
-			vim.api.nvim_buf_set_option(buf, "filetype", "markdown")
-		end,
-	})
-end
 
 local function create_floating_file(location, opts)
 	vim.validate({
@@ -89,7 +81,7 @@ function M.open_file()
 	local filepath = vim.fn.expand("%:.")
 
 	if not filepath then
-		message("Unable to open the file!", "warning")
+		n.message("Unable to open the file!", "warning", "Peek")
 		return
 	end
 
@@ -115,7 +107,7 @@ function M.Peek(what)
 	if vim.tbl_contains(vim.api.nvim_list_wins(), M.floating_win) then
 		local success_1, _ = pcall(vim.api.nvim_set_current_win, M.floating_win)
 		if not success_1 then
-			message("You cannot edit the current file in a preview!", "warning")
+			n.message("You cannot edit the current file in a preview!", "warning", "Peek")
 			return
 		end
 
@@ -129,14 +121,15 @@ function M.Peek(what)
 			{ noremap = true, silent = true }
 		)
 	else
-        message("You cannot Peek here", "warn")
+		n.message("You cannot Peek here", "warn", "Peek")
 		local params = vim.lsp.util.make_position_params()
 		local preview_callback = preview_location_callback_new_signature
 		local success, _ = pcall(vim.lsp.buf_request, 0, "textDocument/" .. what, params, preview_callback)
 		if not success then
-			message(
+			n.message(
 				'Error calling LSP method "textDocument/' .. what .. '". The current language lsp might not support it.',
-				"error"
+				"error",
+				"Peek"
 			)
 		end
 	end
