@@ -1,4 +1,13 @@
-local gps = require("nvim-gps")
+local gps_status_ok, gps = pcall(require, "nvim-gps")
+if not gps_status_ok then
+	require("user.notify").message("Coult not load nvim-gps", "Loading Error", "error")
+	return
+end
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+	require("user.notify").message("Coult not load lualine", "Loading Error", "error")
+	return
+end
 
 local colors = {
 	bg = "#202328",
@@ -35,7 +44,7 @@ local function diff_source()
 	end
 end
 
-require("lualine").setup({
+lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "onedark",

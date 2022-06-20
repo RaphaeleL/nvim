@@ -1,4 +1,8 @@
-local menu = require("which-key")
+local status_ok, menu = pcall(require, "which-key")
+if not status_ok then
+	require("user.notify").message("Coult not load which-key", "Loading Error", "error")
+	return
+end
 
 menu.setup({
 	plugins = {
@@ -75,6 +79,10 @@ menu.register({
 	["<Leader>"] = {
 		f = {
 			name = "+Search",
+			g = {
+				":lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep For > \")})<cr>",
+				"Grep Word",
+			},
 			c = { ":Telescope colorscheme<cr>", "Colorscheme" },
 			f = { ":Telescope find_files<cr>", "Find File" },
 			h = { ":Telescope help_tags<cr>", "Find Help" },

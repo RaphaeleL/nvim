@@ -1,6 +1,11 @@
 --vim.g.nvim_tree_highlight_opened_files = 1
+local status_ok, tree = pcall(require, "nvim-tree")
+if not status_ok then
+	require("user.notify").message("Coult not load nvim-tree", "Loading Error", "error")
+    return
+end
 
-require("nvim-tree").setup({
+tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_setup = false,

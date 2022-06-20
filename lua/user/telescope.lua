@@ -1,9 +1,10 @@
-local ok, actions = pcall(require, "telescope.actions")
-if not ok then
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+	require("user.notify").message("Coult not load telescope", "Loading Error", "error")
 	return
 end
 
-require("telescope").setup({
+telescope.setup({
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",

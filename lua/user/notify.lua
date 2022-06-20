@@ -1,5 +1,9 @@
 local M = {}
-local notify = require("notify")
+local status_ok, notify = pcall(require, "notify")
+if not status_ok then
+	require("user.notify").message("Coult not load notify", "Loading Error", "error")
+	return
+end
 
 notify.setup()
 vim.notify = notify

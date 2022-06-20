@@ -1,5 +1,6 @@
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
+	require("user.notify").message("Coult not load indent_blankline", "Loading Error", "error")
 	return
 end
 
