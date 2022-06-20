@@ -1,23 +1,29 @@
-require("nvim-gps").setup({
+local status_ok, gps = pcall(require, "nvim-gps")
+if not status_ok then
+	require("user.notify").message("Coult not load nvim-gps", "Loading Error", "error")
+	return
+end
+
+gps.setup({
 	disable_icons = false,
 	icons = {
-		["class-name"] = ' ',
-		["function-name"] = ' ',
-		["method-name"] = ' ',
+		["class-name"] = " ",
+		["function-name"] = " ",
+		["method-name"] = " ",
 		--["container-name"] = '⛶ ',
-		["container-name"] = '',
-		["tag-name"] = '炙'
+		["container-name"] = "",
+		["tag-name"] = "炙",
 	},
 	languages = {
 		["json"] = {
 			icons = {
-				["array-name"] = ' ',
-				["object-name"] = ' ',
-				["null-name"] = '[] ',
-				["boolean-name"] = 'ﰰﰴ ',
-				["number-name"] = '# ',
-				["string-name"] = ' '
-			}
+				["array-name"] = " ",
+				["object-name"] = " ",
+				["null-name"] = "[] ",
+				["boolean-name"] = "ﰰﰴ ",
+				["number-name"] = "# ",
+				["string-name"] = " ",
+			},
 		},
 		["latex"] = {
 			icons = {
@@ -32,33 +38,33 @@ require("nvim-gps").setup({
 		},
 		["toml"] = {
 			icons = {
-				["table-name"] = ' ',
-				["array-name"] = ' ',
-				["boolean-name"] = 'ﰰﰴ ',
-				["date-name"] = ' ',
-				["date-time-name"] = ' ',
-				["float-name"] = ' ',
-				["inline-table-name"] = ' ',
-				["integer-name"] = '# ',
-				["string-name"] = ' ',
-				["time-name"] = ' '
-			}
+				["table-name"] = " ",
+				["array-name"] = " ",
+				["boolean-name"] = "ﰰﰴ ",
+				["date-name"] = " ",
+				["date-time-name"] = " ",
+				["float-name"] = " ",
+				["inline-table-name"] = " ",
+				["integer-name"] = "# ",
+				["string-name"] = " ",
+				["time-name"] = " ",
+			},
 		},
 		["verilog"] = {
 			icons = {
-				["module-name"] = ' '
-			}
+				["module-name"] = " ",
+			},
 		},
 		["yaml"] = {
 			icons = {
-				["mapping-name"] = ' ',
-				["sequence-name"] = ' ',
-				["null-name"] = '[] ',
-				["boolean-name"] = 'ﰰﰴ ',
-				["integer-name"] = '# ',
-				["float-name"] = ' ',
-				["string-name"] = ' '
-			}
+				["mapping-name"] = " ",
+				["sequence-name"] = " ",
+				["null-name"] = "[] ",
+				["boolean-name"] = "ﰰﰴ ",
+				["integer-name"] = "# ",
+				["float-name"] = " ",
+				["string-name"] = " ",
+			},
 		},
 		["yang"] = {
 			icons = {
@@ -72,10 +78,10 @@ require("nvim-gps").setup({
 				["leaf-list-name"] = " ",
 				["leaf-name"] = " ",
 				["action-name"] = " ",
-			}
+			},
 		},
 	},
-	separator = ' > ',
+	separator = " > ",
 	depth = 0,
-	depth_limit_indicator = ".."
+	depth_limit_indicator = "..",
 })

@@ -8,4 +8,8 @@ _G.__luacache_config = {
 		path = vim.fn.stdpath("cache") .. "/luacache_modpaths",
 	},
 }
-require("impatient")
+local status_ok, impatient = pcall(require, "impatient")
+if not status_ok then
+	require("user.notify").message("Coult not load impatient", "Loading Error", "error")
+	return
+end

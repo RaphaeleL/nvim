@@ -1,5 +1,6 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	require("user.notify").message("Coult not load cmp", "Loading Error", "error")
 	return
 end
 
@@ -8,7 +9,12 @@ if not snip_status_ok then
 	return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
+local lazy_status_ok, lazyload = pcall(require, "luasnip/loaders/from_vscode")
+if not lazy_status_ok then
+	require("user.notify").message("Coult not load luasnip/loaders/from_vscode", "Loading Error", "error")
+	return
+end
+lazyload.lazy_load()
 
 local check_backspace = function()
 	local col = vim.fn.col(".") - 1

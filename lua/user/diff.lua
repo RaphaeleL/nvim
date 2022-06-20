@@ -1,4 +1,10 @@
-require("diffview").setup({
+local status_ok, diff = pcall(require, "diffview")
+if not status_ok then
+	require("user.notify").message("Coult not load diffview", "Loading Error", "error")
+	return
+end
+
+diff.setup({
 	diff_binaries = false,
 	enhanced_diff_hl = false,
 	use_icons = true,

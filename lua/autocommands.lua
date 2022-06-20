@@ -1,5 +1,9 @@
 -- Notifications with Notify
-local n = require("user.notify")
+local status_ok, n = pcall(require, "user.notify")
+if not status_ok then
+	require("user.notify").message("Coult not load notify", "Loading Error", "error")
+	return
+end
 
 -- Set wrap and spell in markdown
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -41,7 +45,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- Autoformat on Save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function()
-		n.message("Format the current buffer", "Auto Format", "info")
+		n.message("Format the current buffer", "Autoformat File", "info")
 		vim.lsp.buf.formatting()
 	end,
 })
