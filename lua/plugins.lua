@@ -55,6 +55,7 @@ return require("packer").startup(function()
 	use({ "christianchiarulli/nvcode-color-schemes.vim" })
 	use({ "shaeinst/roshnivim-cs" })
 	use({ "Lunarvim/colorschemes" })
+	use({ "lunarvim/darkplus.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
@@ -62,4 +63,9 @@ return require("packer").startup(function()
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)
