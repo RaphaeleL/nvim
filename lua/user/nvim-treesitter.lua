@@ -6,7 +6,6 @@ end
 
 treesitter.setup({
 	highlight = {
-
 		enable = true,
 	},
 })
