@@ -1,6 +1,6 @@
 # Basic IDE Layer (Configuration) for Neovim 
 
-**NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap. 
+**NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap. 
 
 
 ## Table of Contents
@@ -70,7 +70,7 @@ The File Strucutre explained.
         - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name 
             - lsp/      -- Lsp Configuration 
             - *.lua     -- Each has a Setup File if needed
-        - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
+        - *.lua         -- Basic NaaVim Configuration (Neovim Settings, ...)
     - init.lua          -- the start of the nvim configuration
 ```
 
