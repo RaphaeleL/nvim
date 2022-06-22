@@ -1,12 +1,31 @@
-# Basic IDE Layer / Configuration for Neovim
+# Basic IDE Layer (Configuration) for Neovim 
 
-This is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS.
+**NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap. 
 
-## Install Neovim
+
+## Table of Contents
+
+1. [Installation](#installation)
+    - [Package Manager](#package-manager)
+    - [Source](#source)
+2. [Configuration](#configuration)
+    - [Font](#font)
+    - [Strucutre](#strucutre)
+3. [Plugins](#plugins)
+    - [Basic-Plugins](#basic-plugins)
+    - [UI](#ui)
+    - [Lsp](#lsp)
+    - [Auto Completion](#auto-completion)
+    - [Colorscheme](#colorscheme)
+    - [Treesitter](#treesitter)
+    - [Snippets](#snippets)
+4. [Showcase](#showcase)
+
+## Installation
 
 > Neovim 0.7
 
-### Package Manager
+### Package-Manager
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -14,7 +33,7 @@ You can install `nvim` using a package manager, but keep in mind that `nvim` may
 
 If you want to make sure `nvim` is only updated when you want, then I recommend installing from source.
 
-```bash
+```
 $ git clone https://github.com/neovim/neovim.git
 $ cd neovim
 $ git checkout release-0.7
@@ -22,7 +41,7 @@ $ make CMAKE_BUILD_TYPE=RelWithDebInfo
 $ sudo make install
 ```
 
-## Install Configuration
+## Configuration
 
 Be sure to delete or move your current `nvim` directory. Run `nvim` and install all the plugins with:
 
@@ -36,15 +55,30 @@ In addition, the following command can be used to run a series of diagnostic tes
 :checkhealth
 ```
 
-## Font
+### Font
 
-- [Nerd Fonts](https://www.nerdfonts.com)
+Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons.
+
+### Strucutre 
+
+The File Strucutre explained.
+
+```
+- nvim 
+    - assets/           -- contains some demo images for the README.md
+    - lua/              -- contains the configuration
+        - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name 
+            - lsp/      -- Lsp Configuration 
+            - *.lua     -- Each has a Setup File if needed
+        - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
+    - init.lua          -- the start of the nvim configuration
+```
 
 ## Plugins
 
-Managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+> Managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-### Basic Plugins
+### Basic-Plugins
 
 - [mbbill/undotree](https://github.com/mbbill/undotree)
 - [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
@@ -74,7 +108,7 @@ Managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
 
-### Auto Completion
+### Auto-Completion
 
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
@@ -100,6 +134,7 @@ Managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+
 
 ## Showcase
 
