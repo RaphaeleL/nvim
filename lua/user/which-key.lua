@@ -73,6 +73,7 @@ menu.register({
 	["<leader>a"] = { ":call append(line('.'), '')<cr>", "Add Line Below" },
 	["<leader>b"] = { ":call append(line('.')-1, '')<cr>", "Add Line Above" },
 	["<leader>s"] = { ":Telescope find_files<cr>", "Files" },
+	["<leader>G"] = { ":BufferGoto ", "Goto Tab" },
 })
 
 menu.register({
