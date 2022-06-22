@@ -17,7 +17,7 @@ dashboard.section.header.val = {
 }
 
 dashboard.section.buttons.val = {
-	dashboard.button("e", "  > New file", ":ene <BAR> startinsert <cr>"),
+	dashboard.button("n", "  > New file", ":ene <BAR> startinsert <cr>"),
 	dashboard.button("f", "  > Find file", ":Telescope find_files<cr>"),
 	dashboard.button("r", "  > Recent", ":Telescope oldfiles<cr>"),
 	dashboard.button("s", "  > Settings", ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<cr>"),

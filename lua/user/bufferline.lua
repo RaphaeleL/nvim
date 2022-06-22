@@ -1,5 +1,6 @@
 local cmp_status_ok, bufferline = pcall(require, "bufferline")
 if not cmp_status_ok then
+	require("user.notify").message("Coult not load bufferline", "Loading Error", "error")
 	return
 end
 
