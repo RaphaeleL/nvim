@@ -2,7 +2,7 @@
 local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then
 	require("user.notify").message("Coult not load nvim-tree", "Loading Error", "error")
-    return
+	return
 end
 
 tree.setup({
