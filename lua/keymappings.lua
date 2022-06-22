@@ -22,9 +22,6 @@ keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
 
--- Close detached Windows
--- keymap("n", "qq", ":bd!<CR>")
-
 -- Open Which Key Menu
 keymap("n", "<Leader><Leader>", ":WhichKey<Leader><CR><Leader>")
 keymap("v", "<Leader><Leader>", ":WhichKey<Leader><CR><Leader>")
