@@ -105,7 +105,12 @@ menu.register({
 	["<Leader>"] = {
 		d = {
 			name = "+Diagnostics",
+			c = { ":lua vim.lsp.buf.declaration()<cr>", "Show Declaration" },
+			a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
+			R = { ":lua vim.lsp.buf.references()<cr>", "Show References" },
 			D = { ":lua vim.lsp.buf.definition()<cr>", "Show Definition" },
+			h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+			q = { ":lua vim.diagnostic.setloclist()<cr>", "Set Location List" },
 			i = { ":lua vim.lsp.buf.implementation()<cr>", "Show Implementation" },
 			r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
 			I = { ":lua vim.lsp.buf.hover()<cr>", "Show Informations" },
