@@ -114,7 +114,6 @@ The File Strucutre explained.
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
-- [github/copilot.vim](https://github.com/github/copilot.vim)
 - [tpope/vim-sensible](https://github.com/tpope/vim-sensible)
 - [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
