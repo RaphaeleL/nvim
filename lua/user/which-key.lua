@@ -140,7 +140,7 @@ menu.register({
 		t = {
 			name = "+Terminal",
 			t = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
-			b = { ":ToggleTerm<cr>", "Terminal on the bottom" },
+			b = { ":ToggleTerm direction=horizontal<cr>", "Terminal on the bottom" },
 		},
 	},
 })
