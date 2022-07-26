@@ -20,7 +20,6 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "windwp/nvim-autopairs" })
-
 	use({ "ThePrimeagen/harpoon" })
 
 	-- UI
@@ -44,7 +43,7 @@ return require("packer").startup(function()
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "RRethy/vim-illuminate" })
 	use({ "tamago324/nlsp-settings.nvim" })
-	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
+	-- use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" })
@@ -62,6 +61,7 @@ return require("packer").startup(function()
 	use({ "Lunarvim/colorschemes" })
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "romgrk/doom-one.vim" })
+	use({ "olimorris/onedarkpro.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
