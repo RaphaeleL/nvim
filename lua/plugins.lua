@@ -21,6 +21,8 @@ return require("packer").startup(function()
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "windwp/nvim-autopairs" })
 
+	use({ "ThePrimeagen/harpoon" })
+
 	-- UI
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "folke/which-key.nvim" })
