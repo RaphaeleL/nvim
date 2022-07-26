@@ -26,12 +26,15 @@ return require("packer").startup(function()
 	use({ "folke/which-key.nvim" })
 	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
 	use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
-	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "goolord/alpha-nvim" })
 	use({ "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" })
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use({ "nacro90/numb.nvim" })
 	use({ "rcarriga/nvim-notify" })
+
+	-- Git
+	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "f-person/git-blame.nvim" })
 
 	-- LSP
 	use({ "onsails/lspkind.nvim" })
@@ -39,6 +42,7 @@ return require("packer").startup(function()
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "RRethy/vim-illuminate" })
 	use({ "tamago324/nlsp-settings.nvim" })
+	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" })
@@ -55,6 +59,7 @@ return require("packer").startup(function()
 	use({ "shaeinst/roshnivim-cs" })
 	use({ "Lunarvim/colorschemes" })
 	use({ "lunarvim/darkplus.nvim" })
+	use({ "romgrk/doom-one.vim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })

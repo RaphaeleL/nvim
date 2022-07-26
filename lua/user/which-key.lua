@@ -93,10 +93,10 @@ menu.register({
 			t = { ":Telescope live_grep<cr>", "Text" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
 			C = { ":Telescope commands<cr>", "Commands" },
-			p = {
-				":lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
-				"Colorscheme with Preview",
-			},
+			-- p = {
+			-- 	":lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
+			-- 	"Colorscheme with Preview",
+			-- },
 		},
 	},
 })
