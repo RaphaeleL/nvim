@@ -60,20 +60,76 @@ menu.setup({
 })
 
 menu.register({
-	["<leader>v"] = { ":vsplit<cr>", "Vertical Split" },
-	["<leader>h"] = { ":split<cr>", "Horizontal Split" },
-	["<leader>r"] = { ":redo<cr>", "Redo" },
-	["<leader>u"] = { ":undo<cr>", "Undo" },
-	["<leader>U"] = { ":UndotreeToggle<cr>", "Undotree" },
-	["<leader>e"] = { ":NvimTreeToggle<cr>", "Explorer" },
-	["<leader>n"] = { ":noh<cr>", "No Highlighting" },
-	["<leader>c"] = { ":bdelete<cr>", "Close Tab" },
-	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
-	["<leader>H"] = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
-	["<leader>a"] = { ":call append(line('.'), '')<cr>", "Add Line Below" },
-	["<leader>b"] = { ":call append(line('.')-1, '')<cr>", "Add Line Above" },
-	["<leader>s"] = { ":Telescope find_files<cr>", "Files" },
-	["<leader>G"] = { ":BufferGoto ", "Goto Tab" },
+	["<Leader>"] = {
+		n = { ":noh<cr>", "No Highlighting" },
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		l = {
+			name = "+Line",
+			a = { ":call append(line('.'), '')<cr>", "Add Line Below" },
+			b = { ":call append(line('.')-1, '')<cr>", "Add Line Above" },
+			c = { ":CommentToggle<cr>", "Comment Line" },
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		h = {
+			name = "+Harpoon",
+			t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Open Harpoon" },
+			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
+			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
+			c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear Marks" },
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		b = {
+			name = "+Buffer",
+			b = { ":Telescope buffers<cr>", "Show buffers" },
+			n = { ":BufferNext<cr>", "Next" },
+			p = { ":BufferPrevious<cr>", "Previous" },
+			d = { ":BufferDelete<cr>", "Delete" },
+			g = { ":BufferPick<cr>", "Pick" },
+			c = { ":BufferCloseallButCurrent<cr>", "Close all expect of the Current" },
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		o = {
+			name = "+Open",
+			s = { ":Telescope find_files<cr>", "Find files" },
+			e = { ":NvimTreeToggle<cr>", "File Explorer" },
+			u = { ":UndotreeToggle<cr>", "History" },
+			d = { ":Alpha<cr>", "Dashboard" },
+			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
+			t = {
+				f = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
+				b = { ":ToggleTerm direction=horizontal<cr>", "Bottom Terminal" },
+			},
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		w = {
+			name = "+Window",
+			c = { ":bdelete<cr>", "Close Window" },
+			v = { ":vsplit<cr>", "Vertical Split" },
+			h = { ":split<cr>", "Horizontal Split" },
+			g = { ":BufferGoto<cr>", "Goto Tab" },
+		},
+	},
 })
 
 menu.register({
@@ -93,10 +149,6 @@ menu.register({
 			t = { ":Telescope live_grep<cr>", "Text" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
 			C = { ":Telescope commands<cr>", "Commands" },
-			-- p = {
-			-- 	":lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
-			-- 	"Colorscheme with Preview",
-			-- },
 		},
 	},
 })
@@ -138,9 +190,9 @@ menu.register({
 menu.register({
 	["<Leader>"] = {
 		t = {
-			name = "+Terminal",
-			t = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
-			b = { ":ToggleTerm direction=horizontal<cr>", "Terminal on the bottom" },
+			name = "+Toggle",
+			l = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
+			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
 		},
 	},
 })
@@ -149,9 +201,6 @@ menu.register({
 	["<Leader>"] = {
 		g = {
 			name = "+Git",
-			g = { ":Copilot panel<cr>", "Github Copilot Suggestions" },
-			l = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
-			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
 			s = { ":Telescope git_status<cr>", "Status" },
 			c = { ":Telescope git_commits<cr>", "Commits" },
 			b = { ":Telescope git_branches<cr>", "Branches" },
