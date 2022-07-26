@@ -32,7 +32,8 @@ return require("packer").startup(function()
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use({ "nacro90/numb.nvim" })
 	use({ "rcarriga/nvim-notify" })
-
+  use ({"simrat39/symbols-outline.nvim"})
+    
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "f-person/git-blame.nvim" })
@@ -70,7 +71,7 @@ return require("packer").startup(function()
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
 
-	-- Automatically set up your configuration after cloning packer.nvim
+  -- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require("packer").sync()
 	end
