@@ -51,10 +51,10 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "plugins.lua" },
-	callback = function()
-		n.message("Packer is reloading", "Reload Packer", "info")
-		vim.cmd([[source <afile> | PackerSync]])
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	pattern = { "plugins.lua" },
+-- 	callback = function()
+-- 		n.message("Packer is reloading", "Reload Packer", "info")
+-- 		vim.cmd([[source <afile> | PackerSync]])
+-- 	end,
+-- })
