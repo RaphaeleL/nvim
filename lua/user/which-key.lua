@@ -37,7 +37,7 @@ menu.setup({
 		scroll_up = "<c-u>",
 	},
 	window = {
-		--border = "rounded",
+		border = "rounded",
 		position = "bottom",
 		margin = { 1, 0, 1, 0 },
 		padding = { 1, 1, 1, 1 },
@@ -61,7 +61,12 @@ menu.setup({
 
 menu.register({
 	["<Leader>"] = {
+		a = { ":Alpha<cr>", "Dashboard" },
 		n = { ":noh<cr>", "No Highlighting" },
+		s = { ":Telescope find_files<cr>", "Find files" },
+		c = { ":bdelete<cr>", "Close Window" },
+		e = { ":NvimTreeToggle<cr>", "File Explorer" },
+		u = { ":UndotreeToggle<cr>", "History" },
 	},
 })
 
@@ -108,6 +113,7 @@ menu.register({
 		o = {
 			name = "+Open",
 			s = { ":Telescope find_files<cr>", "Find files" },
+			o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
 			u = { ":UndotreeToggle<cr>", "History" },
 			d = { ":Alpha<cr>", "Dashboard" },
