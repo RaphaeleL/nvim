@@ -38,3 +38,28 @@ vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]])
+
+-- -- NEOVIDE
+-- vim.cmd([[set guifont="DroidSansMono Nerd Fonts"]])
+-- vim.g.gui_font_default_size = 12
+-- vim.g.gui_font_size = vim.g.gui_font_default_size
+-- vim.g.gui_font_face = "Cascadia Code"
+--
+-- RefreshGuiFont = function()
+-- 	vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
+-- end
+-- ResizeGuiFont = function(delta)
+-- 	vim.g.gui_font_size = vim.g.gui_font_size + delta
+-- 	RefreshGuiFont()
+-- end
+-- ResetGuiFont = function()
+-- 	vim.g.gui_font_size = vim.g.gui_font_default_size
+-- 	RefreshGuiFont()
+-- end
+-- ResetGuiFont()
+-- vim.keymap.set({ "n", "i" }, "<C-+>", function()
+-- 	ResizeGuiFont(1)
+-- end, { noremap = true, silent = true })
+-- vim.keymap.set({ "n", "i" }, "<C-->", function()
+-- 	ResizeGuiFont(-1)
+-- end, { noremap = true, silent = true })
