@@ -43,7 +43,7 @@ return require("packer").startup(function()
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "RRethy/vim-illuminate" })
 	use({ "tamago324/nlsp-settings.nvim" })
-
+	use({ "ray-x/lsp_signature.nvim" })
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-buffer" })
