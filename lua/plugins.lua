@@ -20,7 +20,6 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "windwp/nvim-autopairs" })
-	use({ "ThePrimeagen/harpoon" })
 
 	-- UI
 	use({ "akinsho/toggleterm.nvim" })
@@ -32,8 +31,8 @@ return require("packer").startup(function()
 	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 	use({ "nacro90/numb.nvim" })
 	use({ "rcarriga/nvim-notify" })
-  use ({"simrat39/symbols-outline.nvim"})
-    
+	use({ "simrat39/symbols-outline.nvim" })
+
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "f-person/git-blame.nvim" })
@@ -44,7 +43,6 @@ return require("packer").startup(function()
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 	use({ "RRethy/vim-illuminate" })
 	use({ "tamago324/nlsp-settings.nvim" })
-	-- use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" })
@@ -57,12 +55,11 @@ return require("packer").startup(function()
 	use({ "saadparwaiz1/cmp_luasnip" })
 
 	-- Colorscheme
-	use({ "christianchiarulli/nvcode-color-schemes.vim" })
-	use({ "shaeinst/roshnivim-cs" })
-	use({ "Lunarvim/colorschemes" })
-	use({ "lunarvim/darkplus.nvim" })
-	use({ "romgrk/doom-one.vim" })
 	use({ "olimorris/onedarkpro.nvim" })
+	-- use({ "christianchiarulli/nvcode-color-schemes.vim" })
+	-- use({ "shaeinst/roshnivim-cs" })
+	-- use({ "Lunarvim/colorschemes" })
+	-- use({ "lunarvim/darkplus.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
@@ -71,7 +68,7 @@ return require("packer").startup(function()
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
 
-  -- Automatically set up your configuration after cloning packer.nvim
+	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require("packer").sync()
 	end
