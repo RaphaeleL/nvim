@@ -64,7 +64,7 @@ menu.register({
 		a = { ":Alpha<cr>", "Dashboard" },
 		n = { ":noh<cr>", "No Highlighting" },
 		s = { ":Telescope find_files<cr>", "Find files" },
-		c = { ":bdelete<cr>", "Close Window" },
+		c = { ":bdelete<cr>", "Close" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
 		u = { ":UndotreeToggle<cr>", "History" },
 	},
@@ -81,29 +81,30 @@ menu.register({
 	},
 })
 
-menu.register({
-	["<Leader>"] = {
-		h = {
-			name = "+Harpoon",
-			t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Open Harpoon" },
-			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
-			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
-			c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear Marks" },
-		},
-	},
-})
+-- menu.register({
+-- 	["<Leader>"] = {
+-- 		h = {
+-- 			name = "+Harpoon",
+-- 			t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Open Harpoon" },
+-- 			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+-- 			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
+-- 			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
+-- 			c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear Marks" },
+-- 		},
+-- 	},
+-- })
 
 menu.register({
 	["<Leader>"] = {
 		b = {
 			name = "+Buffer",
 			b = { ":Telescope buffers<cr>", "Show buffers" },
+			g = { ":BufferGoto<cr>", "Goto Tab" },
 			n = { ":BufferNext<cr>", "Next" },
 			p = { ":BufferPrevious<cr>", "Previous" },
 			d = { ":BufferDelete<cr>", "Delete" },
-			g = { ":BufferPick<cr>", "Pick" },
 			c = { ":BufferCloseallButCurrent<cr>", "Close all expect of the Current" },
+			t = { ":BufferPick<cr>", "Pick" },
 		},
 	},
 })
@@ -133,7 +134,6 @@ menu.register({
 			c = { ":bdelete<cr>", "Close Window" },
 			v = { ":vsplit<cr>", "Vertical Split" },
 			h = { ":split<cr>", "Horizontal Split" },
-			g = { ":BufferGoto<cr>", "Goto Tab" },
 		},
 	},
 })
