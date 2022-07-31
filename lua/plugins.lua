@@ -63,7 +63,7 @@ return require("packer").startup(function()
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
-
+	use({ "p00f/nvim-ts-rainbow" })
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
