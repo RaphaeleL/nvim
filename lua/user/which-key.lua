@@ -120,6 +120,7 @@ menu.register({
 			d = { ":Alpha<cr>", "Dashboard" },
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
 			t = {
+			  name = "+Terminal",
 				f = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
 				b = { ":ToggleTerm direction=horizontal<cr>", "Bottom Terminal" },
 			},
