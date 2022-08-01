@@ -57,10 +57,6 @@ return require("packer").startup(function()
 
 	-- Colorscheme
 	use({ "olimorris/onedarkpro.nvim" })
-	-- use({ "christianchiarulli/nvcode-color-schemes.vim" })
-	-- use({ "shaeinst/roshnivim-cs" })
-	-- use({ "Lunarvim/colorschemes" })
-	-- use({ "lunarvim/darkplus.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
@@ -71,6 +67,12 @@ return require("packer").startup(function()
 
 	-- Quickrun
 	use({ "is0n/jaq-nvim" })
+
+	-- Graveyard
+	-- use({ "christianchiarulli/nvcode-color-schemes.vim" })
+	-- use({ "shaeinst/roshnivim-cs" })
+	-- use({ "Lunarvim/colorschemes" })
+	-- use({ "lunarvim/darkplus.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
