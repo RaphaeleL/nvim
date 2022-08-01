@@ -1,4 +1,5 @@
 local status_ok, menu = pcall(require, "which-key")
+
 if not status_ok then
 	require("user.notify").message("Coult not load which-key", "Loading Error", "error")
 	return
@@ -113,6 +114,7 @@ menu.register({
 	["<Leader>"] = {
 		o = {
 			name = "+Open",
+			g = { ":Neogit kind=split_above<cr>", "Neogit" },
 			s = { ":Telescope find_files<cr>", "Find files" },
 			o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
@@ -120,7 +122,7 @@ menu.register({
 			d = { ":Alpha<cr>", "Dashboard" },
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
 			t = {
-			  name = "+Terminal",
+				name = "+Terminal",
 				f = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
 				b = { ":ToggleTerm direction=horizontal<cr>", "Bottom Terminal" },
 			},
@@ -196,16 +198,6 @@ menu.register({
 
 menu.register({
 	["<Leader>"] = {
-		t = {
-			name = "+Toggle",
-			l = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
-			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
-		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		g = {
 			name = "+Git",
 			s = { ":Telescope git_status<cr>", "Status" },
@@ -213,6 +205,9 @@ menu.register({
 			b = { ":Telescope git_branches<cr>", "Branches" },
 			d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
 			a = { ":Gitsigns blame_line<cr>", "Blame" },
+			l = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
+			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
+			o = { ":Neogit kind=split_above<cr>", "Neogit" },
 		},
 	},
 })

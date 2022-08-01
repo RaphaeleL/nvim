@@ -36,6 +36,7 @@ return require("packer").startup(function()
 	-- Git
 	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
 	use({ "f-person/git-blame.nvim" })
+	use({ "TimUntersberger/neogit" })
 
 	-- LSP
 	use({ "onsails/lspkind.nvim" })
