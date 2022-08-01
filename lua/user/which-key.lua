@@ -68,6 +68,7 @@ menu.register({
 		c = { ":bdelete<cr>", "Close" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
 		u = { ":UndotreeToggle<cr>", "History" },
+		r = { ":Jaq bang<cr>", "Run Code" },
 	},
 })
 
@@ -81,19 +82,6 @@ menu.register({
 		},
 	},
 })
-
--- menu.register({
--- 	["<Leader>"] = {
--- 		h = {
--- 			name = "+Harpoon",
--- 			t = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Open Harpoon" },
--- 			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
--- 			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
--- 			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
--- 			c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear Marks" },
--- 		},
--- 	},
--- })
 
 menu.register({
 	["<Leader>"] = {

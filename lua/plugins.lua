@@ -69,6 +69,9 @@ return require("packer").startup(function()
 	use({ "L3MON4D3/LuaSnip" })
 	use({ "rafamadriz/friendly-snippets" })
 
+	-- Quickrun
+	use({ "is0n/jaq-nvim" })
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require("packer").sync()
