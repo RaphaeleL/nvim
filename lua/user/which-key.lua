@@ -107,7 +107,6 @@ menu.register({
 			s = { ":Telescope find_files<cr>", "Find files" },
 			o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
-			E = { ":NeoTreeFocusToggle<cr>", "File Explorer" },
 			u = { ":UndotreeToggle<cr>", "History" },
 			d = { ":Alpha<cr>", "Dashboard" },
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
