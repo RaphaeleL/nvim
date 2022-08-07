@@ -96,7 +96,7 @@ lualine.setup({
 			},
 		},
 		lualine_c = { { gps.get_location, cond = gps.is_available } },
-		lualine_x = {},
+		lualine_x = { },
 		lualine_y = {
 			{
 				"diff",
