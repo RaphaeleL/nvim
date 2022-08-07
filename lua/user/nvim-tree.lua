@@ -20,9 +20,23 @@ tree.setup({
 		enable = true,
 		auto_open = true,
 	},
+	renderer = {
+		indent_markers = {
+			enable = true,
+		},
+		icons = {
+			webdev_colors = false,
+			show = {
+				file = false,
+				folder = true,
+				folder_arrow = false,
+				git = true,
+			},
+		},
+	},
 	open_on_tab = false,
-	hijack_cursor = false,
-	update_cwd = false,
+	hijack_cursor = true,
+	update_cwd = true,
 	diagnostics = {
 		enable = true,
 		icons = {
