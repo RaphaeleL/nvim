@@ -67,6 +67,7 @@ menu.register({
 		s = { ":Telescope find_files<cr>", "Find files" },
 		c = { ":bdelete<cr>", "Close" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
+		E = { ":NeoTreeFocusToggle<cr>", "File Explorer" },
 		u = { ":UndotreeToggle<cr>", "History" },
 		r = { ":Jaq bang<cr>", "Run Code" },
 	},
