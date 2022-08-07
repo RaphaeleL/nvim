@@ -64,12 +64,12 @@ menu.register({
 	["<Leader>"] = {
 		a = { ":Alpha<cr>", "Dashboard" },
 		n = { ":noh<cr>", "No Highlighting" },
-		s = { ":Telescope find_files<cr>", "Find files" },
-		c = { ":bdelete<cr>", "Close" },
+		f = { ":Telescope find_files<cr>", "Find files" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
-		E = { ":NeoTreeFocusToggle<cr>", "File Explorer" },
+		c = { ":bdelete<cr>", "Close" },
 		u = { ":UndotreeToggle<cr>", "History" },
 		r = { ":Jaq bang<cr>", "Run Code" },
+		h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
 	},
 })
 
@@ -107,6 +107,7 @@ menu.register({
 			s = { ":Telescope find_files<cr>", "Find files" },
 			o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
+			E = { ":NeoTreeFocusToggle<cr>", "File Explorer" },
 			u = { ":UndotreeToggle<cr>", "History" },
 			d = { ":Alpha<cr>", "Dashboard" },
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Help" },
@@ -133,7 +134,7 @@ menu.register({
 
 menu.register({
 	["<Leader>"] = {
-		f = {
+		s = {
 			name = "+Search",
 			g = {
 				":lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep For > \")})<cr>",
