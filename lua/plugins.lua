@@ -12,38 +12,31 @@ end
 
 return require("packer").startup(function()
 	use({ "wbthomason/packer.nvim" })
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	})
 
 	-- Basic Plugins
 	use({ "mbbill/undotree" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "terrortylor/nvim-comment" })
-	use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "nvim-telescope/telescope.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "windwp/nvim-autopairs" })
+	use({ "kyazdani42/nvim-web-devicons" })
+	use({ "nvim-lua/plenary.nvim" })
 
 	-- UI
 	use({ "akinsho/toggleterm.nvim" })
 	use({ "folke/which-key.nvim" })
-	use({ "romgrk/barbar.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-	use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "romgrk/barbar.nvim" })
+	use({ "kyazdani42/nvim-tree.lua" })
 	use({ "goolord/alpha-nvim" })
-	use({ "SmiteshP/nvim-gps", requires = "nvim-treesitter/nvim-treesitter" })
-	use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
+	use({ "SmiteshP/nvim-gps" })
+	use({ "nvim-lualine/lualine.nvim" })
 	use({ "nacro90/numb.nvim" })
 	use({ "rcarriga/nvim-notify" })
 	use({ "simrat39/symbols-outline.nvim" })
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use({ "lewis6991/gitsigns.nvim" })
 	use({ "f-person/git-blame.nvim" })
 
 	-- LSP
@@ -60,7 +53,7 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-path" })
 	use({ "hrsh7th/cmp-cmdline" })
 	use({ "tpope/vim-sensible" })
-	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+	use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "saadparwaiz1/cmp_luasnip" })
 
