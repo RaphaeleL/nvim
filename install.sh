@@ -16,3 +16,6 @@ sudo make install
 # Remove the neovim Repo
 rm -rf ~/neovim
 
+git clone https://github.com/RaphaeleL/nvim.git ~/config/nvim
+
+echo "Type 'nvim' in the Terminal. Now you should be in Neovim :D yeey. Start install all the Plugins with 'PackerInstall'."
