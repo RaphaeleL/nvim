@@ -126,7 +126,7 @@ there may well be some configurations files that are not called. for example neo
 - [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
 - [tpope/vim-sensible](https://github.com/tpope/vim-sensible)
-- [tzachar/cmp-tabnine])(https://github.com/tzachar/cmp-tabnine")
+- [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 - [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 
