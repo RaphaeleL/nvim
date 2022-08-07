@@ -103,7 +103,6 @@ menu.register({
 	["<Leader>"] = {
 		o = {
 			name = "+Open",
-			g = { ":Neogit kind=split_above<cr>", "Neogit" },
 			s = { ":Telescope find_files<cr>", "Find files" },
 			o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
@@ -197,7 +196,6 @@ menu.register({
 			a = { ":Gitsigns blame_line<cr>", "Blame" },
 			l = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
 			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
-			o = { ":Neogit kind=split_above<cr>", "Neogit" },
 		},
 	},
 })
