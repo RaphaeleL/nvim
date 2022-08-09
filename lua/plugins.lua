@@ -17,7 +17,6 @@ return require("packer").startup(function()
 	use({ "mbbill/undotree" })
 	use({ "lewis6991/impatient.nvim" })
 	use({ "terrortylor/nvim-comment" })
-	use({ "nvim-telescope/telescope.nvim" })
 	use({ "lukas-reineke/indent-blankline.nvim" })
 	use({ "windwp/nvim-autopairs" })
 	use({ "kyazdani42/nvim-web-devicons" })
@@ -72,6 +71,10 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
 	use({ "p00f/nvim-ts-rainbow" })
+
+	-- Telescope
+	use({ "nvim-telescope/telescope.nvim" })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" })

@@ -64,10 +64,12 @@ menu.register({
 	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
 })
 
+-- TODO Mappings https://github.com/nvim-telescope/telescope-file-browser.nvim#mappings
 menu.register({
 	["<Leader>"] = {
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
+		x = { ":Telescope file_browser<cr>", "Browser" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
 		c = { ":bdelete<cr>", "Close" },
 		u = { ":UndotreeToggle<cr>", "History" },
