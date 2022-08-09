@@ -36,7 +36,7 @@ return require("packer").startup(function()
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
-	use({ "f-person/git-blame.nvim" })
+	-- use({ "f-person/git-blame.nvim" })
 
 	-- LSP
 	use({ "onsails/lspkind.nvim" })
@@ -45,6 +45,7 @@ return require("packer").startup(function()
 	use({ "RRethy/vim-illuminate" })
 	use({ "tamago324/nlsp-settings.nvim" })
 	use({ "ray-x/lsp_signature.nvim" })
+	-- TODO use({ "glepnir/lspsaga.nvim "})
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" })
@@ -57,16 +58,14 @@ return require("packer").startup(function()
 	use({ "saadparwaiz1/cmp_luasnip" })
 
 	-- Colorscheme
-	use({ "tjdevries/colorbuddy.vim" })
-	use({ "olimorris/onedarkpro.nvim" })
-	use({ "christianchiarulli/nvcode-color-schemes.vim" })
 	use({ "shaeinst/roshnivim-cs" })
-	use({ "Lunarvim/colorschemes" })
-	use({ "lunarvim/darkplus.nvim" })
-	use({ "tiagovla/tokyodark.nvim" })
-	use({ "B4mbus/oxocarbon-lua.nvim" })
 	use({ "folke/tokyonight.nvim" })
-	use({ "sainnhe/gruvbox-material" })
+	-- use({ "tjdevries/colorbuddy.vim" })
+	-- use({ "olimorris/onedarkpro.nvim" })
+	-- use({ "christianchiarulli/nvcode-color-schemes.vim" })
+	-- use({ "Lunarvim/colorschemes" })
+	-- use({ "lunarvim/darkplus.nvim" })
+	-- use({ "tiagovla/tokyodark.nvim" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
