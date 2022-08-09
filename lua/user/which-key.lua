@@ -61,8 +61,11 @@ menu.setup({
 })
 
 menu.register({
+	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
+})
+
+menu.register({
 	["<Leader>"] = {
-		a = { ":Alpha<cr>", "Dashboard" },
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
@@ -95,6 +98,8 @@ menu.register({
 			d = { ":BufferDelete<cr>", "Delete" },
 			c = { ":BufferCloseallButCurrent<cr>", "Close all expect of the Current" },
 			t = { ":BufferPick<cr>", "Pick" },
+			s = { ":split<Return><C-w>w<cr>", "Split Window" },
+			v = { ":vsplit<Return><C-w>w<cr>", "Vertical Split Window" },
 		},
 	},
 })
