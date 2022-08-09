@@ -58,6 +58,7 @@ return require("packer").startup(function()
 	use({ "saadparwaiz1/cmp_luasnip" })
 
 	-- Colorscheme
+	use({ "tjdevries/colorbuddy.vim" })
 	use({ "olimorris/onedarkpro.nvim" })
 	use({ "christianchiarulli/nvcode-color-schemes.vim" })
 	use({ "shaeinst/roshnivim-cs" })
@@ -65,6 +66,8 @@ return require("packer").startup(function()
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "tiagovla/tokyodark.nvim" })
 	use({ "B4mbus/oxocarbon-lua.nvim" })
+	use({ "folke/tokyonight.nvim" })
+	use({ "sainnhe/gruvbox-material" })
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" })
