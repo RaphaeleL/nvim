@@ -31,9 +31,8 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Telescope's Dired
 
 	-- Snippets
-	use({ "L3MON4D3/LuaSnip" }) -- Snippets)
-	use({ "rafamadriz/friendly-snippets" }) -- Snippets)
-	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
+	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
+	use({ "rafamadriz/friendly-snippets" }) -- Snippets
 
 	-- UI
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
@@ -54,7 +53,7 @@ return require("packer").startup(function()
 	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
 
 	-- Auto Completion
-	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion
+	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
 	use({ "hrsh7th/cmp-buffer" }) -- Auto Completion for Buffered words
 	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
@@ -73,6 +72,7 @@ return require("packer").startup(function()
 	-- use({ "tpope/vim-sensible" }) -- Line Informations
 	-- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
+	-- use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme
