@@ -44,7 +44,6 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "rcarriga/nvim-notify" }) -- Notifications
-	use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
 	-- LSP
 	use({ "onsails/lspkind.nvim" }) -- Pictograms
@@ -66,6 +65,7 @@ return require("packer").startup(function()
 	use({ "is0n/jaq-nvim" }) -- Run Code
 
 	-- Graveyard
+	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
