@@ -17,6 +17,7 @@ return require("packer").startup(function()
 	use({ "mbbill/undotree" }) -- Undo History
 	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
+	use({ "lewis6991/impatient.nvim" }) -- Performance
 	use({ "nvim-lua/plenary.nvim" }) -- Required by every second Plugin
 
 	-- Git
@@ -26,12 +27,9 @@ return require("packer").startup(function()
 	use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection)
 	use({ "christianchiarulli/nvcode-color-schemes.vim" }) -- Scheme Collection
 
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
-
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired
+	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Telescope's Dired
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- Snippets)
@@ -42,15 +40,14 @@ return require("packer").startup(function()
 	use({ "is0n/jaq-nvim" }) -- Run Code
 
 	-- UI
+	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "lewis6991/impatient.nvim" }) -- Coloring
 	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "nacro90/numb.nvim" }) -- Jump Around
 	use({ "rcarriga/nvim-notify" }) -- Notifications
@@ -64,13 +61,14 @@ return require("packer").startup(function()
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion
-	use({ "hrsh7th/cmp-buffer" }) -- .. for Buffered words
-	use({ "hrsh7th/cmp-path" }) -- .. for Paths
-	use({ "hrsh7th/cmp-cmdline" }) -- .. for Commands
-	use({ "hrsh7th/cmp-nvim-lsp" }) -- .. for Lsp Stuff
+	use({ "hrsh7th/cmp-buffer" }) -- Auto Completion for Buffered words
+	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
+	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
+	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
 
 	-- Graveyard
+	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
 	-- use({ "tpope/vim-sensible" }) -- Line Informations
