@@ -139,9 +139,8 @@ menu.register({
 			f = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
 			e = { ":LspInfo<cr>", "Info" },
 			o = { ":LspInstallInfo<cr>", "Installer Info" },
-			n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Show next Diagnostic" },
-			N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Show previous Diagnostic" },
-			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
+			n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
+			N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Previous Diagnostic" },
 			-- P = { -- Lunarvim
 			-- 	name = "Peek",
 			-- 	d = { ":lua require('user.lsp.peek').Peek('definition')<cr>", "Definition" },
@@ -165,6 +164,7 @@ menu.register({
 			i = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
 			I = { ":lua vim.lsp.buf.hover()<cr>", "Informations" },
 			s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
 		},
 	},
 })
@@ -201,7 +201,7 @@ menu.register({
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
 			C = { ":Telescope commands<cr>", "Commands" },
-			m = { ":Telescope man_pages<cr>", "Man Pages" },
+			-- m = { ":Telescope man_pages<cr>", "Man Pages" },
 		},
 	},
 })
