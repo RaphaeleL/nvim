@@ -83,76 +83,65 @@ there may well be some configurations files that are not called. for example neo
 
 ### Basic Plugins
 
-- [mbbill/undotree](https://github.com/mbbill/undotree)
-- [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
-- [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
-- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-
-### UI
-
-- [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
-- [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
-- [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-- [SmiteshP/nvim-gps](https://github.com/SmiteshP/nvim-gps)
-- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim)
-- [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
+- Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
+- Comment Blocks: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
+- Auto Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
+- Required by every second Plugin: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 ### Git
 
-- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [f-person/git-blame.nvim](https://github.com/f-person/git-blame.nvim)
-
-### LSP
-
-- [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
-- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig")
-- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
-- [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
-- [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)
-
-### Auto Completion
-
-- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
-- [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
-- [tpope/vim-sensible](https://github.com/tpope/vim-sensible)
-- [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
-- [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-- [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- Git Signs: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 ### Colorscheme
 
-- [olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
-- [christianchiarulli/nvcode-color-schemes.vim](https://github.com/christianchiarulli/nvcode-color-schemes.vim)
-- [shaeinst/roshnivim-cs](https://github.com/shaeinst/roshnivim-cs)
-- [Lunarvim/colorschemes](https://github.com/Lunarvim/colorschemes)
-- [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
-- [tiagovla/tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
-- [B4mbus/oxocarbon-lua.nvim](https://github.com/B4mbus/oxocarbon-lua.nvim)
+- Scheme Collection: [RaphaeleL/colorschemes](https://github.com/RaphaeleL/colorschemes)
 
-### Treesitter
+### Telescope
 
-- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [p00f/nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)
+- File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- Telescope's Dired: [nvim-telescope/telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 ### Snippets
 
-- [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- Snippets: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- more Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- even more Snippets: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 
-### Quickrun
+### UI
 
-- [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
+- Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Icons: [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
+- Indent Highlighting: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- Floating Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+- Shortcut Menu: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- Tab Bar: [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- Menu Bar: [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+- Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
+- Highlight same words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+
+### LSP
+
+- Pictograms: [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
+- Lsp Installer / Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- Diagnostics / Code Actions / ...: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- Lsp Config with Json: [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
+
+### Auto Completion
+
+- Auto Completion: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- Auto Completion for Buffered words: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+- Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
+- Auto Completion for Commands: [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
+- Auto Completion for Lsp Stuff: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- AI Completion: [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
+
+### Nice but not necessarily
+
+- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+- Jump Around: [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim)
+- Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
 
 ## Showcase
 
