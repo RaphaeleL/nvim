@@ -1,8 +1,8 @@
-local gps_status_ok, gps = pcall(require, "nvim-gps")
-if not gps_status_ok then
-	require("user.notify").message("Coult not load nvim-gps", "Loading Error", "error")
-	return
-end
+-- local gps_status_ok, gps = pcall(require, "nvim-gps")
+-- if not gps_status_ok then
+-- 	require("user.notify").message("Coult not load nvim-gps", "Loading Error", "error")
+-- 	return
+-- end
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	require("user.notify").message("Coult not load lualine", "Loading Error", "error")
@@ -96,7 +96,9 @@ lualine.setup({
 				cond = nil,
 			},
 		},
-		lualine_c = { { gps.get_location, cond = gps.is_available } },
+		lualine_c = {
+			-- { gps.get_location, cond = gps.is_available }
+		},
 		lualine_x = {},
 		lualine_y = {
 			{

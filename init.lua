@@ -7,7 +7,7 @@ require("colors")
 
 -- Plugin Settings
 require("user.bufferline")
-require("user.nvim-gps")
+-- require("user.nvim-gps")
 require("user.nvim-tree")
 require("user.which-key")
 require("user.gitsigns")
