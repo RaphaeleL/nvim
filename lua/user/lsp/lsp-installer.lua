@@ -12,7 +12,7 @@ local servers = {
 	"pyright",
 	"sumneko_lua",
 	"tsserver",
-	"jsonls",
+	-- "jsonls",
 }
 
 lsp_installer.setup()
