@@ -74,7 +74,6 @@ menu.register({
 		u = { ":UndotreeToggle<cr>", "History" },
 		r = { ":Jaq bang<cr>", "Run Code" },
 		k = { ":CommentToggle<cr>", "Comment Line" },
-		e = { ":'<,'>CommentToggle<cr>", "Comment Block" },
 	},
 })
 
