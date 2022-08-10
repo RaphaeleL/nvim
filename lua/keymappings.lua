@@ -31,8 +31,8 @@ keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
 -- Move Selection up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv")
-keymap("x", "K", ":move '<-2<CR>gv-gv")
+keymap("x", "J", ":move '>+2<CR>gv-gv")
+keymap("x", "K", ":move '<-1<CR>gv-gv")
 
 -- Increment and Decrement a Number
 keymap("n", "+", "<C-a>")
@@ -40,6 +40,3 @@ keymap("n", "-", "<C-x>")
 
 -- Delete a Word backwards
 keymap("n", "dwb", 'vb"_d')
-
--- Select all
-keymap("n", "<C-a>", "gg<S-v>G")

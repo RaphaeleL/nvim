@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- Autoformat on Save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function()
-		n.message("Format the current buffer", "Autoformat File", "info")
+		-- n.message("Format the current buffer", "Autoformat File", "info")
 		vim.lsp.buf.formatting()
 	end,
 })
