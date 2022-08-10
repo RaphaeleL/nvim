@@ -111,7 +111,7 @@ menu.register({
 		o = {
 			name = "+Open",
 			s = { ":Telescope find_files<cr>", "Find files" },
-			o = { ":SymbolsOutline<cr>", "Outline" },
+			-- o = { ":SymbolsOutline<cr>", "Outline" },
 			e = { ":NvimTreeToggle<cr>", "File Explorer" },
 			u = { ":UndotreeToggle<cr>", "History" },
 			d = { ":Alpha<cr>", "Dashboard" },
@@ -154,6 +154,22 @@ menu.register({
 			t = { ":Telescope live_grep<cr>", "Text" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
 			C = { ":Telescope commands<cr>", "Commands" },
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
+		D = {
+			name = "+LspSaga (trying it out)",
+			d = { ":Lspsaga hover_doc<cr>", "Documentation" },
+			r = { ":Lspsaga rename<cr>", "Rename" },
+			f = { ":Lspsaga lsp_finder<cr>", "Finder" },
+			a = { ":Lspsaga code_action<cr>", "Code Action" },
+			p = { ":Lspsaga preview_defintion<cr>", "Preview Definition" },
+			l = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostics" },
+			c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics" },
+			h = { ":Lspsaga signature_help<cr>", "Signature Help" },
 		},
 	},
 })
