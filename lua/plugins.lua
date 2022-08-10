@@ -55,7 +55,7 @@ return require("packer").startup(function()
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
 
 	-- Colorscheme
-	use({ "shaeinst/roshnivim-cs" } -- Scheme Collection)
+	use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection)
 	use({ "christianchiarulli/nvcode-color-schemes.vim" }) -- Scheme Collection
 
 	-- Treesitter
@@ -67,8 +67,8 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired
 
 	-- Snippets
-	use({ "L3MON4D3/LuaSnip" } -- Snippets)
-	use({ "rafamadriz/friendly-snippets" } -- Snippets)
+	use({ "L3MON4D3/LuaSnip" }) -- Snippets)
+	use({ "rafamadriz/friendly-snippets" }) -- Snippets)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 
 	-- Quickrun
