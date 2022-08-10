@@ -15,43 +15,12 @@ return require("packer").startup(function()
 
 	-- Basic Plugins
 	use({ "mbbill/undotree" }) -- Undo History
-	use({ "lewis6991/impatient.nvim" }) -- Coloring
 	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
-	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
-	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "nvim-lua/plenary.nvim" }) -- Required by every second Plugin
-
-	-- UI
-	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	use({ "folke/which-key.nvim" }) -- Shortcut Menu
-	use({ "romgrk/barbar.nvim" }) -- Tab Bar
-	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "SmiteshP/nvim-gps" }) -- Lualine Components
-	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-	use({ "nacro90/numb.nvim" }) -- Jump Around
-	use({ "rcarriga/nvim-notify" }) -- Notifications
-	use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
-
-	-- LSP
-	use({ "onsails/lspkind.nvim" }) -- Pictograms
-	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }) -- Lsp Installer / Config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions / ...
-	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
-	use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
-	use({ "glepnir/lspsaga.nvim" })
-
-	-- Auto Completion
-	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion
-	use({ "hrsh7th/cmp-buffer" }) -- .. for Buffered words
-	use({ "hrsh7th/cmp-path" }) -- .. for Paths
-	use({ "hrsh7th/cmp-cmdline" }) -- .. for Commands
-	use({ "hrsh7th/cmp-nvim-lsp" }) -- .. for Lsp Stuff
-	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
 
 	-- Colorscheme
 	use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection)
@@ -59,7 +28,6 @@ return require("packer").startup(function()
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
-	use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -73,16 +41,48 @@ return require("packer").startup(function()
 	-- Quickrun
 	use({ "is0n/jaq-nvim" }) -- Run Code
 
+	-- UI
+	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
+	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+	use({ "lewis6991/impatient.nvim" }) -- Coloring
+	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
+	use({ "folke/which-key.nvim" }) -- Shortcut Menu
+	use({ "romgrk/barbar.nvim" }) -- Tab Bar
+	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
+	use({ "goolord/alpha-nvim" }) -- Dashboard
+	use({ "SmiteshP/nvim-gps" }) -- Lualine Components
+	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
+	use({ "nacro90/numb.nvim" }) -- Jump Around
+	use({ "rcarriga/nvim-notify" }) -- Notifications
+	use({ "RRethy/vim-illuminate" }) -- Highlight same words
+
+	-- LSP
+	use({ "onsails/lspkind.nvim" }) -- Pictograms
+	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }) -- Lsp Installer / Config
+	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions / ...
+	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
+
+	-- Auto Completion
+	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion
+	use({ "hrsh7th/cmp-buffer" }) -- .. for Buffered words
+	use({ "hrsh7th/cmp-path" }) -- .. for Paths
+	use({ "hrsh7th/cmp-cmdline" }) -- .. for Commands
+	use({ "hrsh7th/cmp-nvim-lsp" }) -- .. for Lsp Stuff
+	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
+
 	-- Graveyard
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
-	-- use({ "tpope/vim-sensible" }) -- .. Line Informations
-	-- use({ "folke/tokyonight.nvim" })
-	-- use({ "tjdevries/colorbuddy.vim" })
-	-- use({ "olimorris/onedarkpro.nvim" })
-	-- use({ "Lunarvim/colorschemes" })
-	-- use({ "lunarvim/darkplus.nvim" })
-	-- use({ "tiagovla/tokyodark.nvim" })
+	-- use({ "tpope/vim-sensible" }) -- Line Informations
+	-- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff
+	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
+	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
+	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
+	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme)
+	-- use({ "olimorris/onedarkpro.nvim" } -- Colorscheme)
+	-- use({ "Lunarvim/colorschemes" } -- Colorscheme)
+	-- use({ "lunarvim/darkplus.nvim" } -- Colorscheme)
+	-- use({ "tiagovla/tokyodark.nvim" } -- Colorscheme)
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
