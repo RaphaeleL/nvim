@@ -24,8 +24,7 @@ return require("packer").startup(function()
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Colorscheme
-	use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection)
-	use({ "christianchiarulli/nvcode-color-schemes.vim" }) -- Scheme Collection
+	use({ "RaphaeleL/colorschemes" }) -- Scheme Collection
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -36,9 +35,6 @@ return require("packer").startup(function()
 	use({ "rafamadriz/friendly-snippets" }) -- Snippets)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 
-	-- Quickrun
-	use({ "is0n/jaq-nvim" }) -- Run Code
-
 	-- UI
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
@@ -47,9 +43,7 @@ return require("packer").startup(function()
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-	use({ "goolord/alpha-nvim" }) -- Dashboard
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-	use({ "nacro90/numb.nvim" }) -- Jump Around
 	use({ "rcarriga/nvim-notify" }) -- Notifications
 	use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
@@ -67,6 +61,11 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
 
+	-- Nice but not necessarily
+	use({ "goolord/alpha-nvim" }) -- Dashboard
+	use({ "nacro90/numb.nvim" }) -- Jump Around
+	use({ "is0n/jaq-nvim" }) -- Run Code
+
 	-- Graveyard
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
@@ -76,11 +75,12 @@ return require("packer").startup(function()
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
-	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme)
-	-- use({ "olimorris/onedarkpro.nvim" } -- Colorscheme)
-	-- use({ "Lunarvim/colorschemes" } -- Colorscheme)
-	-- use({ "lunarvim/darkplus.nvim" } -- Colorscheme)
-	-- use({ "tiagovla/tokyodark.nvim" } -- Colorscheme)
+	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme
+	-- use({ "olimorris/onedarkpro.nvim" } -- Colorscheme
+	-- use({ "Lunarvim/colorschemes" } -- Colorscheme
+	-- use({ "lunarvim/darkplus.nvim" } -- Colorscheme
+	-- use({ "tiagovla/tokyodark.nvim" } -- Colorscheme
+	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
