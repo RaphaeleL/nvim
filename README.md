@@ -139,8 +139,6 @@ use({ "lewis6991/gitsigns.nvim" })
 
 ## Showcase
 
-> Demo Pictures will be updated if Neovim 0.8 is released
-
 ![Demo-1](./assets/Demo-1.png)
 ![Demo-2](./assets/Demo-2.png)
 ![Demo-3](./assets/Demo-3.png)
