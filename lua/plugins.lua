@@ -74,12 +74,12 @@ return require("packer").startup(function()
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
 	-- use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
-	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme
-	-- use({ "olimorris/onedarkpro.nvim" } -- Colorscheme
-	-- use({ "Lunarvim/colorschemes" } -- Colorscheme
-	-- use({ "lunarvim/darkplus.nvim" } -- Colorscheme
-	-- use({ "tiagovla/tokyodark.nvim" } -- Colorscheme
+	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
+	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
+	-- use({ "lunarvim/darkplus.nvim" }) -- Colorscheme
+	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
+	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
 	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
 
 	-- Automatically set up your configuration after cloning packer.nvim
