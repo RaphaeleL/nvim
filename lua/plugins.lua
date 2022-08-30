@@ -61,7 +61,6 @@ return require("packer").startup(function()
 
 	-- Nice but not necessarily
 	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "nacro90/numb.nvim" }) -- Jump Around
 	use({ "is0n/jaq-nvim" }) -- Run Code
 
 	-- Graveyard
@@ -81,6 +80,7 @@ return require("packer").startup(function()
 	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
 	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
+	-- use({ "nacro90/numb.nvim" }) -- Jump Around
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
