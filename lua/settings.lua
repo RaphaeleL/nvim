@@ -41,7 +41,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/bash"
 vim.opt.relativenumber = true
-vim.opt.confirm = true
+-- vim.opt.confirm = true
 
 vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd([[set formatoptions-=cro]])
