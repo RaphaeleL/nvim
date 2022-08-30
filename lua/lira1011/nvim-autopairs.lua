@@ -1,6 +1,6 @@
 local status_ok, npairs = pcall(require, "nvim-autopairs")
 if not status_ok then
-	require("user.notify").message("Coult not load autopairs", "Loading Error", "error")
+	require("user.notify").message("Could not load autopairs", "Loading Error", "error")
 	return
 end
 

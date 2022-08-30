@@ -1,23 +1,48 @@
 local tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
 if not tabnine_status_ok then
-	require("user.notify").message("Coult not load cmp_tabnine.config", "Loading Error", "error")
+	require("user.notify").message("Could not load cmp_tabnine.config", "Loading Error", "error")
 	return
 end
-local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-if not lspkind_status_ok then
-	require("user.notify").message("Coult not load lspkind", "Loading Error", "error")
-	return
-end
+
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-	require("user.notify").message("Coult not load cmp", "Loading Error", "error")
+	require("user.notify").message("Could not load cmp", "Loading Error", "error")
 	return
 end
+
 local luasnip_status_ok, luasnip = pcall(require, "luasnip")
 if not luasnip_status_ok then
-	require("user.notify").message("Coult not load luasnip", "Loading Error", "error")
+	require("user.notify").message("Could not load luasnip", "Loading Error", "error")
 	return
 end
+
+local kind_icons = {
+	Text = "",
+	Method = "",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "ﴯ",
+	Interface = "",
+	Module = "",
+	Property = "ﰠ",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "",
+	TypeParameter = "",
+}
 
 tabnine:setup({
 	max_lines = 1000,
@@ -27,14 +52,6 @@ tabnine:setup({
 	snippet_placeholder = "..",
 	show_prediction_strength = false,
 })
-
-local source_mapping = {
-	buffer = "[Buffer]",
-	nvim_lsp = "[LSP]",
-	nvim_lua = "[Lua]",
-	cmp_tabnine = "[TN]",
-	path = "[Path]",
-}
 
 cmp.setup({
 	snippet = {
@@ -85,33 +102,32 @@ cmp.setup({
 	window = {
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			--winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 		completion = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-			--winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
 		},
 	},
 	experimental = {
 		ghost_text = true,
 	},
 	formatting = {
-		format = lspkind.cmp_format({
-			mode = "symbol_text",
-			maxwidth = 40,
-			--before = function(entry, vim_item)
-			--	vim_item.kind = lspkind.presets.default[vim_item.kind]
-			--	local menu = source_mapping[entry.source.name]
-			--	if entry.source.name == "cmp_tabnine" then
-			--		if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-			--			menu = entry.completion_item.data.detail .. " " .. menu
-			--		end
-			--		vim_item.kind = ""
-			--	end
-			--	vim_item.menu = menu
-			--	return vim_item
-			--end,
-		}),
+		fields = { "kind", "abbr", "menu" },
+		format = function(entry, vim_item)
+			vim_item.kind = kind_icons[vim_item.kind]
+			vim_item.menu = ({
+				nvim_lsp = "",
+				nvim_lua = "",
+				luasnip = "",
+				buffer = "",
+				path = "",
+				emoji = "",
+			})[entry.source.name]
+			return vim_item
+		end,
+		-- format = lspkind.cmp_format({
+		-- 	mode = "text_symbol",
+		-- 	maxwidth = 40,
+		-- }),
 	},
 })
 

@@ -45,4 +45,4 @@ vim.opt.relativenumber = true
 
 vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd([[set formatoptions-=cro]])
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme darkplus]])

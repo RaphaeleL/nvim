@@ -1,6 +1,6 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-	require("user.notify").message("Coult not load lualine", "Loading Error", "error")
+	require("user.notify").message("Could not load lualine", "Loading Error", "error")
 	return
 end
 
@@ -27,7 +27,7 @@ end
 local colors = {
 	blue = "#80a0ff",
 	cyan = "#79dac8",
-	black = "#282828", -- "#272C34"
+	black = "#1E1E1E", -- "#282828",  "#272C34"
 	white = "#c6c6c6",
 	red = "#ff5189",
 	violet = "#d183e8",

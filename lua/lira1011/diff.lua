@@ -1,6 +1,6 @@
 local status_ok, diff = pcall(require, "diffview")
 if not status_ok then
-	require("user.notify").message("Coult not load diffview", "Loading Error", "error")
+	require("user.notify").message("Could not load diffview", "Loading Error", "error")
 	return
 end
 

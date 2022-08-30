@@ -1,6 +1,6 @@
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
-	require("user.notify").message("Coult not load alpha", "Loading Error", "error")
+	require("user.notify").message("Could not load alpha", "Loading Error", "error")
 	return
 end
 local dashboard = require("alpha.themes.dashboard")

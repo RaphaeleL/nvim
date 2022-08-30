@@ -24,7 +24,7 @@ return require("packer").startup(function()
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Colorscheme
-	use({ "RaphaeleL/colorschemes" }) -- Scheme Collection
+	use({ "lunarvim/darkplus.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -46,7 +46,6 @@ return require("packer").startup(function()
 	use({ "rcarriga/nvim-notify" }) -- Notifications
 
 	-- LSP
-	use({ "onsails/lspkind.nvim" }) -- Pictograms
 	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }) -- Lsp Installer / Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions / ...
 	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
@@ -76,11 +75,12 @@ return require("packer").startup(function()
 	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
-	-- use({ "lunarvim/darkplus.nvim" }) -- Colorscheme
 	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
 	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
+	-- use({ "RaphaeleL/colorschemes" }) -- Scheme Collection
 	-- use({ "nacro90/numb.nvim" }) -- Jump Around
+	-- use({ "onsails/lspkind.nvim" }) -- Pictograms
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then

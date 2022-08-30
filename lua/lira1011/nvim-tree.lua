@@ -1,7 +1,7 @@
 --vim.g.nvim_tree_highlight_opened_files = 1
 local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then
-	require("user.notify").message("Coult not load nvim-tree", "Loading Error", "error")
+	require("user.notify").message("Could not load nvim-tree", "Loading Error", "error")
 	return
 end
 

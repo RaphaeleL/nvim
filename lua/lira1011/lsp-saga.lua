@@ -1,11 +1,11 @@
 local status_ok, saga = pcall(require, "lspsaga")
 if not status_ok then
-	require("user.notify").message("Coult not load lspsaga", "Loading Error", "error")
+	require("user.notify").message("Could not load lspsaga", "Loading Error", "error")
 	return
 end
 local status_ok_kind, kind = pcall(require, "lspsaga.lspkind")
 if not status_ok_kind then
-	require("user.notify").message("Coult not load lspsaga.lspkind", "Loading Error", "error")
+	require("user.notify").message("Could not load lspsaga.lspkind", "Loading Error", "error")
 	return
 end
 
