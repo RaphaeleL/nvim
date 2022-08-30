@@ -1,7 +1,7 @@
 -- Notifications with Notify
-local status_ok, n = pcall(require, "user.notify")
+local status_ok, n = pcall(require, "lira1011.notify")
 if not status_ok then
-	require("user.notify").message("Coult not load notify", "Loading Error", "error")
+	require("lira1011.notify").message("Coult not load notify", "Loading Error", "error")
 	return
 end
 
