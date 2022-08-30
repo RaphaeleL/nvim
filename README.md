@@ -123,7 +123,8 @@ use({ "lewis6991/gitsigns.nvim" })
 
 ### LSP
 
-- Lsp Installer / Config: [neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer](https://github.com/neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer)
+- Lsp Installer: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- Lsp Config: [williamboman/nvim-lsp-installer](williamboman/nvim-lsp-installer)
 - Diagnostics / Code Actions / ...: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Lsp Config with Json: [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
 
