@@ -1,6 +1,6 @@
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
-	require("user.notify").message("Coult not load indent_blankline", "Loading Error", "error")
+	require("user.notify").message("Could not load indent_blankline", "Loading Error", "error")
 	return
 end
 
@@ -21,7 +21,7 @@ vim.g.indent_blankline_show_current_context = true
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")
-vim.opt.listchars:append("eol:¶")
+-- vim.opt.listchars:append("eol:¶")
 
 indent_blankline.setup({
 	show_current_context = true,

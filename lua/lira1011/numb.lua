@@ -1,6 +1,6 @@
 local status_ok, numb = pcall(require, "numb")
 if not status_ok then
-	require("user.notify").message("Coult not load numb", "Loading Error", "error")
+	require("user.notify").message("Could not load numb", "Loading Error", "error")
 	return
 end
 
