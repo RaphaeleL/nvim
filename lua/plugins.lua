@@ -19,6 +19,7 @@ return require("packer").startup(function()
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
 	use({ "lewis6991/impatient.nvim" }) -- Performance
 	use({ "nvim-lua/plenary.nvim" }) -- Required by every second Plugin
+	use({ "is0n/jaq-nvim" }) -- Run Code
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
@@ -44,6 +45,7 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "rcarriga/nvim-notify" }) -- Notifications
+	use({ "goolord/alpha-nvim" }) -- Dashboard
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }) -- Lsp Installer / Config
@@ -57,10 +59,6 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
-
-	-- Nice but not necessarily
-	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "is0n/jaq-nvim" }) -- Run Code
 
 	-- Graveyard
 	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words
