@@ -1,4 +1,3 @@
---vim.g.nvim_tree_highlight_opened_files = 1
 local status_ok, tree = pcall(require, "nvim-tree")
 if not status_ok then
 	require("user.notify").message("Could not load nvim-tree", "Loading Error", "error")
@@ -64,16 +63,7 @@ tree.setup({
 		width = 30,
 		height = 30,
 		hide_root_folder = false,
-		side = "left",
-		mappings = {
-			custom_only = false,
-			list = {
-				{ key = "l", action = "edit", action_cb = edit_or_open },
-				{ key = "L", action = "vsplit_preview", action_cb = vsplit_preview },
-				{ key = "h", action = "close_node" },
-				{ key = "H", action = "collapse_all", action_cb = collapse_all },
-			},
-		},
+		side = "right",
 		number = false,
 		relativenumber = false,
 		signcolumn = "yes",
