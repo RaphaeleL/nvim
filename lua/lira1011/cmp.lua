@@ -124,10 +124,6 @@ cmp.setup({
 			})[entry.source.name]
 			return vim_item
 		end,
-		-- format = lspkind.cmp_format({
-		-- 	mode = "text_symbol",
-		-- 	maxwidth = 40,
-		-- }),
 	},
 })
 
