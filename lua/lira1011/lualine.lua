@@ -1,8 +1,3 @@
--- local gps_status_ok, gps = pcall(require, "nvim-gps")
--- if not gps_status_ok then
--- 	require("user.notify").message("Coult not load nvim-gps", "Loading Error", "error")
--- 	return
--- end
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
 	require("user.notify").message("Coult not load lualine", "Loading Error", "error")
@@ -32,8 +27,7 @@ end
 local colors = {
 	blue = "#80a0ff",
 	cyan = "#79dac8",
-	-- black = "#272C34",
-	black = "#282828",
+	black = "#282828", -- "#272C34"
 	white = "#c6c6c6",
 	red = "#ff5189",
 	violet = "#d183e8",
