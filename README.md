@@ -88,14 +88,15 @@ there may well be some configurations files that are not called. for example neo
 - Auto Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Required by every second Plugin: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
 
 ### Git
 
-- Git Signs: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+use({ "lewis6991/gitsigns.nvim" })
 
 ### Colorscheme
 
-- Scheme Collection: [RaphaeleL/colorschemes](https://github.com/RaphaeleL/colorschemes)
+- Colorscheme: [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
 
 ### Telescope
 
@@ -104,9 +105,8 @@ there may well be some configurations files that are not called. for example neo
 
 ### Snippets
 
-- Snippets: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- more Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-- even more Snippets: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 ### UI
 
@@ -119,29 +119,22 @@ there may well be some configurations files that are not called. for example neo
 - File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - Menu Bar: [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- Highlight same words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ### LSP
 
-- Pictograms: [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
-- Lsp Installer / Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- Lsp Installer / Config: [neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer](https://github.com/neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer)
 - Diagnostics / Code Actions / ...: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Lsp Config with Json: [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
 
 ### Auto Completion
 
-- Auto Completion: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- Auto Completion Engine: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Auto Completion for Buffered words: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - Auto Completion for Commands: [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
 - Auto Completion for Lsp Stuff: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - AI Completion: [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
-
-### Nice but not necessarily
-
-- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-- Jump Around: [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim)
-- Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
 
 ## Showcase
 
