@@ -9,7 +9,7 @@
    - [Source](#source)
 2. [Configuration](#configuration)
    - [Font](#font)
-   - [Strucutre](#strucutre)
+   - [Structure](#structure)
 3. [Plugins](#plugins)
    - [Basic-Plugins](#basic-plugins)
    - [UI](#ui)
