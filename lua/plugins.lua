@@ -31,13 +31,15 @@ return require("packer").startup(function()
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
 	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Telescope's Dired
 
+	-- Treesitter
+	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
+	use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
+
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
 	use({ "rafamadriz/friendly-snippets" }) -- Snippets
 
 	-- UI
-	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
-	use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
