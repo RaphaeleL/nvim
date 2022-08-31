@@ -109,22 +109,6 @@ menu.register({
 	},
 })
 
--- menu.register({
--- 	["<Leader>"] = {
--- 		D = {
--- 			name = "+LspSaga (trying it out)",
--- 			d = { ":Lspsaga hover_doc<cr>", "Documentation" },
--- 			r = { ":Lspsaga rename<cr>", "Rename" },
--- 			f = { ":Lspsaga lsp_finder<cr>", "Finder" },
--- 			a = { ":Lspsaga code_action<cr>", "Code Action" },
--- 			p = { ":Lspsaga preview_defintion<cr>", "Preview Definition" },
--- 			l = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostics" },
--- 			c = { ":Lspsaga show_cursor_diagnostics<cr>", "Cursor Diagnostics" },
--- 			h = { ":Lspsaga signature_help<cr>", "Signature Help" },
--- 		},
--- 	},
--- })
-
 menu.register({
 	["<Leader>"] = {
 		d = {
@@ -134,6 +118,7 @@ menu.register({
 			p = { ":lua vim.lsp.diagnostic.show_position_diagnostics()<cr>", "Position Diagnostic" },
 			d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
 			w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
+			s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			f = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
 			e = { ":LspInfo<cr>", "Info" },
 			o = { ":LspInstallInfo<cr>", "Installer Info" },

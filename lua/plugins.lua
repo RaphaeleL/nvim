@@ -37,6 +37,7 @@ return require("packer").startup(function()
 
 	-- UI
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
+	use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
@@ -48,8 +49,9 @@ return require("packer").startup(function()
 	use({ "goolord/alpha-nvim" }) -- Dashboard
 
 	-- LSP
-	use({ "neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer" }) -- Lsp Installer / Config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions / ...
+	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
+	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
+	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
 	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
 
 	-- Auto Completion
@@ -58,7 +60,7 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
-	use({ "tzachar/cmp-tabnine", run = "./install.sh" }) -- AI Completion
+	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
 	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words
