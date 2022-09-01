@@ -17,19 +17,19 @@ return require("packer").startup(function()
 	use({ "mbbill/undotree" }) -- Undo History
 	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
-	use({ "lewis6991/impatient.nvim" }) -- Performance
-	use({ "nvim-lua/plenary.nvim" }) -- Required by every second Plugin
+	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "is0n/jaq-nvim" }) -- Run Code
+	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Colorscheme
-	use({ "lunarvim/darkplus.nvim" }) -- Colorscheme
+	use({ "RaphaeleL/darkplus" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Telescope's Dired
+	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
@@ -49,6 +49,7 @@ return require("packer").startup(function()
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "rcarriga/nvim-notify" }) -- Notifications
 	use({ "goolord/alpha-nvim" }) -- Dashboard
+	use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
 	-- LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
@@ -65,7 +66,6 @@ return require("packer").startup(function()
 	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
-	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
@@ -83,6 +83,7 @@ return require("packer").startup(function()
 	-- use({ "RaphaeleL/colorschemes" }) -- Scheme Collection
 	-- use({ "nacro90/numb.nvim" }) -- Jump Around
 	-- use({ "onsails/lspkind.nvim" }) -- Pictograms
+	-- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
