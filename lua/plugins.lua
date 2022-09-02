@@ -86,6 +86,7 @@ return require("packer").startup(function()
 	-- use({ "onsails/lspkind.nvim" }) -- Pictograms
 	-- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
 	-- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
+	-- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
