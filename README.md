@@ -92,7 +92,7 @@ there may well be some configurations files that are not called. for example neo
 
 ### Git
 
-use({ "lewis6991/gitsigns.nvim" })
+- Git Signs: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
 ### Colorscheme
 
