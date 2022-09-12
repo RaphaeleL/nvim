@@ -46,6 +46,9 @@ telescope.setup({
 		color_devicons = true,
 		set_env = { ["COLORTERM"] = "truecolor" },
 		pickers = {
+			colorscheme = {
+				enable_preview = true,
+			},
 			find_files = {
 				find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
 			},
