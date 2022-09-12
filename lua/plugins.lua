@@ -25,7 +25,7 @@ return require("packer").startup(function()
 	use({ "lewis6991/gitsigns.nvim" })
 
 	-- Colorscheme
-	use({ "RaphaeleL/darkplus" }) -- Colorscheme
+	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -74,13 +74,14 @@ return require("packer").startup(function()
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
 	-- use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
-	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme
+	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme Creation
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
+	-- use({ "RaphaeleL/darkplus" }) -- Colorscheme
+	-- use({ "jacoborus/tender.vim" }) -- Colorscheme
 	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
 	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
-	-- use({ "RaphaeleL/colorschemes" }) -- Scheme Collection
 	-- use({ "nacro90/numb.nvim" }) -- Jump Around
 	-- use({ "onsails/lspkind.nvim" }) -- Pictograms
 	-- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
