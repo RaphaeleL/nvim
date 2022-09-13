@@ -2,24 +2,6 @@
 
 **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
-## Table of Contents
-
-1. [Installation](#installation)
-   - [Package Manager](#package-manager)
-   - [Source](#source)
-2. [Configuration](#configuration)
-   - [Font](#font)
-   - [Structure](#structure)
-3. [Plugins](#plugins)
-   - [Basic-Plugins](#basic-plugins)
-   - [UI](#ui)
-   - [Lsp](#lsp)
-   - [Auto Completion](#auto-completion)
-   - [Colorscheme](#colorscheme)
-   - [Treesitter](#treesitter)
-   - [Snippets](#snippets)
-4. [Showcase](#showcase)
-
 ## Installation
 
 > Neovim 0.7
