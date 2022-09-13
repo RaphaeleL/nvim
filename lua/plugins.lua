@@ -41,7 +41,6 @@ return require("packer").startup(function()
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "rcarriga/nvim-notify" }) -- Notifications
@@ -63,6 +62,7 @@ return require("packer").startup(function()
 	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
+	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
 	-- use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
