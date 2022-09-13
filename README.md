@@ -54,6 +54,14 @@ In addition, the following command can be used to run a series of diagnostic tes
 :checkhealth
 ```
 
+### Install the Configuration in one Command
+
+On Linux and MacOS the following command can be used to set the configuration (NaaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
+
+```
+bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
+```
+
 ### Font
 
 Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons.
@@ -77,7 +85,7 @@ The File Strucutre explained.
 
 ## Plugins
 
-there may well be some configurations files that are not called. for example neotree. i think it is better to have them rather than having to rewrite them.
+There are some popular plugins which are not listed here, for example WhichKey. Mostly there are still configuration files for such plugins which have not been removed. It is better to have such files in the repository instead of having to rewrite the complex configuration.
 
 > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
@@ -86,9 +94,9 @@ there may well be some configurations files that are not called. for example neo
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Comment Blocks: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Auto Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
-- Required by every second Plugin: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
+- Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 ### Git
 
@@ -96,12 +104,16 @@ there may well be some configurations files that are not called. for example neo
 
 ### Colorscheme
 
-- Colorscheme: [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
+- Colorscheme: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
 
 ### Telescope
 
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- Telescope's Dired: [nvim-telescope/telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
+
+### Treesitter
+
+- Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Sticky Methods: [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 
 ### Snippets
 
@@ -110,22 +122,20 @@ there may well be some configurations files that are not called. for example neo
 
 ### UI
 
-- Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Icons: [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - Indent Highlighting: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Floating Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-- Shortcut Menu: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - Tab Bar: [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
 - File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - Menu Bar: [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+- Highlight same words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 ### LSP
 
-- Lsp Installer: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- Lsp Config: [williamboman/nvim-lsp-installer](williamboman/nvim-lsp-installer)
-- Diagnostics / Code Actions / ...: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- Lsp Installer: [williamboman/nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
+- Lsp Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- Diagnostics / Code Actions: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Lsp Config with Json: [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
 
 ### Auto Completion
