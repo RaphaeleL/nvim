@@ -29,7 +29,6 @@ return require("packer").startup(function()
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
@@ -42,8 +41,6 @@ return require("packer").startup(function()
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
@@ -66,6 +63,9 @@ return require("packer").startup(function()
 	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
+	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
+	-- use({ "folke/which-key.nvim" }) -- Shortcut Menu
+	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
