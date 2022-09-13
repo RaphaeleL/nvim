@@ -38,7 +38,7 @@ telescope.setup({
 			"--hidden",
 			"--glob=!.git/",
 		},
-		file_ignore_patterns = {},
+		file_ignore_patterns = { "node_modules", ".DS_Store" },
 		path_display = { shorten = 5 },
 		winblend = 0,
 		border = {},
