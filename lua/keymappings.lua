@@ -40,3 +40,8 @@ keymap("n", "-", "<C-x>")
 
 -- Delete a Word backwards
 keymap("n", "dwb", 'vb"_d')
+
+-- Yank (from ThePrimeagen)
+vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true })
+vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true })
+keymap("n", "<Leader>Y", '"+Y')
