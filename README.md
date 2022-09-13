@@ -87,6 +87,8 @@ The File Strucutre explained.
 
 There are some popular plugins which are not listed here, for example WhichKey. Mostly there are still configuration files for such plugins which have not been removed. It is better to have such files in the repository instead of having to rewrite the complex configuration.
 
+> The problem with WhichKey, for example, is simply the performance. Basic keymaps are significantly faster than WhichKey keymaps.
+
 > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ### Basic Plugins
