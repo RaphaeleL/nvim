@@ -41,7 +41,7 @@ return require("packer").startup(function()
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "romgrk/barbar.nvim" }) -- Tab Bar
+	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "rcarriga/nvim-notify" }) -- Notifications
