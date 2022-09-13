@@ -30,18 +30,15 @@ keymap("v", "<Leader><Leader>", ":WhichKey<Leader><CR><Leader>")
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
--- Move Selection up and down
-keymap("x", "J", ":move '>+2<CR>gv-gv")
-keymap("x", "K", ":move '<-1<CR>gv-gv")
-
 -- Increment and Decrement a Number
 keymap("n", "+", "<C-a>")
 keymap("n", "-", "<C-x>")
-
--- Delete a Word backwards
-keymap("n", "dwb", 'vb"_d')
 
 -- Yank (from ThePrimeagen)
 vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true })
 vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true })
 keymap("n", "<Leader>Y", '"+Y')
+
+-- Delete (from ThePrimeagen)
+vim.api.nvim_set_keymap("n", "<Leader>d", '"+d', { noremap = true })
+vim.api.nvim_set_keymap("v", "<Leader>d", '"+d', { noremap = true })

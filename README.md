@@ -143,3 +143,9 @@ there may well be some configurations files that are not called. for example neo
 ![Demo-2](./assets/Demo-2.png)
 ![Demo-3](./assets/Demo-3.png)
 ![Demo-4](./assets/Demo-4.png)
+
+# TODO
+
+- [ ] Remove WhichKey
+- [ ] Keymaps
+- [ ] Fork Colorscheme
