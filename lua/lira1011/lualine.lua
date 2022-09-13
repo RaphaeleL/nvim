@@ -24,33 +24,33 @@ local function diff_source()
 	end
 end
 
-local colors = {
-	blue = "#80a0ff",
-	cyan = "#79dac8",
-	black = "#1E1E1E", -- "#282828",  "#272C34"
-	white = "#c6c6c6",
-	red = "#ff5189",
-	violet = "#d183e8",
-	grey = "#303030",
-}
+-- local colors = {
+-- 	blue = "#80a0ff",
+-- 	cyan = "#79dac8",
+-- 	black = "#1E1E1E",
+-- 	white = "#c6c6c6",
+-- 	red = "#ff5189",
+-- 	violet = "#d183e8",
+-- 	grey = "#303030",
+-- }
 
-local bubbles_theme = {
-	normal = {
-		a = { fg = colors.black, bg = colors.violet },
-		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.black, bg = colors.black },
-	},
-
-	insert = { a = { fg = colors.black, bg = colors.blue } },
-	visual = { a = { fg = colors.black, bg = colors.cyan } },
-	replace = { a = { fg = colors.black, bg = colors.red } },
-
-	inactive = {
-		a = { fg = colors.white, bg = colors.black },
-		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.black, bg = colors.black },
-	},
-}
+-- local bubbles_theme = {
+-- 	normal = {
+-- 		a = { fg = colors.black, bg = colors.violet },
+-- 		b = { fg = colors.white, bg = colors.grey },
+-- 		c = { fg = colors.black, bg = colors.black },
+-- 	},
+--
+-- 	insert = { a = { fg = colors.black, bg = colors.blue } },
+-- 	visual = { a = { fg = colors.black, bg = colors.cyan } },
+-- 	replace = { a = { fg = colors.black, bg = colors.red } },
+--
+-- 	inactive = {
+-- 		a = { fg = colors.white, bg = colors.black },
+-- 		b = { fg = colors.white, bg = colors.black },
+-- 		c = { fg = colors.black, bg = colors.black },
+-- 	},
+-- }
 
 lualine.setup({
 	-- options = {
@@ -62,7 +62,8 @@ lualine.setup({
 	-- 	always_divide_middle = true,
 	-- },
 	options = {
-		theme = bubbles_theme,
+		-- theme = bubbles_theme,
+		theme = "kanagawa",
 		component_separators = "|",
 		section_separators = { left = "", right = "" },
 		-- section_separators = { left = "", right = "" },
