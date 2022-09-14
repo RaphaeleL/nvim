@@ -1,8 +1,8 @@
-local tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
-if not tabnine_status_ok then
-	require("user.notify").message("Could not load cmp_tabnine.config", "Loading Error", "error")
-	return
-end
+-- local tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
+-- if not tabnine_status_ok then
+-- 	require("user.notify").message("Could not load cmp_tabnine.config", "Loading Error", "error")
+-- 	return
+-- end
 
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
@@ -44,14 +44,14 @@ local kind_icons = {
 	TypeParameter = "",
 }
 
-tabnine:setup({
-	max_lines = 1000,
-	max_num_results = 20,
-	sort = true,
-	run_on_every_keystroke = true,
-	snippet_placeholder = "..",
-	show_prediction_strength = false,
-})
+-- tabnine:setup({
+--	max_lines = 1000,
+--	max_num_results = 20,
+--	sort = true,
+--	run_on_every_keystroke = true,
+--  snippet_placeholder = "..",
+-- 	show_prediction_strength = false,
+-- })
 
 cmp.setup({
 	snippet = {
@@ -94,7 +94,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "cmp_tabnine" },
+--		{ name = "cmp_tabnine" },
 		{ name = "vsnip" },
 	}, {
 		{ name = "buffer" },
