@@ -14,13 +14,13 @@ return require("packer").startup(function()
 	use({ "wbthomason/packer.nvim" })
 
 	-- Basic Plugins
+	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	use({ "mbbill/undotree" }) -- Undo History
 	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
 	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "is0n/jaq-nvim" }) -- Run Code
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
-	use({ "romgrk/barbar.nvim" }) -- Tab Bar
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
@@ -60,11 +60,11 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
-	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
+	-- use({ "tzachar/cmp-tabnine" }) -- AI Completion
+	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	-- use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
 	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
