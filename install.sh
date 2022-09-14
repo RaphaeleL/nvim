@@ -4,8 +4,9 @@
 git clone https://github.com/neovim/neovim.git ~/neovim
 
 # Remove Previous Stuff 
-sudo rm /usr/local/bin/nvim
-sudo rm -r /usr/local/share/nvim/
+sudo rm -rf ~/.config/nvim
+sudo rm -rf ~/.local/bin/nvim
+sudo rm -rf ~/.local/share/nvim/
 
 # Install
 cd ~/neovim
