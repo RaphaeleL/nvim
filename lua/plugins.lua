@@ -20,6 +20,7 @@ return require("packer").startup(function()
 	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "is0n/jaq-nvim" }) -- Run Code
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
+	use({ "romgrk/barbar.nvim" }) -- Tab Bar
 
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" })
@@ -62,7 +63,6 @@ return require("packer").startup(function()
 	use({ "tzachar/cmp-tabnine" }) -- AI Completion
 
 	-- Graveyard
-	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
 	-- use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
