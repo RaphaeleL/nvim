@@ -152,6 +152,7 @@ menu.register({
 	["<Leader>"] = {
 		a = {
 			name = "+Actions",
+			m = { ":Mason<cr>", "Mason" },
 			c = { ":lua vim.lsp.buf.declaration()<cr>", "Declaration" },
 			a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
 			R = { ":lua vim.lsp.buf.references()<cr>", "References" },
