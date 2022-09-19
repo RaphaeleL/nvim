@@ -6,6 +6,7 @@ end
 local servers = {
 	"rust_analyzer",
 	"gopls",
+  -- "golangci-lint-ls",
 	"bashls",
 	"clangd",
 	"golangci_lint_ls",

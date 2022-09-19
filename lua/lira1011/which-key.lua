@@ -68,7 +68,7 @@ menu.register({
 	["<Leader>"] = {
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
-		x = { ":Telescope file_browser<cr>", "File Browser" },
+		x = { ":Telescope buffers<cr>", "Show buffers" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
 		c = { ":bdelete<cr>", "Close" },
 		u = { ":UndotreeToggle<cr>", "History" },
