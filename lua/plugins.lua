@@ -48,7 +48,6 @@ return require("packer").startup(function()
 	use({ "rcarriga/nvim-notify" }) -- Notifications
 	use({ "goolord/alpha-nvim" }) -- Dashboard
 	use({ "RRethy/vim-illuminate" }) -- Highlight same words
-	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 
 	-- LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
@@ -62,6 +61,10 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
+
+	-- Waiting for Nvim 0.8
+	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
+	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 
 	-- Graveyard
 	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
