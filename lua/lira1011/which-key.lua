@@ -80,6 +80,18 @@ menu.register({
 
 menu.register({
 	["<Leader>"] = {
+		m = {
+			name = "+Harpoon",
+			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
+			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Show Prev" },
+			a = { ":lua require('harpoon.mark').add_file()<cr>", "Add File" },
+			s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
+		},
+	},
+})
+
+menu.register({
+	["<Leader>"] = {
 		b = {
 			name = "+Buffer",
 			b = { ":Telescope buffers<cr>", "Show buffers" },
