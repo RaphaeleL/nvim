@@ -41,3 +41,7 @@ keymap("n", "<Leader>Y", '"+Y')
 keymap("n", "<Leader>d", '"+d')
 keymap("v", "<Leader>d", '"+d')
 keymap("x", "<Leader>p", '"_dP')
+
+-- Harpoon
+keymap("n", ",", ':lua require("harpoon.ui").nav_next()<cr>')
+keymap("n", ";", ':lua require("harpoon.ui").nav_prev()<cr>')
