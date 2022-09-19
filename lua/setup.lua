@@ -1,4 +1,3 @@
-require("lira1011.bufferline")
 require("lira1011.nvim-tree")
 require("lira1011.gitsigns")
 require("lira1011.cmp")

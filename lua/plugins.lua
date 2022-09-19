@@ -14,28 +14,27 @@ return require("packer").startup(function()
 	use({ "wbthomason/packer.nvim" })
 
 	-- Basic Plugins
-	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 	use({ "mbbill/undotree" }) -- Undo History
 	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
 	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "is0n/jaq-nvim" }) -- Run Code
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
-	use({ "romgrk/barbar.nvim" }) -- Tab Bar
+
+	-- Keybinds
+	use({ "folke/which-key.nvim" }) -- Shortcut Menu
 
 	-- Git
-	use({ "lewis6991/gitsigns.nvim" })
+	use({ "lewis6991/gitsigns.nvim" }) -- Gitsigns beside Numbers
 
 	-- Colorscheme
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
-	use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
 
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
@@ -49,6 +48,7 @@ return require("packer").startup(function()
 	use({ "rcarriga/nvim-notify" }) -- Notifications
 	use({ "goolord/alpha-nvim" }) -- Dashboard
 	use({ "RRethy/vim-illuminate" }) -- Highlight same words
+	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 
 	-- LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
@@ -64,6 +64,9 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 
 	-- Graveyard
+	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
+	-- use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
+	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
 	-- use({ "tzachar/cmp-tabnine" }) -- AI Completion
 	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
@@ -87,7 +90,7 @@ return require("packer").startup(function()
 	-- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
 	-- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
 	-- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
-	-- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
+	-- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then

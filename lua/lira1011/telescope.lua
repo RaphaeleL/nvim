@@ -4,60 +4,174 @@ if not status_ok then
 	return
 end
 
+local actions = require("telescope.actions")
+
 telescope.setup({
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",
 		entry_prefix = "  ",
-		initial_mode = "insert",
-		selection_strategy = "reset",
-		sorting_strategy = "descending",
-		layout_strategy = "horizontal",
-		layout_config = {
-			width = 0.75,
-			preview_cutoff = 120,
-			horizontal = {
-				preview_width = function(_, cols, _)
-					if cols < 120 then
-						return math.floor(cols * 0.5)
-					end
-					return math.floor(cols * 0.6)
-				end,
-				mirror = false,
-			},
-			vertical = { mirror = false },
+		path_display = { "smart" },
+		file_ignore_patterns = {
+			".git/",
+			"target/",
+			"docs/",
+			"vendor/*",
+			"%.lock",
+			"__pycache__/*",
+			"%.sqlite3",
+			"%.ipynb",
+			"node_modules/*",
+			"%.jpg",
+			"%.jpeg",
+			"%.png",
+			"%.svg",
+			"%.otf",
+			"%.ttf",
+			"%.webp",
+			".DS_Store",
+			".dart_tool/",
+			".github/",
+			".gradle/",
+			".idea/",
+			".settings/",
+			".vscode/",
+			"__pycache__/",
+			"build/",
+			"env/",
+			"gradle/",
+			"node_modules/",
+			"%.pdb",
+			"%.dll",
+			"%.class",
+			"%.exe",
+			"%.cache",
+			"%.ico",
+			"%.pdf",
+			"%.dylib",
+			"%.jar",
+			"%.docx",
+			"%.met",
+			"smalljre_*/*",
+			".vale/",
+			"%.burp",
+			"%.mp4",
+			"%.mkv",
+			"%.rar",
+			"%.zip",
+			"%.7z",
+			"%.tar",
+			"%.bz2",
+			"%.epub",
+			"%.flac",
+			"%.tar.gz",
 		},
-		vimgrep_arguments = {
-			"rg",
-			"--color=never",
-			"--no-heading",
-			"--with-filename",
-			"--line-number",
-			"--column",
-			"--smart-case",
-			"--hidden",
-			"--glob=!.git/",
-		},
-		file_ignore_patterns = { "node_modules", ".DS_Store" },
-		path_display = { shorten = 5 },
-		winblend = 0,
-		border = {},
-		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-		color_devicons = true,
-		set_env = { ["COLORTERM"] = "truecolor" },
-		pickers = {
-			colorscheme = {
-				enable_preview = true,
+
+		mappings = {
+			i = {
+				["<C-n>"] = actions.cycle_history_next,
+				["<C-p>"] = actions.cycle_history_prev,
+
+				["<C-j>"] = actions.move_selection_next,
+				["<C-k>"] = actions.move_selection_previous,
+
+				["<C-b>"] = actions.results_scrolling_up,
+				["<C-f>"] = actions.results_scrolling_down,
+
+				["<C-c>"] = actions.close,
+
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
+
+				["<CR>"] = actions.select_default,
+				["<C-s>"] = actions.select_horizontal,
+				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
+
+				["<c-d>"] = require("telescope.actions").delete_buffer,
+
+				["<Tab>"] = actions.close,
+				["<S-Tab>"] = actions.close,
+				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<C-l>"] = actions.complete_tag,
+				["<C-h>"] = actions.which_key,
+				["<esc>"] = actions.close,
 			},
-			find_files = {
-				find_command = { "fd", "--type=file", "--hidden", "--smart-case" },
-			},
-			live_grep = {
-				only_sort_text = true,
+
+			n = {
+				["<esc>"] = actions.close,
+				["<CR>"] = actions.select_default,
+				["<C-x>"] = actions.select_horizontal,
+				["<C-v>"] = actions.select_vertical,
+				["<C-t>"] = actions.select_tab,
+				["<C-b>"] = actions.results_scrolling_up,
+				["<C-f>"] = actions.results_scrolling_down,
+
+				["<Tab>"] = actions.close,
+				["<S-Tab>"] = actions.close,
+				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
+				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+
+				["j"] = actions.move_selection_next,
+				["k"] = actions.move_selection_previous,
+				["H"] = actions.move_to_top,
+				["M"] = actions.move_to_middle,
+				["L"] = actions.move_to_bottom,
+				["q"] = actions.close,
+				["dd"] = require("telescope.actions").delete_buffer,
+				["s"] = actions.select_horizontal,
+				["v"] = actions.select_vertical,
+				["t"] = actions.select_tab,
+
+				["<Down>"] = actions.move_selection_next,
+				["<Up>"] = actions.move_selection_previous,
+				["gg"] = actions.move_to_top,
+				["G"] = actions.move_to_bottom,
+
+				["<C-u>"] = actions.preview_scrolling_up,
+				["<C-d>"] = actions.preview_scrolling_down,
+
+				["<PageUp>"] = actions.results_scrolling_up,
+				["<PageDown>"] = actions.results_scrolling_down,
+
+				["?"] = actions.which_key,
 			},
 		},
 	},
-	pickers = {},
+	pickers = {
+		live_grep = {
+			theme = "dropdown",
+		},
+		grep_string = {
+			theme = "dropdown",
+		},
+		find_files = {
+			theme = "dropdown",
+			previewer = false,
+		},
+		buffers = {
+			theme = "dropdown",
+			previewer = false,
+			initial_mode = "normal",
+		},
+		lsp_references = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_definitions = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_declarations = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+		lsp_implementations = {
+			theme = "dropdown",
+			initial_mode = "normal",
+		},
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true,
@@ -65,20 +179,5 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
-		file_browser = {
-			theme = "ivy",
-			-- disables netrw and use telescope-file-browser in its place
-			hijack_netrw = true,
-			mappings = {
-				["i"] = {
-					-- your custom insert mode mappings
-				},
-				["n"] = {
-					-- your custom normal mode mappings
-				},
-			},
-		},
 	},
 })
-
-require("telescope").load_extension("file_browser")
