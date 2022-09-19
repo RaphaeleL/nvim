@@ -24,6 +24,9 @@ local function diff_source()
 	end
 end
 
+-- vim.g.gitblame_display_virtual_text = 0
+-- local git_blame = require("gitblame")
+
 lualine.setup({
 	options = {
 		theme = "kanagawa",
@@ -54,7 +57,9 @@ lualine.setup({
 				cond = nil,
 			},
 		},
-		lualine_c = {},
+		lualine_c = {
+			-- { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
+		},
 		lualine_x = {},
 		lualine_y = {
 			{
