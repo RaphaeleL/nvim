@@ -74,7 +74,7 @@ return require("packer").startup(function()
 	-- use({ "tzachar/cmp-tabnine" }) -- AI Completion
 	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
 	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
-	use({ "simrat39/symbols-outline.nvim" }) -- Outliner
+	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
 	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
 	-- use({ "tpope/vim-sensible" }) -- Line Informations
 	-- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff

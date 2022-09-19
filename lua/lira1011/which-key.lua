@@ -74,7 +74,7 @@ menu.register({
 		u = { ":UndotreeToggle<cr>", "History" },
 		r = { ":Jaq bang<cr>", "Run Code" },
 		k = { ":CommentToggle<cr>", "Comment Line" },
-		o = { ":SymbolsOutline<cr>", "Outline" },
+		o = { ":Telescope lsp_document_symbols<cr>", "Outline" },
 		l = { ":'<,'>CommentToggle<cr>", "Comment Block" },
 	},
 })
