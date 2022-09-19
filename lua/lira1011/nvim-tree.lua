@@ -60,6 +60,7 @@ tree.setup({
 		timeout = 200,
 	},
 	view = {
+		adaptive_size = true,
 		width = 30,
 		height = 30,
 		hide_root_folder = false,
