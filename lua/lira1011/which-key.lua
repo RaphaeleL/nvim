@@ -164,6 +164,7 @@ menu.register({
 		g = {
 			name = "+Git",
 			s = { ":Telescope git_status<cr>", "Status" },
+			g = { ":LazyGit<cr>", "LazyGit" },
 			c = { ":Telescope git_commits<cr>", "Commits" },
 			b = { ":Telescope git_branches<cr>", "Branches" },
 			d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
