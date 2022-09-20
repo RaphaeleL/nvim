@@ -68,7 +68,6 @@ menu.register({
 	["<Leader>"] = {
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
-		x = { ":Telescope buffers<cr>", "Show buffers" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
 		c = { ":bdelete<cr>", "Close" },
 		u = { ":UndotreeToggle<cr>", "History" },
@@ -81,7 +80,7 @@ menu.register({
 
 menu.register({
 	["<Leader>"] = {
-		m = {
+		h = {
 			name = "+Harpoon",
 			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
 			p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Show Prev" },
@@ -138,12 +137,6 @@ menu.register({
 			o = { ":LspInstallInfo<cr>", "Installer Info" },
 			n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
 			N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Previous Diagnostic" },
-			-- P = { -- Lunarvim
-			-- 	name = "Peek",
-			-- 	d = { ":lua require('user.lsp.peek').Peek('definition')<cr>", "Definition" },
-			-- 	t = { ":lua require('user.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-			-- 	i = { ":lua require('user.lsp.peek').Peek('implementation')<cr>", "Implementation" },
-			-- },
 		},
 	},
 })
@@ -152,15 +145,14 @@ menu.register({
 	["<Leader>"] = {
 		a = {
 			name = "+Actions",
-			m = { ":Mason<cr>", "Mason" },
 			c = { ":lua vim.lsp.buf.declaration()<cr>", "Declaration" },
 			a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
 			R = { ":lua vim.lsp.buf.references()<cr>", "References" },
 			D = { ":lua vim.lsp.buf.definition()<cr>", "Definition" },
 			h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
 			q = { ":lua vim.diagnostic.setloclist()<cr>", "Set Location List" },
-			i = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-			I = { ":lua vim.lsp.buf.hover()<cr>", "Informations" },
+			I = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+			i = { ":lua vim.lsp.buf.hover()<cr>", "Informations" },
 			s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
 		},
@@ -184,22 +176,11 @@ menu.register({
 
 menu.register({
 	["<Leader>"] = {
-		t = {
-			name = "+Terminal",
-			f = { ":ToggleTerm direction=float<cr>", "Floating Terminal" },
-			b = { ":ToggleTerm direction=horizontal<cr>", "Bottom Terminal" },
-		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
-		h = {
+		["."] = {
 			name = "+Help",
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
-			C = { ":Telescope commands<cr>", "Commands" },
-			-- m = { ":Telescope man_pages<cr>", "Man Pages" },
+			c = { ":Telescope commands<cr>", "Commands" },
 		},
 	},
 })
