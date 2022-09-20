@@ -61,5 +61,9 @@ keymap("n", "sb", ":Telescope buffers<cr>")
 -- Diagnostic
 keymap("n", "dl", ":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>")
 
+
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
+
+-- Git 
+keymap("n", "lg", ":LazyGit<cr>")
