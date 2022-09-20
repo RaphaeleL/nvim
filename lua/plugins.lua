@@ -21,7 +21,6 @@ return require("packer").startup(function()
 	use({ "is0n/jaq-nvim" }) -- Run Code
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
 	use({ "ThePrimeagen/harpoon" }) -- the one and only
-	use({ "williamboman/mason.nvim" }) -- Package Manager
 
 	-- Keybinds
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
