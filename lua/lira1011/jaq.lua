@@ -18,6 +18,7 @@ jaq.setup({
 			rust = "cargo run",
 			cpp = "g++ % -o $fileBase -O3 && ./$fileBase",
 			c = "gcc % -o $fileBase -O3 && ./$fileBase",
+			haskell = "runhaskell %",
 		},
 	},
 
