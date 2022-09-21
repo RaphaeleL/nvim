@@ -1,7 +1,3 @@
-local status_ok, lsp_lines = pcall(require, "lsp_lines")
-if not status_ok then
-	require("user.notify").message("Could not load lsp_lines", "Loading Error", "error")
-	return
-end
+local lsp_lines = require("lsp_lines")
 
 lsp_lines.setup()

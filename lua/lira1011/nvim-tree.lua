@@ -1,8 +1,4 @@
-local status_ok, tree = pcall(require, "nvim-tree")
-if not status_ok then
-	require("user.notify").message("Could not load nvim-tree", "Loading Error", "error")
-	return
-end
+local tree = require("nvim-tree")
 
 tree.setup({
 	disable_netrw = true,

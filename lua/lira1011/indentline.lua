@@ -1,8 +1,4 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
-if not status_ok then
-	require("user.notify").message("Could not load indent_blankline", "Loading Error", "error")
-	return
-end
+local indent_blankline = require("indent_blankline")
 
 vim.g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
 vim.g.indent_blankline_filetype_exclude = {

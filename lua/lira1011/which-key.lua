@@ -1,9 +1,4 @@
-local status_ok, menu = pcall(require, "which-key")
-
-if not status_ok then
-	require("user.notify").message("Could not load which-key", "Loading Error", "error")
-	return
-end
+local menu = require("which-key")
 
 menu.setup({
 	plugins = {
