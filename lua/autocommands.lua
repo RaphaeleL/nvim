@@ -1,10 +1,3 @@
--- Notifications with Notify
-local status_ok, n = pcall(require, "lira1011.notify")
-if not status_ok then
-	require("lira1011.notify").message("Could not load notify", "Loading Error", "error")
-	return
-end
-
 -- Set wrap and spell in markdown
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "markdown" },
@@ -45,7 +38,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- Autoformat on Save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 	callback = function()
-		-- n.message("Format the current buffer", "Autoformat File", "info")
 		vim.lsp.buf.formatting()
 	end,
 })
@@ -54,7 +46,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- 	pattern = { "plugins.lua" },
 -- 	callback = function()
--- 		n.message("Packer is reloading", "Reload Packer", "info")
 -- 		vim.cmd([[source <afile> | PackerSync]])
 -- 	end,
 -- })

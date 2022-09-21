@@ -1,9 +1,4 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-	require("user.notify").message("Could not load telescope", "Loading Error", "error")
-	return
-end
-
+local telescope = require("telescope")
 local actions = require("telescope.actions")
 
 telescope.setup({

@@ -4,17 +4,8 @@
 -- 	return
 -- end
 
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-	require("user.notify").message("Could not load cmp", "Loading Error", "error")
-	return
-end
-
-local luasnip_status_ok, luasnip = pcall(require, "luasnip")
-if not luasnip_status_ok then
-	require("user.notify").message("Could not load luasnip", "Loading Error", "error")
-	return
-end
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 local kind_icons = {
 	Text = "",

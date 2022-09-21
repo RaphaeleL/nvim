@@ -1,8 +1,4 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then
-	require("user.notify").message("Could not load lualine", "Loading Error", "error")
-	return
-end
+local lualine = require("lualine")
 
 local conditions = {
 	buffer_not_empty = function()

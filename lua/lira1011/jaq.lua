@@ -1,8 +1,4 @@
-local status_ok, jaq = pcall(require, "jaq-nvim")
-if not status_ok then
-	require("user.notify").message("Could not load jaq-nvim", "Loading Error", "error")
-	return
-end
+local jaq = require("jaq-nvim")
 
 jaq.setup({
 	cmds = {
