@@ -66,6 +66,7 @@ return require("packer").startup(function()
 	-- Waiting for Nvim 0.8
 	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
+	-- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
 	-- Graveyard
 	-- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
