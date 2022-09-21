@@ -66,7 +66,7 @@ keymap("n", "dl", ":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>")
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
 
 -- Git
-keymap("n", "lg", ":LazyGit<cr>")
+keymap("n", "gg", ":LazyGit<cr>")
 
 -- Search
 keymap("n", "st", ":Telescope live_grep<cr>")
