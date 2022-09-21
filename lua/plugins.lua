@@ -85,7 +85,7 @@ return require("packer").startup(function()
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
 	-- use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
-	-- use({ "tjdevries/colorbuddy.vim" } -- Colorscheme Creation
+	-- use({ "tjdevries/colorbuddy.vim" }) -- Colorscheme Creation
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
 	-- use({ "RaphaeleL/darkplus" }) -- Colorscheme
