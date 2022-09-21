@@ -53,6 +53,7 @@ return require("packer").startup(function()
 	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
 	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
+	use({ "j-hui/fidget.nvim" }) -- Lsp UI
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
