@@ -180,3 +180,15 @@ menu.register({
 		},
 	},
 })
+
+menu.register({
+	["<Leader>"] = {
+		["p"] = {
+			name = "+Packer",
+			i = { ":PackerInstall<cr>", "Install" },
+			s = { ":PackerSync<cr>", "Sync" },
+			c = { ":PackerClean<cr>", "Clean" },
+			C = { ":PackerCompile<cr>", "Compile" },
+		},
+	},
+})
