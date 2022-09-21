@@ -63,4 +63,4 @@ require("kanagawa").setup({
 	overrides = {},
 	theme = "default",
 })
-vim.cmd([[colorscheme kanagawa]])
+vim.cmd([[colorscheme darkplus]])
