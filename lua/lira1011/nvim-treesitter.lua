@@ -1,6 +1,30 @@
 local treesitter = require("nvim-treesitter.configs")
 
 treesitter.setup({
+  ensured_installed = {
+		"bash",
+		"comment",
+		"scss",
+		"css",
+		"html",
+		"javascript",
+		"typescript",
+		"lua",
+		"markdown",
+		"regex",
+		"toml",
+		"yaml",
+		"c",
+		"cpp",
+		"haskell",
+		"java",
+		"python",
+		"rust",
+		"go",
+		"php",
+		"swift",
+		"kotlin",
+	},
 	highlight = {
 		enable = true,
 	},
