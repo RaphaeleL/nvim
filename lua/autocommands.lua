@@ -36,11 +36,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Autoformat on Save
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	callback = function()
-		vim.lsp.buf.formatting()
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+-- 	callback = function()
+-- 		vim.lsp.buf.formatting()
+-- 	end,
+-- })
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
