@@ -19,7 +19,7 @@ local function diff_source()
 		}
 	end
 end
---
+
 -- vim.g.gitblame_display_virtual_text = 0
 -- local git_blame = require("gitblame")
 --
@@ -114,13 +114,14 @@ local colors = {
 	red = "#c34043",
 	violet = "#d183e8",
 	grey = "#303030",
+  transparent = nil
 }
 
 local bubbles_theme = {
 	normal = {
 		a = { fg = colors.black, bg = colors.violet },
 		b = { fg = colors.white, bg = colors.grey },
-		c = { fg = colors.black, bg = colors.black },
+		c = { fg = colors.black, bg = colors.transparent },
 	},
 
 	insert = { a = { fg = colors.black, bg = colors.blue } },
@@ -130,7 +131,7 @@ local bubbles_theme = {
 	inactive = {
 		a = { fg = colors.white, bg = colors.black },
 		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.black, bg = colors.black },
+		c = { fg = colors.black, bg = colors.transparent },
 	},
 }
 
