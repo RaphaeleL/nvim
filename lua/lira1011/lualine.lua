@@ -107,39 +107,39 @@ end
 -- })
 
 local colors = {
-  blue   = '#7e9cd8',
-  cyan   = '#79dac8',
-  black  = '#1f1f28',
-  white  = '#dcd7ba',
-  red    = '#c34043',
-  violet = '#d183e8',
-  grey   = '#303030',
+	blue = "#7e9cd8",
+	cyan = "#79dac8",
+	black = "#1f1f28",
+	white = "#dcd7ba",
+	red = "#c34043",
+	violet = "#d183e8",
+	grey = "#303030",
 }
 
 local bubbles_theme = {
-  normal = {
-    a = { fg = colors.black, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
-  },
+	normal = {
+		a = { fg = colors.black, bg = colors.violet },
+		b = { fg = colors.white, bg = colors.grey },
+		c = { fg = colors.black, bg = colors.black },
+	},
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+	insert = { a = { fg = colors.black, bg = colors.blue } },
+	visual = { a = { fg = colors.black, bg = colors.cyan } },
+	replace = { a = { fg = colors.black, bg = colors.red } },
 
-  inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.black, bg = colors.black },
-  },
+	inactive = {
+		a = { fg = colors.white, bg = colors.black },
+		b = { fg = colors.white, bg = colors.black },
+		c = { fg = colors.black, bg = colors.black },
+	},
 }
 
-require('lualine').setup {
-  options = {
-    theme = bubbles_theme,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
-  },
+require("lualine").setup({
+	options = {
+		theme = bubbles_theme,
+		component_separators = "|",
+		section_separators = { left = "", right = "" },
+	},
 	sections = {
 		lualine_a = {
 			{
@@ -164,9 +164,7 @@ require('lualine').setup {
 				cond = nil,
 			},
 		},
-		lualine_c = {
-			-- { git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available },
-		},
+		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {
 			{
@@ -213,6 +211,6 @@ require('lualine').setup {
 		lualine_y = {},
 		lualine_z = {},
 	},
-  tabline = {},
-  extensions = {},
-}
+	tabline = {},
+	extensions = {},
+})
