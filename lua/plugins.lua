@@ -60,17 +60,15 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 
-	-- Do i really want to keep them?
-	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-	use({ "rcarriga/nvim-notify" }) -- Notifications
-	use({ "goolord/alpha-nvim" }) -- Dashboard
-
 	-- Waiting for Nvim 0.8
 	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 
 	-- Graveyard
+	-- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+	-- use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
+	-- use({ "goolord/alpha-nvim" }) -- Dashboard
+	-- use({ "rcarriga/nvim-notify" }) -- Notifications
 	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	-- use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
 	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
