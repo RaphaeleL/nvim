@@ -55,9 +55,9 @@ menu.setup({
 	},
 })
 
--- menu.register({
--- 	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
--- })
+menu.register({
+	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
+})
 
 menu.register({
 	["<Leader>"] = {
