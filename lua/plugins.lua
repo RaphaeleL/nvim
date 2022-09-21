@@ -47,7 +47,7 @@ return require("packer").startup(function()
 	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 	use({ "RRethy/vim-illuminate" }) -- Highlight same words
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-  use({ "goolord/alpha-nvim" }) -- Dashboard
+	use({ "goolord/alpha-nvim" }) -- Dashboard
 
 	-- LSP
 	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
