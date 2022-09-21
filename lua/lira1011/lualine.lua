@@ -114,7 +114,7 @@ local colors = {
 	red = "#c34043",
 	violet = "#d183e8",
 	grey = "#303030",
-  transparent = nil
+	transparent = nil,
 }
 
 local bubbles_theme = {
@@ -139,7 +139,8 @@ require("lualine").setup({
 	options = {
 		theme = bubbles_theme,
 		component_separators = "|",
-		section_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 	},
 	sections = {
 		lualine_a = {
