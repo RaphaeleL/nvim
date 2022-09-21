@@ -31,6 +31,7 @@ return require("packer").startup(function()
 
 	-- Colorscheme
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
+	use({ "RaphaeleL/darkplus" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -88,7 +89,6 @@ return require("packer").startup(function()
 	-- use({ "tjdevries/colorbuddy.vim" }) -- Colorscheme Creation
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
 	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
-	-- use({ "RaphaeleL/darkplus" }) -- Colorscheme
 	-- use({ "jacoborus/tender.vim" }) -- Colorscheme
 	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
