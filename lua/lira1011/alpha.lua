@@ -37,6 +37,11 @@ dashboard.section.header.val = {
 	"                 ⢠⣿⡟                ⠉⠉                      ",
 	"                  ⠉                                         ",
 	"                                                            ",
+	"                                                            ",
+	"            NaaVim - A Basic IDE Layor for Neovim           ",
+	"                                                            ",
+	"                                                            ",
+	"                                                            ",
 }
 
 dashboard.section.buttons.val = {
