@@ -1,6 +1,6 @@
 <p align="center">
   <p align="center">
-   <img width="150" height="150" src="assets/pic-1.png" alt="Logo">
+   <img height="150" src="assets/pic-1.png" alt="Logo">
   </p>
   <h1 align="center"><b>NaaVim</b></h1>
   <p align="center">
