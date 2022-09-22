@@ -7,6 +7,7 @@ git clone https://github.com/neovim/neovim.git ~/neovim
 sudo rm -rf ~/.config/nvim
 sudo rm -rf ~/.local/bin/nvim
 sudo rm -rf ~/.local/share/nvim/
+sudo rm -rf ~/.cache/nvim
 
 # Install
 cd ~/neovim
