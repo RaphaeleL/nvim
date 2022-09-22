@@ -11,7 +11,7 @@ sudo rm -rf ~/.cache/nvim
 
 # Install
 cd ~/neovim
-git checkout release-0.7
+git checkout v0.7.2 
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 
