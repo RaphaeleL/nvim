@@ -3,13 +3,13 @@
 # NaaVim
 
 <b>Useable for </b>
-macOS · Windows · Linux
+macOS · Linux · (Windows)
 
 > **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
 ## Installation
 
-> Neovim 0.7
+> Neovim 0.7.2
 
 ### Package-Manager
 
@@ -51,7 +51,7 @@ $ bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.s
 
 ### Font
 
-Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons.
+Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons. Such **Nerd Fonts** are not mandatory, but are needed for the display of the icons.
 
 > [Iosevka Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 
@@ -85,6 +85,10 @@ The File Strucutre explained.
         - *.lua         -- Basic NaaVim Configuration (Neovim Settings, ...)
     - init.lua          -- the start of the nvim configuration
 ```
+
+## Future
+
+The Goal of NaaVim is to live beside NeoVim, so you should be able to have one 'nvim' Configuration and Command and also one 'naavim' Configuration and Command. Also there should be an easier Plugin Support / Overview.
 
 ## Plugins
 
