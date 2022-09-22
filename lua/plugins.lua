@@ -30,8 +30,7 @@ return require("packer").startup(function()
 	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
 
 	-- Colorscheme
-	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
-	use({ "RaphaeleL/darkplus" }) -- Colorscheme
+	use({ "Mofiqul/vscode.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -92,6 +91,8 @@ return require("packer").startup(function()
 	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
 	-- use({ "jacoborus/tender.vim" }) -- Colorscheme
 	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
+	-- use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
+	-- use({ "RaphaeleL/darkplus" }) -- Colorscheme
 	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
 	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
 	-- use({ "nacro90/numb.nvim" }) -- Jump Around
