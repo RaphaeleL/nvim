@@ -65,11 +65,11 @@ return require("packer").startup(function()
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
 
 	-- Waiting for Nvim 0.8
-	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 	-- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
 	-- Graveyard
+	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
 	-- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	-- use({ "goolord/alpha-nvim" }) -- Dashboard
 	-- use({ "rcarriga/nvim-notify" }) -- Notifications
