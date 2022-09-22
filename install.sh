@@ -25,4 +25,7 @@ git clone https://github.com/RaphaeleL/nvim.git ~/config/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-echo "Type 'nvim' in the Terminal. Now you should be in Neovim :D yeey. Start install all the Plugins with 'PackerInstall'."
+# Create an Executable 
+cp navim ~/.local/bin/
+
+echo "Type 'navim' in the Terminal. Now you should be in Neovim :D yeey. Start install all the Plugins with 'PackerInstall'."

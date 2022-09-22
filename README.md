@@ -86,9 +86,11 @@ The File Strucutre explained.
     - init.lua          -- the start of the nvim configuration
 ```
 
-## Future
+## Usage
 
 The Goal of NaaVim is to live beside NeoVim, so you should be able to have one 'nvim' Configuration and Command and also one 'naavim' Configuration and Command. Also there should be an easier Plugin Support / Overview.
+
+> **Current State:** Use `navim` instead of `nvim`
 
 ## Plugins
 

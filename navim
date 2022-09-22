@@ -1,0 +1,2 @@
+#!/bin/sh
+exec nvim -u "$HOME/.local/share/navim/init.lua" #"$@"
