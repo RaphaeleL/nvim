@@ -56,7 +56,7 @@ In addition, the following command can be used to run a series of diagnostic tes
 On Linux and MacOS the following command can be used to set the configuration (NaaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
+$ bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
 ```
 
 ### Font
@@ -66,15 +66,15 @@ Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons.
 > [Iosevka Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 
 ```bash
-curl -fLo "<FONT NAME> Nerd Font Complete.otf" \
+$ curl -fLo "<FONT NAME> Nerd Font Complete.otf" \
     https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/<FONT_PATH>/complete/<FONT_NAME>%20Nerd%20Font%20Complete.otf
 ```
 
 or for macOS Users via Homebrew:
 
 ```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-<FONT NAME>-nerd-font
+$ brew tap homebrew/cask-fonts
+$ brew install --cask font-<FONT NAME>-nerd-font
 ```
 
 ### Colorscheme
