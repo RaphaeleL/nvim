@@ -68,11 +68,12 @@ return require("packer").startup(function()
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 	-- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
+	-- Are you coming back?
+	-- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+	-- use({ "rcarriga/nvim-notify" }) -- Notifications
+
 	-- Graveyard
 	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
-	-- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	-- use({ "goolord/alpha-nvim" }) -- Dashboard
-	-- use({ "rcarriga/nvim-notify" }) -- Notifications
 	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
 	-- use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
 	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
