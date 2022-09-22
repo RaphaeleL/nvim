@@ -1,21 +1,11 @@
-<p align="center">
-  <p align="center">
-   <img height="150" src="assets/pic-1.png" alt="Logo">
-  </p>
-  <h1 align="center"><b>NaaVim</b></h1>
-  <p align="center">
-    NeoVim IDE Layer 
-    <br />
-    <br />
-    <b>Useable for </b>
-    macOS · Windows · Linux
-    <br />
-  </p>
-</p>
-<br/>
-<br/>
+ <img height="150" src="assets/pic-1.png" align="right" alt="Logo">
 
-**NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
+# NaaVim
+
+<b>Useable for </b>
+macOS · Windows · Linux
+
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
 ## Installation
 
@@ -98,9 +88,7 @@ The File Strucutre explained.
 
 ## Plugins
 
-There are some popular plugins which are not listed here, for example WhichKey. Mostly there are still configuration files for such plugins which have not been removed. It is better to have such files in the repository instead of having to rewrite the complex configuration.
-
-> The problem with WhichKey, for example, is simply the performance. Basic keymaps are significantly faster than WhichKey keymaps.
+There are some popular plugins which are not listed here, for example Barber (Tab's). Mostly there are still configuration files for such plugins which have not been removed. It is better to have such files in the repository instead of having to rewrite the complex configuration.
 
 > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
