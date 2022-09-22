@@ -1,4 +1,19 @@
-# Basic IDE Layer (Configuration) for Neovim
+<p align="center">
+  <p align="center">
+   <img width="150" height="150" src="assets/pic-1.png" alt="Logo">
+  </p>
+  <h1 align="center"><b>NaaVim</b></h1>
+  <p align="center">
+    NeoVim IDE Layer 
+    <br />
+    <br />
+    <b>Useable for </b>
+    macOS · Windows · Linux
+    <br />
+  </p>
+</p>
+<br/>
+<br/>
 
 **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
