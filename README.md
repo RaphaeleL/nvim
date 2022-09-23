@@ -1,4 +1,4 @@
- <img height="150" src="assets/pic-1.png" align="right" alt="Logo">
+ <img height="150" src="assets/logo.png" align="right" alt="Logo">
 
 # NaaVim
 
@@ -159,3 +159,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ![Demo-2](./assets/Demo-2.png)
 ![Demo-3](./assets/Demo-3.png)
 ![Demo-4](./assets/Demo-4.png)
+![Demo-5](./assets/Demo-5.png)
+![Demo-6](./assets/Demo-6.png)
+![Demo-7](./assets/Demo-7.png)
