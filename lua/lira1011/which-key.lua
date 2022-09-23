@@ -56,11 +56,8 @@ menu.setup({
 })
 
 menu.register({
-	["<leader>;"] = { ":Alpha<cr>", "Dashboard" },
-})
-
-menu.register({
 	["<Leader>"] = {
+		[";"] = { ":Alpha<cr>", "Dashboard" },
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
 		e = { ":NvimTreeToggle<cr>", "File Explorer" },
