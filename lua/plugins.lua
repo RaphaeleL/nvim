@@ -21,6 +21,7 @@ return require("packer").startup(function()
 	use({ "is0n/jaq-nvim" }) -- Run Code
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
 	use({ "ThePrimeagen/harpoon" }) -- the one and only
+	use({ "akinsho/toggleterm.nvim" })
 
 	-- Keybinds
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
@@ -38,9 +39,9 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
 
-	-- -- Snippets
-	-- use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
-	-- use({ "rafamadriz/friendly-snippets" }) -- Snippets
+	-- Snippets
+	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
+	use({ "rafamadriz/friendly-snippets" }) -- Snippets
 
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons

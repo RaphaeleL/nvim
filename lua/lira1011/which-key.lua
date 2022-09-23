@@ -70,11 +70,6 @@ menu.register({
 		k = { ":CommentToggle<cr>", "Comment Line" },
 		o = { ":Telescope lsp_document_symbols<cr>", "Outline" },
 		l = { ":'<,'>CommentToggle<cr>", "Comment Block" },
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		h = {
 			name = "+Harpoon",
 			n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
@@ -82,11 +77,6 @@ menu.register({
 			a = { ":lua require('harpoon.mark').add_file()<cr>", "Add File" },
 			s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		b = {
 			name = "+Buffer",
 			b = { ":Telescope buffers<cr>", "Show buffers" },
@@ -100,11 +90,6 @@ menu.register({
 			v = { ":vsplit<cr>", "Vertical Split" },
 			h = { ":split<cr>", "Horizontal Split" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		s = {
 			name = "+Search",
 			g = {
@@ -114,11 +99,6 @@ menu.register({
 			r = { ":Telescope oldfiles<cr>", "Open Recent File" },
 			t = { ":Telescope live_grep<cr>", "Live Grep" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		d = {
 			name = "+Diagnostics",
 			r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -133,11 +113,6 @@ menu.register({
 			n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
 			N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Previous Diagnostic" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		a = {
 			name = "+Actions",
 			c = { ":lua vim.lsp.buf.declaration()<cr>", "Declaration" },
@@ -151,11 +126,6 @@ menu.register({
 			s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		g = {
 			name = "+Git",
 			s = { ":Telescope git_status<cr>", "Status" },
@@ -167,28 +137,23 @@ menu.register({
 			t = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
 			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		["."] = {
 			name = "+Help",
 			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
 			k = { ":Telescope keymaps<cr>", "Keymaps" },
 			c = { ":Telescope commands<cr>", "Commands" },
 		},
-	},
-})
-
-menu.register({
-	["<Leader>"] = {
 		["p"] = {
 			name = "+Packer",
 			i = { ":PackerInstall<cr>", "Install" },
 			s = { ":PackerSync<cr>", "Sync" },
 			c = { ":PackerClean<cr>", "Clean" },
 			C = { ":PackerCompile<cr>", "Compile" },
+		},
+		["t"] = {
+			name = "+Terminal",
+			t = { ":ToggleTerm<cr>", "Open Terminal" },
+			f = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
 		},
 	},
 })
