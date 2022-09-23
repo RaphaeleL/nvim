@@ -104,9 +104,7 @@ function main() {
     remove_nvim_repo
   fi
   clone_config
-  if confirm "Do you need to install Packer?"; then 
-    install_packer
-  fi
+  install_packer
   hint
 }
 
