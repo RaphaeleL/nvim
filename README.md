@@ -155,10 +155,10 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 ## Showcase
 
-![Demo-1](./assets/Demo-1.png)
-![Demo-2](./assets/Demo-2.png)
-![Demo-3](./assets/Demo-3.png)
-![Demo-4](./assets/Demo-4.png)
-![Demo-5](./assets/Demo-5.png)
-![Demo-6](./assets/Demo-6.png)
-![Demo-7](./assets/Demo-7.png)
+![Demo\_1](./assets/Demo_1.png)
+![Demo\_2](./assets/Demo_2.png)
+![Demo\_3](./assets/Demo_3.png)
+![Demo\_4](./assets/Demo_4.png)
+![Demo\_5](./assets/Demo_5.png)
+![Demo\_6](./assets/Demo_6.png)
+![Demo\_7](./assets/Demo_7.png)
