@@ -26,7 +26,8 @@ function message() {
   local text="$1"
   local div_width=$(tput cols)
   printf "%${div_width}s\n" ' ' | tr ' ' -
-  printf "%s\n" "$text"
+  printf "> %s\n" "$text"
+  printf "%${div_width}s\n" ' ' | tr ' ' -
 }
 
 function remove_nvim() {
@@ -67,13 +68,12 @@ function clone_config() {
 }
 
 function install_packer() {
-  message "|Install Packer ..."
+  message "Install Packer ..."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
 function hint() {
-  print_logo 
   message "Make Sure to manually run ':PackerInstall' when starting nvim for the first time."
 }
 
