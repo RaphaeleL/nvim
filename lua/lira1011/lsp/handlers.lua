@@ -57,7 +57,6 @@ M.on_attach = function(client, bufnr)
 		client.resolved_capabilities.document_formatting = false
 	end
 
-	M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 	M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
 
 	--lsp_keymaps(bufnr)
