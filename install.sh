@@ -64,7 +64,7 @@ function remove_nvim_repo() {
 
 function clone_config() {
   message "Clone the NaVim Configuration Repository ..."
-  git clone https://github.com/RaphaeleL/nvim.git ~/config/nvim
+  git clone https://github.com/RaphaeleL/nvim.git ~/.config/nvim
 }
 
 function install_packer() {
