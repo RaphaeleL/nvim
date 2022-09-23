@@ -42,6 +42,7 @@ return require("packer").startup(function()
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
 	use({ "rafamadriz/friendly-snippets" }) -- Snippets
+	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
@@ -85,7 +86,6 @@ return require("packer").startup(function()
 	-- use({ "tpope/vim-sensible" }) -- Line Informations
 	-- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff
 	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
-	-- use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
 	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
 	-- use({ "tjdevries/colorbuddy.vim" }) -- Colorscheme Creation
 	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
