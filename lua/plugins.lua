@@ -38,9 +38,9 @@ return require("packer").startup(function()
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
 
-	-- Snippets
-	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
-	use({ "rafamadriz/friendly-snippets" }) -- Snippets
+	-- -- Snippets
+	-- use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
+	-- use({ "rafamadriz/friendly-snippets" }) -- Snippets
 
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
