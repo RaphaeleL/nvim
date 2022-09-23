@@ -99,15 +99,22 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 - Auto Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
-- Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- the one and only: [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
+- Floating Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+
+### Keybinds
+
+- Shortcut Menu: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### Git
 
-- Git Signs: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- Gitsigns beside Numbers: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- Git Commands in Nvim: [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 ### Colorscheme
 
-- Colorscheme: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- Colorscheme: [Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
 
 ### Telescope
 
@@ -116,7 +123,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ### Treesitter
 
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Sticky Methods: [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 
 ### Snippets
 
@@ -126,13 +132,10 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ### UI
 
 - Icons: [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- Indent Highlighting: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Tab Bar: [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim)
-- File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 - Menu Bar: [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
-- Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 - Highlight same words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ### LSP
 
@@ -140,6 +143,7 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 - Lsp Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Diagnostics / Code Actions: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - Lsp Config with Json: [tamago324/nlsp-settings.nvim](https://github.com/tamago324/nlsp-settings.nvim)
+- Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
 ### Auto Completion
 
@@ -148,7 +152,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 - Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - Auto Completion for Commands: [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
 - Auto Completion for Lsp Stuff: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-- AI Completion: [tzachar/cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 
 ## Showcase
 
