@@ -50,7 +50,7 @@ function clone_neovim() {
 }
 
 function install_neovim() {
-  message "Install Neovim ..."
+  message "Install Neovim v0.7.2 ..."
   cd ~/neovim
   git checkout v0.7.2 
   make CMAKE_BUILD_TYPE=Release
@@ -98,7 +98,7 @@ function confirm() {
 
 function main() {
   print_logo 
-  if confirm "Would you like to install Neovim?"; then 
+  if confirm "Would you like to install Neovim v0.7.2?"; then 
     clone_neovim
     install_neovim
     remove_nvim_repo
