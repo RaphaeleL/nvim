@@ -22,18 +22,21 @@ function print_logo() {
   echo "                                                            "
 }
 
+function message() {
+  local text="$1"
+  local div_width=$(tput cols)
+  printf "%${div_width}s\n" ' ' | tr ' ' -
+  printf "%s\n" "$text"
+}
+
 function remove_nvim() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Remove Previous Neovim ...                                 |"
-  echo "+-----------------------------------------------------------+"
+  message "Remove Previous Neovim ..."
   rm -rf /usr/local/bin/nvim
   rm -rf /usr/local/share/nvim/
 }
 
 function remove_config() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Remove Old Configuration ...                               |"
-  echo "+-----------------------------------------------------------+"
+  message "Remove Old Configuration ..."
   rm -rf ~/.config/nvim
   rm -rf ~/.local/bin/nvim
   rm -rf ~/.local/share/nvim/
@@ -41,16 +44,12 @@ function remove_config() {
 }
 
 function clone_neovim() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Clone the Neovim Repository ...                            |"
-  echo "+-----------------------------------------------------------+"
+  message "Clone the Neovim Repository ..."
   git clone https://github.com/neovim/neovim.git ~/neovim
 }
 
 function install_neovim() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Install Neovim ...                                         |"
-  echo "+-----------------------------------------------------------+"
+  message "Install Neovim ..."
   cd ~/neovim
   git checkout v0.7.2 
   make CMAKE_BUILD_TYPE=Release
@@ -58,37 +57,30 @@ function install_neovim() {
 }
 
 function remove_nvim_repo() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Remove Neovim Repository ...                               |"
-  echo "+-----------------------------------------------------------+"
+  message "Remove Neovim Repository ..."
   rm -rf ~/neovim
 }
 
 function clone_config() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Clone the NaVim Configuration Repository ...               |"
-  echo "+-----------------------------------------------------------+"
+  message "Clone the NaVim Configuration Repository ..."
   git clone https://github.com/RaphaeleL/nvim.git ~/config/nvim
 }
 
 function install_packer() {
-  echo "+-----------------------------------------------------------+"
-  echo "|Install Packer ...                                         |"
-  echo "+-----------------------------------------------------------+"
+  message "|Install Packer ..."
   git clone --depth 1 https://github.com/wbthomason/packer.nvim\
    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 }
 
 function hint() {
   print_logo 
-  echo "Make Sure to manually run ':PackerInstall' when starting nvim for the first time."
+  message "Make Sure to manually run ':PackerInstall' when starting nvim for the first time."
 }
-
 
 function confirm() {
   local question="$1"
   while true; do
-    msg "$question"
+    message "$question"
     read -p "[y]es or [n]o (default: no) : " -r answer
     case "$answer" in
       y | Y | yes | YES | Yes)
@@ -98,7 +90,7 @@ function confirm() {
         return 1
         ;;
       *)
-        msg "Please answer [y]es or [n]o."
+        message "Please answer [y]es or [n]o."
         ;;
     esac
   done
@@ -112,7 +104,9 @@ function main() {
     remove_nvim_repo
   fi
   clone_config
-  install_packer
+  if confirm "Do you need to install Packer?"; then 
+    install_packer
+  fi
   hint
 }
 
