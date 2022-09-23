@@ -7,6 +7,9 @@
         "vim",
         "packer_bootstrap",
         "use",
-        "require"
+        "require",
+        "collapse_all",
+        "vsplit_preview",
+        "edit_or_open"
     ]
 }
