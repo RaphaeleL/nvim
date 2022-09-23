@@ -1,31 +1,51 @@
 #!/bin/bash
 
-# Get the neovim Repo
-git clone https://github.com/neovim/neovim.git ~/neovim
+echo "                                                            "
+echo "                          ⢠⣶⡤                               "
+echo "                         ⢠⣿⡿⠁                               "
+echo "                        ⢠⣿⡿⠁                      ⣀⣀        "
+echo "                       ⢀⣿⡿⠁                       ⣿⣿        "
+echo "     ⢀⣀⣀              ⢠⣿⡟                    ⢠⣶⣤⣀⡀⣿⣿ ⣀⣤⣴⣆   "
+echo "   ⢠⣾⡿⠛⠿⣿⣶⣄⣀⣴⣿⠟      ⢠⣿⡿                     ⠉⠉⠛⠻⢿⣿⣿⡿⠿⠛⠋⠉   "
+echo "   ⠉⠋    ⠙⠛⠿⠛⠁      ⢠⣿⡿⠁                        ⣴⣿⠟⠹⣿⣧⡀     "
+echo "                   ⣰⣿⡟⠁            ⣠⣶⣶⣦        ⠺⡿⠋  ⠈⢿⡷⠂    "
+echo "                  ⣰⣿⡟              ⢻⣿⣿⡿                     "
+echo "                 ⢠⣿⡟                ⠉⠉                      "
+echo "                  ⠉                                         "
+echo "                                                            "
+echo "                                                            "
+echo "            NaaVim - A Basic IDE Layor for Neovim           "
+echo "                                                            "
+echo "                                                            "
+echo "                                                            "
 
-# Remove Previous Stuff 
+echo "Remove Previous Neovim ..."
+sudo rm -rf /usr/local/bin/nvim
+sudo rm -rf /usr/local/share/nvim/
+
+echo "Remove Old Configuration ..."
 sudo rm -rf ~/.config/nvim
 sudo rm -rf ~/.local/bin/nvim
 sudo rm -rf ~/.local/share/nvim/
 sudo rm -rf ~/.cache/nvim
 
-# Install
+echo "Clone the Neovim Repository ..."
+git clone https://github.com/neovim/neovim.git ~/neovim
+
+echo "Install Neovim ..."
 cd ~/neovim
 git checkout v0.7.2 
 make CMAKE_BUILD_TYPE=Release
 sudo make install
 
-# Remove the Neovim Repo
+echo "Remove Neovim Repository ..."
 rm -rf ~/neovim
 
-# Get the Neovim Config
+echo "Clone the NaVim Configuration Repository ..."
 git clone https://github.com/RaphaeleL/nvim.git ~/config/nvim
 
-# Install Packer
+echo "Install Packer ..."
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-# Create an Executable 
-cp navim ~/.local/bin/
-
-echo "Type 'navim' in the Terminal. Now you should be in Neovim :D yeey. Start install all the Plugins with 'PackerInstall'."
+echo "Make Sure to manually run ':PackerInstall' when starting nvim for the first time."
