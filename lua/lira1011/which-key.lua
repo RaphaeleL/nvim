@@ -89,10 +89,6 @@ menu.register({
 		},
 		s = {
 			name = "+Search",
-			g = {
-				":lua require('telescope.builtin').grep_string({ search = vim.fn.input(\"Grep For > \")})<cr>",
-				"Grep Word",
-			},
 			r = { ":Telescope oldfiles<cr>", "Open Recent File" },
 			t = { ":Telescope live_grep<cr>", "Live Grep" },
 		},
