@@ -1,11 +1,11 @@
  <img height="150" src="assets/logo.png" align="right" alt="Logo">
 
-# NaaVim
+# NaVim
 
 <b>Useable for </b>
 macOS · Linux · (Windows)
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
+> **NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
 ## Installation
 
@@ -43,7 +43,7 @@ In addition, the following command can be used to run a series of diagnostic tes
 
 ### Install the Configuration in one Command
 
-On Linux and MacOS the following command can be used to set the configuration (NaaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
+On Linux and MacOS the following command can be used to set the configuration (NaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
 
 ```
 $ bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
@@ -82,9 +82,12 @@ The File Strucutre explained.
         - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name
             - lsp/      -- Lsp Configuration
             - *.lua     -- Each has a Setup File if needed
-        - *.lua         -- Basic NaaVim Configuration (Neovim Settings, ...)
+        - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
     - init.lua          -- the start of the nvim configuration
 ```
+## Future 
+
+In the distant future `NaVim` shall have an independent instance or configuration besides the conventional `nvim`.
 
 ## Plugins
 
