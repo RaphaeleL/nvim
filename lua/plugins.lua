@@ -71,6 +71,7 @@ return require("packer").startup(function()
   -- Are you coming back?
   -- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
   -- use({ "rcarriga/nvim-notify" }) -- Notifications
+  -- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
   -- Graveyard
   -- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
@@ -104,7 +105,6 @@ return require("packer").startup(function()
   -- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
   -- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
   -- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
-  -- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
