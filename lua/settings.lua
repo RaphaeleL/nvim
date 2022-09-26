@@ -46,21 +46,14 @@ vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd([[set formatoptions-=cro]])
 
 vim.cmd([[colorscheme vscode]])
-
 local c = require("vscode.colors")
 require("vscode").setup({
-	transparent = true,
-	disable_nvimtree_bg = true,
-
-	-- Override colors (see ./lua/vscode/colors.lua)
-	color_overrides = {
-		vscLineNumber = "#6b6b6b",
-	},
-
-	-- Override highlight groups (see ./lua/vscode/theme.lua)
-	group_overrides = {
-		-- this supports the same val table as vim.api.nvim_set_hl
-		-- use colors from this colorscheme by requiring vscode.colors!
-		Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-	},
+  transparent = true,
+  disable_nvimtree_bg = true,
+  color_overrides = {
+    vscLineNumber = "#6b6b6b",
+  },
+  group_overrides = {
+    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+  },
 })

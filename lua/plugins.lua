@@ -47,7 +47,6 @@ return require("packer").startup(function()
   -- UI
   use({ "kyazdani42/nvim-web-devicons" }) -- Icons
   use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-  use({ "RRethy/vim-illuminate" }) -- Highlight same words
   use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
   use({ "goolord/alpha-nvim" }) -- Dashboard
 
@@ -93,7 +92,10 @@ return require("packer").startup(function()
   -- use({ "jacoborus/tender.vim" }) -- Colorscheme
   -- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
   -- use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
-  -- use({ "RaphaeleL/darkplus" }) -- Colorscheme
+  -- use({ "Lunarvim/darkplus.nvim" }) -- Colorscheme
+  -- use({ "sainnhe/gruvbox-material" }) -- Colorscheme
+  -- use({ "tomasiser/vim-code-dark" }) -- Colorscheme
+  -- use({ "lourenci/github-colors" }) -- Colorscheme
   -- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
   -- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
   -- use({ "nacro90/numb.nvim" }) -- Jump Around
@@ -102,6 +104,7 @@ return require("packer").startup(function()
   -- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
   -- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
   -- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
+  -- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
