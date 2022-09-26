@@ -69,7 +69,7 @@ return require("packer").startup(function()
   -- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
   -- Are you coming back?
-  -- use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+  use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
   -- use({ "rcarriga/nvim-notify" }) -- Notifications
   -- use({ "RRethy/vim-illuminate" }) -- Highlight same words
 
