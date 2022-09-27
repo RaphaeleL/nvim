@@ -62,6 +62,12 @@ keymap("n", "r", ":Jaq bang<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
 keymap("n", "df", ":lua vim.lsp.buf.formatting()<cr>")
 
+-- Buffers
+keymap("n", "bb", ":Telescope buffers<cr>")
+keymap("n", "bc", ":bdelete<cr>")
+keymap("n", "bv", ":vsplit<cr>")
+keymap("n", "bh", ":split<cr>")
+
 -- Diagnostic
 keymap("n", "dl", ":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>")
 
