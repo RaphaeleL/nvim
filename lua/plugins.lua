@@ -1,12 +1,7 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   packer_bootstrap = vim.fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
+    "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path,
   })
 end
 
@@ -89,7 +84,12 @@ return require("packer").startup(function()
   -- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff
   -- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
   -- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
-  -- use({ "tjdevries/colorbuddy.vim" }) -- Colorscheme Creation
+  -- use({ "nacro90/numb.nvim" }) -- Jump Around
+  -- use({ "onsails/lspkind.nvim" }) -- Pictograms
+  -- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
+  -- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
+  -- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
+  -- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
   -- use({ "folke/tokyonight.nvim" }) -- Colorscheme
   -- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
   -- use({ "jacoborus/tender.vim" }) -- Colorscheme
@@ -101,12 +101,6 @@ return require("packer").startup(function()
   -- use({ "lourenci/github-colors" }) -- Colorscheme
   -- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
   -- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
-  -- use({ "nacro90/numb.nvim" }) -- Jump Around
-  -- use({ "onsails/lspkind.nvim" }) -- Pictograms
-  -- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
-  -- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
-  -- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
-  -- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then
