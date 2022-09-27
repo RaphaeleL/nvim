@@ -77,12 +77,6 @@ menu.register({
     b = {
       name = "+Buffer",
       b = { ":Telescope buffers<cr>", "Show buffers" },
-      g = { ":BufferGoto<cr>", "Goto Tab" },
-      n = { ":BufferNext<cr>", "Next" },
-      p = { ":BufferPrevious<cr>", "Previous" },
-      d = { ":BufferDelete<cr>", "Delete" },
-      k = { ":BufferCloseallButCurrent<cr>", "Close all expect of the Current" },
-      t = { ":BufferPick<cr>", "Pick" },
       c = { ":bdelete<cr>", "Close Window" },
       v = { ":vsplit<cr>", "Vertical Split" },
       h = { ":split<cr>", "Horizontal Split" },
