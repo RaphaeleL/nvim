@@ -18,11 +18,8 @@ return require("packer").startup(function()
   use({ "terrortylor/nvim-comment" }) -- Comment Blocks
   use({ "windwp/nvim-autopairs" }) -- Auto Brackets
   use({ "lewis6991/impatient.nvim" }) -- Better Performance
-  use({ "is0n/jaq-nvim" }) -- Run Code
   use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
   use({ "ThePrimeagen/harpoon" }) -- the one and only
-  use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-  use({ "nvim-pack/nvim-spectre" }) -- Global Search / Replace
 
   -- Keybinds
   use({ "folke/which-key.nvim" }) -- Shortcut Menu
@@ -48,17 +45,12 @@ return require("packer").startup(function()
   -- UI
   use({ "kyazdani42/nvim-web-devicons" }) -- Icons
   use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-  use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-  use({ "goolord/alpha-nvim" }) -- Dashboard
-  use({ "ghillb/cybu.nvim" }) -- Buffer Overview
-  use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 
   -- LSP
   use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
   use({ "neovim/nvim-lspconfig" }) -- Lsp Config
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
   use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
-  use({ "j-hui/fidget.nvim" }) -- Lsp UI
 
   -- Auto Completion
   use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
@@ -66,6 +58,16 @@ return require("packer").startup(function()
   use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
   use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
   use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
+
+  -- Nice but not Needed
+  use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
+  use({ "nvim-pack/nvim-spectre" }) -- Global Search / Replace
+  use({ "is0n/jaq-nvim" }) -- Run Code
+  use({ "j-hui/fidget.nvim" }) -- Lsp UI
+  use({ "goolord/alpha-nvim" }) -- Dashboard
+  use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
+  use({ "ghillb/cybu.nvim" }) -- Buffer Overview
+  use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 
   -- Waiting for Nvim 0.8
   -- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
