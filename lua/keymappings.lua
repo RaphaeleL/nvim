@@ -15,7 +15,7 @@ vim.g.mapleader = " "
 -- Navigate between Tabs
 keymap("n", "<TAB>", ":bprev<cr>")
 keymap("n", "<S-TAB>", ":bnext<cr>")
-keymap("n", "#", ":CybuNext<cr>")
+keymap("n", "m", ":CybuNext<cr>")
 
 -- Navigation between Vim Windows
 keymap("n", "<C-h>", "<C-w>h")
@@ -52,6 +52,9 @@ keymap("n", "ha", ':lua require("harpoon.mark").add_file()<cr>')
 keymap("n", "hs", ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
 
 -- Basic
+keymap("n", "s", ":wa!<cr>")
+keymap("n", "q", ":qa!<cr>")
+keymap("n", "qq", ":qa!<cr>")
 keymap("n", "f", ":Telescope find_files<cr>")
 keymap("n", "e", ":NvimTreeToggle<cr>")
 keymap("n", "c", ":bdelete<cr>")
