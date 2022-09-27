@@ -16,6 +16,7 @@ vim.g.mapleader = " "
 keymap("n", "<TAB>", ":bprev<cr>")
 keymap("n", "<S-TAB>", ":bnext<cr>")
 keymap("n", "m", ":CybuNext<cr>")
+keymap("n", "M", ":CybuPrev<cr>")
 
 -- Navigation between Vim Windows
 keymap("n", "<C-h>", "<C-w>h")
