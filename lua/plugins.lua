@@ -50,6 +50,7 @@ return require("packer").startup(function()
   use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
   use({ "goolord/alpha-nvim" }) -- Dashboard
   use({ "ghillb/cybu.nvim" }) -- Buffer Overview
+  use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 
   -- LSP
   use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
@@ -69,12 +70,9 @@ return require("packer").startup(function()
   -- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
   -- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
-  -- Are you coming back?
-  use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+  -- Graveyard
   -- use({ "rcarriga/nvim-notify" }) -- Notifications
   -- use({ "RRethy/vim-illuminate" }) -- Highlight same words
-
-  -- Graveyard
   -- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
   -- use({ "romgrk/barbar.nvim" }) -- Tab Bar
   -- use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
