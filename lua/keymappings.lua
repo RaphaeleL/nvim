@@ -1,7 +1,7 @@
 local opts = { silent = true, noremap = true }
 
 local function keymap(mode, old, new)
-	vim.api.nvim_set_keymap(mode, old, new, opts)
+  vim.api.nvim_set_keymap(mode, old, new, opts)
 end
 
 -- New Escape Key
@@ -13,8 +13,9 @@ keymap("n", "<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- Navigate between Tabs
-keymap("n", "<TAB>", ":bprev<CR>")
-keymap("n", "<S-TAB>", ":bnext<CR>")
+keymap("n", "<TAB>", ":bprev<cr>")
+keymap("n", "<S-TAB>", ":bnext<cr>")
+keymap("n", "#", ":CybuNext<cr>")
 
 -- Navigation between Vim Windows
 keymap("n", "<C-h>", "<C-w>h")
@@ -23,8 +24,8 @@ keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
 
 -- Open Which Key Menu
-keymap("n", "<Leader><Leader>", ":WhichKey<Leader><CR><Leader>")
-keymap("v", "<Leader><Leader>", ":WhichKey<Leader><CR><Leader>")
+keymap("n", "<Leader><Leader>", ":WhichKey<Leader><cr><Leader>")
+keymap("v", "<Leader><Leader>", ":WhichKey<Leader><cr><Leader>")
 
 -- Indent Selection
 keymap("v", "<", "<gv")
