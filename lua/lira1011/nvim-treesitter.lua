@@ -24,6 +24,7 @@ treesitter.setup({
 		"php",
 		"swift",
 		"kotlin",
+		"latex",
 	},
 	highlight = {
 		enable = true,
