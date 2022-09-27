@@ -58,10 +58,12 @@ menu.setup({
 menu.register({
   ["<Leader>"] = {
     [";"] = { ":Alpha<cr>", "Dashboard" },
+    Q = { ":qa!<cr>", "Quit All" },
+    q = { ":q!<cr>", "Quit" },
     n = { ":noh<cr>", "No Highlighting" },
     f = { ":Telescope find_files<cr>", "Find files" },
     e = { ":NvimTreeToggle<cr>", "File Explorer" },
-    c = { ":bdelete<cr>", "Close" },
+    c = { ":bdelete!<cr>", "Close" },
     u = { ":UndotreeToggle<cr>", "History" },
     r = { ":Jaq bang<cr>", "Run Code" },
     k = { ":CommentToggle<cr>", "Comment Line" },
@@ -143,6 +145,13 @@ menu.register({
       name = "+Terminal",
       t = { ":ToggleTerm<cr>", "Open Terminal" },
       f = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
+    },
+    ["S"] = {
+      name = "+UI",
+      i = { ":IndentBlanklineToggle<cr>", "Indentline" },
+      t = { ":Gitsigns toggle_signs<cr>", "Git Toggle Line" },
+      n = { ":Gitsigns toggle_numhl<cr>", "Git Toggle Num" },
+      c = { ":Telescope colorscheme<cr>", "Colorscheme" },
     },
   },
 })
