@@ -54,7 +54,7 @@ keymap("n", "hs", ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
 
 -- Basic
 keymap("n", "s", ":wa!<cr>")
-keymap("n", "q", ":qa!<cr>")
+keymap("n", "Q", ":qa!<cr>")
 keymap("n", "f", ":Telescope find_files<cr>")
 keymap("n", "e", ":NvimTreeToggle<cr>")
 keymap("n", "c", ":bdelete<cr>")
