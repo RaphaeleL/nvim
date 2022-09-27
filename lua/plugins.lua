@@ -22,6 +22,7 @@ return require("packer").startup(function()
   use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
   use({ "ThePrimeagen/harpoon" }) -- the one and only
   use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
+  use({ "nvim-pack/nvim-spectre" }) -- Global Search / Replace
 
   -- Keybinds
   use({ "folke/which-key.nvim" }) -- Shortcut Menu
