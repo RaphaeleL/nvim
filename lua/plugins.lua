@@ -1,7 +1,7 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   packer_bootstrap = vim.fn.system({
-    "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path,
+    "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path,plugins
   })
 end
 
@@ -42,10 +42,12 @@ return require("packer").startup(function()
   use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 
   -- LSP
-  use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
+  -- use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
   use({ "neovim/nvim-lspconfig" }) -- Lsp Config
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
   use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
+  use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
+  use({"williamboman/mason-lspconfig.nvim"}) -- Mason Config
 
   -- Auto Completion
   use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
