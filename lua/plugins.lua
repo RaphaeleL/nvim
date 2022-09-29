@@ -20,8 +20,6 @@ return require("packer").startup(function()
 	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
 	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
-	use({ "ThePrimeagen/harpoon" }) -- the one and only
-	use({ "dstein64/vim-startuptime" }) -- Time Messurement
 
 	-- Keybinds
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
@@ -50,10 +48,10 @@ return require("packer").startup(function()
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "tamago324/nlsp-settings.nvim" }) -- Lsp Config with Json
 	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
+	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
+	use({ "ray-x/lsp_signature.nvim" })
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
@@ -71,6 +69,9 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
+
+	-- i think you'll be removed
+	use({ "ThePrimeagen/harpoon" }) -- the one and only
 
 	-- Waiting for Nvim 0.8
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
