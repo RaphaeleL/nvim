@@ -44,16 +44,3 @@ vim.opt.relativenumber = true
 
 vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd([[set formatoptions-=cro]])
-
-vim.cmd([[colorscheme vscode]])
-local c = require("vscode.colors")
-require("vscode").setup({
-  transparent = true,
-  disable_nvimtree_bg = true,
-  color_overrides = {
-    vscLineNumber = "#6b6b6b",
-  },
-  group_overrides = {
-    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-  },
-})

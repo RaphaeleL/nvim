@@ -1,119 +1,136 @@
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	packer_bootstrap = vim.fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-		plugins,
-	})
+local fn = vim.fn
+
+-- Automatically install packer
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+---@diagnostic disable-next-line: missing-parameter
+if fn.empty(fn.glob(install_path)) > 0 then
+  PACKER_BOOTSTRAP = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  }
+  print "Installing packer close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
 end
 
-return require("packer").startup(function()
-	use({ "wbthomason/packer.nvim" })
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
 
-	-- Basic Plugins
-	use({ "mbbill/undotree" }) -- Undo History
-	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
-	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
-	use({ "lewis6991/impatient.nvim" }) -- Better Performance
-	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
 
-	-- Keybinds
-	use({ "folke/which-key.nvim" }) -- Shortcut Menu
+-- Have packer use a popup window
+packer.init {
+  -- snapshot = "july-24",
+  snapshot_path = fn.stdpath "config" .. "/snapshots",
+  max_jobs = 50,
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+    prompt_border = "rounded", -- Border style of prompt popups.
+  },
+}
 
-	-- Git
-	use({ "lewis6991/gitsigns.nvim" }) -- Gitsigns beside Numbers
-	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
+-- Install your plugins here
+return packer.startup(function(use)
+  -- Plugin Mangager
+  use "wbthomason/packer.nvim" -- Have packer manage itself
 
-	-- Colorscheme
-	use({ "Mofiqul/vscode.nvim" }) -- Colorscheme
+  use "neovim/nvim-lspconfig" 
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "jose-elias-alvarez/null-ls.nvim" 
+  use "ray-x/lsp_signature.nvim"
+  use "SmiteshP/nvim-navic"
+  use "simrat39/symbols-outline.nvim"
+  use "b0o/SchemaStore.nvim"
+  use "RRethy/vim-illuminate"
+  use "j-hui/fidget.nvim"
+  use "lvimuser/lsp-inlayhints.nvim"
+  use "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
+  use "nvim-lua/plenary.nvim" 
+  use "christianchiarulli/nvim-cmp"
+  use "hrsh7th/cmp-buffer" 
+  use "hrsh7th/cmp-path" 
+  use "hrsh7th/cmp-cmdline" 
+  use "saadparwaiz1/cmp_luasnip" 
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+  use { "tzachar/cmp-tabnine", run = "./install.sh" }
+  use "L3MON4D3/LuaSnip" 
+  use "rafamadriz/friendly-snippets" 
+  use "nvim-treesitter/nvim-treesitter"
+  use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-ts-autotag"
+  use "nvim-telescope/telescope.nvim"
+  use "lunarvim/darkplus.nvim"
+  use "rcarriga/nvim-notify"
+  use "ghillb/cybu.nvim"
+  use "lewis6991/impatient.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  use "christianchiarulli/lualine.nvim"
+  use "goolord/alpha-nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  use "kyazdani42/nvim-tree.lua"
+  use "numToStr/Comment.nvim"
+  use "folke/todo-comments.nvim"
+  use "akinsho/toggleterm.nvim"
+  use "windwp/nvim-spectre"
+  use "is0n/jaq-nvim"
+  use "kdheepak/lazygit.nvim"
+  use "lewis6991/gitsigns.nvim"
+  use "windwp/nvim-autopairs"
+  use "nacro90/numb.nvim"
+  use "folke/which-key.nvim"
 
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
+  -- Graveyard
+  -- use "romgrk/nvim-treesitter-context"
+  -- use "mizlan/iswap.nvim"
+  -- use {'christianchiarulli/nvim-ts-rainbow'}
+  -- use "nvim-telescope/telescope-ui-select.nvim"
+  -- use "nvim-telescope/telescope-file-browser.nvim"
+  -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
+  -- use { "christianchiarulli/JABS.nvim" }
+  -- use "lunarvim/vim-solidity"
+  -- use "tpope/vim-repeat"
+  -- use "Shatur/neovim-session-manager"
+  -- use "metakirby5/codi.vim"
+  -- use { "nyngwang/NeoZoom.lua", branch = "neo-zoom-original" }
+  -- use "rcarriga/cmp-dap"
+  -- use "filipdutescu/renamer.nvim"
+  -- use "https://github.com/rhysd/conflict-marker.vim"
+  -- use "rebelot/kanagawa.nvim"
+  -- use "unblevable/quick-scope"
+  -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  -- use "gbprod/cutlass.nvim"
+  -- use "christianchiarulli/lsp-inlay-hints"
+  -- use "rmagatti/goto-preview"
+  -- use "stevearc/aerial.nvim"
+  -- use "nvim-lua/lsp_extensions.nvim"
+  -- use { "christianchiarulli/nvim-gps", branch = "text_hl" }
+  -- use "stevearc/stickybuf.nvim"
+  -- use "folke/trouble.nvim"
+  -- use "drybalka/tree-climber.nvim"
+  -- use "phaazon/hop.nvim"
+  -- use { "michaelb/sniprun", run = "bash ./install.sh" }
 
-	-- Snippets
-	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
-	use({ "rafamadriz/friendly-snippets" }) -- Snippets
-	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
-
-	-- UI
-	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
-	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-
-	-- LSP
-	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
-	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
-	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "ray-x/lsp_signature.nvim" })
-
-	-- Auto Completion
-	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
-	use({ "hrsh7th/cmp-buffer" }) -- Auto Completion for Buffered words
-	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
-	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
-	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
-
-	-- Nice but not Needed
-	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	use({ "nvim-pack/nvim-spectre" }) -- Global Search / Replace
-	use({ "is0n/jaq-nvim" }) -- Run Code
-	use({ "j-hui/fidget.nvim" }) -- Lsp UI
-	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
-	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-
-	-- i think you'll be removed
-	use({ "ThePrimeagen/harpoon" }) -- the one and only
-
-	-- Waiting for Nvim 0.8
-	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
-	-- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
-
-	-- Graveyard
-	-- use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
-	-- use({ "rcarriga/nvim-notify" }) -- Notifications
-	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words
-	-- use({ "lvimuser/lsp-inlayhints.nvim" }) -- Lsp Inline Informations
-	-- use({ "romgrk/barbar.nvim" }) -- Tab Bar
-	-- use({ "nvim-treesitter/nvim-treesitter-context" }) -- Sticky Methods
-	-- use({ "nvim-telescope/telescope-file-browser.nvim" }) -- Dired like Filebrowser
-	-- use({ "tzachar/cmp-tabnine" }) -- AI Completion
-	-- use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	-- use({ "SmiteshP/nvim-gps" }) -- Lualine Components
-	-- use({ "simrat39/symbols-outline.nvim" }) -- Outliner
-	-- use({ "f-person/git-blame.nvim" }) -- Git inline Informations
-	-- use({ "tpope/vim-sensible" }) -- Line Informations
-	-- use({ "glepnir/lspsaga.nvim" }) -- Collection of Helpfull Lsp Stuff
-	-- use({ "ray-x/lsp_signature.nvim" }) -- Information about e.g. Methods
-	-- use({ "p00f/nvim-ts-rainbow" }) -- Coloring Brackets
-	-- use({ "nacro90/numb.nvim" }) -- Jump Around
-	-- use({ "onsails/lspkind.nvim" }) -- Pictograms
-	-- use({ "nvim-treesitter/nvim-treesitter-textobjects" }) -- Text Handlings
-	-- use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previewer
-	-- use({ "sunjon/shade.nvim" }) -- Shade inactive Panes
-	-- use({ "nvim-telescope/telescope-media-files.nvim" }) -- Show Pictures
-	-- use({ "folke/tokyonight.nvim" }) -- Colorscheme
-	-- use({ "olimorris/onedarkpro.nvim" }) -- Colorscheme
-	-- use({ "jacoborus/tender.vim" }) -- Colorscheme
-	-- use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
-	-- use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
-	-- use({ "Lunarvim/darkplus.nvim" }) -- Colorscheme
-	-- use({ "sainnhe/gruvbox-material" }) -- Colorscheme
-	-- use({ "tomasiser/vim-code-dark" }) -- Colorscheme
-	-- use({ "lourenci/github-colors" }) -- Colorscheme
-	-- use({ "Lunarvim/colorschemes" }) -- Scheme Collection
-	-- use({ "shaeinst/roshnivim-cs" }) -- Scheme Collection
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
+  end
 end)

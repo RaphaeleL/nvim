@@ -1,11 +1,15 @@
-local telescope = require("telescope")
-local actions = require("telescope.actions")
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+  return
+end
 
-telescope.setup({
+local actions = require "telescope.actions"
+local icons = require "user.icons"
+
+telescope.setup {
   defaults = {
     prompt_prefix = " ",
     selection_caret = " ",
-    entry_prefix = "  ",
     path_display = { "smart" },
     file_ignore_patterns = {
       ".git/",
@@ -17,14 +21,13 @@ telescope.setup({
       "%.sqlite3",
       "%.ipynb",
       "node_modules/*",
-      "%.jpg",
-      "%.jpeg",
-      "%.png",
+      -- "%.jpg",
+      -- "%.jpeg",
+      -- "%.png",
       "%.svg",
       "%.otf",
       "%.ttf",
       "%.webp",
-      ".DS_Store",
       ".dart_tool/",
       ".github/",
       ".gradle/",
@@ -85,12 +88,17 @@ telescope.setup({
 
         ["<c-d>"] = require("telescope.actions").delete_buffer,
 
+        -- ["<C-u>"] = actions.preview_scrolling_up,
+        -- ["<C-d>"] = actions.preview_scrolling_down,
+
+        -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<Tab>"] = actions.close,
         ["<S-Tab>"] = actions.close,
+        -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
-        ["<C-h>"] = actions.which_key,
+        ["<C-h>"] = actions.which_key, -- keys from pressing <C-h>
         ["<esc>"] = actions.close,
       },
 
@@ -105,6 +113,8 @@ telescope.setup({
 
         ["<Tab>"] = actions.close,
         ["<S-Tab>"] = actions.close,
+        -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
@@ -135,6 +145,7 @@ telescope.setup({
     },
   },
   pickers = {
+
     live_grep = {
       theme = "dropdown",
     },
@@ -149,6 +160,13 @@ telescope.setup({
       theme = "dropdown",
       previewer = false,
       initial_mode = "normal",
+    },
+    planets = {
+      show_pluto = true,
+      show_moon = true,
+    },
+    colorscheme = {
+      -- enable_preview = true,
     },
     lsp_references = {
       theme = "dropdown",
@@ -166,13 +184,16 @@ telescope.setup({
       theme = "dropdown",
       initial_mode = "normal",
     },
+
+
+    -- Default configuration for builtin pickers goes here:
+    -- picker_name = {
+    --   picker_config_key = value,
+    --   ...
+    -- }
+    -- Now the picker_config_key will be applied every time you call this
+    -- builtin picker
   },
   extensions = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = "smart_case",
-    },
   },
-})
+}

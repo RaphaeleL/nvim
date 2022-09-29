@@ -1,17 +1,28 @@
-require("user.gitsigns")
-require("user.cmp")
-require("user.nvim-treesitter")
-require("user.impatient")
-require("user.nvim_comment")
-require("user.nvim-autopairs")
-require("user.lualine")
-require("user.telescope")
-require("user.lsp")
-require("user.jaq")
-require("user.which-key")
-require("user.nvim-tree")
-require("user.fidget")
-require("user.alpha")
-require("user.toggleterm")
-require("user.cybu")
-require("user.indentline")
+require "user.alpha"
+require "user.autopairs"
+require "user.bufferline"
+require "user.cmp"
+require "user.cybu"
+require "user.fidget"
+require "user.gitsigns"
+require "user.icons"
+require "user.impatient"
+require "user.jabs"
+require "user.jaq"
+require "user.lualine"
+require "user.matchup"
+require "user.navic"
+require "user.neoscroll"
+require "user.notify"
+require "user.numb"
+require "user.nvim-tree"
+require "user.nvim-webdev-icons"
+require "user.spectre"
+require "user.symbol-outline"
+require "user.telescope"
+require "user.todo-comments"
+require "user.toggleterm"
+require "user.treesitter"
+require "user.whichkey"
+require "user.lsp"
+require "user.bfs"

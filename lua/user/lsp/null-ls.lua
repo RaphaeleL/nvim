@@ -3,9 +3,13 @@ if not null_ls_status_ok then
   return
 end
 
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+-- https://github.com/prettier-solidity/prettier-plugin-solidity
+-- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
   debug = false,
   sources = {
@@ -17,6 +21,7 @@ null_ls.setup {
     formatting.stylua,
     formatting.shfmt,
     formatting.google_java_format,
+    -- diagnostics.flake8,
     diagnostics.shellcheck,
   },
 }
@@ -27,9 +32,13 @@ local unwrap = {
   generator = {
     fn = function(params)
       local diagnostics = {}
+      -- sources have access to a params object
+      -- containing info about the current file and editor state
       for i, line in ipairs(params.content) do
         local col, end_col = line:find "unwrap()"
         if col and end_col then
+          -- null-ls fills in undefined positions
+          -- and converts source diagnostics into the required format
           table.insert(diagnostics, {
             row = i,
             col = col,
