@@ -21,6 +21,7 @@ return require("packer").startup(function()
 	use({ "lewis6991/impatient.nvim" }) -- Better Performance
 	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
 	use({ "ThePrimeagen/harpoon" }) -- the one and only
+	use({ "dstein64/vim-startuptime" }) -- Time Messurement
 
 	-- Keybinds
 	use({ "folke/which-key.nvim" }) -- Shortcut Menu
