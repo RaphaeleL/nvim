@@ -48,9 +48,9 @@ return require("packer").startup(function()
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
-	use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
-	-- use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
-	-- use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
+	-- use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
+	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
+	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
 	use({ "ray-x/lsp_signature.nvim" })
 
