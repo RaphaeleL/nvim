@@ -93,10 +93,10 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
 			CloudDownload = "",
 		},
 		diagnostics = {
-			Error = "",
-			Warning = "",
-			Information = "",
-			Question = "",
+			Error = "",
+			Warning = "",
+			Information = "",
+			Question = "",
 			Hint = "",
 		},
 		misc = {
@@ -197,11 +197,11 @@ else
 			CloudDownload = " ",
 		},
 		diagnostics = {
-			Error = " ",
-			Warning = " ",
-			Information = " ",
-			Question = " ",
-			Hint = " ",
+			Error = "",
+			Warning = "",
+			Information = "",
+			Question = "",
+			Hint = "",
 		},
 		misc = {
 			Robot = " ",
