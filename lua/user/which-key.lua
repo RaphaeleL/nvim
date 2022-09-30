@@ -92,7 +92,7 @@ menu.register({
     },
     d = {
       namde = "+Diagnostics",
-      l = { ":lua vim.diagnostic.open_float()<cr>", "Line Diagnostic" },
+      l = { ":lua require('lsp_lines').toggle()<cr>", "Line Diagnostic" },
       d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
       w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
       s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
