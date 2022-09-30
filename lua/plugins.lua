@@ -71,10 +71,8 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-
-	-- Waiting for Nvim 0.8
-	-- use({ "fgheng/winbar.nvim" }) -- Get File, Function, ...
-	-- use({ "SmiteshP/nvim-navic" }) -- Shows Top Bar with Path 
+	use({ "fgheng/winbar.nvim" }) -- Get File, Function, ...
+	use({ "SmiteshP/nvim-navic" }) -- Shows Top Bar with Path 
 	
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
