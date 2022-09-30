@@ -92,16 +92,12 @@ menu.register({
     },
     d = {
       name = "+Diagnostics",
-      r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
       l = { ":lua require('lsp_lines').toggle()<cr>", "Line Diagnostic" },
       d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
       w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
       s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
       f = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
       e = { ":LspInfo<cr>", "Info" },
-      o = { ":LspInstallInfo<cr>", "Installer Info" },
-      n = { ":lua vim.lsp.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-      N = { ":lua vim.lsp.diagnostic.goto_prev()<cr>", "Previous Diagnostic" },
     },
     a = {
       name = "+Actions",
