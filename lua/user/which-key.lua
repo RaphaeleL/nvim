@@ -69,13 +69,13 @@ menu.register({
     k = { ":CommentToggle<cr>", "Comment Line" },
     o = { ":Telescope lsp_document_symbols<cr>", "Outline" },
     l = { ":'<,'>CommentToggle<cr>", "Comment Block" },
-    h = {
-      name = "+Harpoon",
-      n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
-      p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Show Prev" },
-      a = { ":lua require('harpoon.mark').add_file()<cr>", "Add File" },
-      s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
-    },
+    -- h = {
+    --   name = "+Harpoon",
+    --   n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
+    --   p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Show Prev" },
+    --   a = { ":lua require('harpoon.mark').add_file()<cr>", "Add File" },
+    --   s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
+    -- },
     b = {
       name = "+Buffer",
       b = { ":Telescope buffers<cr>", "Show buffers" },
@@ -93,8 +93,7 @@ menu.register({
     d = {
       name = "+Diagnostics",
       r = { ":lua vim.lsp.buf.rename()<cr>", "Rename" },
-      l = { ":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", "Line Diagnostic" },
-      p = { ":lua vim.lsp.diagnostic.show_position_diagnostics()<cr>", "Position Diagnostic" },
+      l = { ":lua require('lsp_lines').toggle()<cr>", "Line Diagnostic" },
       d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
       w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
       s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },

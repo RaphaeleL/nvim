@@ -48,11 +48,11 @@ return require("packer").startup(function()
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
-	-- use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
 	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "ray-x/lsp_signature.nvim" })
+	use({ "ray-x/lsp_signature.nvim" }) -- 
+	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- LSP Line Diagnostics
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
@@ -71,14 +71,12 @@ return require("packer").startup(function()
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 
-	-- i think you'll be removed
-	use({ "ThePrimeagen/harpoon" }) -- the one and only
-
 	-- Waiting for Nvim 0.8
 	-- use({ "fgheng/winbar.nvim" }) -- Shows File, Function, ...
 	-- use({ "SmiteshP/nvim-navic" }) -- Shows File, Function, ...
 
 	-- Graveyard
+	-- use({ "ThePrimeagen/harpoon" }) -- the one and only
 	-- use({ "williamboman/nvim-lsp-installer" }) -- Lsp Installer
 	-- use({ "rcarriga/nvim-notify" }) -- Notifications
 	-- use({ "RRethy/vim-illuminate" }) -- Highlight same words

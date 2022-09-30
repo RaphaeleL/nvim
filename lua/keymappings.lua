@@ -62,7 +62,7 @@ keymap("n", "sb", ":Telescope buffers<cr>")
 keymap("n", "df", ":lua vim.lsp.buf.formatting()<cr>")
 
 -- Diagnostic
-keymap("n", "dl", ":lua vim.lsp.diagnostic.show_line_diagnostics()<cr>")
+keymap("n", "dl", ":lua require('lsp_lines').toggle()<cr>")
 
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
