@@ -91,13 +91,16 @@ menu.register({
       l = { ":lua require('spectre').open_file_search()<cr>", "File" },
     },
     d = {
-      name = "+Diagnostics",
+      namde = "+Diagnostics",
       l = { ":lua require('lsp_lines').toggle()<cr>", "Line Diagnostic" },
       d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
       w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
       s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
       f = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
       e = { ":LspInfo<cr>", "Info" },
+      o = { ":LspInstallInfo<cr>", "Installer Info" },
+      n = { ":lua vim.diagnostic.goto_next({buffer=0})<cr>", "Next Diagnostic" },
+      N = { ":lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Previous Diagnostic" },
     },
     a = {
       name = "+Actions",
