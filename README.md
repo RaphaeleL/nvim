@@ -181,9 +181,3 @@ This Configuration is based on:
 - [NvChad](https://github.com/NvChad/NvChad)
   - [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
-
-# TODO 
-
-- LSP is not 100% working
-  - this issue is from `MASON` 
-
