@@ -51,8 +51,8 @@ return require("packer").startup(function()
 	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "ray-x/lsp_signature.nvim" }) -- 
-	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- LSP Line Diagnostics
+	use({ "ray-x/lsp_signature.nvim" }) -- Show function signature 
+	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- Lsp Line Diagnostics
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
