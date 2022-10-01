@@ -7,8 +7,3 @@ require("neoscroll").setup({
 	cursor_scrolls_alone = false,
 })
 
-local t = {}
-t["<c-k>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-t["<c-j>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-
-require("neoscroll.config").set_mappings(t)
