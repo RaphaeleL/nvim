@@ -26,7 +26,7 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.cursorline = true
 vim.opt.number = true
-vim.opt.laststatus = 3
+vim.opt.laststatus = 0
 vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.numberwidth = 4
@@ -48,12 +48,12 @@ vim.cmd([[set formatoptions-=cro]])
 vim.cmd([[colorscheme vscode]])
 local c = require("vscode.colors")
 require("vscode").setup({
-  transparent = true,
-  disable_nvimtree_bg = true,
-  color_overrides = {
-    vscLineNumber = "#6b6b6b",
-  },
-  group_overrides = {
-    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-  },
+	transparent = true,
+	disable_nvimtree_bg = true,
+	color_overrides = {
+		vscLineNumber = "#6b6b6b",
+	},
+	group_overrides = {
+		Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+	},
 })
