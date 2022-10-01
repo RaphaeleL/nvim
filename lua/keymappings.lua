@@ -46,23 +46,19 @@ keymap("x", "<Leader>p", '"_dP')
 
 -- TODO: Which Key Transition
 
--- Harpoon
-keymap("n", ",", ':lua require("harpoon.ui").nav_next()<cr>')
-keymap("n", ";", ':lua require("harpoon.ui").nav_prev()<cr>')
-keymap("n", "ha", ':lua require("harpoon.mark").add_file()<cr>')
-keymap("n", "hs", ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
-
 -- Basic
-keymap("n", "s", ":wa!<cr>")
 keymap("n", "f", ":Telescope find_files<cr>")
 keymap("n", "e", ":NvimTreeToggle<cr>")
 keymap("n", "c", ":bdelete<cr>")
 keymap("n", "r", ":Jaq bang<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
-keymap("n", "df", ":lua vim.lsp.buf.formatting()<cr>")
+keymap("n", "df", ":lua vim.lsp.buf.format { async = true }<cr>")
 
 -- Diagnostic
 keymap("n", "dl", ":lua require('lsp_lines').toggle()<cr>")
 
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
+
+-- LazyGit 
+keymap("n", "gl", ":LazyGit<cr>")
