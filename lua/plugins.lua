@@ -52,7 +52,7 @@ return require("packer").startup(function()
 	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "ray-x/lsp_signature.nvim" }) -- Show function signature 
+	use({ "ray-x/lsp_signature.nvim" }) -- Show function signature
 	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- Lsp Line Diagnostics
 
 	-- Auto Completion
@@ -72,8 +72,8 @@ return require("packer").startup(function()
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "fgheng/winbar.nvim" }) -- Get File, Function, ...
-	use({ "SmiteshP/nvim-navic" }) -- Shows Top Bar with Path 
-	
+	use({ "SmiteshP/nvim-navic" }) -- Shows Top Bar with Path
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require("packer").sync()
