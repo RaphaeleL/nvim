@@ -87,8 +87,8 @@ menu.register({
       name = "+Search (and Replace)",
       r = { ":Telescope oldfiles<cr>", "Open Recent File" },
       t = { ":Telescope live_grep<cr>", "Live Grep" },
-      g = { ":lua require('spectre').open_visual()<cr>", "Project" },
-      l = { ":lua require('spectre').open_file_search()<cr>", "File" },
+      g = { ":lua require('spectre').open_visual()<cr>", "Search Replace in Project" },
+      l = { ":lua require('spectre').open_file_search()<cr>", "Search Replace in File" },
     },
     d = {
       namde = "+Diagnostics",
@@ -129,7 +129,8 @@ menu.register({
     ["."] = {
       name = "+Help",
       h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
-      k = { ":Telescope keymaps<cr>", "Keymaps" },
+      k = { ":Telescope keymaps<cr>", "Keymaps from Telescope" },
+      K = { ":map<cr>", "Keymaps from Neovim" },
       c = { ":Telescope commands<cr>", "Commands" },
     },
     ["p"] = {
@@ -151,6 +152,8 @@ menu.register({
       n = { ":Gitsigns toggle_numhl<cr>", "Git Toggle Num" },
       c = { ":Telescope colorscheme<cr>", "Colorscheme" },
       m = { ":Mason<cr>", "LSP Package Manager (Mason)" },
+      w = { ":set wrap<cr>", "Wrap" },
+      W = { ":set nowrap<cr>", "Unwrap" },
     },
   },
 })
