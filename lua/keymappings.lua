@@ -59,6 +59,7 @@ keymap("n", "df", ":lua vim.lsp.buf.format { async = true }<cr>")
 
 -- Diagnostic
 keymap("n", "dl", ":lua require('lsp_lines').toggle()<cr>")
+keymap("n", "dd", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
 
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
