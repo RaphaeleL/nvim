@@ -1,5 +1,3 @@
--- TODO weired behaviour on file opening
-
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
