@@ -67,6 +67,3 @@ for _, server in pairs(servers) do
 	lspconfig[server].setup(opts)
 	::continue::
 end
-
--- TODO: add something to installer later
--- require("lspconfig").motoko.setup {}

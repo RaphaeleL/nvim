@@ -71,8 +71,8 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "fgheng/winbar.nvim" }) -- Get File, Function, ...
-	use({ "SmiteshP/nvim-navic" }) -- Shows Top Bar with Path
+	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with PathGet File, Function, ...
+	use({ "SmiteshP/nvim-navic" }) -- Get File, Function, ...
 	use({ "karb94/neoscroll.nvim" }) -- Smooth Scrolling
 	use({ "nacro90/numb.nvim" }) -- Smooth Jumping
 

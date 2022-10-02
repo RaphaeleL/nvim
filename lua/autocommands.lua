@@ -26,7 +26,18 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 
 -- use 'q' to quit from some plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
+	pattern = {
+		"Jaq",
+		"qf",
+		"help",
+		"man",
+		"lspinfo",
+		"spectre_panel",
+		"lir",
+		"DressingSelect",
+		"tsplayground",
+		"Markdown",
+	},
 	callback = function()
 		vim.cmd([[
             nnoremap <silent> <buffer> q :close <cr>
@@ -36,11 +47,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Autoformat on Save
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
--- 	callback = function()
--- 		vim.lsp.buf.formatting()
--- 	end,
--- })
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+	callback = function()
+		vim.lsp.buf.formatting()
+	end,
+})
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
