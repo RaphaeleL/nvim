@@ -98,7 +98,7 @@ function confirm() {
 
 function main() {
   print_logo 
-  if confirm "Would you like to install Neovim v0.7.2 (sudo mode required)?"; then 
+  if confirm "Would you like to install Neovim v0.8.0 (sudo mode required)?"; then 
     clone_neovim
     install_neovim
     remove_nvim_repo

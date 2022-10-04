@@ -1,7 +1,7 @@
 local opts = { silent = true, noremap = true }
 
 local function keymap(mode, old, new)
-  vim.api.nvim_set_keymap(mode, old, new, opts)
+	vim.api.nvim_set_keymap(mode, old, new, opts)
 end
 
 -- New Escape Key
@@ -51,18 +51,17 @@ keymap("x", "<Leader>p", '"_dP')
 -- Basic
 keymap("n", "f", ":Telescope find_files<cr>")
 keymap("n", "e", ":NvimTreeToggle<cr>")
-keymap("n", "c", ":q!<cr>")
-keymap("n", "C", ":bdelete<cr>")
+keymap("n", "c", ":bdelete<cr>")
 keymap("n", "r", ":Jaq bang<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
 keymap("n", "df", ":lua vim.lsp.buf.format { async = true }<cr>")
 
 -- Diagnostic
-keymap("n", "dl", ":lua require('lsp_lines').toggle()<cr>")
+keymap("n", "dl", ":lua vim.diagnostic.open_float()<cr>")
 keymap("n", "dd", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
 
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
 
--- LazyGit 
+-- LazyGit
 keymap("n", "gl", ":LazyGit<cr>")

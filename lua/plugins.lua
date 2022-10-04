@@ -31,6 +31,8 @@ return require("packer").startup(function()
 
 	-- Colorscheme
 	use({ "Mofiqul/vscode.nvim" }) -- Colorscheme
+	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -53,7 +55,6 @@ return require("packer").startup(function()
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
 	use({ "ray-x/lsp_signature.nvim" }) -- Show function signature
-	use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" }) -- Lsp Line Diagnostics
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
@@ -71,9 +72,8 @@ return require("packer").startup(function()
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with PathGet File, Function, ...
-	use({ "SmiteshP/nvim-navic" }) -- Get File, Function, ...
-	use({ "karb94/neoscroll.nvim" }) -- Smooth Scrolling
+	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
+	use({ "SmiteshP/nvim-navic" }) -- Get File & Function
 	use({ "nacro90/numb.nvim" }) -- Smooth Jumping
 
 	-- Automatically set up your configuration after cloning packer.nvim
