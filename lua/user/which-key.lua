@@ -58,6 +58,7 @@ menu.setup({
 menu.register({
 	["<Leader>"] = {
 		[";"] = { ":Alpha<cr>", "Dashboard" },
+		["/"] = { ":cd %:h<cr>", "Goto Current Directory" },
 		q = { ":q!<cr>", "Quit" },
 		n = { ":noh<cr>", "No Highlighting" },
 		f = { ":Telescope find_files<cr>", "Find files" },
