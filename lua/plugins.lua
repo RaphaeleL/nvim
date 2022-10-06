@@ -75,6 +75,7 @@ return require("packer").startup(function()
 	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
 	use({ "SmiteshP/nvim-navic" }) -- Get File & Function
 	use({ "nacro90/numb.nvim" }) -- Smooth Jumping
+	use({ "melkster/modicator.nvim" }) -- Cursorline Color is Mode
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
