@@ -1,5 +1,4 @@
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-print()
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	packer_bootstrap = vim.fn.system({
 		"git",
@@ -74,8 +73,6 @@ return require("packer").startup(function()
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
 	use({ "SmiteshP/nvim-navic" }) -- Get File & Function
-	use({ "nacro90/numb.nvim" }) -- Smooth Jumping
-	use({ "melkster/modicator.nvim" }) -- Cursorline Color is Mode
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
