@@ -73,6 +73,7 @@ return require("packer").startup(function()
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
 	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
 	use({ "SmiteshP/nvim-navic" }) -- Get File & Function
+	use({ "iamcco/markdown-preview.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then

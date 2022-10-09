@@ -158,5 +158,10 @@ menu.register({
 			w = { ":set wrap<cr>", "Wrap" },
 			W = { ":set nowrap<cr>", "Unwrap" },
 		},
+		["m"] = {
+			name = "+Markdown",
+			m = { ":MarkdownPreview<cr>", "Start Preview" },
+			s = { ":MarkdownPreviewStop<cr>", "Stop Preview" },
+		},
 	},
 })
