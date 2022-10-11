@@ -31,7 +31,7 @@ return require("packer").startup(function()
 	-- Colorscheme
 	use({ "Mofiqul/vscode.nvim" }) -- Colorscheme
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
