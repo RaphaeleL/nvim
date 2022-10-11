@@ -96,15 +96,6 @@ function confirm() {
   done
 }
 
-function install_extra_executable() {
-  message "Install Core ..."
-  cd ~/.local/share 
-  mkdir navim 
-  git clone https://github.com/RaphaeleL/nvim navim
-  message "Create Executable ..."
-  cp -r navim/executable/navim ~/.local/bin/
-}
-
 function main() {
   print_logo 
   if confirm "Would you like to install Neovim v0.8.0 (sudo mode required)?"; then 
@@ -114,9 +105,6 @@ function main() {
   fi
   clone_config
   install_packer
-  if confirm "Would you like to install an seperate 'navim' Command (Linux / MacOS only)?"; then 
-    install_extra_executable
-  fi
   hint
 }
 
