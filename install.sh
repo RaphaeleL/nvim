@@ -97,13 +97,12 @@ function confirm() {
 }
 
 function install_extra_executable() {
-  message "Create Executable ..."
-  cp core/exe ~/.local/bin/navim 
   message "Install Core ..."
   cd ~/.local/share 
   mkdir navim 
   git clone https://github.com/RaphaeleL/nvim navim
-  cp -r ../../core/site navim/
+  message "Create Executable ..."
+  cp -r navim/executable/navim ~/.local/bin/
 }
 
 function main() {
