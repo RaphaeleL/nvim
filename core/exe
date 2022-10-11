@@ -1,7 +1,0 @@
-#!/bin/sh
-
-export LUNARVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"/Users/raphaele/.local/share/navim"}"
-export LUNARVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"/Users/raphaele/.config/navim"}"
-export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"/Users/raphaele/.cache/navim"}"
-
-exec nvim -u "$LUNARVIM_RUNTIME_DIR/navim/init.lua" "$@"
