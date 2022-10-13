@@ -90,7 +90,7 @@ menu.register({
 			l = { ":lua require('spectre').open_file_search()<cr>", "Search Replace in File" },
 		},
 		d = {
-			namde = "+Diagnostics",
+			a = { ":LspToggleAutoFormat", "Toggle Autoformat" },
 			D = { ":Telescope lsp_definitions<cr>", "Goto Definition" },
 			k = { ":Telescope lsp_declarations<cr>", "Goto Declaration" },
 			i = { ":Telescope lsp_implementations<cr>", "Goto Implementation" },
