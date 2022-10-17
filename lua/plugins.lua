@@ -69,10 +69,10 @@ return require("packer").startup(function()
 	use({ "j-hui/fidget.nvim" }) -- Lsp UI
 	use({ "goolord/alpha-nvim" }) -- Dashboard
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
-	use({ "ghillb/cybu.nvim" }) -- Buffer Overview
+	-- use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
-	use({ "SmiteshP/nvim-navic" }) -- Get File & Function
+	-- use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
+	-- use({ "SmiteshP/nvim-navic" }) -- Get File & Function
 	use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previer
 
 	-- Automatically set up your configuration after cloning packer.nvim
