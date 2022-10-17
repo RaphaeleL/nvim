@@ -20,7 +20,7 @@ vim.g.indent_blankline_use_treesitter = false
 vim.g.indent_blankline_show_current_context = true
 
 vim.opt.list = true
-vim.opt.listchars:append("eol:¶")
+-- vim.opt.listchars:append("eol:¶")
 -- vim.opt.listchars:append("eol:↴")
 
 indent_blankline.setup({
