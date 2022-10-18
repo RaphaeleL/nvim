@@ -53,7 +53,7 @@ return require("packer").startup(function()
 	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
 	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
 	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-	use({ "ray-x/lsp_signature.nvim" }) -- Show function signature
+	-- use({ "ray-x/lsp_signature.nvim" }) -- Show function signature
 
 	-- Auto Completion
 	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
@@ -74,6 +74,7 @@ return require("packer").startup(function()
 	-- use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
 	-- use({ "SmiteshP/nvim-navic" }) -- Get File & Function
 	use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previer
+	use({ "RRethy/vim-illuminate" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
