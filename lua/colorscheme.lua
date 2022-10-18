@@ -31,7 +31,7 @@ require("catppuccin").setup({
 		gitgutter = false,
 		gitsigns = true,
 		hop = false,
-		illuminate = false,
+		illuminate = true,
 		leap = false,
 		lightspeed = false,
 		lsp_saga = false,
