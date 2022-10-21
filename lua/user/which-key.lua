@@ -117,8 +117,8 @@ menu.register({
 			i = { ":lua vim.lsp.buf.hover()<cr>", "Informations" },
 			s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
-			f = { ":foldopen<cr>", "Open Fold" },
-			u = { ":foldclose<cr>", "Fold Expression" },
+			u = { ":foldopen<cr>", "Open Fold" },
+			f = { ":foldclose<cr>", "Fold Expression" },
 		},
 		g = {
 			name = "+Git",
