@@ -44,3 +44,9 @@ vim.opt.relativenumber = true
 
 vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
 vim.cmd([[set formatoptions-=cro]])
+
+vim.cmd([[set foldmethod=expr]])
+vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
+vim.cmd([[set foldlevel=20]])
+
+
