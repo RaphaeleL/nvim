@@ -8,7 +8,7 @@ require("kanagawa").setup({
 	variablebuiltinStyle = { italic = true },
 	specialReturn = true,
 	specialException = true,
-	transparent = false,
+	transparent = true,
 	dimInactive = false,
 	globalStatus = false,
 	terminalColors = true,

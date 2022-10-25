@@ -90,6 +90,7 @@ menu.register({
 			l = { ":lua require('spectre').open_file_search()<cr>", "Search Replace in File" },
 		},
 		d = {
+			name = "+Diagnostics",
 			a = { ":LspToggleAutoFormat", "Toggle Autoformat" },
 			D = { ":Telescope lsp_definitions<cr>", "Goto Definition" },
 			k = { ":Telescope lsp_declarations<cr>", "Goto Declaration" },
@@ -119,6 +120,8 @@ menu.register({
 			S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
 			u = { ":foldopen<cr>", "Open Fold" },
 			f = { ":foldclose<cr>", "Fold Expression" },
+			t = { ":ToggleTerm<cr>", "Open Terminal" },
+			f = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
 		},
 		g = {
 			name = "+Git",
@@ -131,26 +134,14 @@ menu.register({
 			t = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
 			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
 		},
-		["."] = {
-			name = "+Help",
-			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
-			k = { ":Telescope keymaps<cr>", "Keymaps from Telescope" },
-			K = { ":map<cr>", "Keymaps from Neovim" },
-			c = { ":Telescope commands<cr>", "Commands" },
-		},
-		["p"] = {
+		p = {
 			name = "+Packer",
 			i = { ":PackerInstall<cr>", "Install" },
 			s = { ":PackerSync<cr>", "Sync" },
 			c = { ":PackerClean<cr>", "Clean" },
 			C = { ":PackerCompile<cr>", "Compile" },
 		},
-		["t"] = {
-			name = "+Terminal",
-			t = { ":ToggleTerm<cr>", "Open Terminal" },
-			f = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
-		},
-		["S"] = {
+		S = {
 			name = "+UI",
 			i = { ":IndentBlanklineToggle<cr>", "Indentline" },
 			t = { ":Gitsigns toggle_signs<cr>", "Git Toggle Line" },
@@ -160,10 +151,12 @@ menu.register({
 			w = { ":set wrap<cr>", "Wrap" },
 			W = { ":set nowrap<cr>", "Unwrap" },
 		},
-		["m"] = {
-			name = "+Markdown",
-			m = { ":MarkdownPreview<cr>", "Start Preview" },
-			s = { ":MarkdownPreviewStop<cr>", "Stop Preview" },
+		["."] = {
+			name = "+Help",
+			h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
+			k = { ":Telescope keymaps<cr>", "Keymaps from Telescope" },
+			K = { ":map<cr>", "Keymaps from Neovim" },
+			c = { ":Telescope commands<cr>", "Commands" },
 		},
 	},
 })

@@ -13,8 +13,6 @@ keymap("n", "<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- Navigate between Tabs
--- keymap("n", "<TAB>", ":CybuNext<cr>")
--- keymap("n", "<S-TAB>", ":CybuPrev<cr>")
 keymap("n", "<TAB>", ":bprev<cr>")
 keymap("n", "<S-TAB>", ":bnext<cr>")
 
@@ -43,6 +41,9 @@ keymap("n", "<Leader>Y", '"+Y')
 keymap("n", "<Leader>d", '"+d')
 keymap("v", "<Leader>d", '"+d')
 keymap("x", "<Leader>p", '"_dP')
+
+-- Delete Character without Copy it
+keymap("n", "x", '"_x')
 
 -- TODO: Which Key Transition
 
