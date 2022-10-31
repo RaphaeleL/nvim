@@ -47,7 +47,6 @@ return require("packer").startup(function()
 
 	-- UI
 	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
-	use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
@@ -76,7 +75,7 @@ return require("packer").startup(function()
 	-- use({ "ghillb/cybu.nvim" }) -- Buffer Overview
 	-- use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
 	-- use({ "SmiteshP/nvim-navic" }) -- Get File & Function
-	-- use({ "ray-x/lsp_signature.nvim" }) -- Show function signature
+	-- use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
