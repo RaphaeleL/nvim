@@ -10,6 +10,7 @@ end
 
 local servers = {
 	"cssls",
+  "texlab",
 	"cssmodules_ls",
 	"emmet_ls",
 	"html",
