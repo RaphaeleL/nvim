@@ -48,12 +48,12 @@ keymap("n", "x", '"_x')
 -- TODO: Which Key Transition
 
 -- Basic
-keymap("n", "f", ":Telescope find_files<cr>")
+-- keymap("n", "f", ":Telescope find_files<cr>")
 keymap("n", "e", ":NvimTreeToggle<cr>")
 keymap("n", "c", ":bdelete<cr>")
 keymap("n", "r", ":Jaq bang<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
-keymap("n", "df", ":lua vim.lsp.buf.format { async = true }<cr>")
+-- keymap("n", "df", ":lua vim.lsp.buf.format { async = true }<cr>")
 
 -- Diagnostic
 keymap("n", "dl", ":lua vim.diagnostic.open_float()<cr>")
