@@ -31,7 +31,8 @@ return require("packer").startup(function()
 	-- Colorscheme
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
-	use({ "navarasu/onedark.nvim" })
+	use({ "navarasu/onedark.nvim" }) -- Colorscheme
+	use({ "tiagovla/tokyodark.nvim" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer

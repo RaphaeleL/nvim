@@ -81,13 +81,13 @@ require("catppuccin").setup({
 })
 
 require("onedark").setup({
-	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	style = "darker",
 	transparent = true,
 	term_colors = true,
 	ending_tildes = false,
 	cmp_itemkind_reverse = false,
 	toggle_style_key = nil,
-	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
 	code_style = {
 		comments = "italic",
 		keywords = "none",
@@ -107,4 +107,9 @@ require("onedark").setup({
 	},
 })
 
-vim.cmd("colorscheme onedark")
+vim.g.tokyodark_transparent_background = true
+vim.g.tokyodark_enable_italic_comment = true
+vim.g.tokyodark_enable_italic = true
+vim.g.tokyodark_color_gamma = "1.0"
+
+vim.cmd("colorscheme catppuccin")
