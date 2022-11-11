@@ -29,9 +29,9 @@ return require("packer").startup(function()
 	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
 
 	-- Colorscheme
-	use({ "Mofiqul/vscode.nvim" }) -- Colorscheme
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
+	use({ "navarasu/onedark.nvim" })
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer

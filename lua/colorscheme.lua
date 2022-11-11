@@ -80,4 +80,31 @@ require("catppuccin").setup({
 	},
 })
 
-vim.cmd("colorscheme catppuccin")
+require("onedark").setup({
+	style = "darker", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+	transparent = true,
+	term_colors = true,
+	ending_tildes = false,
+	cmp_itemkind_reverse = false,
+	toggle_style_key = nil,
+	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+	code_style = {
+		comments = "italic",
+		keywords = "none",
+		functions = "none",
+		strings = "none",
+		variables = "none",
+	},
+	lualine = {
+		transparent = true,
+	},
+	colors = {},
+	highlights = {},
+	diagnostics = {
+		darker = true,
+		undercurl = true,
+		background = true,
+	},
+})
+
+vim.cmd("colorscheme onedark")
