@@ -73,11 +73,6 @@ return require("packer").startup(function()
 	use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previer
 	use({ "RRethy/vim-illuminate" }) -- Highlight same Words
 
-	-- use({ "ghillb/cybu.nvim" }) -- Buffer Overview
-	-- use({ "fgheng/winbar.nvim" }) -- Shows Top Bar with Path
-	-- use({ "SmiteshP/nvim-navic" }) -- Get File & Function
-	-- use({ "nvim-lualine/lualine.nvim" }) -- Menu Bar
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	if packer_bootstrap then
 		require("packer").sync()
