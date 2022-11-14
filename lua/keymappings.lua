@@ -47,6 +47,7 @@ keymap("n", "x", '"_x')
 
 -- Basic
 keymap("n", "e", ":NvimTreeToggle<cr>")
+keymap("n", "c", ":bdelete<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
 
 -- Diagnostic
