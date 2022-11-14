@@ -32,7 +32,7 @@ return require("packer").startup(function()
 	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
 	use({ "navarasu/onedark.nvim" }) -- Colorscheme
-	use({ "tiagovla/tokyodark.nvim" })
+	use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
@@ -70,7 +70,6 @@ return require("packer").startup(function()
 	use({ "goolord/alpha-nvim" }) -- Dashboard
 	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
 	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "iamcco/markdown-preview.nvim" }) -- Markdown Previer
 	use({ "RRethy/vim-illuminate" }) -- Highlight same Words
 
 	-- Automatically set up your configuration after cloning packer.nvim
