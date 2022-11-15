@@ -29,14 +29,11 @@ return require("packer").startup(function()
 	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
 
 	-- Colorscheme
-	use({ "rebelot/kanagawa.nvim" }) -- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
-	use({ "navarasu/onedark.nvim" }) -- Colorscheme
-	use({ "tiagovla/tokyodark.nvim" }) -- Colorscheme
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-ui-select.nvim" })
+	use({ "nvim-telescope/telescope-ui-select.nvim" }) -- Action Select
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting

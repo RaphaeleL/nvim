@@ -1,22 +1,3 @@
-require("kanagawa").setup({
-	undercurl = true,
-	commentStyle = { italic = true },
-	functionStyle = {},
-	keywordStyle = { italic = true },
-	statementStyle = { bold = true },
-	typeStyle = {},
-	variablebuiltinStyle = { italic = true },
-	specialReturn = true,
-	specialException = true,
-	transparent = true,
-	dimInactive = false,
-	globalStatus = false,
-	terminalColors = true,
-	colors = {},
-	overrides = {},
-	theme = "default",
-})
-
 require("catppuccin").setup({
 	transparent_background = true,
 	integrations = {
@@ -79,37 +60,5 @@ require("catppuccin").setup({
 		},
 	},
 })
-
-require("onedark").setup({
-	style = "darker",
-	transparent = true,
-	term_colors = true,
-	ending_tildes = false,
-	cmp_itemkind_reverse = false,
-	toggle_style_key = nil,
-	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" },
-	code_style = {
-		comments = "italic",
-		keywords = "none",
-		functions = "none",
-		strings = "none",
-		variables = "none",
-	},
-	lualine = {
-		transparent = true,
-	},
-	colors = {},
-	highlights = {},
-	diagnostics = {
-		darker = true,
-		undercurl = true,
-		background = true,
-	},
-})
-
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = "1.0"
 
 vim.cmd("colorscheme catppuccin")
