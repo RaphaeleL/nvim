@@ -69,7 +69,7 @@ $ brew install --cask font-<FONT NAME>-nerd-font
 
 ### Colorscheme
 
-The colorscheme changes regularly and is mostly adjusted to subtle (therefore the colorscheme of the images from the showcase below is also not always 100% up to date). At the moment one from [catppuccin/nvim"](https://github.com/catppuccin/nvim") is used.
+The colorscheme changes regularly and is mostly adjusted to subtle (therefore the colorscheme of the images from the showcase below is also not always 100% up to date). At the moment one from [catppuccin/nvim](https://github.com/catppuccin/nvim) is used.
 
 ### Structure
 
