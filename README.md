@@ -1,4 +1,4 @@
- <img height="150" src="assets/logo.png" align="right" alt="Logo">
+<img height="150" src="assets/logo.png" align="right" alt="Logo">
 
 # NaVim
 
@@ -69,7 +69,7 @@ $ brew install --cask font-<FONT NAME>-nerd-font
 
 ### Colorscheme
 
-The colorscheme changes regularly and is mostly adjusted to subtle (therefore the colorscheme of the images from the showcase below is also not always 100% up to date). At the moment one from [Mofiqul/vscode](https://github.com/Mofiqul/vscode.nvim) is used.
+The colorscheme changes regularly and is mostly adjusted to subtle (therefore the colorscheme of the images from the showcase below is also not always 100% up to date). At the moment one from [catppuccin/nvim"](https://github.com/catppuccin/nvim") is used.
 
 ### Structure
 
@@ -81,7 +81,7 @@ The File Strucutre explained.
     - lua/              -- contains the configuration
         - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name
             - lsp/      -- Lsp Configuration
-            - *.lua     -- Each has a Setup File if needed
+            - *.lua     -- Each Plugin has a Setup File (if needed)
         - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
     - init.lua          -- the start of the nvim configuration
 ```
@@ -115,11 +115,12 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 ### Colorscheme
 
-- Colorscheme: [Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
+- Colorscheme: [catppuccin/nvim"](https://github.com/catppuccin/nvim")
 
 ### Telescope
 
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- Action Select: [nvim-telescope/telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 
 ### Treesitter
 
@@ -134,7 +135,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ### UI
 
 - Icons: [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-- Menu Bar: [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
 ### LSP
 
@@ -142,8 +142,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 - Nvim Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 - Mason Config: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - Diagnostics / Code Actions: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-- Show function signature: [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)
-- Lsp Line Diagnostics: [https://git.sr.ht/~whynothugo/lsp_lines.nvim](https://github.com/https://git.sr.ht/~whynothugo/lsp_lines.nvim)
 
 ### Auto Completion
 
@@ -161,16 +159,12 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 - Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 - Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 - File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- Buffer Overview: [ghillb/cybu.nvim](https://github.com/ghillb/cybu.nvim)
 - Indent Highlighting: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Get File, Function, ...: [fgheng/winbar.nvim](https://github.com/fgheng/winbar.nvim)
-- Shows Top Bar with Path: [SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic)
-- Smooth Scrolling: [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
-- Smooth Jumping: [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim)
+- Highlight same Words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 ## Showcase
 
-> Some small details are not up to date (like Lualine or winbar/navic), but there are not new Pictures after every new Plugin :D
+> Some small details are not up to date (like Lualine, Winbar/Navic and WhichKey), but there are not new Pictures after every new Plugin :D
 
 ![Demo-1](./assets/Demo_1.png)
 ![Demo-2](./assets/Demo_2.png)
