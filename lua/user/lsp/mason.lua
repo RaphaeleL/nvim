@@ -65,5 +65,4 @@ for _, server in pairs(servers) do
 	server = vim.split(server, "@")[1]
 
 	lspconfig[server].setup(opts)
-	::continue::
 end
