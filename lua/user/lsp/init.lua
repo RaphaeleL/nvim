@@ -27,7 +27,6 @@ M.server_capabilities = function()
 	end)
 end
 
-require("user.lsp.lsp-signature")
 require("user.lsp.mason")
 require("user.lsp.handlers").setup()
 require("user.lsp.null-ls")
