@@ -133,6 +133,7 @@ menu.register({
 			a = { ":Gitsigns blame_line<cr>", "Blame" },
 			t = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
 			n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
+			d = { ":DiffviewOpen<cr>", "Show Diffs" },
 		},
 		p = {
 			name = "+Packer",

@@ -27,6 +27,7 @@ return require("packer").startup(function()
 	-- Git
 	use({ "lewis6991/gitsigns.nvim" }) -- Gitsigns beside Numbers
 	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
+	use({ "sindrets/diffview.nvim" }) -- Show Diff
 
 	-- Colorscheme
 	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
