@@ -1,73 +1,163 @@
--- Set wrap in Markdown and Latex
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "markdown", "tex" },
-	callback = function()
-		vim.opt_local.wrap = true
-	end,
+local menu = require("which-key")
+
+menu.setup({
+  plugins = {
+    marks = true,
+    registers = true,
+    spelling = {
+      enabled = true,
+      suggestions = 20,
+    },
+    presets = {
+      operators = false,
+      motions = true,
+      text_objects = true,
+      windows = true,
+      nav = true,
+      z = true,
+      g = true,
+    },
+  },
+  key_labels = {
+    ["<space>"] = "SPC",
+    ["<cr>"] = "RET",
+    ["<tab>"] = "TAB",
+  },
+  icons = {
+    breadcrumb = "»",
+    separator = "➜",
+    group = "+",
+  },
+  popup_mappings = {
+    scroll_down = "<c-d>",
+    scroll_up = "<c-u>",
+  },
+  window = {
+    border = "rounded",
+    position = "bottom",
+    margin = { 1, 0, 1, 0 },
+    padding = { 1, 1, 1, 1 },
+    winblend = 0,
+  },
+  layout = {
+    height = { min = 4, max = 25 },
+    width = { min = 20, max = 50 },
+    spacing = 3,
+    align = "left",
+  },
+  ignore_missing = true,
+  hidden = { "<silent>", ":", ":", "<cr>", "call", "lua", "^:", "^ " },
+  show_help = true,
+  triggers = "auto",
+  triggers_blacklist = {
+    i = { "j", "k" },
+    v = { "j", "k" },
+  },
 })
 
--- Remove statusline and tabline when in alpha
-vim.api.nvim_create_autocmd({ "User" }, {
-	pattern = { "AlphaReady" },
-	callback = function()
-		vim.cmd([[
-      set showtabline=0
-      set laststatus=0
-    ]])
-	end,
-})
-
--- Fix Autocomment
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-	callback = function()
-		vim.cmd("set formatoptions-=cro")
-	end,
-})
-
--- use 'q' to quit from some plugins
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = {
-		"Jaq",
-		"qf",
-		"help",
-		"man",
-		"mason",
-		"spectre_panel",
-		"lir",
-		"DressingSelect",
-		"Markdown",
-	},
-	callback = function()
-		vim.cmd([[
-      nnoremap <silent> <buffer> q :close <cr>
-      set nobuflisted
-    ]])
-	end,
-})
-
--- Autoformat on Save
--- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
--- 	callback = function()
--- 		vim.lsp.buf.format({ async = true })
--- 	end,
--- })
-
--- Reload neovim whenever the plugins.lua file is saved
--- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
--- 	pattern = { "plugins.lua" },
--- 	callback = function()
--- 		vim.cmd([[source <afile> | PackerSync]])
--- 	end,
--- })
-
--- Faster yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("HighlightYank", {}),
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({
-			higroup = "IncSearch",
-			timeout = 40,
-		})
-	end,
+menu.register({
+  ["<Leader>"] = {
+    [";"] = { ":Alpha<cr>", "Dashboard" },
+    ["/"] = { ":cd %:h<cr>", "Goto Current Directory" },
+    q = { ":q!<cr>", "Quit" },
+    n = { ":noh<cr>", "No Highlighting" },
+    f = { ":Telescope find_files<cr>", "Find files" },
+    e = { ":NvimTreeToggle<cr>", "File Explorer" },
+    u = { ":UndotreeToggle<cr>", "History" },
+    r = { ":Jaq bang<cr>", "Run Code" },
+    k = { ":CommentToggle<cr>", "Comment Line" },
+    o = { ":Telescope lsp_document_symbols<cr>", "Outline" },
+    l = { ":'<,'>CommentToggle<cr>", "Comment Block" },
+    -- h = {
+    --   name = "+Harpoon",
+    --   n = { ":lua require('harpoon.ui').nav_next()<cr>", "Show Next" },
+    --   p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Show Prev" },
+    --   a = { ":lua require('harpoon.mark').add_file()<cr>", "Add File" },
+    --   s = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Menu" },
+    -- },
+    b = {
+      name = "+Buffer",
+      b = { ":Telescope buffers<cr>", "Show buffers" },
+      c = { ":bdelete<cr>", "Close Window" },
+      v = { ":vsplit<cr>", "Vertical Split" },
+      h = { ":split<cr>", "Horizontal Split" },
+    },
+    s = {
+      name = "+Search (and Replace)",
+      r = { ":Telescope oldfiles<cr>", "Open Recent File" },
+      t = { ":Telescope live_grep<cr>", "Live Grep" },
+      g = { ":lua require('spectre').open_visual()<cr>", "Search Replace in Project" },
+      l = { ":lua require('spectre').open_file_search()<cr>", "Search Replace in File" },
+    },
+    d = {
+      name = "+Diagnostics",
+      D = { ":Telescope lsp_definitions<cr>", "Goto Definition" },
+      k = { ":Telescope lsp_declarations<cr>", "Goto Declaration" },
+      i = { ":Telescope lsp_implementations<cr>", "Goto Implementation" },
+      r = { ":Telescope lsp_references<cr>", "Goto References" },
+      l = { ":lua vim.diagnostic.open_float()<cr>", "Line Diagnostic" },
+      d = { ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Diagnostics Buffer" },
+      w = { ":Telescope diagnostics<cr>", "Diagnostics Workspace" },
+      s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+      f = { ":lua vim.lsp.buf.format { async = true }<cr>", "Format" },
+      e = { ":LspInfo<cr>", "Info" },
+      o = { ":LspInstallInfo<cr>", "Installer Info" },
+      n = { ":lua vim.diagnostic.goto_next({buffer=0})<cr>", "Next Diagnostic" },
+      N = { ":lua vim.diagnostic.goto_prev({buffer=0})<cr>", "Previous Diagnostic" },
+      m = { ":Mason<cr>", "LSP Package Manager (Mason)" },
+    },
+    a = {
+      name = "+Actions",
+      F = { ":LspToggleAutoFormat<cr>", "Toggle Autoformat" },
+      c = { ":lua vim.lsp.buf.declaration()<cr>", "Declaration" },
+      a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Actions" },
+      R = { ":lua vim.lsp.buf.references()<cr>", "References" },
+      D = { ":lua vim.lsp.buf.definition()<cr>", "Definition" },
+      h = { ":lua vim.lsp.buf.signature_help()<cr>", "Signature Help" },
+      q = { ":lua vim.diagnostic.setloclist()<cr>", "Set Location List" },
+      I = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+      i = { ":lua vim.lsp.buf.hover()<cr>", "Informations" },
+      s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+      S = { ":Telescope lsp_dynamic_workspace_symbols<cr>", "Symbols Workspace" },
+      u = { ":foldopen<cr>", "Open Fold" },
+      f = { ":foldclose<cr>", "Fold Expression" },
+      t = { ":ToggleTerm<cr>", "Open Terminal" },
+      T = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
+      r = { ":IncRename ", "Rename" },
+    },
+    g = {
+      name = "+Git",
+      s = { ":Telescope git_status<cr>", "Status" },
+      l = { ":LazyGit<cr>", "LazyGit" },
+      c = { ":Telescope git_commits<cr>", "Commits" },
+      b = { ":Telescope git_branches<cr>", "Branches" },
+      d = { ":Gitsigns diffthis HEAD<cr>", "Diff" },
+      a = { ":Gitsigns blame_line<cr>", "Blame" },
+      t = { ":Gitsigns toggle_signs<cr>", "Toggle Line" },
+      n = { ":Gitsigns toggle_numhl<cr>", "Toggle Num" },
+    },
+    p = {
+      name = "+Packer",
+      i = { ":PackerInstall<cr>", "Install" },
+      s = { ":PackerSync<cr>", "Sync" },
+      c = { ":PackerClean<cr>", "Clean" },
+      C = { ":PackerCompile<cr>", "Compile" },
+    },
+    S = {
+      name = "+UI",
+      i = { ":IndentBlanklineToggle<cr>", "Indentline" },
+      t = { ":Gitsigns toggle_signs<cr>", "Git Toggle Line" },
+      n = { ":Gitsigns toggle_numhl<cr>", "Git Toggle Num" },
+      c = { ":Telescope colorscheme<cr>", "Colorscheme" },
+      w = { ":set wrap<cr>", "Wrap" },
+      W = { ":set nowrap<cr>", "Unwrap" },
+    },
+    ["."] = {
+      name = "+Help",
+      h = { ":lua require('telescope.builtin').help_tags()<cr>", "Configuration Help" },
+      k = { ":Telescope keymaps<cr>", "Keymaps from Telescope" },
+      K = { ":map<cr>", "Keymaps from Neovim" },
+      c = { ":Telescope commands<cr>", "Commands" },
+    },
+  },
 })
