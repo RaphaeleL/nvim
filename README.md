@@ -115,7 +115,7 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 ### Colorscheme
 
-- Colorscheme: [catppuccin/nvim"](https://github.com/catppuccin/nvim")
+- Colorscheme: [catppuccin/nvim](https://github.com/catppuccin/nvim)
 
 ### Telescope
 
