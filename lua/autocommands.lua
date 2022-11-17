@@ -1,6 +1,6 @@
--- Set wrap and spell in markdown
+-- Set wrap in Markdown and Latex
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "markdown" },
+	pattern = { "markdown", "tex" },
 	callback = function()
 		vim.opt_local.wrap = true
 	end,
@@ -11,9 +11,9 @@ vim.api.nvim_create_autocmd({ "User" }, {
 	pattern = { "AlphaReady" },
 	callback = function()
 		vim.cmd([[
-            set showtabline=0
-            set laststatus=0
-        ]])
+      set showtabline=0
+      set laststatus=0
+    ]])
 	end,
 })
 
@@ -31,18 +31,17 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		"qf",
 		"help",
 		"man",
-		"lspinfo",
+		"mason",
 		"spectre_panel",
 		"lir",
 		"DressingSelect",
-		"tsplayground",
 		"Markdown",
 	},
 	callback = function()
 		vim.cmd([[
-            nnoremap <silent> <buffer> q :close <cr>
-            set nobuflisted
-        ]])
+      nnoremap <silent> <buffer> q :close <cr>
+      set nobuflisted
+    ]])
 	end,
 })
 
@@ -53,7 +52,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 -- 	end,
 -- })
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Reload neovim whenever the plugins.lua file is saved
 -- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
 -- 	pattern = { "plugins.lua" },
 -- 	callback = function()
