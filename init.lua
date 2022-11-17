@@ -1,6 +1,6 @@
 require("plugins") -- Get all the Plugins (managed by Packer)
 require("settings") -- All (Neo)-Vim Settings
-require("keymappings") -- Basic Keymaps (more are in lura/user/which-key.lua)
+require("keymappings") -- Basic Keymaps (more are in lua/user/which-key.lua)
 require("autocommands") -- Commands which are executed automatically
 require("setup") -- Settings for each Plugin
-require("colorscheme") -- Colors
+require("colorscheme") -- Colorscheme
