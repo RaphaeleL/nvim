@@ -123,7 +123,6 @@ menu.register({
       f = { ":foldclose<cr>", "Fold Expression" },
       t = { ":ToggleTerm<cr>", "Open Terminal" },
       T = { ":ToggleTerm direction=float<cr>", "Open Floating Terminal" },
-      r = { ":IncRename ", "Rename" },
     },
     g = {
       name = "+Git",

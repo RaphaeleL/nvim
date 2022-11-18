@@ -50,10 +50,6 @@ keymap("n", "e", ":NvimTreeToggle<cr>")
 keymap("n", "c", ":bdelete<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
 
--- Diagnostic
-keymap("n", "dl", ":lua vim.diagnostic.open_float()<cr>")
-keymap("n", "dd", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
-
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
 
