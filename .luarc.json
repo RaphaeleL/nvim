@@ -1,14 +1,17 @@
 {
-  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-  "Lua.diagnostics.disable": ["different-requires"],
-  "Lua.diagnostics.globals": [
-    "vim",
-    "packer_bootstrap",
-    "use",
-    "require",
-    "collapse_all",
-    "vsplit_preview",
-    "edit_or_open",
-    "plugins"
-  ]
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.diagnostics.disable": [
+        "different-requires"
+    ],
+    "Lua.diagnostics.globals": [
+        "vim",
+        "packer_bootstrap",
+        "use",
+        "require",
+        "collapse_all",
+        "vsplit_preview",
+        "edit_or_open",
+        "plugins"
+    ],
+    "Lua.workspace.checkThirdParty": false
 }
