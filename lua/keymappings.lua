@@ -55,3 +55,6 @@ keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
 
 -- LazyGit
 keymap("n", "gl", ":LazyGit<cr>")
+
+-- Faster Exit 
+keymap("n", "<C-q>", ":wqall!<cr>")
