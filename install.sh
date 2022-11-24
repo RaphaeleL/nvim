@@ -50,9 +50,9 @@ function clone_neovim() {
 }
 
 function install_neovim() {
-  message "Install Neovim v0.8.0 ..."
+  message "Install Neovim v0.8.1 ..."
   cd ~/neovim
-  git checkout v0.7.2 
+  git checkout v0.8.1 
   make CMAKE_BUILD_TYPE=Release
   make install
 }
@@ -98,7 +98,7 @@ function confirm() {
 
 function main() {
   print_logo 
-  if confirm "Would you like to install Neovim v0.8.0 (sudo mode required)?"; then 
+  if confirm "Would you like to install Neovim v0.8.1 (sudo mode required)?"; then 
     clone_neovim
     install_neovim
     remove_nvim_repo
