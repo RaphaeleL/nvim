@@ -9,7 +9,7 @@ macOS · Linux · (Windows)
 
 ## Installation
 
-> Neovim 0.8.0
+> Neovim 0.8.1
 
 ### Package-Manager
 
