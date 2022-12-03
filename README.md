@@ -173,3 +173,10 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ![Demo-5](./assets/Demo_5.png)
 ![Demo-6](./assets/Demo_6.png)
 ![Demo-7](./assets/Demo_7.png)
+
+# Acknowledgments
+
+This Configuration is inspired by:
+
+- [NvChad](https://github.com/NvChad/NvChad)
+- [LunarVim](https://github.com/LunarVim/LunarVim)
