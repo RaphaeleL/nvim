@@ -67,6 +67,7 @@ menu.register({
     r = { ":Jaq bang<cr>", "Run Code" },
     k = { ":CommentToggle<cr>", "Comment Line" },
     o = { ":Telescope lsp_document_symbols<cr>", "Outline" },
+    t = { ":Telescope file_browser<cr>", "File Browser" },
     l = { ":'<,'>CommentToggle<cr>", "Comment Block" },
     -- h = {
     --   name = "+Harpoon",

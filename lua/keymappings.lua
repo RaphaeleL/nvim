@@ -47,6 +47,8 @@ keymap("n", "x", '"_x')
 
 -- Basic
 keymap("n", "e", ":NvimTreeToggle<cr>")
+keymap("n", "t", ":Telescope file_browser<cr>")
+
 keymap("n", "c", ":bdelete<cr>")
 keymap("n", "sb", ":Telescope buffers<cr>")
 

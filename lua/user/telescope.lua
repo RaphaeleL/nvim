@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 telescope.setup({
 	defaults = {
@@ -175,11 +176,24 @@ telescope.setup({
 			case_mode = "smart_case",
 		},
 		["ui-select"] = {
-			require("telescope.themes").get_dropdown({
-				-- even more opts
-			}),
+			require("telescope.themes").get_dropdown({}),
+		},
+		file_browser = {
+			theme = "ivy",
+			hijack_netrw = true,
+			mappings = {
+				["i"] = {},
+				["n"] = {
+					["+"] = fb_actions.create,
+					["-"] = fb_actions.remove,
+					["y"] = fb_actions.copy,
+					["r"] = fb_actions.rename,
+					["m"] = fb_actions.move,
+				},
+			},
 		},
 	},
 })
 
 require("telescope").load_extension("ui-select")
+require("telescope").load_extension("file_browser")

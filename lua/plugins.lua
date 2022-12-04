@@ -39,6 +39,7 @@ return require("packer").startup(function()
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
 	use({ "nvim-telescope/telescope-ui-select.nvim" }) -- Action Select
+    use({ "nvim-telescope/telescope-file-browser.nvim" }) -- File Browser
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
