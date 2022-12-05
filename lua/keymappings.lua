@@ -13,8 +13,10 @@ keymap("n", "<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- Navigate between Tabs
-keymap("n", "<TAB>", ":bprev<cr>")
-keymap("n", "<S-TAB>", ":bnext<cr>")
+-- keymap("n", "<TAB>", ":bprev<cr>")
+-- keymap("n", "<S-TAB>", ":bnext<cr>")
+keymap("n", "<TAB>", ":CybuNext<cr>")
+keymap("n", "<S-TAB>", ":CybuPrev<cr>")
 
 -- Navigation between Vim Windows
 keymap("n", "<C-h>", "<C-w>h")
