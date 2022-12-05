@@ -22,7 +22,7 @@ If you want to make sure `nvim` is only updated when you want, then I recommend 
 ```
 $ git clone https://github.com/neovim/neovim.git
 $ cd neovim
-$ git checkout release-0.7
+$ git checkout release-0.8.1
 $ make CMAKE_BUILD_TYPE=RelWithDebInfo
 $ sudo make install
 ```
