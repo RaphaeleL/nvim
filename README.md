@@ -39,14 +39,6 @@ In addition, the following command can be used to run a series of diagnostic tes
 :checkhealth
 ```
 
-### Install the Configuration in one Command
-
-On Linux and MacOS the following command can be used to set the configuration (NaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
-
-```
-$ bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
-```
-
 ### Font
 
 Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons. Such **Nerd Fonts** are not mandatory, but are needed for the display of the icons.
@@ -67,7 +59,7 @@ $ brew install --cask font-<FONT NAME>-nerd-font
 
 ### Colorscheme
 
-The colorscheme changes regularly and is mostly adjusted to subtle (therefore the colorscheme of the images from the showcase below is also not always 100% up to date). At the moment one from [catppuccin/nvim](https://github.com/catppuccin/nvim) is used.
+At the moment one from [catppuccin/nvim](https://github.com/catppuccin/nvim) is in use.
 
 ### Structure
 
@@ -75,21 +67,14 @@ The File Strucutre explained.
 
 ```
 - nvim
-    - assets/           -- contains some demo images for the README.md
-    - lua/              -- contains the configuration
-        - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
+    - lua/              -- contains the configuration of NeoVim
+        - *.lua         -- Neovim Settings, Keymappings, ... 
     - after/plugin/
-        - *.lua         -- Each Plugin has a Setup File (if needed)
+        - *.lua         -- each Plugin has a Setup File (if needed)
     - init.lua          -- the start of every Configuration
 ```
 
-## Future
-
-In the distant future `NaVim` shall have an independent instance or configuration besides the conventional `nvim`.
-
 ## Plugins
-
-There are some popular plugins which are not listed here, for example Barber (Tab's). Mostly there are still configuration files for such plugins which have not been removed. It is better to have such files in the repository instead of having to rewrite the complex configuration.
 
 > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 
