@@ -122,9 +122,11 @@ The File Strucutre explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
+> yes, vim is always faster than neovim with plugins will ever be. but compared to the popular LunarVim, NaVim (without LazyLoading!) is almost twice as fast!
+
 - NaVim Beta: `nvim auditsc.c  0,55s user 0,13s system 72% cpu 0,932 total`
 - LunarVim Stable: `lvim auditsc.c  0,94s user 0,18s system 74% cpu 1,509 total`
-- Vim: `/usr/bin/vim auditsc.c  0,04s user 0,01s system 7% cpu 0,723 total`
+- Vim: `vim auditsc.c  0,04s user 0,01s system 7% cpu 0,723 total`
 
 # Acknowledgments
 
