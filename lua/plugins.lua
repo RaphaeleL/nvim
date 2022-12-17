@@ -3,6 +3,10 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   use { "wbthomason/packer.nvim" }
 
+  -- UNSURED IF YOU WILL SURVIVE THE DECLUTTER
+  use { "j-hui/fidget.nvim" } -- simply useless
+  use { "nvim-telescope/telescope-file-browser.nvim" } -- netrw
+
   -- Basic Plugins
   use { "mbbill/undotree" } -- Undo History
   use { "lewis6991/impatient.nvim" } -- Better Performance
@@ -17,14 +21,11 @@ return require('packer').startup(function(use)
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim" } -- File Explorer
-  use { "nvim-telescope/telescope-file-browser.nvim" } -- File Browser
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter" } -- Syntax Highlighting
 
-  -- UI
-  use { "j-hui/fidget.nvim" } -- Lsp UI
-
+  -- LSP
   use {
     "VonHeikemen/lsp-zero.nvim",
     requires = {
