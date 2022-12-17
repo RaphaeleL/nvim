@@ -4,7 +4,6 @@ return require('packer').startup(function(use)
   use { "wbthomason/packer.nvim" }
 
   -- UNSURED IF YOU WILL SURVIVE THE DECLUTTER
-  use { "j-hui/fidget.nvim" } -- simply useless
   use { "nvim-telescope/telescope-file-browser.nvim" } -- netrw
 
   -- Basic Plugins

@@ -118,10 +118,6 @@ The File Strucutre explained.
 - Snippets: [hrsh7th/cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
 - Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
-### Nice but not Needed
-
-- Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
-
 # Performance 
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
