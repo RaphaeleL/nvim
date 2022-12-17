@@ -139,18 +139,6 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 - Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
-## Showcase
-
-> Some small details are not up to date (like Lualine, Winbar/Navic and WhichKey), but there are not new Pictures after every new Plugin :D
-
-![Demo-1](./assets/Demo_1.png)
-![Demo-2](./assets/Demo_2.png)
-![Demo-3](./assets/Demo_3.png)
-![Demo-4](./assets/Demo_4.png)
-![Demo-5](./assets/Demo_5.png)
-![Demo-6](./assets/Demo_6.png)
-![Demo-7](./assets/Demo_7.png)
-
 # Acknowledgments
 
 This Configuration is inspired by:
