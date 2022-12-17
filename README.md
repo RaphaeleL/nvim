@@ -79,11 +79,10 @@ The File Strucutre explained.
 - nvim
     - assets/           -- contains some demo images for the README.md
     - lua/              -- contains the configuration
-        - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name
-            - lsp/      -- Lsp Configuration
-            - *.lua     -- Each Plugin has a Setup File (if needed)
         - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
-    - init.lua          -- the start of the nvim configuration
+    - after/plugin/
+        - *.lua         -- Each Plugin has a Setup File (if needed)
+    - init.lua          -- the start of every Configuration
 ```
 
 ## Future
@@ -99,14 +98,8 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ### Basic Plugins
 
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
-- Comment Blocks: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
-- Auto Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-
-### Keybinds
-
-- Shortcut Menu: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### Git
 
@@ -120,47 +113,31 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 ### Telescope
 
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- Action Select: [nvim-telescope/telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
+- File Browser: [nvim-telescope/telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 ### Treesitter
 
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-### Snippets
-
-- Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
-- Snippets: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-
-### UI
-
-- Icons: [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
-
 ### LSP
 
+> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
+
 - Lsp Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- Nvim Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-- Mason Config: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- Diagnostics / Code Actions: [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
-
-### Auto Completion
-
-- Auto Completion Engine: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Auto Completion for Buffered words: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
-- Auto Completion for Commands: [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)
-- Auto Completion for Lsp Stuff: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+- Lsp Package Manager Config: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+- Auto Completion: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- Auto Completion: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+- Auto Completion: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
+- Snippets Engine:[L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- Snippets: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
+- Snippets: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- Snippets: [hrsh7th/cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
+- Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 ### Nice but not Needed
 
-- Floating Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-- Global Search / Replace: [nvim-pack/nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
-- Run Code: [is0n/jaq-nvim](https://github.com/is0n/jaq-nvim)
 - Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
-- Dashboard: [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-- File Explorer: [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- Indent Highlighting: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Highlight same Words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 ## Showcase
 
@@ -180,3 +157,4 @@ This Configuration is inspired by:
 
 - [NvChad](https://github.com/NvChad/NvChad)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
+- [ThePrimeagen](https://github.com/ThePrimeagen)

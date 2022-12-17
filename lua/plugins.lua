@@ -1,79 +1,49 @@
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	packer_bootstrap = vim.fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-		plugins,
-	})
-end
+vim.cmd.packadd('packer.nvim')
 
-return require("packer").startup(function()
-	use({ "wbthomason/packer.nvim" })
+return require('packer').startup(function(use)
+  use { "wbthomason/packer.nvim" }
 
-	-- Basic Plugins
-	use({ "mbbill/undotree" }) -- Undo History
-	use({ "terrortylor/nvim-comment" }) -- Comment Blocks
-	use({ "windwp/nvim-autopairs" }) -- Auto Brackets
-	use({ "lewis6991/impatient.nvim" }) -- Better Performance
-	use({ "nvim-lua/plenary.nvim" }) -- some Lua Functions
+  -- Basic Plugins
+  use { "mbbill/undotree" } -- Undo History
+  use { "lewis6991/impatient.nvim" } -- Better Performance
+  use { "nvim-lua/plenary.nvim" } -- some Lua Functions
 
-	use({ "akinsho/toggleterm.nvim" }) -- Floating Terminal
-	use({ "nvim-pack/nvim-spectre" }) -- Global Search / Replace
-	use({ "is0n/jaq-nvim" }) -- Run Code
-	use({ "kyazdani42/nvim-tree.lua" }) -- File Explorer
+  -- Git
+  use { "lewis6991/gitsigns.nvim" } -- Gitsigns beside Numbers
+  use { "kdheepak/lazygit.nvim" } -- Git Commands in Nvim
 
-	-- Keybinds
-	use({ "folke/which-key.nvim" }) -- Shortcut Menu
+  -- Colorscheme
+  use { "catppuccin/nvim", as = "catppuccin" } -- Colorscheme
 
-	-- Git
-	use({ "lewis6991/gitsigns.nvim" }) -- Gitsigns beside Numbers
-	use({ "kdheepak/lazygit.nvim" }) -- Git Commands in Nvim
+  -- Telescope
+  use { "nvim-telescope/telescope.nvim" } -- File Explorer
+  use { "nvim-telescope/telescope-file-browser.nvim" } -- File Browser
 
-	-- Colorscheme
-	use({ "catppuccin/nvim", as = "catppuccin" }) -- Colorscheme
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter" } -- Syntax Highlighting
 
-	-- Telescope
-	use({ "nvim-telescope/telescope.nvim" }) -- File Explorer
-	use({ "nvim-telescope/telescope-ui-select.nvim" }) -- Action Select
-	use({ "nvim-telescope/telescope-file-browser.nvim" }) -- File Browser
+  -- UI
+  use { "j-hui/fidget.nvim" } -- Lsp UI
 
-	-- Treesitter
-	use({ "nvim-treesitter/nvim-treesitter" }) -- Syntax Highlighting
+  use {
+    "VonHeikemen/lsp-zero.nvim",
+    requires = {
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
+      { "williamboman/mason-lspconfig.nvim" },
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-path" },
+      { "saadparwaiz1/cmp_luasnip" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-nvim-lua" },
+      { "L3MON4D3/LuaSnip" },
+      { "rafamadriz/friendly-snippets" },
+    }
+  }
 
-	-- Snippets
-	use({ "L3MON4D3/LuaSnip" }) -- Snippet Engine
-	use({ "rafamadriz/friendly-snippets" }) -- Snippets
-	use({ "saadparwaiz1/cmp_luasnip" }) -- Snippets
-
-	-- UI
-	use({ "kyazdani42/nvim-web-devicons" }) -- Icons
-
-	use({ "RRethy/vim-illuminate" }) -- Highlight same Words
-	use({ "goolord/alpha-nvim" }) -- Dashboard
-	use({ "lukas-reineke/indent-blankline.nvim" }) -- Indent Highlighting
-	use({ "ghillb/cybu.nvim" }) -- Visualize Buffers
-
-	-- LSP
-	use({ "neovim/nvim-lspconfig" }) -- Lsp Config
-	use({ "williamboman/mason.nvim" }) -- Nvim Package Manager
-	use({ "williamboman/mason-lspconfig.nvim" }) -- Mason Config
-	use({ "jose-elias-alvarez/null-ls.nvim" }) -- Diagnostics / Code Actions
-
-	use({ "j-hui/fidget.nvim" }) -- Lsp UI
-
-	-- Auto Completion
-	use({ "hrsh7th/nvim-cmp" }) -- Auto Completion Engine
-	use({ "hrsh7th/cmp-buffer" }) -- Auto Completion for Buffered words
-	use({ "hrsh7th/cmp-path" }) -- Auto Completion for Paths
-	use({ "hrsh7th/cmp-cmdline" }) -- Auto Completion for Commands
-	use({ "hrsh7th/cmp-nvim-lsp" }) -- Auto Completion for Lsp Stuff
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)

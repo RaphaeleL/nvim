@@ -13,20 +13,14 @@ keymap("n", "<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- Navigate between Tabs
--- keymap("n", "<TAB>", ":bprev<cr>")
--- keymap("n", "<S-TAB>", ":bnext<cr>")
-keymap("n", "<TAB>", ":CybuNext<cr>")
-keymap("n", "<S-TAB>", ":CybuPrev<cr>")
+keymap("n", "<TAB>", ":bprev<cr>")
+keymap("n", "<S-TAB>", ":bnext<cr>")
 
 -- Navigation between Vim Windows
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
-
--- Open Which Key Menu
-keymap("n", "<Leader><Leader>", ":WhichKey<Leader><cr><Leader>")
-keymap("v", "<Leader><Leader>", ":WhichKey<Leader><cr><Leader>")
 
 -- Indent Selection
 keymap("v", "<", "<gv")
@@ -48,17 +42,40 @@ keymap("x", "<Leader>p", '"_dP')
 keymap("n", "x", '"_x')
 
 -- Basic
-keymap("n", "e", ":NvimTreeToggle<cr>")
-keymap("n", "t", ":Telescope file_browser<cr>")
+keymap("n", "e", ":Telescope find_files<cr>")
+keymap("n", "eb", ":Telescope file_browser<cr>")
+keymap("n", "eg", ":Telescope live_grep<cr>")
+
+keymap("n", "sb", ":Telescope buffers<cr>")
+keymap("n", "sv", ":vsplit<cr>")
+keymap("n", "sh", ":split<cr>")
+keymap("n", "sc", ":close<cr>")
 
 keymap("n", "c", ":bdelete<cr>")
-keymap("n", "sb", ":Telescope buffers<cr>")
 
 -- Actions
 keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
+keymap("n", "<Leader>n", ":noh<cr>")
 
--- LazyGit
+keymap("n", "su", ":UndotreeToggle<cr>")
+
+keymap("n", "fo", ":foldopen<cr>")
+keymap("n", "fc", ":foldclose<cr>")
+
+keymap("n", "ff", ":lua vim.lsp.buf.format { async = true }<cr>")
+
+keymap("n", "ds", ":Telescope lsp_document_symbols<cr>")
+
+-- Git
 keymap("n", "gl", ":LazyGit<cr>")
+keymap("n", "gf", ":Telescope git_files<cr>")
 
--- Faster Exit 
-keymap("n", "<C-q>", ":wqall!<cr>")
+-- Diagnostics
+keymap("n", "da", ":lua vim.lsp.buf.code_action()<cr>")
+keymap("n", "dr", ":lua vim.lsp.buf.references()<cr>")
+keymap("n", "df", ":lua vim.lsp.buf.definition()<cr>")
+keymap("n", "dc", ":lua vim.lsp.buf.declaration()<cr>")
+keymap("n", "di", ":lua vim.lsp.buf.signature_help()<cr>")
+keymap("n", "dl", ":lua vim.diagnostic.open_float()<cr>")
+keymap("n", "db", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
+keymap("n", "dw", ":Telescope diagnostics<cr>")
