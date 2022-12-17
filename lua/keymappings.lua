@@ -1,81 +1,82 @@
 local opts = { silent = true, noremap = true }
 
-local function keymap(mode, old, new)
-	vim.api.nvim_set_keymap(mode, old, new, opts)
-end
+local function nmap(old, new) vim.api.nvim_set_keymap("n", old, new, opts) end
+local function vmap(old, new) vim.api.nvim_set_keymap("v", old, new, opts) end
+local function imap(old, new) vim.api.nvim_set_keymap("i", old, new, opts) end
+local function xmap(old, new) vim.api.nvim_set_keymap("x", old, new, opts) end
 
 -- New Escape Key
-keymap("i", "kj", "<ESC>")
-keymap("i", "jk", "<ESC>")
+imap("kj", "<ESC>")
+imap("jk", "<ESC>")
 
 -- Leader Key
-keymap("n", "<Space>", "<NOP>")
+nmap("<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- Navigate between Tabs
-keymap("n", "<TAB>", ":bprev<cr>")
-keymap("n", "<S-TAB>", ":bnext<cr>")
+nmap("<TAB>", ":bprev<cr>")
+nmap("<S-TAB>", ":bnext<cr>")
 
 -- Navigation between Vim Windows
-keymap("n", "<C-h>", "<C-w>h")
-keymap("n", "<C-j>", "<C-w>j")
-keymap("n", "<C-k>", "<C-w>k")
-keymap("n", "<C-l>", "<C-w>l")
+nmap("<C-h>", "<C-w>h")
+nmap("<C-j>", "<C-w>j")
+nmap("<C-k>", "<C-w>k")
+nmap("<C-l>", "<C-w>l")
 
 -- Indent Selection
-keymap("v", "<", "<gv")
-keymap("v", ">", ">gv")
+vmap("<", "<gv")
+vmap(">", ">gv")
 
 -- Increment and Decrement a Number
-keymap("n", "+", "<C-a>")
-keymap("n", "-", "<C-x>")
+nmap("+", "<C-a>")
+nmap("-", "<C-x>")
 
 -- Yank, Delete and Paste from ThePrimeagen
-keymap("n", "<Leader>y", '"+y')
-keymap("v", "<Leader>y", '"+y')
-keymap("n", "<Leader>Y", '"+Y')
-keymap("n", "<Leader>d", '"+d')
-keymap("v", "<Leader>d", '"+d')
-keymap("x", "<Leader>p", '"_dP')
+nmap("<Leader>y", '"+y')
+vmap("<Leader>y", '"+y')
+nmap("<Leader>Y", '"+Y')
+nmap("<Leader>d", '"+d')
+vmap("<Leader>d", '"+d')
+xmap("<Leader>p", '"_dP')
 
 -- Delete Character without Copy it
-keymap("n", "x", '"_x')
+nmap("x", '"_x')
 
 -- Basic
-keymap("n", "e", ":Telescope find_files<cr>")
-keymap("n", "eb", ":Telescope file_browser<cr>")
-keymap("n", "eg", ":Telescope live_grep<cr>")
+nmap("e", ":Telescope find_files<cr>")
+nmap("eb", ":Telescope file_browser<cr>")
+nmap("eg", ":Telescope live_grep<cr>")
 
-keymap("n", "sb", ":Telescope buffers<cr>")
-keymap("n", "sv", ":vsplit<cr>")
-keymap("n", "sh", ":split<cr>")
-keymap("n", "sc", ":close<cr>")
+nmap("sb", ":Telescope buffers<cr>")
+nmap("sv", ":vsplit<cr>")
+nmap("sh", ":split<cr>")
+nmap("sc", ":close<cr>")
 
-keymap("n", "c", ":bdelete<cr>")
+nmap("c", ":bdelete<cr>")
 
 -- Actions
-keymap("n", "ai", ":lua vim.lsp.buf.hover()<cr>")
-keymap("n", "<Leader>n", ":noh<cr>")
+nmap("ai", ":lua vim.lsp.buf.hover()<cr>")
+nmap("<Leader>n", ":noh<cr>")
 
-keymap("n", "su", ":UndotreeToggle<cr>")
+nmap("su", ":UndotreeToggle<cr>")
 
-keymap("n", "fo", ":foldopen<cr>")
-keymap("n", "fc", ":foldclose<cr>")
+nmap("fo", ":foldopen<cr>")
+nmap("fc", ":foldclose<cr>")
 
-keymap("n", "ff", ":lua vim.lsp.buf.format { async = true }<cr>")
+nmap("ff", ":lua vim.lsp.buf.format { async = true }<cr>")
 
-keymap("n", "ds", ":Telescope lsp_document_symbols<cr>")
+nmap("ds", ":Telescope lsp_document_symbols<cr>")
 
 -- Git
-keymap("n", "lg", ":LazyGit<cr>")
-keymap("n", "gf", ":Telescope git_files<cr>")
+nmap("lg", ":LazyGit<cr>")
+nmap("gf", ":Telescope git_files<cr>")
 
 -- Diagnostics
-keymap("n", "da", ":lua vim.lsp.buf.code_action()<cr>")
-keymap("n", "dr", ":lua vim.lsp.buf.references()<cr>")
-keymap("n", "df", ":lua vim.lsp.buf.definition()<cr>")
-keymap("n", "dc", ":lua vim.lsp.buf.declaration()<cr>")
-keymap("n", "di", ":lua vim.lsp.buf.signature_help()<cr>")
-keymap("n", "dl", ":lua vim.diagnostic.open_float()<cr>")
-keymap("n", "db", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
-keymap("n", "dw", ":Telescope diagnostics<cr>")
+nmap("da", ":lua vim.lsp.buf.code_action()<cr>")
+nmap("dr", ":lua vim.lsp.buf.references()<cr>")
+nmap("df", ":lua vim.lsp.buf.definition()<cr>")
+nmap("dc", ":lua vim.lsp.buf.declaration()<cr>")
+nmap("di", ":lua vim.lsp.buf.signature_help()<cr>")
+nmap("dl", ":lua vim.diagnostic.open_float()<cr>")
+nmap("db", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
+nmap("dw", ":Telescope diagnostics<cr>")
