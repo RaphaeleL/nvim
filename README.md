@@ -122,12 +122,14 @@ The File Strucutre explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-> Yes, Vim is always faster than NeoVim with plugins will ever be. but compared to the popular LunarVim, NaVim Beta (without LazyLoading!) is almost twice as fast! Even the slow NaVim Main is a bit faster then LunarVim
+> Yes, Vim is always faster than NeoVim with plugins will ever be. but compared to the popular LunarVim, NaVim Beta (without LazyLoading!) is almost twice as fast! NvChad is a lot faster than NaVim Beta is currently, but lazyloading is used there. With much larger files (then the 3000 Lines File mentioned), NaVim Beta will be faster.
 
-- NaVim Main: `nvim auditsc.c  0,83s`
-- NaVim Beta: `nvim auditsc.c  0,55s`
-- LunarVim Stable: `lvim auditsc.c  0,94s`
-- Vim: `vim auditsc.c  0,04s user`
+- NaVim Main: `0,83s`
+- NaVim Beta: `0,55s`
+- LunarVim Stable: `0,94s`
+- LunarVim Rolling: `0,96s`
+- NvChad: `0,22s`
+- Vim: `0,04s`
 
 # Acknowledgments
 
@@ -136,3 +138,4 @@ This Configuration is inspired by:
 - [NvChad](https://github.com/NvChad/NvChad)
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
+- [TJ DeVries](https://github.com/tjdevries)
