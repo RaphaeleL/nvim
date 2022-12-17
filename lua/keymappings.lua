@@ -1,8 +1,11 @@
 local opts = { silent = true, noremap = true }
 
 local function nmap(old, new) vim.api.nvim_set_keymap("n", old, new, opts) end
+
 local function vmap(old, new) vim.api.nvim_set_keymap("v", old, new, opts) end
+
 local function imap(old, new) vim.api.nvim_set_keymap("i", old, new, opts) end
+
 local function xmap(old, new) vim.api.nvim_set_keymap("x", old, new, opts) end
 
 -- New Escape Key
@@ -67,6 +70,11 @@ nmap("ff", ":lua vim.lsp.buf.format { async = true }<cr>")
 
 nmap("ds", ":Telescope lsp_document_symbols<cr>")
 
+nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+nmap("<leader>x", ":!chmod +x %<cr>")
+
+nmap("<leader>p", [["_dP]])
+
 -- Git
 nmap("lg", ":LazyGit<cr>")
 nmap("gf", ":Telescope git_files<cr>")
@@ -80,5 +88,5 @@ nmap("di", ":lua vim.lsp.buf.signature_help()<cr>")
 nmap("dl", ":lua vim.diagnostic.open_float()<cr>")
 nmap("db", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
 nmap("dw", ":Telescope diagnostics<cr>")
-nmap("dn", ":lua vim.diagnostic.goto_next()<cr>")
-nmap("dp", ":lua vim.diagnostic.goto_prev()<cr>")
+nmap("dn", ":lua vim.diagnostic.goto_next()<cr>zz")
+nmap("dp", ":lua vim.diagnostic.goto_prev()<cr>zz")
