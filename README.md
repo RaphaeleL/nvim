@@ -1,5 +1,3 @@
-<img height="150" src="assets/logo.png" align="right" alt="Logo">
-
 # NaVim
 
 <b>Useable for </b>
