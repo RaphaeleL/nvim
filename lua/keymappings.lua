@@ -67,7 +67,7 @@ keymap("n", "ff", ":lua vim.lsp.buf.format { async = true }<cr>")
 keymap("n", "ds", ":Telescope lsp_document_symbols<cr>")
 
 -- Git
-keymap("n", "gl", ":LazyGit<cr>")
+keymap("n", "lg", ":LazyGit<cr>")
 keymap("n", "gf", ":Telescope git_files<cr>")
 
 -- Diagnostics
