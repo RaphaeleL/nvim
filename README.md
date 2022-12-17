@@ -122,6 +122,14 @@ The File Strucutre explained.
 
 - Lsp UI: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
+# Performance 
+
+Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
+
+- NaVim Beta: `nvim auditsc.c  0,55s user 0,13s system 72% cpu 0,932 total`
+- LunarVim Stable: `lvim auditsc.c  0,94s user 0,18s system 74% cpu 1,509 total`
+- Vim: `/usr/bin/vim auditsc.c  0,04s user 0,01s system 7% cpu 0,723 total`
+
 # Acknowledgments
 
 This Configuration is inspired by:
