@@ -1,6 +1,5 @@
 # MacOS  
 .DS_Store
-plugin/
 
 # Compiled Lua sources
 luac.out
