@@ -75,6 +75,9 @@ nmap("<leader>x", ":!chmod +x %<cr>")
 
 nmap("<leader>p", [["_dP]])
 
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+
 -- Git
 nmap("<Leader>g", ":Git<cr>")
 nmap("<Leader>gd", ":Git diff<cr>")
