@@ -77,6 +77,8 @@ nmap("<leader>p", [["_dP]])
 
 -- Git
 nmap("<Leader>g", ":Git<cr>")
+nmap("<Leader>gd", ":Git diff<cr>")
+nmap("<Leader>gb", ":Git blame<cr>")
 nmap("<Leader>ga", ":Git add .<cr>")
 nmap("<Leader>gc", ":Git commit<cr>")
 nmap("<Leader>gp", ":Git push<cr>")
