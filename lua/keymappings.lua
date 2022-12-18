@@ -48,7 +48,8 @@ nmap("x", '"_x')
 -- Basic
 nmap("e", ":Telescope find_files<cr>")
 nmap("eb", ":Telescope file_browser<cr>")
-nmap("eg", ":Telescope live_grep<cr>")
+nmap("el", ":Telescope live_grep<cr>")
+nmap("eg", ":Telescope git_files<cr>")
 
 nmap("sb", ":Telescope buffers<cr>")
 nmap("sv", ":vsplit<cr>")
@@ -77,7 +78,6 @@ nmap("<leader>p", [["_dP]])
 
 -- Git
 nmap("lg", ":LazyGit<cr>")
-nmap("gf", ":Telescope git_files<cr>")
 
 -- Diagnostics
 nmap("da", ":lua vim.lsp.buf.code_action()<cr>")
