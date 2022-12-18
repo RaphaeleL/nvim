@@ -175,21 +175,5 @@ telescope.setup({
 			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
-		file_browser = {
-			theme = "ivy",
-			hijack_netrw = true,
-			mappings = {
-				["i"] = {},
-				["n"] = {
-					["+"] = fb_actions.create,
-					["-"] = fb_actions.remove,
-					["y"] = fb_actions.copy,
-					["r"] = fb_actions.rename,
-					["m"] = fb_actions.move,
-				},
-			},
-		},
 	},
 })
-
-require("telescope").load_extension("file_browser")
