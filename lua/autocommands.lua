@@ -27,6 +27,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 -- use 'q' to quit from some plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = {
+		"Git",
 		"Jaq",
 		"qf",
 		"help",
