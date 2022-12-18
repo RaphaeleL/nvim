@@ -26,6 +26,11 @@ nmap("<C-j>", "<C-w>j")
 nmap("<C-k>", "<C-w>k")
 nmap("<C-l>", "<C-w>l")
 
+-- nmap("<C-Up>", ":resize -2<CR>")
+-- nmap("<C-Down>", ":resize +2<CR>")
+-- nmap("<C-Left>", ":vertical resize -2<CR>")
+-- nmap("<C-Right>", ":vertical resize +2<CR>")
+
 -- Indent Selection
 vmap("<", "<gv")
 vmap(">", ">gv")
@@ -54,7 +59,6 @@ nmap("sb", ":Telescope buffers<cr>")
 nmap("sv", ":vsplit<cr>")
 nmap("sh", ":split<cr>")
 nmap("sc", ":close<cr>")
-
 nmap("c", ":bdelete<cr>")
 
 nmap("J", "mzJ`z")
@@ -74,8 +78,6 @@ nmap("ds", ":Telescope lsp_document_symbols<cr>")
 
 nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 nmap("<leader>x", ":!chmod +x %<cr>")
-
-nmap("<leader>p", [["_dP]])
 
 nmap("<C-d>", "<C-d>zz")
 nmap("<C-u>", "<C-u>zz")
