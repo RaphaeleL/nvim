@@ -1,3 +1,5 @@
+<img height="150" src="https://raw.githubusercontent.com/RaphaeleL/nvim/main/assets/logo.png" align="right" alt="Logo">
+
 # NaaVim
 
 <b>Useable for </b>
