@@ -1,6 +1,6 @@
 -- Set wrap and spell in markdown
 vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "markdown", "tex" },
+	pattern = { "markdown", "tex", "text" },
 	callback = function()
 		vim.opt_local.wrap = true
 	end,
