@@ -59,7 +59,7 @@ $ brew install --cask font-<FONT NAME>-nerd-font
 
 ### Colorscheme
 
-At the moment one from [catppuccin/nvim](https://github.com/catppuccin/nvim) is in use.
+At the moment one from [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) is in use.
 
 ### Structure
 
@@ -91,7 +91,7 @@ The File Structure explained.
 
 ### Colorscheme
 
-- Colorscheme: [catppuccin/nvim](https://github.com/catppuccin/nvim)
+- Colorscheme: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
 
 ### Telescope
 
