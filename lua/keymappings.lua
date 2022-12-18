@@ -47,7 +47,6 @@ nmap("x", '"_x')
 
 -- Basic
 nmap("e", ":Telescope find_files<cr>")
-nmap("eb", ":Telescope file_browser<cr>")
 nmap("el", ":Telescope live_grep<cr>")
 nmap("eg", ":Telescope git_files<cr>")
 
