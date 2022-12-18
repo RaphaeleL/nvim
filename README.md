@@ -1,11 +1,11 @@
-# NaVim
+# NaaVim
 
 <b>Useable for </b>
 macOS · Linux · (Windows)
 
-> **NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
-> Checkout the [Performance Test's](https://github.com/RaphaeleL/nvim/tree/beta#performance) of NaVim Beta
+> Checkout the [Performance Test's](https://github.com/RaphaeleL/nvim/tree/beta#performance) of NaaVim Beta
 
 ## Installation
 
@@ -119,8 +119,8 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
-- [NaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
+- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
+- [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
 - [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
 - [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
