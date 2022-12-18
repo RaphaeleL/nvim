@@ -121,11 +121,11 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 
 - [NaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
 - [NaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
-- [CraftzDog](https://github.com/craftzdog): `0,84s`
-- [Adam Elmore](https://github.com/adamelmore): `0,94s`
+- [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
+- [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
 - [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
 - [LunarVim Rolling](https://github.com/LunarVim/LunarVim/tree/rolling): `0,96s`
-- [Christian Chiarulli](https://github.com/ChristianChiarulli): `2,60s`
+- [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
 
 > As a direct comparison, the following are the times of Vim (base version without plugins and settings and other stuff) and NVChad (with LazyLoading):
 
@@ -140,7 +140,3 @@ This Configuration is inspired by:
 - [LunarVim](https://github.com/LunarVim/LunarVim)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 - [TJ DeVries](https://github.com/tjdevries)
-
-
-
-
