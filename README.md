@@ -63,7 +63,7 @@ At the moment one from [catppuccin/nvim](https://github.com/catppuccin/nvim) is 
 
 ### Structure
 
-The File Strucutre explained.
+The File Structure explained.
 
 ```
 - nvim
