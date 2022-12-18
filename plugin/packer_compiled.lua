@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
-    url = "https://github.com/kdheepak/lazygit.nvim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -168,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["telescope-file-browser.nvim"] = {
-    loaded = true,
-    path = "/Users/raphaele/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
-    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
