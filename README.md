@@ -1,11 +1,11 @@
 <img height="150" src="assets/logo.png" align="right" alt="Logo">
 
-# NaVim
+# NaaVim
 
 <b>Useable for </b>
 macOS · Linux · (Windows)
 
-> **NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
 > Checkout the [Beta Branch](https://github.com/RaphaeleL/nvim/tree/beta) for a Version twice as fast!
 
@@ -45,7 +45,7 @@ In addition, the following command can be used to run a series of diagnostic tes
 
 ### Install the Configuration in one Command
 
-On Linux and MacOS the following command can be used to set the configuration (NaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
+On Linux and MacOS the following command can be used to set the configuration (NaaVim) directly. **Attention: Requirement is a suitable NeoVim installation!**
 
 ```
 $ bash <(curl -s https://raw.githubusercontent.com/RaphaeleL/nvim/main/install.sh)
@@ -84,13 +84,13 @@ The File Strucutre explained.
         - user/         -- Wrapper, so you can name the Plugin Configuration Files can be named like the Plugin name
             - lsp/      -- Lsp Configuration
             - *.lua     -- Each Plugin has a Setup File (if needed)
-        - *.lua         -- Basic NaVim Configuration (Neovim Settings, ...)
+        - *.lua         -- Basic NaaVim Configuration (Neovim Settings, ...)
     - init.lua          -- the start of the nvim configuration
 ```
 
 ## Future
 
-In the distant future `NaVim` shall have an independent instance or configuration besides the conventional `nvim`.
+In the distant future `NaaVim` shall have an independent instance or configuration besides the conventional `nvim`.
 
 ## Plugins
 
@@ -168,8 +168,8 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
-- [NaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
+- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
+- [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
 - [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
 - [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
