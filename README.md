@@ -119,14 +119,20 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-> Yes, Vim is always faster than NeoVim with plugins will ever be. but compared to the popular LunarVim, NaVim Beta (without LazyLoading!) is twice as fast! NvChad is a faster than NaVim Beta is currently, but LazyLoading is used there. With much larger files (then the 3000 Lines File mentioned), NaVim Beta will be faster.
+> Configurations based on LazyLoading were not considered (for example NVChad). 
 
-- NaVim Main: `0,83s`
-- NaVim Beta: `0,41s`
-- LunarVim Stable: `0,94s`
-- LunarVim Rolling: `0,96s`
-- NvChad: `0,22s` (LazyLoading)
-- Vim: `0,04s` (Plain and Basic Vim, no Settings, no Plugins, no nothing :D) 
+- [NaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,41s`
+- [NaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
+- [CraftzDog](https://github.com/craftzdog): `0,84s`
+- [AdamElmore](https://github.com/adamelmore): `0,94s`
+- [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
+- [LunarVim Rolling](https://github.com/LunarVim/LunarVim/tree/rolling): `0,96s`
+- [ChristianChiarulli](https://github.com/ChristianChiarulli/nvim): `2,60s`
+
+> As a direct comparison, the following are the times of Vim (base version without plugins and settings and other stuff) and NVChad (with LazyLoading):
+
+- [Vim](https://github.com/vim/vim): `0,04s` (Plain and Basic Vim, no Settings, no Plugins, no nothing :D) 
+- [NvChad](https://github.com/NvChad/NvChad): `0,22s` (LazyLoading)
 
 # Acknowledgments
 
