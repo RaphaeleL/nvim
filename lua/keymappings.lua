@@ -60,6 +60,7 @@ nmap("<Leader>gd", ":Git diff<cr>", "Git: Open [G]it [D]iffs")
 nmap("<Leader>gb", ":Git blame<cr>", "Git: Open [G]it [B]lame History")
 nmap("<Leader>ga", ":Git add .<cr>", "Git: [G]it [A]dd all Changed Files")
 nmap("<Leader>gc", ":Git commit<cr>", "Git: [G]it [C]ommit Files")
+nmap("<Leader>gp", ":Git push<cr>", "Git: [G]it [P]ush")
 
 nmap("sa", ":lua vim.lsp.buf.code_action()<cr>", "LSP: [S]how Code [A]ctions")
 nmap("sl", ":lua vim.diagnostic.open_float()<cr>", "LSP: [S]how [L]ine Diagnostics")
