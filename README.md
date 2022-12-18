@@ -57,10 +57,6 @@ $ brew tap homebrew/cask-fonts
 $ brew install --cask font-<FONT NAME>-nerd-font
 ```
 
-### Colorscheme
-
-At the moment one from [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) is in use.
-
 ### Structure
 
 The File Structure explained.
