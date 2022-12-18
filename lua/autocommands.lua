@@ -1,11 +1,3 @@
--- Set wrap and spell in markdown
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "markdown", "tex", "text" },
-  callback = function()
-    vim.opt_local.wrap = true
-  end,
-})
-
 -- use 'q' to quit from some plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
