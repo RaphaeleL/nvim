@@ -5,7 +5,7 @@ macOS · Linux · (Windows)
 
 > **NaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
-> Checkout the [Performance Test's](https://github.com/RaphaeleL/nvim/tree/beta#performance) of NaVim Beta!
+> Checkout the [Performance Test's](https://github.com/RaphaeleL/nvim/tree/beta#performance) of NaVim Beta
 
 ## Installation
 
@@ -94,7 +94,6 @@ The File Structure explained.
 ### Telescope
 
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- File Browser: [nvim-telescope/telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim)
 
 ### Treesitter
 
@@ -126,8 +125,8 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 - NaVim Beta: `0,41s`
 - LunarVim Stable: `0,94s`
 - LunarVim Rolling: `0,96s`
-- NvChad: `0,22s`
-- Vim: `0,04s`
+- NvChad: `0,22s` (LazyLoading)
+- Vim: `0,04s` (Plain and Basic Vim, no Settings, no Plugins, no nothing :D) 
 
 # Acknowledgments
 
