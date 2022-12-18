@@ -57,6 +57,8 @@ nmap("sc", ":close<cr>")
 
 nmap("c", ":bdelete<cr>")
 
+nmap("J", "mzJ`z")
+
 -- Actions
 nmap("ai", ":lua vim.lsp.buf.hover()<cr>")
 nmap("<Leader>n", ":noh<cr>")
