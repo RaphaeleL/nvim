@@ -61,4 +61,10 @@ require("catppuccin").setup({
 	},
 })
 
-vim.cmd("colorscheme catppuccin")
+require('kanagawa').setup({
+    transparent = true,
+})
+
+vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme catppuccin")
+
