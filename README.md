@@ -87,7 +87,7 @@ The File Strucutre explained.
 ### Git
 
 - Gitsigns beside Numbers: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- Git Commands in Nvim: [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+- Git Commands in Nvim: [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 ### Colorscheme
 
