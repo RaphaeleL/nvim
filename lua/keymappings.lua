@@ -78,6 +78,8 @@ nmap("<leader>p", [["_dP]])
 
 -- Git
 nmap("lg", ":LazyGit<cr>")
+nmap("<Leader>g", ":Git<cr>")
+nmap("<Leader>gp", ":Git push<cr>")
 
 -- Diagnostics
 nmap("da", ":lua vim.lsp.buf.code_action()<cr>")
