@@ -77,7 +77,6 @@ nmap("<leader>x", ":!chmod +x %<cr>")
 nmap("<leader>p", [["_dP]])
 
 -- Git
-nmap("lg", ":LazyGit<cr>")
 nmap("<Leader>g", ":Git<cr>")
 nmap("<Leader>gp", ":Git push<cr>")
 

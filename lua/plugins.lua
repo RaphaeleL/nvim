@@ -10,7 +10,6 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   use "lewis6991/gitsigns.nvim"
-  use "kdheepak/lazygit.nvim"
   use "tpope/vim-fugitive"
 
   use { "catppuccin/nvim", as = "catppuccin" }
