@@ -1,12 +1,10 @@
-local opts = { silent = true, noremap = true }
+local function nmap(old, new, desc) vim.api.nvim_set_keymap("n", old, new, { silent = true, noremap = true, desc = desc }) end
 
-local function nmap(old, new) vim.api.nvim_set_keymap("n", old, new, opts) end
+local function vmap(old, new, desc) vim.api.nvim_set_keymap("v", old, new, { silent = true, noremap = true, desc = desc }) end
 
-local function vmap(old, new) vim.api.nvim_set_keymap("v", old, new, opts) end
+local function imap(old, new, desc) vim.api.nvim_set_keymap("i", old, new, { silent = true, noremap = true, desc = desc }) end
 
-local function imap(old, new) vim.api.nvim_set_keymap("i", old, new, opts) end
-
-local function xmap(old, new) vim.api.nvim_set_keymap("x", old, new, opts) end
+local function xmap(old, new, desc) vim.api.nvim_set_keymap("x", old, new, { silent = true, noremap = true, desc = desc }) end
 
 -- New Escape Key
 imap("kj", "<ESC>")
@@ -16,88 +14,75 @@ imap("jk", "<ESC>")
 nmap("<Space>", "<NOP>")
 vim.g.mapleader = " "
 
--- Navigate between Tabs
 nmap("<TAB>", ":bprev<cr>")
 nmap("<S-TAB>", ":bnext<cr>")
 
--- Navigation between Vim Windows
-nmap("<C-h>", "<C-w>h")
-nmap("<C-j>", "<C-w>j")
-nmap("<C-k>", "<C-w>k")
-nmap("<C-l>", "<C-w>l")
+nmap("<C-h>", "<C-w>h", "Navigate in Windows down")
+nmap("<C-j>", "<C-w>j", "Navigate in Windows left")
+nmap("<C-k>", "<C-w>k", "Navigate in Windows up")
+nmap("<C-l>", "<C-w>l", "Navigate in Windows right")
 
--- nmap("<C-Up>", ":resize -2<CR>")
--- nmap("<C-Down>", ":resize +2<CR>")
--- nmap("<C-Left>", ":vertical resize -2<CR>")
--- nmap("<C-Right>", ":vertical resize +2<CR>")
+vmap("<", "<gv", "Indent Selection in")
+vmap(">", ">gv", "Indent Selection out")
 
--- Indent Selection
-vmap("<", "<gv")
-vmap(">", ">gv")
+nmap("+", "<C-a>", "Increment Number")
+nmap("-", "<C-x>", "Decrement Number")
 
--- Increment and Decrement a Number
-nmap("+", "<C-a>")
-nmap("-", "<C-x>")
+nmap("<Leader>Y", '"+Y', "Yank Complete Line")
+nmap("<Leader>d", '"+d', "Delete without overwrite Clipboard")
+vmap("<Leader>d", '"+d', "Delete without overwrite Clipboard")
+xmap("<Leader>p", '"_dP', "Paste without overwrite Clipboard")
 
--- Yank, Delete and Paste from ThePrimeagen
-nmap("<Leader>y", '"+y')
-vmap("<Leader>y", '"+y')
-nmap("<Leader>Y", '"+Y')
-nmap("<Leader>d", '"+d')
-vmap("<Leader>d", '"+d')
-xmap("<Leader>p", '"_dP')
+nmap("x", '"_x', "Delete Char without overwrite Clipboard")
 
--- Delete Character without Copy it
-nmap("x", '"_x')
+nmap("e", ":Telescope find_files<cr>", "File Explorer")
+nmap("el", ":Telescope live_grep<cr>", "Live Grep in Project")
+nmap("eg", ":Telescope git_files<cr>", "File Explorer with Git Files")
 
--- Basic
-nmap("e", ":Telescope find_files<cr>")
-nmap("el", ":Telescope live_grep<cr>")
-nmap("eg", ":Telescope git_files<cr>")
+nmap("sb", ":Telescope buffers<cr>", "[S]how  Buffers")
+nmap("sv", ":vsplit<cr>", "Split Vertical")
+nmap("sh", ":split<cr>", "Split Horizontal")
+nmap("sc", ":close<cr>", "Close Split")
+nmap("c", ":bdelete<cr>", "Close Buffer")
 
-nmap("sb", ":Telescope buffers<cr>")
-nmap("sv", ":vsplit<cr>")
-nmap("sh", ":split<cr>")
-nmap("sc", ":close<cr>")
-nmap("c", ":bdelete<cr>")
+nmap("J", "mzJ`z", "Concat line without loosing, the Cursor")
 
-nmap("J", "mzJ`z")
+nmap("ai", ":lua vim.lsp.buf.hover()<cr>", "More Informations about Keyword")
+nmap("<Leader>n", ":noh<cr>", "No Highlighting")
 
--- Actions
-nmap("ai", ":lua vim.lsp.buf.hover()<cr>")
-nmap("<Leader>n", ":noh<cr>")
+nmap("su", ":UndotreeToggle<cr>", "[S]how Undotree")
 
-nmap("su", ":UndotreeToggle<cr>")
+nmap("fo", ":foldopen<cr>", "Open a folded Expression")
+nmap("fc", ":foldclose<cr>", "Fold an Expression")
 
-nmap("fo", ":foldopen<cr>")
-nmap("fc", ":foldclose<cr>")
+nmap("ff", ":lua vim.lsp.buf.format { async = true }<cr>", "[F]ormat [F]ile")
 
-nmap("ff", ":lua vim.lsp.buf.format { async = true }<cr>")
+nmap("ds", ":Telescope lsp_document_symbols<cr>", "Show [D]ocument [S]ymbols (Outliner)")
 
-nmap("ds", ":Telescope lsp_document_symbols<cr>")
+nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], "Rename")
+nmap("<leader>x", ":!chmod +x %<cr>", "Adding Execution Permission")
 
-nmap("<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-nmap("<leader>x", ":!chmod +x %<cr>")
+nmap("<C-d>", "<C-d>zz", "Scroll Down and stay in the Middle")
+nmap("<C-u>", "<C-u>zz", "Scroll Up and stay in the Middle")
 
-nmap("<C-d>", "<C-d>zz")
-nmap("<C-u>", "<C-u>zz")
+nmap("km", ":Telescope keymaps<cr>", "Help about [K]ey[m]aps")
 
--- Git
-nmap("<Leader>g", ":Git<cr>")
-nmap("<Leader>gd", ":Git diff<cr>")
-nmap("<Leader>gb", ":Git blame<cr>")
-nmap("<Leader>ga", ":Git add .<cr>")
-nmap("<Leader>gc", ":Git commit<cr>")
-nmap("<Leader>gp", ":Git push<cr>")
+nmap("<Leader>g", ":Git<cr>", "Open [G]it Client")
+nmap("<Leader>gd", ":Git diff<cr>", "Open [G]it [D]iffs")
+nmap("<Leader>gb", ":Git blame<cr>", "Open [G]it [B]lame History")
+nmap("<Leader>ga", ":Git add .<cr>", "[G]it [A]dd all Changed Files")
+nmap("<Leader>gc", ":Git commit<cr>", "[G]it [C]ommit Files")
 
--- Diagnostics
-nmap("da", ":lua vim.lsp.buf.code_action()<cr>")
-nmap("dr", ":lua vim.lsp.buf.references()<cr>")
-nmap("df", ":lua vim.lsp.buf.definition()<cr>")
-nmap("dc", ":lua vim.lsp.buf.declaration()<cr>")
-nmap("di", ":lua vim.lsp.buf.signature_help()<cr>")
-nmap("dl", ":lua vim.diagnostic.open_float()<cr>")
-nmap("db", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
-nmap("dw", ":Telescope diagnostics<cr>")
-nmap("dn", ":lua vim.diagnostic.goto_next()<cr>zz")
-nmap("dp", ":lua vim.diagnostic.goto_prev()<cr>zz")
+nmap("sa", ":lua vim.lsp.buf.code_action()<cr>", "[S]how Code [A]ctions")
+nmap("si", ":lua vim.lsp.buf.signature_help()<cr>", "[S]how Keyword [I]nformations")
+nmap("sl", ":lua vim.diagnostic.open_float()<cr>", "[S]how [L]ine Diagnostics")
+nmap("sb", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "[S]how [Buffer] Diagnostics")
+nmap("sd", ":Telescope diagnostics<cr>", "[S]how Workspace [D]iagnostics")
+
+nmap("sw", ":Telescope grep_string<cr>", "[S]how current [W]ord")
+
+nmap("sr", ":lua vim.lsp.buf.references()<cr>", "[S]how [R]eference")
+nmap("sf", ":lua vim.lsp.buf.definition()<cr>", "[S]how De[f]inition")
+nmap("sc", ":lua vim.lsp.buf.declaration()<cr>", "[S]how De[c]laration")
+nmap("sn", ":lua vim.diagnostic.goto_next()<cr>zz", "[S]how [n]ext Diagnostic")
+nmap("sp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[S]how [p]rev Diagnostic")
