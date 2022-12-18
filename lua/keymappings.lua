@@ -11,7 +11,7 @@ local function xmap(old, new, desc) vim.api.nvim_set_keymap("x", old, new, { sil
 -- Action: Shorten some Keybinds 
 -- Git: Git Client Shortcuts
 -- Help: What keybind should i use again? :D 
--- LSP: All about LSP
+-- LSP
 
 imap("kj", "<ESC>")
 imap("jk", "<ESC>")
