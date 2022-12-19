@@ -42,13 +42,8 @@ lsp.configure('sumneko_lua', {
 lsp.setup()
 
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
-
-  if client.name == "eslint" then
-    vim.cmd.LspStop('eslint')
-    return
-  end
 
   vim.keymap.set("n", "sa", ":lua vim.lsp.buf.code_action()<cr>", opts)
   vim.keymap.set("n", "sl", ":lua vim.diagnostic.open_float()<cr>", opts)
