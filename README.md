@@ -7,7 +7,7 @@ macOS · Linux · (Windows)
 
 > **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
 
-> Checkout the [Beta Branch](https://github.com/RaphaeleL/nvim/tree/beta) for a Blazingly Fast Version! 
+> Checkout the [Main Branch](https://github.com/RaphaeleL/nvim/) for an Blazingly Fast IDE Layer! 
 
 ## Installation
 
