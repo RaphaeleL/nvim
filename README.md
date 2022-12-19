@@ -84,7 +84,6 @@ The File Structure explained.
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Git Commands: [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-- Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - Colorscheme: [rose-pine/neovim](https://github.com/rose-pine/neovim)
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -109,10 +108,9 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s` without [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (LazyLoading [Reference](https://github.com/NvChad/NvChad#what-is-it))
+- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s`
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it))
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
-- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,44s` with [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
 - [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`

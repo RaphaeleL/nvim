@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
   use "lewis6991/impatient.nvim"
   use "nvim-lua/plenary.nvim"
 
-  use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
 
   use "rose-pine/neovim"
