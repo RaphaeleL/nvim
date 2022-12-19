@@ -91,7 +91,7 @@ The File Structure explained.
 
 ### Colorscheme
 
-- Colorscheme: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- Colorscheme: [rose-pine/neovim](https://github.com/rose-pine/neovim)
 
 ### Telescope
 

@@ -1,5 +1,8 @@
-require('kanagawa').setup({
-    transparent = true,
+-- catppuccin/nvim
+-- rebelot/kanagawa.nvim
+
+require('rose-pine').setup({
+    disable_background = true
 })
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme rose-pine")

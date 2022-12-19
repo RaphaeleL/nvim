@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive"
 
-  use "rebelot/kanagawa.nvim"
+  use "rose-pine/neovim"
 
   use "nvim-telescope/telescope.nvim"
 
