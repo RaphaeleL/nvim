@@ -121,7 +121,7 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-> NVChad is using LazyLoading ([Reference](https://github.com/NvChad/NvChad#what-is-it))
+> NvChad is using LazyLoading ([Reference](https://github.com/NvChad/NvChad#what-is-it))
 
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s`
 - [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,38s`
