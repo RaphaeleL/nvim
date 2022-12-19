@@ -121,19 +121,17 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
+> NVChad is using LazyLoading ([Reference](https://github.com/NvChad/NvChad#what-is-it))
+
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s`
+- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,38s`
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
-- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,44s`
 - [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
 - [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
 - [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
 - [LunarVim Rolling](https://github.com/LunarVim/LunarVim/tree/rolling): `0,96s`
 - [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
-
-> As a direct comparison, the following are the times of Vim (base version without plugins and settings and other stuff) and NVChad (with LazyLoading):
-
-- [Vim](https://github.com/vim/vim): `0,04s`
-- [NvChad](https://github.com/NvChad/NvChad): `0,22s`
 
 # Acknowledgments
 
