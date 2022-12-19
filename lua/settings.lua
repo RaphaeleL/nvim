@@ -42,12 +42,12 @@ vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/zsh"
 vim.opt.relativenumber = true
 
-vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
-vim.cmd([[set formatoptions-=cro]])
+-- vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
+-- vim.cmd([[set formatoptions-=cro]])
 
-vim.cmd([[set foldmethod=expr]])
-vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
-vim.cmd([[set foldlevel=20]])
-vim.cmd([[set modifiable]])
-vim.cmd([[set buftype=]])
+-- vim.cmd([[set foldmethod=expr]])
+-- vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
+-- vim.cmd([[set foldlevel=20]])
+-- vim.cmd([[set modifiable]])
+-- vim.cmd([[set buftype=]])
 
