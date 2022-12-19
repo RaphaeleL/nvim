@@ -1,6 +1,6 @@
 <img height="150" src="https://raw.githubusercontent.com/RaphaeleL/nvim/main/assets/logo.png" align="right" alt="Logo">
 
-# NaaVim - beta 
+# NaaVim - beta v2
 
 <b>Useable for </b>
 macOS · Linux · (Windows)
