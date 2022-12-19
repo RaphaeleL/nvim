@@ -108,10 +108,8 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim Beta v2](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s` 
-  - (without [lewis6991/gitsigns](https://github.com/lewis6991/gitsigns.nvim)
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s`
-  - LazyLoading ([Reference](https://github.com/NvChad/NvChad#what-is-it))
+- [NaaVim Beta v2](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s` (without [lewis6991/gitsigns](https://github.com/lewis6991/gitsigns.nvim))
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (LazyLoading [Reference](https://github.com/NvChad/NvChad#what-is-it))
 - [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,38s`
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
 - [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
