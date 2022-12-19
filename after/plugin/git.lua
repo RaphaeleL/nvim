@@ -42,3 +42,10 @@ gitsigns.setup({
 		enable = false,
 	},
 })
+
+vim.keymap.set("n", "<Leader>g", ":Git<cr>")
+vim.keymap.set("n", "<Leader>gd", ":Git diff<cr>")
+vim.keymap.set("n", "<Leader>gb", ":Git blame<cr>")
+vim.keymap.set("n", "<Leader>ga", ":Git add .<cr>")
+vim.keymap.set("n", "<Leader>gc", ":Git commit<cr>")
+vim.keymap.set("n", "<Leader>gp", ":Git push<cr>")
