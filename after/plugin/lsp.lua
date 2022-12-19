@@ -31,4 +31,14 @@ lsp.ensure_installed({
   'yamlls',
 })
 
+lsp.configure('sumneko_lua', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+})
+
 lsp.setup()
