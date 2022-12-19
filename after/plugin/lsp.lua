@@ -5,10 +5,10 @@ lsp.preset('recommended')
 lsp.set_preferences({
   suggest_lsp_servers = false,
   sign_icons = {
-    error = 'E',
-    warn = 'W',
-    hint = 'H',
-    info = 'I'
+    error = '',
+    warn = '',
+    hint = '',
+    info = ''
   }
 })
 
@@ -62,4 +62,4 @@ lsp.on_attach(function(client, bufnr)
 
 end)
 
-vim.diagnostic.config({ virtual_text = false })
+vim.diagnostic.config({ virtual_text = true })
