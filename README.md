@@ -168,15 +168,7 @@ There are some popular plugins which are not listed here, for example Barber (Ta
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s`
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (LazyLoading [Reference](https://github.com/NvChad/NvChad#what-is-it))
-- [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
-- [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
-- [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
-- [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
-- [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
-- [LunarVim Rolling](https://github.com/LunarVim/LunarVim/tree/rolling): `0,96s`
-- [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
+> see [NaaVim Performance Test](https://github.com/RaphaeleL/nvim/tree/beta#performance)
 
 # Acknowledgments
 
