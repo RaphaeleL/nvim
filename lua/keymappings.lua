@@ -1,6 +1,3 @@
--- The Keymaps are distributed over the entire Configuration.
--- for example, there are Keymaps for lsp in the lsp file.
-
 vim.keymap.set("i", "kj", "<ESC>")
 vim.keymap.set("i", "jk", "<ESC>")
 

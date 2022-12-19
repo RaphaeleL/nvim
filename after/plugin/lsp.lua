@@ -39,9 +39,6 @@ lsp.configure('sumneko_lua', {
   }
 })
 
-lsp.setup()
-
-
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -56,5 +53,7 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "ff", ":lua vim.lsp.buf.format { async = true }<cr>", opts)
 
 end)
+
+lsp.setup()
 
 vim.diagnostic.config({ virtual_text = true })
