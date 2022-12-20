@@ -39,10 +39,8 @@ lsp.configure('sumneko_lua', {
   }
 })
 
+local enable_virtualtext = false
 local enable_autoformat = true
-if not enable_autoformat then
-  return
-end
 
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -57,6 +55,7 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", opts)
   vim.keymap.set("n", "ff", ":Format<cr>", opts)
   vim.keymap.set("n", "ft", ":FormatToggleAuto<cr>", opts)
+  vim.keymap.set("n", "vt", ":VirtualTextToggle<cr>:write<cr>", opts)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
@@ -72,17 +71,22 @@ lsp.on_attach(function(_, bufnr)
     enable_autoformat = not enable_autoformat
   end, { desc = 'Auto Format current buffer with LSP' })
 
-  -- Autoformat on Save
-  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    callback = function()
-      if enable_autoformat then
-        vim.lsp.buf.format({ async = true })
-      end
-    end,
-  })
+  -- Create a command ':VirtualTextToggle' to Toggle the Virtual Text
+  vim.api.nvim_buf_create_user_command(bufnr, 'VirtualTextToggle', function(_)
+    -- TODO not working
+    enable_virtualtext = not enable_virtualtext
+  end, { desc = 'Toggle the Virtual Text LSP' })
 
 end)
 
-lsp.setup()
+-- Some LSP Autocommands
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  callback = function()
+    vim.diagnostic.config({ virtual_text = enable_virtualtext })
+    if enable_autoformat then
+      vim.lsp.buf.format({ async = true })
+    end
+  end,
+})
 
-vim.diagnostic.config({ virtual_text = true })
+lsp.setup()
