@@ -73,7 +73,6 @@ lsp.on_attach(function(_, bufnr)
 
   -- Create a command ':VirtualTextToggle' to Toggle the Virtual Text
   vim.api.nvim_buf_create_user_command(bufnr, 'VirtualTextToggle', function(_)
-    -- TODO not working
     enable_virtualtext = not enable_virtualtext
   end, { desc = 'Toggle the Virtual Text LSP' })
 

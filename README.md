@@ -107,7 +107,7 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,27s`
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (see `assets/time_proof.png`)
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s` (with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it))
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
 - [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
