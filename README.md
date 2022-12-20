@@ -20,11 +20,11 @@ You can install `nvim` using a package manager, but keep in mind that `nvim` may
 If you want to make sure `nvim` is only updated when you want, then I recommend installing from source.
 
 ```
-$ git clone https://github.com/neovim/neovim.git
-$ cd neovim
-$ git checkout release-0.8.1
-$ make CMAKE_BUILD_TYPE=RelWithDebInfo
-$ sudo make install
+git clone https://github.com/neovim/neovim.git
+cd neovim
+git checkout release-0.8.1
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 ```
 
 ## Configuration
@@ -48,15 +48,15 @@ Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons. Such **
 > [Iosevka Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
 
 ```bash
-$ curl -fLo "<FONT NAME> Nerd Font Complete.otf" \
+curl -fLo "<FONT NAME> Nerd Font Complete.otf" \
     https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/<FONT_PATH>/complete/<FONT_NAME>%20Nerd%20Font%20Complete.otf
 ```
 
 or for macOS Users via Homebrew:
 
 ```bash
-$ brew tap homebrew/cask-fonts
-$ brew install --cask font-<FONT NAME>-nerd-font
+brew tap homebrew/cask-fonts
+brew install --cask font-<FONT NAME>-nerd-font
 ```
 
 ### Structure
@@ -65,11 +65,12 @@ The File Structure explained.
 
 ```
 - nvim
-    - lua/              -- contains the configuration of NeoVim
-        - *.lua         -- Neovim Settings, Keymappings, ... 
-    - after/plugin/
-        - *.lua         -- each Plugin has a Setup File (if needed)
-    - init.lua          -- the start of every Configuration
+  - lua/              -- contains the configuration of NeoVim
+    - *.lua           -- Neovim Settings, Keymappings, ... 
+  - after/
+    - plugin/*.lua    -- each Plugin has a Setup File 
+    - ftplugin/*.vim  -- each Language has specific Settings 
+  - init.lua          -- the start of every Configuration
 ```
 
 ## Plugins
@@ -106,10 +107,6 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
-
-> see [NaaVim Performance Test](https://github.com/RaphaeleL/nvim/tree/beta#performance)
-=======
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,24s`
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s` (with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it))
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
