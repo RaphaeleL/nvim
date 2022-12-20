@@ -111,6 +111,7 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 - [NaaVim Beta](https://github.com/RaphaeleL/nvim/tree/beta): `0,24s`
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s` (with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it))
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
+- [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
 - [NaaVim Main](https://github.com/RaphaeleL/nvim): `0,83s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
 - [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
