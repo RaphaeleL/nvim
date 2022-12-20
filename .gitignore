@@ -1,6 +1,6 @@
 # MacOS  
 .DS_Store
-plugin/
+plugin/packer_compiled.lua
 
 # Compiled Lua sources
 luac.out

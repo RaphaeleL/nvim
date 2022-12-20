@@ -29,7 +29,7 @@ vim.opt.number = true
 vim.opt.laststatus = 0
 vim.opt.showcmd = false
 vim.opt.ruler = false
-vim.opt.numberwidth = 2
+vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
@@ -41,10 +41,3 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/zsh"
 vim.opt.relativenumber = true
-
-vim.api.nvim_buf_set_option(0, "commentstring", "# %s")
-vim.cmd([[set formatoptions-=cro]])
-
-vim.cmd([[set foldmethod=expr]])
-vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
-vim.cmd([[set foldlevel=20]])
