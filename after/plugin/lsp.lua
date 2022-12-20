@@ -53,9 +53,9 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "gp", ":lua vim.diagnostic.goto_prev()<cr>zz", opts)
   vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<cr>", opts)
   vim.keymap.set("n", "<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", opts)
-  vim.keymap.set("n", "ff", ":Format<cr>", opts)
-  vim.keymap.set("n", "ft", ":FormatToggleAuto<cr>", opts)
-  vim.keymap.set("n", "vt", ":VirtualTextToggle<cr>:write<cr>", opts)
+  vim.keymap.set("n", "ff", ":silent Format<cr>", opts)
+  vim.keymap.set("n", "ft", ":silent FormatToggleAuto<cr>", opts)
+  vim.keymap.set("n", "vt", ":silent VirtualTextToggle<cr>:silent write<cr>", opts)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
