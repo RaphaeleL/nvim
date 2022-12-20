@@ -1,5 +1,6 @@
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")
 if not ok then
+  print("Couldn't require nvim-treesitter.configs")
   return
 end
 

@@ -1,5 +1,6 @@
 local ok, lsp = pcall(require, "lsp-zero")
 if not ok then
+  print("Couldn't require lsp-zero")
   return
 end
 
