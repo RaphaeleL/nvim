@@ -5,7 +5,7 @@ vim.keymap.set("n", "<Space>", "<NOP>")
 vim.g.mapleader = " "
 
 -- cmdheight=0 is kinda buggy when ':w'. So silent writing / closing with force
-vim.keymap.set("n", "ss", ":silent write!<cr>")
+vim.keymap.set("n", "ss", ":silent wa!<cr>")
 vim.keymap.set("n", "qq", ":silent wqa!<cr>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
@@ -14,8 +14,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "sv", ":vsplit<cr>")
 vim.keymap.set("n", "sh", ":split<cr>")
-vim.keymap.set("n", "q", ":close!<cr>")
-vim.keymap.set("n", "c", ":bdelete!<cr>")
+vim.keymap.set("n", "c", ":close!<cr>")
+vim.keymap.set("n", "q", ":bdelete!<cr>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
