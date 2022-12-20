@@ -5,19 +5,15 @@
 <b>Useable for </b>
 macOS · Linux · (Windows)
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. it includes some useful plugins, but not everything the nvim community provides, for example no dap. Windows should somehow working, it's not Tested. Maybe with some small Changes.
 
-## Installation
+## Install
 
 > Neovim 0.8.1
 
-### Package-Manager
-
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
-### Source
-
-If you want to make sure `nvim` is only updated when you want, then I recommend installing from source.
+If you want to make sure `nvim` is only updated when you want, then I recommend installing from source this way:
 
 ```
 git clone https://github.com/neovim/neovim.git
@@ -27,39 +23,16 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
-## Configuration
+Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically. Maybe you need to Restart `nvim` twice.
 
-Be sure to delete or move your current `nvim` directory. Run `nvim` and install all the plugins with:
+## Uninstall 
 
-```
-:PackerInstall
-```
-
-In addition, the following command can be used to run a series of diagnostic tests to check the state of the Neovim installation. If it detects any problems, it usually offers suggestions on how to fix them or where to find out more
-
-```
-:checkhealth
+```bash 
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
 ```
 
-### Font
-
-Use the [Nerd Fonts](https://www.nerdfonts.com) to get some fancy icons. Such **Nerd Fonts** are not mandatory, but are needed for the display of the icons.
-
-> [Iosevka Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Iosevka)
-
-```bash
-curl -fLo "<FONT NAME> Nerd Font Complete.otf" \
-    https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/<FONT_PATH>/complete/<FONT_NAME>%20Nerd%20Font%20Complete.otf
-```
-
-or for macOS Users via Homebrew:
-
-```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-<FONT NAME>-nerd-font
-```
-
-### Structure
+## Structure
 
 The File Structure explained.
 
@@ -87,7 +60,7 @@ The File Structure explained.
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-### LSP
+### Language Server Protocol
 
 > Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 
