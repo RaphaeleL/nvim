@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   end,
 })
 
--- Faster yank
+-- Highlight Yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = vim.api.nvim_create_augroup("HighlightYank", {}),
   pattern = "*",
