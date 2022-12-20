@@ -1,23 +1,3 @@
--- use 'q' to quit from some plugins
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = {
-    "Git",
-    "Jaq",
-    "qf",
-    "help",
-    "man",
-    "lspinfo",
-    "DressingSelect",
-    "Markdown",
-  },
-  callback = function()
-    vim.cmd([[
-            nnoremap <silent> <buffer> q :close <cr>
-            set nobuflisted
-        ]])
-  end,
-})
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "plugins.lua" },
@@ -37,3 +17,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     })
   end,
 })
+
+-- Autoformat on Save
+-- for impl see after/plugin/lsp.lua

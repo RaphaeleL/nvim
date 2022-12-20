@@ -1,4 +1,15 @@
-vim.cmd.packadd('packer.nvim')
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  packer_bootstrap = vim.fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+    plugins,
+  })
+end
 
 return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
@@ -14,6 +25,8 @@ return require('packer').startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   use "nvim-treesitter/nvim-treesitter"
+
+  use "terrortylor/nvim-comment"
 
   use {
     "VonHeikemen/lsp-zero.nvim",
@@ -32,4 +45,7 @@ return require('packer').startup(function(use)
     }
   }
 
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)

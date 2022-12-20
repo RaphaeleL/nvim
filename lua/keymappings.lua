@@ -10,10 +10,12 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "sv", ":vsplit<cr>")
 vim.keymap.set("n", "sh", ":split<cr>")
-vim.keymap.set("n", "sc", ":close<cr>")
+vim.keymap.set("n", "q", ":close<cr>")
 vim.keymap.set("n", "c", ":bdelete<cr>")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+vim.keymap.set({"n", "v"}, "<Leader>l", ":CommentToggle<cr>")
 
 vim.keymap.set("n", "<TAB>", ":bprev<cr>")
 vim.keymap.set("n", "<S-TAB>", ":bnext<cr>")
@@ -47,6 +49,4 @@ vim.keymap.set("n", "sd", ":Telescope diagnostics<cr>")
 vim.keymap.set("n", "sw", ":Telescope grep_string<cr>")
 vim.keymap.set("n", "ds", ":Telescope lsp_document_symbols<cr>")
 -- vim.keymap.set("n", "sb", ":Telescope diagnostics bufnr=0 theme=get_ivy<cr>")
--- vim.keymap.set("n", "km", ":Telescope keymaps<cr>") -- Slows down the Movement somehow
-vim.keymap.set("n", "km", ":nmap ") -- Slows down the Movement somehow
 

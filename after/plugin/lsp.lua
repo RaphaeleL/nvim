@@ -39,6 +39,11 @@ lsp.configure('sumneko_lua', {
   }
 })
 
+local enable_autoformat = true
+if not enable_autoformat then
+  return
+end
+
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -50,7 +55,31 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "gp", ":lua vim.diagnostic.goto_prev()<cr>zz", opts)
   vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<cr>", opts)
   vim.keymap.set("n", "<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", opts)
-  vim.keymap.set("n", "ff", ":lua vim.lsp.buf.format { async = true }<cr>", opts)
+  vim.keymap.set("n", "ff", ":Format<cr>", opts)
+  vim.keymap.set("n", "ft", ":FormatToggleAuto<cr>", opts)
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    if vim.lsp.buf.format then
+      vim.lsp.buf.format()
+    elseif vim.lsp.buf.formatting then
+      vim.lsp.buf.formatting()
+    end
+  end, { desc = 'Format current buffer with LSP' })
+
+  -- Create a command `:EnableAutoformat` to Toggle the Autoformatter
+  vim.api.nvim_buf_create_user_command(bufnr, 'FormatToggleAuto', function(_)
+    enable_autoformat = not enable_autoformat
+  end, { desc = 'Auto Format current buffer with LSP' })
+
+  -- Autoformat on Save
+  vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    callback = function()
+      if enable_autoformat then
+        vim.lsp.buf.format({ async = true })
+      end
+    end,
+  })
 
 end)
 
