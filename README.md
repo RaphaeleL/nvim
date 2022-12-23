@@ -23,7 +23,7 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
-Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically. Maybe you need to Restart `nvim` twice.
+Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically. Maybe you need to Restart `nvim`, that Treesitter is reloading everything too.
 
 ## Uninstall 
 
@@ -48,7 +48,9 @@ The File Structure explained.
 
 ## Plugins
 
-> Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+> Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
+
+<!-- > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) -->
 
 ### Basic Plugins
 
@@ -56,13 +58,14 @@ The File Structure explained.
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Git Commands: [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+- Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - Colorscheme: [rose-pine/neovim](https://github.com/rose-pine/neovim)
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ### Language Server Protocol
 
-> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
+> Managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 - Lsp Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
@@ -80,8 +83,14 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (see `assets/time_proof.png`)
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it))
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` 
+  - with [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) and no [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
+  - see `assets/time_proof.png`
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,24s` 
+  - with [folke/lazy.nvim](https://github.com/folke/lazy.nvim) and [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
+  - with LazyLoading
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s` 
+  - with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it)
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
 - [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
@@ -89,6 +98,8 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 - [LunarVim Stable](https://github.com/LunarVim/LunarVim): `0,94s`
 - [LunarVim Rolling](https://github.com/LunarVim/LunarVim/tree/rolling): `0,96s`
 - [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
+
+> [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there can be a huge delay when opening `nvim`. 
 
 # Acknowledgments
 

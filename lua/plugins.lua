@@ -1,59 +1,36 @@
-local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-local is_bootstrap = false
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  is_bootstrap = true
-  vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-  vim.cmd "packadd packer.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--single-branch",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
 end
+vim.opt.runtimepath:prepend(lazypath)
 
-require('packer').startup(function(use)
-  use "wbthomason/packer.nvim"
-
-  use "mbbill/undotree"
-  use "lewis6991/impatient.nvim"
-  use "nvim-lua/plenary.nvim"
-
-  use "tpope/vim-fugitive"
-
-  use "rose-pine/neovim"
-
-  use "nvim-telescope/telescope.nvim"
-
-  use "nvim-treesitter/nvim-treesitter"
-
-  use "terrortylor/nvim-comment"
-
-  use {
-    "VonHeikemen/lsp-zero.nvim",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-nvim-lua",
-      "L3MON4D3/LuaSnip",
-      "rafamadriz/friendly-snippets",
-    }
-  }
-
-  if is_bootstrap then
-    require('packer').sync()
-  end
-
-end)
-
-if is_bootstrap then
-  print '=================================='
-  print '    Plugins are being installed'
-  print '    Wait until Packer completes,'
-  print '       then restart nvim'
-  print '    Give Treesitter and Mason a'
-  print '    Moment to Install everyting'
-  print '        after opening nvim'
-  print '=================================='
-  return
-end
+require("lazy").setup({
+  { "mbbill/undotree", lazy = true },
+  { "lewis6991/gitsigns.nvim", lazy = true },
+  { "lewis6991/impatient.nvim", lazy = true },
+  { "nvim-lua/plenary.nvim", lazy = true },
+  { "tpope/vim-fugitive", lazy = true },
+  { "rose-pine/neovim", lazy = true },
+  { "nvim-telescope/telescope.nvim", enabled = true },
+  { "nvim-treesitter/nvim-treesitter", lazy = true },
+  { "terrortylor/nvim-comment", lazy = true },
+  { "VonHeikemen/lsp-zero.nvim", lazy = true },
+  { "neovim/nvim-lspconfig", lazy = true },
+  { "williamboman/mason.nvim", lazy = true },
+  { "williamboman/mason-lspconfig.nvim", lazy = true },
+  { "hrsh7th/nvim-cmp", lazy = true },
+  { "hrsh7th/cmp-buffer", lazy = true },
+  { "hrsh7th/cmp-path", lazy = true },
+  { "saadparwaiz1/cmp_luasnip", lazy = true },
+  { "hrsh7th/cmp-nvim-lsp", lazy = true },
+  { "hrsh7th/cmp-nvim-lua", lazy = true },
+  { "L3MON4D3/LuaSnip", lazy = true },
+  { "rafamadriz/friendly-snippets", lazy = true },
+})

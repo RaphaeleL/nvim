@@ -7,7 +7,6 @@ end
 lsp.preset('recommended')
 
 lsp.set_preferences({
-  -- suggest_lsp_servers = false,
   sign_icons = {
     error = 'E',
     warn = 'W',
@@ -44,7 +43,7 @@ lsp.configure('sumneko_lua', {
 })
 
 local enable_virtualtext = false
-local enable_autoformat = true
+local enable_autoformat = false
 
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
