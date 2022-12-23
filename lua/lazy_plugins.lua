@@ -13,7 +13,9 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "mbbill/undotree", lazy = true,
+    "mbbill/undotree",
+    event = "VeryLazy",
+    -- lazy = true,
     keys = {
       { "su", ":UndotreeToggle<cr>" },
     }
@@ -39,10 +41,15 @@ require("lazy").setup({
       require("impatient").setup()
     end,
   },
-  { "nvim-lua/plenary.nvim", lazy = true },
+  {
+    "nvim-lua/plenary.nvim",
+    event = "VeryLazy",
+    -- lazy = true
+  },
   {
     "tpope/vim-fugitive",
     lazy = true,
+    event = "VeryLazy",
     keys = {
       { "<Leader>g", ":Git<cr>" },
       { "<Leader>gd", ":Git diff<cr>" },
@@ -56,6 +63,7 @@ require("lazy").setup({
   {
     "rose-pine/neovim",
     lazy = true,
+    event = "VeryLazy",
   },
   { "nvim-treesitter/nvim-treesitter", lazy = true },
   {
@@ -70,6 +78,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     lazy = true,
+    event = "VeryLazy",
     keys = {
       { "e", ":Telescope find_files<cr>" },
       { "el", ":Telescope live_grep<cr>" },

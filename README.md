@@ -30,6 +30,7 @@ Clone the Repository into `.config/` and start `nvim`. The Configuration is Inst
 ```bash 
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
+rm -rf ~/.local/state/nvim
 ```
 
 ## Structure
@@ -49,8 +50,6 @@ The File Structure explained.
 ## Plugins
 
 > Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
-
-<!-- > Plugins are managed by [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) -->
 
 ### Basic Plugins
 
@@ -86,10 +85,11 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` 
   - with [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) and no [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
   - with [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) the Performance is `0.54s` 
-  - see `assets/time_proof.png`
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,24s` 
+  - see `assets/time_proof_packer.png`
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,31s` 
   - with [folke/lazy.nvim](https://github.com/folke/lazy.nvim) and [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
   - with LazyLoading
+  - see `assets/time_proof_lazy.png`
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s` 
   - with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it)
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
