@@ -20,7 +20,6 @@ require("lazy").setup({
   },
   {
     "lewis6991/gitsigns.nvim",
-    lazy = true,
     config = function()
       require('gitsigns').setup {
         signs = {
@@ -81,6 +80,9 @@ require("lazy").setup({
       { "ds", ":Telescope lsp_document_symbols<cr>" },
     }
   },
+  { "L3MON4D3/LuaSnip", lazy = true },
+  { "rafamadriz/friendly-snippets", lazy = true },
+  { "saadparwaiz1/cmp_luasnip", lazy = true },
   -- Always Loading Lsp
   { "VonHeikemen/lsp-zero.nvim", enabled = true },
   { "neovim/nvim-lspconfig", enabled = true },
@@ -89,9 +91,6 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp", enabled = true },
   { "hrsh7th/cmp-buffer", enabled = true },
   { "hrsh7th/cmp-path", enabled = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
   { "hrsh7th/cmp-nvim-lsp", enabled = true },
   { "hrsh7th/cmp-nvim-lua", enabled = true },
-  { "L3MON4D3/LuaSnip", lazy = true },
-  { "rafamadriz/friendly-snippets", lazy = true },
 })
