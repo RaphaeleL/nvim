@@ -85,6 +85,7 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` 
   - with [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) and no [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
+  - with [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) the Performance is `0.54s` 
   - see `assets/time_proof.png`
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,24s` 
   - with [folke/lazy.nvim](https://github.com/folke/lazy.nvim) and [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
