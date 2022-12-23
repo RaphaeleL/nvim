@@ -82,16 +82,15 @@ The File Structure explained.
 
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` 
-  - with [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) and no [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
-  - with [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) the Performance is `0.54s` 
-  - see `assets/time_proof_packer.png`
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,31s` 
-  - with [folke/lazy.nvim](https://github.com/folke/lazy.nvim) and [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) 
-  - with LazyLoading
-  - see `assets/time_proof_lazy.png`
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` 
-  - with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it)
+<!-- - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s`  -->
+  <!-- - with [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) and no [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)  -->
+  <!-- - with [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) the Performance is `0.54s`  -->
+  <!-- - see `assets/time_proof_packer.png` -->
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,31s` (LazyLoading)
+  <!-- - with [folke/lazy.nvim](https://github.com/folke/lazy.nvim) and [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)  -->
+  <!-- - see `assets/time_proof_lazy.png` -->
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (LazyLoading)
+  <!-- - with [LazyLoading](https://github.com/NvChad/NvChad#what-is-it) -->
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
 - [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
 - [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
@@ -101,6 +100,8 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 - [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
 
 > [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there can be a huge delay when opening `nvim`. 
+
+> for some *proofs* see `assets/time_proofs`. There are some Screenshots.
 
 # Acknowledgments
 
