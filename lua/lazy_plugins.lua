@@ -12,16 +12,43 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
-  -- NOT SURE IF YOU WILL SURVIVE THE DECLUTTERING
+  -- =================================================================
+  -- Basic Plugins
+  -- =================================================================
   {
-    "mbbill/undotree",
-    event = "VeryLazy",
+    "rose-pine/neovim",
+    lazy = true,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = true,
+  },
+  {
+    "terrortylor/nvim-comment",
+    lazy = true,
+    config = function()
+      require("nvim_comment").setup()
+    end,
     keys = {
-      { "su", ":UndotreeToggle<cr>" },
+      { "<Leader>l", ":CommentToggle<cr>" }
+    }
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    lazy = true,
+    keys = {
+      { "e", ":Telescope find_files<cr>" },
+      { "el", ":Telescope live_grep<cr>" },
+      { "eg", ":Telescope git_files<cr>" },
+      { "sb", ":Telescope buffers<cr>" },
+      { "sd", ":Telescope diagnostics<cr>" },
+      { "sw", ":Telescope grep_string<cr>" },
+      { "ds", ":Telescope lsp_document_symbols<cr>" },
     }
   },
   {
     "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
     config = function()
       require('gitsigns').setup {
         signs = {
@@ -43,13 +70,29 @@ require("lazy").setup({
   },
   {
     "nvim-lua/plenary.nvim",
-    event = "VeryLazy",
+    lazy = true
   },
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    enabled = true,
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp",
+    }
+  },
+  -- =================================================================
+
+  -- =================================================================
   -- NOT SURE IF YOU WILL SURVIVE THE DECLUTTERING
+  -- =================================================================
   {
     "tpope/vim-fugitive",
     lazy = true,
-    event = "VeryLazy",
     keys = {
       { "<Leader>g", ":Git<cr>" },
       { "<Leader>gd", ":Git diff<cr>" },
@@ -60,47 +103,11 @@ require("lazy").setup({
     }
   },
   {
-    "rose-pine/neovim",
+    "mbbill/undotree",
     lazy = true,
-    event = "VeryLazy",
-  },
-  { "nvim-treesitter/nvim-treesitter", lazy = true },
-  {
-    "terrortylor/nvim-comment",
-    config = function()
-      require("nvim_comment").setup()
-    end,
     keys = {
-      { "<Leader>l", ":CommentToggle<cr>" }
+      { "su", ":UndotreeToggle<cr>" },
     }
   },
-  {
-    "nvim-telescope/telescope.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    keys = {
-      { "e", ":Telescope find_files<cr>" },
-      { "el", ":Telescope live_grep<cr>" },
-      { "eg", ":Telescope git_files<cr>" },
-      { "sb", ":Telescope buffers<cr>" },
-      { "sd", ":Telescope diagnostics<cr>" },
-      { "sw", ":Telescope grep_string<cr>" },
-      { "ds", ":Telescope lsp_document_symbols<cr>" },
-    }
-  },
-  -- NOT SURE IF YOU 3 WILL SURVIVE THE DECLUTTERING
-  { "L3MON4D3/LuaSnip", lazy = true },
-  { "rafamadriz/friendly-snippets", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
-
-  -- Always Loading Lsp
-  { "VonHeikemen/lsp-zero.nvim", enabled = true },
-  { "neovim/nvim-lspconfig", enabled = true },
-  { "williamboman/mason.nvim", enabled = true },
-  { "williamboman/mason-lspconfig.nvim", enabled = true },
-  { "hrsh7th/nvim-cmp", enabled = true },
-  { "hrsh7th/cmp-buffer", enabled = true },
-  { "hrsh7th/cmp-path", enabled = true },
-  { "hrsh7th/cmp-nvim-lsp", enabled = true },
-  { "hrsh7th/cmp-nvim-lua", enabled = true },
+  -- =================================================================
 })
