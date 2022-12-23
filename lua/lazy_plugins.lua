@@ -12,10 +12,10 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
+  -- NOT SURE IF YOU WILL SURVIVE THE DECLUTTERING
   {
     "mbbill/undotree",
     event = "VeryLazy",
-    -- lazy = true,
     keys = {
       { "su", ":UndotreeToggle<cr>" },
     }
@@ -44,8 +44,8 @@ require("lazy").setup({
   {
     "nvim-lua/plenary.nvim",
     event = "VeryLazy",
-    -- lazy = true
   },
+  -- NOT SURE IF YOU WILL SURVIVE THE DECLUTTERING
   {
     "tpope/vim-fugitive",
     lazy = true,
@@ -58,7 +58,6 @@ require("lazy").setup({
       { "<Leader>gc", ":Git commit<cr>" },
       { "<Leader>gp", ":Git push<cr>" },
     }
-
   },
   {
     "rose-pine/neovim",
@@ -89,9 +88,11 @@ require("lazy").setup({
       { "ds", ":Telescope lsp_document_symbols<cr>" },
     }
   },
+  -- NOT SURE IF YOU 3 WILL SURVIVE THE DECLUTTERING
   { "L3MON4D3/LuaSnip", lazy = true },
   { "rafamadriz/friendly-snippets", lazy = true },
   { "saadparwaiz1/cmp_luasnip", lazy = true },
+
   -- Always Loading Lsp
   { "VonHeikemen/lsp-zero.nvim", enabled = true },
   { "neovim/nvim-lspconfig", enabled = true },
