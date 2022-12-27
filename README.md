@@ -82,7 +82,7 @@ Remove plugins that you have used less than 5 times in the last 3-4 weeks.
 Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (Lazy Loading)
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (Lazy Loading)
+- [NvChad](https://github.com/NvChad): `0,32s` (Lazy Loading)
 - [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim): `0,52s`
 - [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
@@ -100,8 +100,8 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 
 This Configuration is inspired by:
 
-- [NvChad](https://github.com/NvChad/NvChad)
-- [LunarVim](https://github.com/LunarVim/LunarVim)
+- [NvChad](https://github.com/NvChad)
+- [LunarVim](https://github.com/LunarVim)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
 - [TJ DeVries](https://github.com/tjdevries)
 
