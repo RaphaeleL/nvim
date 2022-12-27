@@ -12,26 +12,12 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
-  -- =================================================================
-  -- Basic Plugins
-  -- =================================================================
-  {
-    "rose-pine/neovim",
-    lazy = true,
-  },
+  -- ============================================
+  --      BASIC PLUGINS
+  -- ============================================
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = true,
-  },
-  {
-    "terrortylor/nvim-comment",
-    lazy = true,
-    config = function()
-      require("nvim_comment").setup()
-    end,
-    keys = {
-      { "<Leader>l", ":CommentToggle<cr>" }
-    }
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -47,16 +33,26 @@ require("lazy").setup({
     }
   },
   {
+    "terrortylor/nvim-comment",
+    lazy = true,
+    config = function()
+      require("nvim_comment").setup()
+    end,
+    keys = {
+      { "<Leader>l", ":CommentToggle<cr>" }
+    }
+  },
+  {
     "lewis6991/gitsigns.nvim",
     event = "VeryLazy",
     config = function()
-      require('gitsigns').setup {
+      require("gitsigns").setup {
         signs = {
-          add = { text = '+' },
-          change = { text = '~' },
-          delete = { text = '_' },
-          topdelete = { text = '‾' },
-          changedelete = { text = '~' },
+          add = { text = "+" },
+          change = { text = "~" },
+          delete = { text = "_" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
         },
       }
     end,
@@ -72,6 +68,14 @@ require("lazy").setup({
     "nvim-lua/plenary.nvim",
     lazy = true
   },
+  -- ============================================
+  --      LANGUAGE SERVER PROTOCOL
+  -- ============================================
+  --
+  -- TODO: is this able to lazy load, somehow
+  --       only load if a lsp supported file
+  --       is open?
+  --
   {
     "VonHeikemen/lsp-zero.nvim",
     enabled = true,
@@ -85,11 +89,12 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lsp",
     }
   },
-  -- =================================================================
-
-  -- =================================================================
-  -- NOT SURE IF YOU WILL SURVIVE THE DECLUTTERING
-  -- =================================================================
+  -- ============================================
+  --      USEFUL BUT NOT NECESSARY
+  -- ============================================
+  -- 
+  -- LazyLoading, so no Problem to keep you
+  --
   {
     "tpope/vim-fugitive",
     lazy = true,
@@ -109,5 +114,29 @@ require("lazy").setup({
       { "su", ":UndotreeToggle<cr>" },
     }
   },
-  -- =================================================================
+  -- ============================================
+  --      COLORSCHEME COLLECTION
+  -- ============================================
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
+    config = function()
+      require("kanagawa").setup({ transparent = true })
+    end
+  },
+  -- {
+  --   "rose-pine/neovim",
+  --   lazy = true,
+  --   config = function()
+  --     require("rose-pine").setup({ disable_background = true })
+  --   end
+  -- },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  --   lazy = true,
+  --   config = function()
+  --     require("catppuccin").setup({ transparent_background = true })
+  --   end
+  -- },
 })
