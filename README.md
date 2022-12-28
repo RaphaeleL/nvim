@@ -107,6 +107,8 @@ This Configuration is inspired by:
 
 ## Showcase
 
-![Demo-1](./assets/demo/Demo_1.png)
-![Demo-2](./assets/demo/Demo_2.png)
-![Demo-3](./assets/demo/Demo_3.png)
+See  `assets/demo/*.png`. There are some Screenshots.
+
+<!-- ![Demo-1](./assets/demo/Demo-1.png) -->
+<!-- ![Demo-2](./assets/demo/Demo_2.png) -->
+<!-- ![Demo-3](./assets/demo/Demo_3.png) -->
