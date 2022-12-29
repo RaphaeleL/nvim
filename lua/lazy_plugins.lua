@@ -33,6 +33,67 @@ require("lazy").setup({
     }
   },
   {
+    "lewis6991/impatient.nvim",
+    lazy = true,
+    config = function()
+      require("impatient").setup()
+    end,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true
+  },
+  -- ============================================
+  --      LANGUAGE SERVER PROTOCOL
+  -- ============================================
+  --
+  -- TODO: is this able to lazy load? Somehow only 
+  -- load if a lsp supported file is open. The 
+  -- startup time for the mentioned file would be 
+  -- halved!
+  --
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    enabled = true,
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp",
+    }
+  },
+  -- ============================================
+  --      USEFUL BUT NOT NECESSARY
+  -- ============================================
+  --
+  -- these plugins are lazy loaded. so there is no 
+  -- problem to keep them and load them only when 
+  -- the key combination is actually pressed or the 
+  -- event is triggered.  
+  --
+  {
+    "tpope/vim-fugitive",
+    lazy = true,
+    keys = {
+      { "<Leader>g", ":Git<cr>" },
+      { "<Leader>gd", ":Git diff<cr>" },
+      { "<Leader>gb", ":Git blame<cr>" },
+      { "<Leader>ga", ":Git add .<cr>" },
+      { "<Leader>gc", ":Git commit<cr>" },
+      { "<Leader>gp", ":Git push<cr>" },
+    }
+  },
+  {
+    "mbbill/undotree",
+    lazy = true,
+    keys = {
+      { "su", ":UndotreeToggle<cr>" },
+    }
+  },
+  {
     "terrortylor/nvim-comment",
     lazy = true,
     config = function()
@@ -57,66 +118,15 @@ require("lazy").setup({
       }
     end,
   },
-  {
-    "lewis6991/impatient.nvim",
-    lazy = true,
-    config = function()
-      require("impatient").setup()
-    end,
-  },
-  {
-    "nvim-lua/plenary.nvim",
-    lazy = true
-  },
-  -- ============================================
-  --      LANGUAGE SERVER PROTOCOL
-  -- ============================================
-  --
-  -- TODO: is this able to lazy load, somehow
-  --       only load if a lsp supported file
-  --       is open?
-  --
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    enabled = true,
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "hrsh7th/nvim-cmp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lsp",
-    }
-  },
-  -- ============================================
-  --      USEFUL BUT NOT NECESSARY
-  -- ============================================
-  -- 
-  -- LazyLoading, so no Problem to keep you
-  --
-  {
-    "tpope/vim-fugitive",
-    lazy = true,
-    keys = {
-      { "<Leader>g", ":Git<cr>" },
-      { "<Leader>gd", ":Git diff<cr>" },
-      { "<Leader>gb", ":Git blame<cr>" },
-      { "<Leader>ga", ":Git add .<cr>" },
-      { "<Leader>gc", ":Git commit<cr>" },
-      { "<Leader>gp", ":Git push<cr>" },
-    }
-  },
-  {
-    "mbbill/undotree",
-    lazy = true,
-    keys = {
-      { "su", ":UndotreeToggle<cr>" },
-    }
-  },
   -- ============================================
   --      COLORSCHEME COLLECTION
   -- ============================================
+  --
+  -- if you can't set a transparent background (to
+  -- create a consistent color scheme through the 
+  -- actual terminal), there is a useful plugin that 
+  -- will do it for you: xiyaowong/nvim-transparent
+  --
   {
     "rebelot/kanagawa.nvim",
     lazy = true,
