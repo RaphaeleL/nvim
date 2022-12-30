@@ -47,9 +47,9 @@ require("lazy").setup({
   --      LANGUAGE SERVER PROTOCOL
   -- ============================================
   --
-  -- TODO: is this able to lazy load? Somehow only 
-  -- load if a lsp supported file is open. The 
-  -- startup time for the mentioned file would be 
+  -- TODO: is this able to lazy load? Somehow only
+  -- load if a lsp supported file is open. The
+  -- startup time for the mentioned file would be
   -- halved!
   --
   {
@@ -69,10 +69,10 @@ require("lazy").setup({
   --      USEFUL BUT NOT NECESSARY
   -- ============================================
   --
-  -- these plugins are lazy loaded. so there is no 
-  -- problem to keep them and load them only when 
-  -- the key combination is actually pressed or the 
-  -- event is triggered.  
+  -- these plugins are lazy loaded. so there is no
+  -- problem to keep them and load them only when
+  -- the key combination is actually pressed or the
+  -- event is triggered.
   --
   {
     "tpope/vim-fugitive",
@@ -123,8 +123,8 @@ require("lazy").setup({
   -- ============================================
   --
   -- if you can't set a transparent background (to
-  -- create a consistent color scheme through the 
-  -- actual terminal), there is a useful plugin that 
+  -- create a consistent color scheme through the
+  -- actual terminal), there is a useful plugin that
   -- will do it for you: xiyaowong/nvim-transparent
   --
   {

@@ -9,7 +9,7 @@ macOS · Linux · (Windows)
 
 ## Install
 
-> Neovim 0.8.1
+> Neovim 0.8.2
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -18,7 +18,7 @@ If you want to make sure `nvim` is only updated when you want, then I recommend 
 ```
 git clone https://github.com/neovim/neovim.git
 cd neovim
-git checkout release-0.8.1
+git checkout v0.8.2
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
@@ -69,9 +69,9 @@ Remove plugins that you have used less than 5 times in the last 3-4 weeks.
 
 > Managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
-- Lsp Config: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- Lsp Configuration: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
-- Lsp Package Manager Config: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+- Lsp Package Manager Configuration: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - Auto Completion: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Auto Completion: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - Auto Completion: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
@@ -83,14 +83,13 @@ Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw
 
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (Lazy Loading)
 - [NvChad](https://github.com/NvChad): `0,32s` (Lazy Loading)
-- [ThePrimeagen's Config](https://github.com/ThePrimeagen): `0,41s`
+- [ThePrimeagen's Configuration](https://github.com/ThePrimeagen): `0,41s`
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim): `0,52s`
-- [TJ DeVries' Config](https://github.com/tjdevries): `0,71s`
-- [CraftzDog's Config](https://github.com/craftzdog): `0,84s`
-- [Adam Elmore's Config](https://github.com/adamelmore): `0,94s`
-- [LunarVim Stable Branch](https://github.com/LunarVim): `0,94s`
-- [LunarVim Rolling Branch](https://github.com/LunarVim): `0,96s`
-- [Christian Chiarulli's Config](https://github.com/ChristianChiarulli): `2,60s`
+- [TJ DeVries' Configuration](https://github.com/tjdevries): `0,71s`
+- [Takuya Matsuyama's Configuration](https://github.com/craftzdog): `0,84s`
+- [Adam Elmore's Configuration](https://github.com/adamelmore): `0,94s`
+- [LunarVim](https://github.com/LunarVim): `0,94s`
+- [Christian Chiarulli's Configuration](https://github.com/ChristianChiarulli): `2,60s`
 
 > [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there *can* be a huge delay when opening `nvim`. Expect with NaaVim's LazyLoading :D
 
