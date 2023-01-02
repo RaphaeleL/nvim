@@ -13,9 +13,9 @@ macOS · Linux · (Windows)
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
-If you want to make sure `nvim` is only updated when you want, then I recommend installing from source this way:
+If you want to make sure `nvim` is only updated when you want, then I recommend installing it from source this way:
 
-```
+```bash
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout v0.8.2
@@ -38,20 +38,20 @@ rm -rf ~/.local/state/nvim
 The File Structure explained.
 
 ```
-- nvim
-  - lua/              -- contains the configuration of NeoVim
+~/.config/nvim/
+  - lua/              -- Contains the configuration of NeoVim
     - *.lua           -- Neovim Settings, Keymappings, ... 
-  - after/
-    - plugin/*.lua    -- each Plugin has a Setup File 
-    - ftplugin/*.vim  -- each Language has specific Settings 
+  - after/            -- Automatically Load Vim / Lua Files
+    - plugin/*.lua    -- some Plugins own a setup File (in Lua)
+    - ftplugin/*.vim  -- some Languages own a setup File (in Vim Script)
   - init.lua          -- the start of every Configuration
 ```
 
 ## Plugins
 
-Remove plugins that you have used less than 5 times in the last 3-4 weeks.
+Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
-> Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
+> Remove plugins that you have used less than 5 times in the last 3-4 weeks.
 
 ### Basic Plugins
 
@@ -79,21 +79,21 @@ Remove plugins that you have used less than 5 times in the last 3-4 weeks.
 
 # Performance 
 
-Messured with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
+Messured (in Winter 2022) with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
 - [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (Lazy Loading)
-- [NvChad](https://github.com/NvChad): `0,32s` (Lazy Loading)
-- [ThePrimeagen's Configuration](https://github.com/ThePrimeagen): `0,41s`
+- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (Lazy Loading)
+- [ThePrimeagen's Configuration](https://github.com/ThePrimeagen/init.lua): `0,41s`
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim): `0,52s`
-- [TJ DeVries' Configuration](https://github.com/tjdevries): `0,71s`
-- [Takuya Matsuyama's Configuration](https://github.com/craftzdog): `0,84s`
-- [Adam Elmore's Configuration](https://github.com/adamelmore): `0,94s`
-- [LunarVim](https://github.com/LunarVim): `0,94s`
-- [Christian Chiarulli's Configuration](https://github.com/ChristianChiarulli): `2,60s`
+- [TJ DeVries' Configuration](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim): `0,71s`
+- [Takuya Matsuyama's Configuration](https://github.com/craftzdog/dotfiles-public/tree/master/.config/nvim): `0,84s`
+- [Adam Elmore's Configuration](https://github.com/adamelmore/dotfiles/tree/main/.config/nvim): `0,94s`
+- [LunarVim](https://github.com/LunarVim/LunarVim): `0,94s`
+- [Christian Chiarulli's Configuration](https://github.com/ChristianChiarulli/nvim): `2,60s`
 
-> [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there *can* be a huge delay when opening `nvim`. Expect with NaaVim's LazyLoading :D
+> [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there *can* be a huge delay when opening `nvim`. 
 
-> for some *proofs* see `assets/time_proofs`. There are some Screenshots.
+> for *proofs* see `assets/time_proofs`. There are some Screenshots.
 
 # Acknowledgments
 
@@ -106,8 +106,4 @@ This Configuration is inspired by:
 
 ## Showcase
 
-See  `assets/demo/*.png`. There are some Screenshots.
-
-<!-- ![Demo-1](./assets/demo/Demo-1.png) -->
-<!-- ![Demo-2](./assets/demo/Demo_2.png) -->
-<!-- ![Demo-3](./assets/demo/Demo_3.png) -->
+See `assets/demo/*.png`. There are some Screenshots.
