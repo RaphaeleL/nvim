@@ -77,22 +77,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Auto Completion: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - Auto Completion: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 
-# Performance 
-
-Messured (in Winter 2022) with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
-
-- [NvChad](https://github.com/NvChad/NvChad): `0,32s` (Lazy Loading)
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,39s` (Lazy Loading)
-- [ThePrimeagen's Configuration](https://github.com/ThePrimeagen/init.lua): `0,41s`
-- [Kickstart](https://github.com/nvim-lua/kickstart.nvim): `0,52s`
-- [TJ DeVries' Configuration](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim): `0,71s`
-- [Takuya Matsuyama's Configuration](https://github.com/craftzdog/dotfiles-public/tree/master/.config/nvim): `0,84s`
-- [Adam Elmore's Configuration](https://github.com/adamelmore/dotfiles/tree/main/.config/nvim): `0,94s`
-- [LunarVim](https://github.com/LunarVim/LunarVim): `0,94s`
-- [Christian Chiarulli's Configuration](https://github.com/ChristianChiarulli/nvim): `2,60s`
-
-> [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there *can* be a huge delay when opening `nvim`. 
-
 # Acknowledgments
 
 This Configuration is inspired by:
