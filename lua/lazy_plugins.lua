@@ -43,6 +43,7 @@ require("lazy").setup({
     "nvim-lua/plenary.nvim",
     lazy = true
   },
+  --
   -- ============================================
   --      LANGUAGE SERVER PROTOCOL
   -- ============================================
@@ -55,16 +56,19 @@ require("lazy").setup({
   {
     "VonHeikemen/lsp-zero.nvim",
     enabled = true,
+    -- lazy = true,
+    -- event = "VeryLazy",
     dependencies = {
-      "neovim/nvim-lspconfig",
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
       "hrsh7th/nvim-cmp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lsp",
-    }
+    },
   },
+  --
   -- ============================================
   --      USEFUL BUT NOT NECESSARY
   -- ============================================
@@ -118,6 +122,14 @@ require("lazy").setup({
       }
     end,
   },
+  {
+    "RRethy/vim-illuminate",
+    event = "VeryLazy",
+    config = function()
+      require("illuminate")
+    end,
+  },
+  --
   -- ============================================
   --      COLORSCHEME COLLECTION
   -- ============================================
@@ -127,12 +139,16 @@ require("lazy").setup({
   -- actual terminal), there is a useful plugin that
   -- will do it for you: xiyaowong/nvim-transparent
   --
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = true,
+  --   config = function()
+  --     require("kanagawa").setup({ transparent = true })
+  --   end
+  -- },
   {
-    "rebelot/kanagawa.nvim",
+    "lunarvim/darkplus.nvim",
     lazy = true,
-    config = function()
-      require("kanagawa").setup({ transparent = true })
-    end
   },
   -- {
   --   "rose-pine/neovim",
