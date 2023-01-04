@@ -25,7 +25,6 @@ lsp.ensure_installed({
   'clangd',
   'cmake',
   'jsonls',
-  'ltex',
   'sumneko_lua',
   'marksman',
   'pyright',

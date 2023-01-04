@@ -1,36 +1,41 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--single-branch",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
-end
-vim.opt.runtimepath:prepend(lazypath)
+vim.cmd.packadd('packer.nvim')
 
-require("lazy").setup({
-  { "mbbill/undotree", lazy = true },
-  { "lewis6991/gitsigns.nvim", lazy = true },
-  { "lewis6991/impatient.nvim", lazy = true },
-  { "nvim-lua/plenary.nvim", lazy = true },
-  { "tpope/vim-fugitive", lazy = true },
-  { "rose-pine/neovim", lazy = true },
-  { "nvim-telescope/telescope.nvim", enabled = true },
-  { "nvim-treesitter/nvim-treesitter", lazy = true },
-  { "terrortylor/nvim-comment", lazy = true },
-  { "VonHeikemen/lsp-zero.nvim", lazy = true },
-  { "neovim/nvim-lspconfig", lazy = true },
-  { "williamboman/mason.nvim", lazy = true },
-  { "williamboman/mason-lspconfig.nvim", lazy = true },
-  { "hrsh7th/nvim-cmp", lazy = true },
-  { "hrsh7th/cmp-buffer", lazy = true },
-  { "hrsh7th/cmp-path", lazy = true },
-  { "saadparwaiz1/cmp_luasnip", lazy = true },
-  { "hrsh7th/cmp-nvim-lsp", lazy = true },
-  { "hrsh7th/cmp-nvim-lua", lazy = true },
-  { "L3MON4D3/LuaSnip", lazy = true },
-  { "rafamadriz/friendly-snippets", lazy = true },
-})
+return require('packer').startup(function(use)
+  use "wbthomason/packer.nvim"
+
+  use "lewis6991/impatient.nvim"
+  use { "mbbill/undotree", opts = true }
+
+  use "nvim-lua/plenary.nvim"
+
+  use { "tpope/vim-fugitive", opts = true }
+
+  use { "nvim-telescope/telescope.nvim", opts = true }
+
+  use "nvim-treesitter/nvim-treesitter"
+
+  use { "terrortylor/nvim-comment", opts = true }
+  use { "lewis6991/gitsigns.nvim", opts = true }
+  use { "RRethy/vim-illuminate", opts = true }
+
+  use {
+    "VonHeikemen/lsp-zero.nvim",
+    opts = true,
+    requires = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+      "hrsh7th/nvim-cmp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp",
+    }
+  }
+
+  use "lunarvim/darkplus.nvim"
+  -- use "rebelot/kanagawa.nvim"
+  -- use "rose-pine/neovim"
+  -- use "catppuccin/nvim"
+
+
+end)
