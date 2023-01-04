@@ -55,7 +55,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Basic Plugins
 
-> The Colorscheme is constantly changing but it's for sure one of them: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim), [rose-pine/neovim](https://github.com/rose-pine/neovim) or [catppuccin/nvim](https://github.com/catppuccin/nvim)
+> The Colorscheme is constantly changing but it's for sure one of them: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim), [rose-pine/neovim](https://github.com/rose-pine/neovim), [catppuccin/nvim](https://github.com/catppuccin/nvim) or [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
 
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
@@ -81,8 +81,8 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 Messured (in Winter 2022) with the `time` Command for a 3000 Line Linux Kernel [File](https://raw.githubusercontent.com/torvalds/linux/master/kernel/auditsc.c):
 
-- [NaaVim](https://github.com/RaphaeleL/nvim): `0,22s` (Lazy Loading)
 - [NvChad](https://github.com/NvChad/NvChad): `0,32s` (Lazy Loading)
+- [NaaVim](https://github.com/RaphaeleL/nvim): `0,39s` (Lazy Loading)
 - [ThePrimeagen's Configuration](https://github.com/ThePrimeagen/init.lua): `0,41s`
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim): `0,52s`
 - [TJ DeVries' Configuration](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim): `0,71s`
@@ -92,8 +92,6 @@ Messured (in Winter 2022) with the `time` Command for a 3000 Line Linux Kernel [
 - [Christian Chiarulli's Configuration](https://github.com/ChristianChiarulli/nvim): `2,60s`
 
 > [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) compares the code with the current Git changes, so there *can* be a huge delay when opening `nvim`. 
-
-> for *proofs* see `assets/time_proofs`. There are some Screenshots.
 
 # Acknowledgments
 
