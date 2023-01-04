@@ -1,5 +1,5 @@
 require("settings")
 require("keymappings")
-require("lazy_plugins")
--- require("packer_plugins")
+-- require("lazy_plugins")
+require("packer_plugins")
 require("autocommands")
