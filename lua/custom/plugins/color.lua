@@ -16,10 +16,6 @@ return {
         end
     },
     {
-        "lunarvim/darkplus.nvim",
-        lazy = true,
-    },
-    {
         "rose-pine/neovim",
         lazy = true,
         config = function()
@@ -33,5 +29,9 @@ return {
         config = function()
             require("catppuccin").setup({ transparent_background = true })
         end
+    },
+    {
+        dir = "~/.config/nvim/themes/darkplus.nvim",
+        name = "transparent_darkplus"
     },
 }

@@ -1,2 +1,1 @@
-vim.cmd("colorscheme darkplus")
--- vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme transparent_darkplus")

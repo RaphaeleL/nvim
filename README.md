@@ -56,7 +56,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Basic Plugins
 
-> The Colorscheme is constantly changing but it's for sure one of them: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim), [rose-pine/neovim](https://github.com/rose-pine/neovim), [catppuccin/nvim](https://github.com/catppuccin/nvim) or [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
+> The Colorscheme is constantly changing but it's for sure one of them: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim), [rose-pine/neovim](https://github.com/rose-pine/neovim), [catppuccin/nvim](https://github.com/catppuccin/nvim) or my own Interpretation of [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
 
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
