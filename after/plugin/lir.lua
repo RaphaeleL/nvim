@@ -54,5 +54,3 @@ lir.setup {
 require("lir.git_status").setup {
     show_ignored = false,
 }
-
-vim.api.nvim_set_keymap("n", "-", ":edit %:h<CR>", { noremap = true })
