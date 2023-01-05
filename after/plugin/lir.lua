@@ -17,7 +17,8 @@ if has_devicons then
 end
 
 local actions = require "lir.actions"
--- local has_mmv, mmv_actions = pcall(require, "lir.mmv.actions")
+local mark_actions = require "lir.mark.actions"
+local clipboard_actions = require "lir.clipboard.actions"
 
 lir.setup {
     show_hidden_files = true,
@@ -27,6 +28,9 @@ lir.setup {
 
     mappings = {
         ["<CR>"] = actions.edit,
+        ["h"] = actions.split,
+        ["v"] = actions.vsplit,
+        ["t"] = actions.tabedit,
         ["-"] = actions.up,
 
         ["m"] = actions.mkdir,
@@ -36,8 +40,14 @@ lir.setup {
         ["d"] = actions.delete,
         ["."] = actions.toggle_show_hidden,
 
-        -- mmv
-        -- ["m"] = (has_mmv and mmv_actions.mmv) or nil,
+        ["J"] = function()
+            mark_actions.toggle_mark()
+            vim.cmd("normal! j")
+        end,
+
+        ["c"] = clipboard_actions.copy,
+        ["x"] = clipboard_actions.cut,
+        ["p"] = clipboard_actions.paste,
     },
 }
 
@@ -46,40 +56,3 @@ require("lir.git_status").setup {
 }
 
 vim.api.nvim_set_keymap("n", "-", ":edit %:h<CR>", { noremap = true })
-
--- Can do this if we want to get particular settings
--- vim.cmd [[
---   augroup LirSettings
---     au!
---     autocmd Filetype lir :lua LirSettings()
---   augroup END
--- ]]
-
--- Recommended actions, can play with these some more later.
--- ['l']     = actions.edit,
--- ['<C-s>'] = actions.split,
--- ['<C-v>'] = actions.vsplit,
--- ['<C-t>'] = actions.tabedit,
-
--- ['h']     = actions.up,
--- ['q']     = actions.quit,
-
--- ['N']     = actions.newfile,
--- ['R']     = actions.rename,
--- ['@']     = actions.cd,
--- ['Y']     = actions.yank_path,
-
--- ['J'] = function()
---   mark_actions.toggle_mark()
---   vim.cmd('normal! j')
--- end,
--- ['C'] = clipboard_actions.copy,
--- ['X'] = clipboard_actions.cut,
--- ['P'] = clipboard_actions.paste,
-
--- highlight link LirGitStatusBracket Comment
--- highlight link LirGitStatusIndex Special
--- highlight link LirGitStatusWorktree WarningMsg
--- highlight link LirGitStatusUnmerged ErrorMsg
--- highlight link LirGitStatusUntracked Comment
--- highlight link LirGitStatusIgnored Comment
