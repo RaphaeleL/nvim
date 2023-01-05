@@ -28,8 +28,8 @@ lir.setup {
 
     mappings = {
         ["<CR>"] = actions.edit,
-        ["h"] = actions.split,
-        ["v"] = actions.vsplit,
+        ["H"] = actions.split,
+        ["V"] = actions.vsplit,
         ["t"] = actions.tabedit,
         ["-"] = actions.up,
 
