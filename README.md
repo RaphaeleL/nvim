@@ -66,6 +66,16 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
+The following plugins are really cool, useful and great. But they are not necessary.
+
+- File Explorer: [tamago324/lir.nvim](https://github.com/tamago324/lir.nvim)
+- File Explorer Git Extension: [tamago324/lir-git-status.nvim](https://github.com/tamago324/lir-git-status.nvim)
+- Show Indent: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- Highlight Same Words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
+- Commentin: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
+
 ### Language Server Protocol
 
 > Managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)

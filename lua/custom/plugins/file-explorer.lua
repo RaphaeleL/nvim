@@ -3,7 +3,9 @@ return {
         "tamago324/lir.nvim",
         lazy = true,
         keys = {
-            { "<leader>t", ":lua require'lir.float'.toggle()<cr>" },
+            { "e", ":lua require'lir.float'.toggle()<cr>" },
+            -- { "<leader>t", ":lua require'lir.float'.toggle()<cr>" },
+            -- { "e", ":edit %:h<cr>" },
         }
     },
     {
@@ -11,20 +13,16 @@ return {
         lazy = true,
     },
     {
-        "tamago324/lir-mmv.nvim",
-        lazy = true,
-    },
-    {
         "nvim-telescope/telescope.nvim",
         lazy = true,
         keys = {
-            { "e", ":Telescope find_files<cr>" },
-            { "el", ":Telescope live_grep<cr>" },
-            { "eg", ":Telescope git_files<cr>" },
-            { "sb", ":Telescope buffers<cr>" },
-            { "sd", ":Telescope diagnostics<cr>" },
-            { "sw", ":Telescope grep_string<cr>" },
-            { "ds", ":Telescope lsp_document_symbols<cr>" },
+            { "t", ":Telescope find_files<cr>" },
+            { "tl", ":Telescope live_grep<cr>" },
+            { "tg", ":Telescope git_files<cr>" },
+            { "tb", ":Telescope buffers<cr>" },
+            { "td", ":Telescope diagnostics<cr>" },
+            { "tw", ":Telescope grep_string<cr>" },
+            { "ts", ":Telescope lsp_document_symbols<cr>" },
         }
     },
 }

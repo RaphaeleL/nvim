@@ -12,10 +12,10 @@ return {
     },
     {
         "nvim-tree/nvim-web-devicons",
-        event = "VeryLazy",
+        lazy = true,
     },
     {
         "rcarriga/nvim-notify",
-        event = "VeryLazy",
+        lazy = true,
     }
 }
