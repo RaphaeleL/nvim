@@ -32,4 +32,11 @@ return {
             { "<Leader>gp", ":Git push<cr>" },
         }
     },
+    {
+        "rhysd/git-messenger.vim",
+        lazy = true,
+        keys = {
+            { "<Leader>gm", ":GitMessenger<cr>"},
+        }
+    },
 }

@@ -75,6 +75,7 @@ The following plugins are really cool, useful and great. But they are not necess
 - Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Commentin: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
+- Git Commit View: [rhysd/git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
 
 ### Language Server Protocol
 
