@@ -17,7 +17,7 @@ if has_devicons then
 end
 
 local actions = require "lir.actions"
-local has_mmv, mmv_actions = pcall(require, "lir.mmv.actions")
+-- local has_mmv, mmv_actions = pcall(require, "lir.mmv.actions")
 
 lir.setup {
     show_hidden_files = true,
@@ -29,15 +29,15 @@ lir.setup {
         ["<CR>"] = actions.edit,
         ["-"] = actions.up,
 
-        ["K"] = actions.mkdir,
-        ["N"] = actions.newfile,
-        ["R"] = actions.rename,
-        ["Y"] = actions.yank_path,
-        ["D"] = actions.delete,
+        ["m"] = actions.mkdir,
+        ["n"] = actions.newfile,
+        ["r"] = actions.rename,
+        ["y"] = actions.yank_path,
+        ["d"] = actions.delete,
         ["."] = actions.toggle_show_hidden,
 
         -- mmv
-        ["M"] = (has_mmv and mmv_actions.mmv) or nil,
+        -- ["m"] = (has_mmv and mmv_actions.mmv) or nil,
     },
 }
 
