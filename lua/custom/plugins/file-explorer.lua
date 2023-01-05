@@ -3,7 +3,7 @@ return {
         "tamago324/lir.nvim",
         lazy = true,
         keys = {
-            { "e", ":lua require'lir.float'.toggle()<cr>" },
+            { "e", ":edit %:h<cr>" },
             -- { "<leader>t", ":lua require'lir.float'.toggle()<cr>" },
             -- { "e", ":edit %:h<cr>" },
         }
