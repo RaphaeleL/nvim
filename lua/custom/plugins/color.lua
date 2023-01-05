@@ -31,7 +31,6 @@ return {
         end
     },
     {
-        dir = "~/.config/nvim/themes/darkplus.nvim",
-        name = "transparent_darkplus"
+        dir = "~/.config/nvim/themes/darkplus"
     },
 }

@@ -1,1 +1,1 @@
-vim.cmd("colorscheme transparent_darkplus")
+vim.cmd("colorscheme darkplus")
