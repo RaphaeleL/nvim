@@ -4,8 +4,7 @@ return {
         lazy = true,
         keys = {
             { "e", ":edit %:h<cr>" },
-            -- { "<leader>t", ":lua require'lir.float'.toggle()<cr>" },
-            -- { "e", ":edit %:h<cr>" },
+            { "E", ":lua require('lir.float').toggle()<cr>" },
         }
     },
     {

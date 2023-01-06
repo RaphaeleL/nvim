@@ -1,4 +1,4 @@
-require("settings")
-require("keymappings")
-require("plugins")
-require("autocommands")
+require "settings"
+require "keymappings"
+require "plugins"
+require "autocommands"

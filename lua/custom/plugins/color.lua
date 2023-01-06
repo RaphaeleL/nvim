@@ -31,6 +31,7 @@ return {
         end
     },
     {
-        dir = "~/.config/nvim/themes/darkplus"
+        dir = "~/.config/nvim/themes/darkplus",
+        lazy = true,
     },
 }

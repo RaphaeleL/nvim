@@ -16,6 +16,10 @@ return {
     },
     {
         "rcarriga/nvim-notify",
-        lazy = true,
-    }
+        enabled = true,
+    },
+    {
+        "mrjones2014/nvim-ts-rainbow",
+        event = "VeryLazy",
+    },
 }
