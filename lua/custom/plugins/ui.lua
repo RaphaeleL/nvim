@@ -1,11 +1,17 @@
 return {
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "VeryLazy",
+        lazy = true,
+        keys = {
+            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>" },
+        },
     },
     {
         "RRethy/vim-illuminate",
-        event = "VeryLazy",
+        lazy = true,
+        keys = {
+            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>" },
+        },
         config = function()
             require("illuminate")
         end,
@@ -13,10 +19,6 @@ return {
     {
         "nvim-tree/nvim-web-devicons",
         lazy = true,
-    },
-    {
-        "rcarriga/nvim-notify",
-        enabled = true,
     },
     {
         "mrjones2014/nvim-ts-rainbow",
