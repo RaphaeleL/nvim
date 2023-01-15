@@ -1,12 +1,3 @@
--- ============================================
---      LANGUAGE SERVER PROTOCOL
--- ============================================
---
--- TODO: is this able to lazy load? Somehow only
--- load if a lsp supported file is open. The
--- startup time for the mentioned file would be
--- halved!
---
 return {
     {
         "VonHeikemen/lsp-zero.nvim",

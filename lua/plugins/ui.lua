@@ -1,5 +1,9 @@
 return {
     {
+        "nvim-treesitter/nvim-treesitter",
+        lazy = true,
+    },
+    {
         "lukas-reineke/indent-blankline.nvim",
         lazy = true,
         keys = {

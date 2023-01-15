@@ -11,4 +11,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("custom.plugins", {})
+require("lazy").setup("plugins", {})
