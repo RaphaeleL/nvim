@@ -5,11 +5,10 @@ return {
         keys = {
             { "e", ":edit %:h<cr>" },
             { "E", ":lua require('lir.float').toggle()<cr>" },
+        },
+        dependencies = {
+            "tamago324/lir-git-status.nvim"
         }
-    },
-    {
-        "tamago324/lir-git-status.nvim",
-        lazy = true,
     },
     {
         "nvim-telescope/telescope.nvim",
