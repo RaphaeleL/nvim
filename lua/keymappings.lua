@@ -27,7 +27,7 @@ vim.keymap.set("n", "<S-TAB>", ":write<cr>:bnext<cr>")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<Leader>n", ":noh<cr>")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<cr>")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
@@ -39,5 +39,7 @@ vim.keymap.set("v", "<Leader>d", '"+d')
 vim.keymap.set("x", "<Leader>p", '"_dP')
 vim.keymap.set("n", "x", '"_x')
 
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+vim.keymap.set("n", "<leader>a", "GVgg", { desc = "Mark everything" })
