@@ -15,13 +15,14 @@ return {
         "nvim-telescope/telescope.nvim",
         lazy = true,
         keys = {
-            { "t", ":Telescope find_files<cr>", desc = "Telescope: Open Fuzzy File Finder" },
-            { "tl", ":Telescope live_grep<cr>", desc = "Telescope: Open Fuzzy File Finder - Live Grep" },
-            { "tg", ":Telescope git_files<cr>", desc = "Telescope: Open Fuzzy File Finder - Git Files" },
-            { "tb", ":Telescope buffers<cr>", desc = "Telescope: Open Fuzzy File Finder - Buffers" },
-            { "td", ":Telescope diagnostics<cr>", desc = "Telescope: Open Fuzzy File Finder - Diagnostics" },
-            { "tw", ":Telescope grep_string<cr>", desc = "Telescope: Open Fuzzy File Finder - Grep" },
-            { "ts", ":Telescope lsp_document_symbols<cr>", desc = "Telescope: Open Fuzzy File Finder - Outliner" },
+            { "<leader>sf", ":Telescope find_files<cr>", desc = "Telescope: [S]how [F]uzzy File Finder" },
+            { "<leader>sl", ":Telescope live_grep<cr>", desc = "Telescope: [S]how [L]ive Grep" },
+            { "<leader>sg", ":Telescope git_files<cr>", desc = "Telescope: [S]how [G]it Files" },
+            { "<leader>sb", ":Telescope buffers<cr>", desc = "Telescope: [S]how [B]uffers" },
+            { "<leader>sd", ":Telescope diagnostics<cr>", desc = "Telescope: [S]how [D]iagnostics" },
+            { "<leader>ss", ":Telescope grep_string<cr>", desc = "Telescope: [S]how [G]rep" },
+            { "<leader>so", ":Telescope lsp_document_symbols<cr>", desc = "Telescope: [S]how [O]utliner" },
+            { "<leader>sk", ":Telescope keymaps<cr>", desc = "Telescope: [S]how [K]eymaps" },
         }
     },
 }
