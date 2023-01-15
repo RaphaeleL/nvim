@@ -21,21 +21,4 @@ return {
             "hrsh7th/cmp-nvim-lsp",
         },
     },
-    -- {
-    --     "j-hui/fidget.nvim",
-    --     enabled = true,
-    --     config = function()
-    --         require("fidget").setup {
-    --             text = {
-    --                 spinner = "moon",
-    --             },
-    --             align = {
-    --                 bottom = true,
-    --             },
-    --             window = {
-    --                 relative = "editor",
-    --             },
-    --         }
-    --     end,
-    -- },
 }
