@@ -42,24 +42,29 @@ lsp.configure('sumneko_lua', {
     }
 })
 
-local enable_virtualtext = false
+local enable_virtualtext = true
 local enable_autoformat = false
 
 lsp.on_attach(function(_, bufnr)
-    local opts = { buffer = bufnr, remap = false }
+    local nmap = function(keys, func, desc)
+        if desc then
+            desc = 'LSP: ' .. desc
+        end
+        vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    end
 
-    vim.keymap.set("n", "sa", ":lua vim.lsp.buf.code_action()<cr>", opts)
-    vim.keymap.set("n", "sl", ":lua vim.diagnostic.open_float()<cr>", opts)
-    vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", opts)
-    vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opts)
-    vim.keymap.set("n", "gn", ":lua vim.diagnostic.goto_next()<cr>zz", opts)
-    vim.keymap.set("n", "gp", ":lua vim.diagnostic.goto_prev()<cr>zz", opts)
-    vim.keymap.set("n", "K", ":lua vim.lsp.buf.hover()<cr>", opts)
-    vim.keymap.set("n", "<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", opts)
-    -- vim.keymap.set("n", "ff", ":silent Format<cr>", opts)
-    vim.keymap.set("n", "ff", ":silent LspZeroFormat!<cr>", opts)
-    vim.keymap.set("n", "ft", ":silent FormatToggleAuto<cr>", opts)
-    vim.keymap.set("n", "vt", ":silent VirtualTextToggle<cr>:silent write<cr>", opts)
+    -- My Keymaps
+    nmap("ca", ":lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction")
+    nmap("od", ":lua vim.diagnostic.open_float()<cr>", "[O]pen [D]iagnostics")
+    nmap("gr", ":lua vim.lsp.buf.references()<cr>", "[G]oto [R]eference")
+    nmap("gd", ":lua vim.lsp.buf.definition()<cr>", "[G]oto [D]efinition")
+    nmap("gn", ":lua vim.diagnostic.goto_next()<cr>zz", "[G]oto [N]ext Diagnostic")
+    nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
+    nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
+    nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
+    nmap("ff", ":silent LspZeroFormat!<cr>", "[F]ormat [F]ile")
+    nmap("ft", ":silent FormatToggleAuto<cr>", "[F]ormat File [T]oggle")
+    nmap("vt", ":silent VirtualTextToggle<cr>:silent write<cr>", "[V]irtual Line Diagnostics [T]oggle")
 
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
