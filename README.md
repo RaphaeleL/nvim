@@ -100,4 +100,5 @@ This Configuration is inspired by:
 
 ## Showcase
 
-See `assets/demo/*.png`. There are some Screenshots.
+[Demo1]("./assets/demo/Demo-1.png")
+[Demo2]("./assets/demo/Demo-2.png")
