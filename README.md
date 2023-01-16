@@ -100,5 +100,5 @@ This Configuration is inspired by:
 
 ## Showcase
 
-[Demo1]("./assets/demo/Demo-1.png")
-[Demo2]("./assets/demo/Demo-2.png")
+<img height="150" src="./assets/demo/Demo-1.png" align="center" alt="Demo-1">
+<img height="150" src="./assets/demo/Demo-2.png" align="center" alt="Demo-2">
