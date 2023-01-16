@@ -56,8 +56,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Basic Plugins
 
-> The Colorscheme is constantly changing but it's for sure one of them: [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim), [rose-pine/neovim](https://github.com/rose-pine/neovim), [catppuccin/nvim](https://github.com/catppuccin/nvim) or my own Interpretation of [lunarvim/darkplus.nvim](https://github.com/lunarvim/darkplus.nvim)
-
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
@@ -65,6 +63,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- Colorscheme: [RaphaeleL/vivid.nvim](https://github.com/RaphaeleL/vivid.nvim)
 
 The following plugins are really cool, useful and great. But they are not necessary.
 

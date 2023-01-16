@@ -22,7 +22,8 @@ return {
         end
     },
     {
-        dir = "~/.config/nvim/themes/darkplus",
+        "RaphaeleL/vivid.nvim",
+        name = "vivid",
         lazy = true,
     },
 }
