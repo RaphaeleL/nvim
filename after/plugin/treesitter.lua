@@ -7,6 +7,9 @@ end
 
 treesitter.setup({
     ensured_installed = {
+        "html",
+        "markdown",
+        "markdown-inline",
         "bash",
         "comment",
         "scss",
