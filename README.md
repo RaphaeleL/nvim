@@ -72,7 +72,7 @@ The following plugins are really cool, useful and great. But they are not necess
 - Highlight Same Words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- Commentin: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
+- Commenting: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Git Commit View: [rhysd/git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
 - Rainbow Parantheses: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
 
@@ -99,7 +99,4 @@ This Configuration is inspired by:
 
 ## Showcase
 
-<img src="./assets/demo/Demo-1.png" align="center" alt="Demo-1">
-<img src="./assets/demo/Demo-2.png" align="center" alt="Demo-2">
-<img src="./assets/demo/Demo-3.png" align="center" alt="Demo-3">
-<img src="./assets/demo/Demo-4.png" align="center" alt="Demo-4">
+<img src="./assets/demo/Demo.png" align="center" alt="Demo">
