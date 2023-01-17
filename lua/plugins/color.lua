@@ -22,8 +22,7 @@ return {
         end
     },
     {
-        "RaphaeleL/vivid.nvim",
-        name = "vivid",
+        dir = "~/Developer/colorgen-nvim/own_theme/",
         lazy = true,
     },
 }
