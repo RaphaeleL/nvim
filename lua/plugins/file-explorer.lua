@@ -3,8 +3,8 @@ return {
         "tamago324/lir.nvim",
         lazy = true,
         keys = {
-            { "e", ":edit %:h<cr>" },
-            { "E", ":lua require('lir.float').toggle()<cr>" },
+            -- { "E", ":edit %:h<cr>" },
+            { "e", ":lua require('lir.float').toggle()<cr>" },
         },
         dependencies = {
             "tamago324/lir-git-status.nvim"

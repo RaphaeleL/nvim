@@ -23,6 +23,6 @@ return {
     -- },
     {
         dir = "~/Developer/colorgen-nvim/own_theme/",
-        lazy = true,
+        enabled = true,
     },
 }

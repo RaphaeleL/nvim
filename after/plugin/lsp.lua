@@ -8,6 +8,7 @@ lsp.preset('recommended')
 
 lsp.set_preferences({
     suggest_lsp_servers = true,
+    underline = false,
     sign_icons = {
         error = 'E',
         warn = 'W',
