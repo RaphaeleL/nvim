@@ -20,7 +20,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>")
 
-vim.keymap.set("n", "su", ":UndotreeToggle<cr>")
+-- vim.keymap.set("n", "su", ":UndotreeToggle<cr>")
 
 vim.keymap.set("n", "<TAB>", ":write<cr>:bprev<cr>")
 vim.keymap.set("n", "<S-TAB>", ":write<cr>:bnext<cr>")
