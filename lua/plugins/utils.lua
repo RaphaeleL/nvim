@@ -1,11 +1,11 @@
 return {
-    {
-        "mbbill/undotree",
-        lazy = true,
-        keys = {
-            { "su", ":UndotreeToggle<cr>" },
-        }
-    },
+    -- {
+    --     "mbbill/undotree",
+    --     lazy = true,
+    --     keys = {
+    --         { "su", ":UndotreeToggle<cr>" },
+    --     }
+    -- },
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",

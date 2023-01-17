@@ -5,17 +5,11 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        lazy = true,
-        keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
-        },
+        event = "VeryLazy",
     },
     {
         "RRethy/vim-illuminate",
-        lazy = true,
-        keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
-        },
+        event = "VeryLazy",
         config = function()
             require("illuminate")
         end,

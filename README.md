@@ -63,7 +63,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Colorscheme: [RaphaeleL/vivid.nvim](https://github.com/RaphaeleL/vivid.nvim)
 
 The following plugins are really cool, useful and great. But they are not necessary.
 
