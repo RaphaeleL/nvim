@@ -99,4 +99,5 @@ This Configuration is inspired by:
 
 ## Showcase
 
-<img src="./assets/demo/Demo.png" align="center" alt="Demo">
+<img src="./assets/demo/Demo-1.png" align="center" alt="Demo1">
+<img src="./assets/demo/Demo-2.png" align="center" alt="Demo2">
