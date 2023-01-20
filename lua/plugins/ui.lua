@@ -1,7 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "VeryLazy", 
+        event = "VeryLazy",
         config = function()
             local ok, treesitter = pcall(require, "nvim-treesitter.configs")
             if not ok then
@@ -34,14 +34,16 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
+        lazy = true,
         keys = {
             { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
         },
     },
     {
         "RRethy/vim-illuminate",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
+        lazy = true,
         keys = {
             { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
         },
