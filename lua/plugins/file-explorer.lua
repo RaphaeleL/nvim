@@ -85,7 +85,7 @@ return {
             { "<leader>/",
                 ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })<cr>",
                 desc = "Telescope: Search in the Current File" },
-            { "<leader>?", ":Telescope oldfiles<cr>", desc = "Telescope: [S]how Oldfiles" },
+            { "<leader>?", ":Telescope oldfiles<cr>", desc = "Telescope: Show Oldfiles" },
         }
     },
 }
