@@ -78,7 +78,7 @@ The following plugins are really cool, useful and great. But they are not necess
 
 ### Language Server Protocol
 
-> Managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
+> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 
 - Lsp Configuration: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
