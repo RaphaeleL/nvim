@@ -4,6 +4,7 @@ return {
         event = "VeryLazy",
         config = function()
             require("gitsigns").setup {
+                numhl = true,
                 signs = {
                     add = { text = "│" },
                     change = { text = "│" },

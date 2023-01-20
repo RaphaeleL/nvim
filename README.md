@@ -43,7 +43,6 @@ The File Structure explained.
     - custom/plugins/*.lua  -- List of the Plugins, sorted by Type 
     - *.lua                 -- Neovim Settings, Keymappings, ... 
   - after/                  -- Automatically Load Vim / Lua Files
-    - plugin/*.lua          -- some Plugins own a setup File (in Lua)
     - ftplugin/*.vim        -- some Languages own a setup File (in Vim Script)
   - init.lua                -- the start of every Configuration
 ```
