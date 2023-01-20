@@ -83,10 +83,12 @@ The following plugins are really cool, useful and great. But they are not necess
 - Lsp Configuration: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 - Lsp Package Manager Configuration: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- Auto Completion: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Auto Completion: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- Auto Completion: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
-- Auto Completion: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- Auto Completion Enginge: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- Auto Completion for Buffer: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
+- Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
+- Auto Completion for LSP: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+- Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 # Acknowledgments
 
