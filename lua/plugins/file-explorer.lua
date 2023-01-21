@@ -11,6 +11,7 @@ return {
         config = function()
             local has_lir, lir = pcall(require, "lir")
             if not has_lir then
+                require("notify")("Couldn't require lir", "error")
                 return
             end
 

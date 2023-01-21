@@ -16,7 +16,7 @@ return {
         config = function()
             local ok, lsp = pcall(require, "lsp-zero")
             if not ok then
-                print("Couldn't require lsp-zero")
+                require("notify")("Couldn't require lsp-zero", "error")
                 return
             end
 
@@ -63,7 +63,11 @@ return {
                 nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
                 nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
                 nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
-                nmap("ff", ":silent LspZeroFormat!<cr>", "[F]ormat [F]ile")
+                -- nmap("ff", ":silent LspZeroFormat!<cr>", "[F]ormat [F]ile")
+                nmap("ff", function()
+                    vim.cmd("silent LspZeroFormat!")
+                    vim.cmd("lua require('notify')('Format File Async with lsp-zero', 'Info')")
+                end, "[F]ormat [F]ile")
 
             end)
 

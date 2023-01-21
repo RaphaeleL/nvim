@@ -3,7 +3,13 @@ return {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = function()
-            require("gitsigns").setup {
+            local ok, gitsigns = pcall(require, "gitsigns")
+            if not ok then
+                require("notify")("Couldn't require gitsigns", "error")
+                return
+            end
+
+            gitsigns.setup {
                 numhl = true,
                 signs = {
                     add = { text = "│" },
