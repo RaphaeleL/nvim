@@ -36,7 +36,7 @@ vim.keymap.set({ "n", "i" }, "<m-backspace>", "<c-w", { desc = "(NaaVim) Chars: 
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "(NaaVim) Line: Move in a Linebreak up" })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "(NaaVim) Line: Move in a Linebreak down" })
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "(NaaVim) Line: Comment Selection in/out" })
-vim.keymap.set("n", "<leader>a", "gvgg", { desc = "(naavim) line: mark everything" })
+vim.keymap.set("n", "<leader>a", "gvgg", { desc = "(NaaVim) line: mark everything" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "(NaaVim) Line: Line: Move Selection up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "(NaaVim) Line: Line: Move Selection down" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "(NaaVim) Line: Concat Line without moving the Cursor" })
