@@ -47,7 +47,7 @@ return {
         -- event = "VeryLazy",
         lazy = true,
         keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
+            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
         },
     },
     {
@@ -55,7 +55,7 @@ return {
         -- event = "VeryLazy",
         lazy = true,
         keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "UI: Toggle" },
+            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
         },
         config = function()
             require("illuminate")

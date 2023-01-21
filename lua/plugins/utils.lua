@@ -13,7 +13,7 @@ return {
             require("nvim_comment").setup()
         end,
         keys = {
-            { "<Leader>l", ":CommentToggle<cr>", desc = "Comment Selection" }
+            { "<Leader>l", ":CommentToggle<cr>", desc = "(NaaVim) Comment Selection" }
         }
     },
 }
