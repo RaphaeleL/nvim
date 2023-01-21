@@ -23,7 +23,12 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
 
-Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically. Maybe you need to Restart `nvim`, that Treesitter is reloading everything too.
+Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically.
+
+```bash 
+cd ~/.config
+git clone https://github.com/RaphaeleL/nvim
+```
 
 ## Uninstall 
 
