@@ -1,11 +1,21 @@
 return {
     {
+        "rcarriga/nvim-notify",
+        lazy = true,
+        config = function()
+            require("notify").setup({
+                background_colour = "#000000",
+                render = "minimal",
+            })
+        end
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
         config = function()
             local ok, treesitter = pcall(require, "nvim-treesitter.configs")
             if not ok then
-                print("Couldn't require nvim-treesitter.configs")
+                require("notify")("Couldn't require nvim-treesitter.configs", "error")
                 return
             end
             treesitter.setup({
