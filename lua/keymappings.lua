@@ -23,8 +23,6 @@ vim.keymap.set("n", "<Leader>n", ":noh<cr>", { desc = "(NaaVim) Buffer: No Highl
 -- Char Manipulation
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "(NaaVim) Chars: Rename" })
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<cr>", { desc = "(NaaVim) Chars: Add Execution Permission to the File" })
-vim.keymap.set("v", "<", "<gv", { desc = "(NaaVim) Chars: Indent to Left" })
-vim.keymap.set("v", ">", ">gv", { desc = "(NaaVim) Chars: Indent to Right" })
 vim.keymap.set("n", "+", "<C-a>", { desc = "(NaaVim) Chars: Increment a Number" })
 vim.keymap.set("n", "-", "<C-x>", { desc = "(NaaVim) Chars: Decrement a Number" })
 vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "(NaaVim) Chars: Yank line" })
@@ -33,6 +31,8 @@ vim.keymap.set("n", "x", '"_x', { desc = "(NaaVim) Chars: Delete Char without lo
 vim.keymap.set({ "n", "i" }, "<m-backspace>", "<c-w", { desc = "(NaaVim) Chars: Delete a Word with Backspace" })
 
 -- Line Manipulation
+vim.keymap.set("v", "<", "<gv", { desc = "(NaaVim) Line: Indent to Left" })
+vim.keymap.set("v", ">", ">gv", { desc = "(NaaVim) Line: Indent to Right" })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "(NaaVim) Line: Move in a Linebreak up" })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "(NaaVim) Line: Move in a Linebreak down" })
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "(NaaVim) Line: Comment Selection in/out" })
