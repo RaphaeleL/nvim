@@ -10,7 +10,6 @@ return {
             end
 
             gitsigns.setup {
-                numhl = true,
                 signs = {
                     add = { text = "│" },
                     change = { text = "│" },
@@ -23,7 +22,6 @@ return {
         end,
         keys = {
             { "<Leader>gt", ":Gitsigns toggle_deleted<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle deleted" },
-            -- { "<Leader>glb", ":Gitsigns blame_line<cr>", desc = "(NaaVim) Git: [G]it [L]ine Information" },
         }
     },
     {
@@ -32,7 +30,6 @@ return {
         keys = {
             { "<Leader>g", ":Git<cr>", desc = "(NaaVim) Git: [G]it" },
             { "<Leader>gd", ":Git diff<cr>", desc = "(NaaVim) Git: [G]it [d]iff" },
-            -- { "<Leader>gb", ":Git blame<cr>", desc = "(NaaVim) Git: [G]it [b]lame" },
             { "<Leader>ga", ":Git add .<cr>", desc = "(NaaVim) Git: [G]it [a]dd all" },
             { "<Leader>gc", ":Git commit<cr>", desc = "(NaaVim) Git: [G]it [c]ommit" },
             { "<Leader>gp", ":Git push<cr>", desc = "(NaaVim) Git: [G]it [p]ush" },
