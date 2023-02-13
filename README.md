@@ -9,7 +9,7 @@ macOS · Linux · (Windows)
 
 ## Install
 
-> Neovim 0.8.2
+> Neovim 0.8.3
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -18,7 +18,7 @@ If you want to make sure `nvim` is only updated when you want, then I recommend 
 ```bash
 git clone https://github.com/neovim/neovim.git
 cd neovim
-git checkout v0.8.2
+git checkout v0.8.3
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
