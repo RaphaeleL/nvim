@@ -1,11 +1,4 @@
 return {
-    -- {
-    --     "mbbill/undotree",
-    --     lazy = true,
-    --     keys = {
-    --         { "su", ":UndotreeToggle<cr>" },
-    --     }
-    -- },
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
@@ -15,5 +8,12 @@ return {
         keys = {
             { "<Leader>l", ":CommentToggle<cr>", desc = "(NaaVim) Comment Selection" }
         }
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup()
+        end,
     },
 }
