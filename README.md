@@ -80,6 +80,9 @@ The following plugins are really cool, useful and great. But they are not necess
 - Commenting: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Git Commit View: [rhysd/git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
 - Rainbow Parantheses: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
+- File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- Auto Pairs: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Global Search: [windwp/nvim-spectre](https://github.com/windwp/nvim-spectre)
 
 ### Language Server Protocol
 
