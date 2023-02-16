@@ -8,44 +8,7 @@ return {
             { "<leader>f", ":Neotree<cr>", "(NaaVim) Open Left File Explorer" }
         },
         config = function()
-            require("neo-tree").setup({
-                default_component_configs = {
-                    window = {
-                        mappings = {
-                            -- ====================================
-                            -- LIR Keymaps
-                            -- ====================================
-                            ["<CR>"] = "open",
-                            ["H"] = "open_split",
-                            ["V"] = "open_vsplit",
-
-                            -- ["t"] = actions.tabedit,
-                            ["-"] = "close_node",
-                            ["m"] = "add_directory",
-                            -- ["n"] = actions.newfile,
-                            ["r"] = "rename",
-                            -- ["y"] = actions.yank_path,
-                            ["d"] = "delete",
-                            -- ["."] = actions.toggle_show_hidden,
-                            -- ["J"] = function()
-                            --     mark_actions.toggle_mark()
-                            --     vim.cmd("normal! j")
-                            -- end,
-                            ["y"] = "copy_to_clipboard",
-                            ["c"] = "copy",
-                            ["x"] = "cut_to_clipboard",
-                            ["p"] = "paste_from_clipboard",
-                            -- ====================================
-                            -- NEOTREE Keymaps
-                            -- ====================================
-                            ["R"] = "refresh",
-                            ["P"] = "toggle_preview",
-                            ["f"] = "toggle_preview",
-                            -- ====================================
-                        }
-                    }
-                }
-            })
+            require("neo-tree").setup({ })
         end,
     },
     {
