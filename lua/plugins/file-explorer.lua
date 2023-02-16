@@ -1,11 +1,12 @@
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
+        lazy = true,
         dependencies = {
             "MunifTanjim/nui.nvim"
         },
         keys = {
-            { "<leader>f", ":Neotree<cr>", "(NaaVim) Open Left File Explorer" }
+            { "<leader>f", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
         },
         config = function()
             require("neo-tree").setup({ })
