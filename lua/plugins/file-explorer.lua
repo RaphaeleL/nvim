@@ -1,5 +1,54 @@
 return {
     {
+        "nvim-neo-tree/neo-tree.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim"
+        },
+        keys = {
+            { "<leader>f", ":Neotree<cr>", "(NaaVim) Open Left File Explorer" }
+        },
+        config = function()
+            require("neo-tree").setup({
+                default_component_configs = {
+                    window = {
+                        mappings = {
+                            -- ====================================
+                            -- LIR Keymaps
+                            -- ====================================
+                            ["<CR>"] = "open",
+                            ["H"] = "open_split",
+                            ["V"] = "open_vsplit",
+
+                            -- ["t"] = actions.tabedit,
+                            ["-"] = "close_node",
+                            ["m"] = "add_directory",
+                            -- ["n"] = actions.newfile,
+                            ["r"] = "rename",
+                            -- ["y"] = actions.yank_path,
+                            ["d"] = "delete",
+                            -- ["."] = actions.toggle_show_hidden,
+                            -- ["J"] = function()
+                            --     mark_actions.toggle_mark()
+                            --     vim.cmd("normal! j")
+                            -- end,
+                            ["y"] = "copy_to_clipboard",
+                            ["c"] = "copy",
+                            ["x"] = "cut_to_clipboard",
+                            ["p"] = "paste_from_clipboard",
+                            -- ====================================
+                            -- NEOTREE Keymaps
+                            -- ====================================
+                            ["R"] = "refresh",
+                            ["P"] = "toggle_preview",
+                            ["f"] = "toggle_preview",
+                            -- ====================================
+                        }
+                    }
+                }
+            })
+        end,
+    },
+    {
         "tamago324/lir.nvim",
         lazy = true,
         keys = {
@@ -75,14 +124,14 @@ return {
         "nvim-telescope/telescope.nvim",
         lazy = true,
         keys = {
-            { "<leader>sf", ":Telescope find_files<cr>", desc = "(NaaVim) Telescope: [S]how [F]uzzy File Finder" },
-            { "<leader>sl", ":Telescope live_grep<cr>", desc = "(NaaVim) Telescope: [S]how [L]ive Grep" },
-            { "<leader>sg", ":Telescope git_files<cr>", desc = "(NaaVim) Telescope: [S]how [G]it Files" },
-            { "<leader><space>", ":Telescope buffers<cr>", desc = "(NaaVim) Telescope: [S]how Buffers" },
-            { "<leader>sd", ":Telescope diagnostics<cr>", desc = "(NaaVim) Telescope: [S]how [D]iagnostics" },
-            { "<leader>ss", ":Telescope grep_string<cr>", desc = "(NaaVim) Telescope: [S]how [G]rep" },
+            { "<leader>sf", ":Telescope find_files<cr>",           desc = "(NaaVim) Telescope: [S]how [F]uzzy File Finder" },
+            { "<leader>sl", ":Telescope live_grep<cr>",            desc = "(NaaVim) Telescope: [S]how [L]ive Grep" },
+            { "<leader>sg", ":Telescope git_files<cr>",            desc = "(NaaVim) Telescope: [S]how [G]it Files" },
+            { "<leader>sb", ":Telescope buffers<cr>",              desc = "(NaaVim) Telescope: [S]how Buffers" },
+            { "<leader>sd", ":Telescope diagnostics<cr>",          desc = "(NaaVim) Telescope: [S]how [D]iagnostics" },
+            { "<leader>ss", ":Telescope grep_string<cr>",          desc = "(NaaVim) Telescope: [S]how [G]rep" },
             { "<leader>so", ":Telescope lsp_document_symbols<cr>", desc = "(NaaVim) Telescope: [S]how [O]utliner" },
-            { "<leader>sk", ":Telescope keymaps<cr>", desc = "(NaaVim) Telescope: [S]how [K]eymaps" },
+            { "<leader>sk", ":Telescope keymaps<cr>",              desc = "(NaaVim) Telescope: [S]how [K]eymaps" },
             { "<leader>/",
                 ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })<cr>",
                 desc = "(NaaVim) Telescope: Search in the Current File" },
