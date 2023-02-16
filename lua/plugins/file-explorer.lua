@@ -9,7 +9,7 @@ return {
             { "<leader>f", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
         },
         config = function()
-            require("neo-tree").setup({ })
+            require("neo-tree").setup({})
         end,
     },
     {
@@ -100,6 +100,16 @@ return {
                 ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })<cr>",
                 desc = "(NaaVim) Telescope: Search in the Current File" },
             { "<leader>?", ":Telescope oldfiles<cr>", desc = "(NaaVim) Telescope: Show Oldfiles" },
-        }
+        },
+        config = function()
+            require('telescope').setup({
+                defaults = {
+                    file_ignore_patterns = {
+                        "node_modules",
+                        ".DS_Store"
+                    }
+                }
+            })
+        end,
     },
 }
