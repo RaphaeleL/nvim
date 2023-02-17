@@ -3,7 +3,7 @@ return {
         "cshuaimin/ssr.nvim",
         lazy = true,
         keys = {
-            { "ssr", ":lua require('ssr').open()<cr>", desc = "(NaaVim) [S]tructure [S]earch and [R]eplace" }
+            { "<leader>S", ":lua require('ssr').open()<cr>", desc = "(NaaVim) Structure [S]earch and Replace (hovered Element)" }
         },
         config = function()
             require("ssr").setup {
@@ -37,13 +37,6 @@ return {
         config = function()
             require("nvim-autopairs").setup()
         end,
-    },
-    {
-        "windwp/nvim-spectre",
-        lazy = true,
-        keys = {
-            { "<leader>S", ":lua require('spectre').open()<cr>" },
-        }
     },
     -- {
     --     "folke/which-key.nvim",
