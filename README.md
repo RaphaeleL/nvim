@@ -50,7 +50,6 @@ The File Structure explained.
 ~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
 ~/.config/nvim/after/                 # Automatically Load Vim / Lua Files
 ~/.config/nvim/after/ftplugin/*.vim   # some Languages own a setup File (in Vim Script)
-
 ```
 
 ## Plugins
