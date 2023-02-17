@@ -43,13 +43,14 @@ rm -rf ~/.local/state/nvim
 The File Structure explained.
 
 ```
-~/.config/nvim/
-  - lua/                    -- Contains the configuration of NeoVim
-    - plugins/*.lua         -- List of the Plugins, sorted by Type 
-    - *.lua                 -- Neovim Settings, Keymappings, ... 
-  - after/                  -- Automatically Load Vim / Lua Files
-    - ftplugin/*.vim        -- some Languages own a setup File (in Vim Script)
-  - init.lua                -- the start of every Configuration
+~/.config/nvim/                       # Base
+~/.config/nvim/init.lua               # the start of every Configuration
+~/.config/nvim/lua/                    # Contains the configuration of NeoVim
+~/.config/nvim/lua/*.lua              # Neovim Settings, Keymappings, ... 
+~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
+~/.config/nvim/after/                 # Automatically Load Vim / Lua Files
+~/.config/nvim/after/ftplugin/*.vim   # some Languages own a setup File (in Vim Script)
+
 ```
 
 ## Plugins
