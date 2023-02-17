@@ -38,16 +38,4 @@ return {
             require("nvim-autopairs").setup()
         end,
     },
-    -- {
-    --     "folke/which-key.nvim",
-    --     lazy = true,
-    --     keys = {
-    --         { "<leader><leader>", ":WhichKey<cr>", desc = "(NaaVim) Open WhichKey" },
-    --     },
-    --     config = function()
-    --         vim.o.timeout = true
-    --         vim.o.timeoutlen = 300
-    --         require("which-key").setup({ })
-    --     end,
-    -- },
 }
