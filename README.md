@@ -45,7 +45,7 @@ The File Structure explained.
 ```
 ~/.config/nvim/
   - lua/                    -- Contains the configuration of NeoVim
-    - custom/plugins/*.lua  -- List of the Plugins, sorted by Type 
+    - plugins/*.lua         -- List of the Plugins, sorted by Type 
     - *.lua                 -- Neovim Settings, Keymappings, ... 
   - after/                  -- Automatically Load Vim / Lua Files
     - ftplugin/*.vim        -- some Languages own a setup File (in Vim Script)
@@ -60,33 +60,19 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Basic Plugins
 
-- Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Better Performance: [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - Some Lua Functions: [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - Git Commands: [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
-- File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- Fuzzy File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - Colorscheme: [RaphaeleL/my_vivid](https://github.com/RaphaeleL/my_vivid)
 
-The following plugins are really cool, useful and great. But they are not necessary.
-
-- File Explorer: [tamago324/lir.nvim](https://github.com/tamago324/lir.nvim)
-- File Explorer Git Extension: [tamago324/lir-git-status.nvim](https://github.com/tamago324/lir-git-status.nvim)
-- Show Indent: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Highlight Same Words: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
-- Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-- Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
-- Commenting: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
-- Git Commit View: [rhysd/git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
-- Rainbow Parantheses: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
-- File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
-- Auto Pairs: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Global Search: [cshuaimin/ssr.nvim](https://github.com/windwp/nvim-spectre)
-
 ### Language Server Protocol
 
-> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
+The Language Server Protocol turns a text editor into an IDE with autocompletion.
+
+> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim), which is not necessary, but quite more pleasant.
 
 - Lsp Configuration: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
@@ -97,6 +83,22 @@ The following plugins are really cool, useful and great. But they are not necess
 - Auto Completion for LSP: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+
+The following plugins are really cool, useful and great. But they are not necessary. Thanks to LazyLoading there are no performance disadvantages through this and can therefore be maintained without any problems.
+
+- Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
+- Classic File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- Floating File Explorer: [tamago324/lir.nvim](https://github.com/tamago324/lir.nvim)
+- Floating File Explorer Git Extension: [tamago324/lir-git-status.nvim](https://github.com/tamago324/lir-git-status.nvim)
+- Show Indentlines: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- Highlight Words on Hover: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- Some Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
+- Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
+- Git Commit View: [rhysd/git-messenger.vim](https://github.com/rhysd/git-messenger.vim)
+- Rainbow Brackets: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
+- Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Search and Replace: [cshuaimin/ssr.nvim](https://github.com/cshuaimin/ssr.nvim)
 
 # Acknowledgments
 
