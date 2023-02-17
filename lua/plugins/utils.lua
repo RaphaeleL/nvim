@@ -1,5 +1,12 @@
 return {
     {
+        "mbbill/undotree",
+        lazy = true,
+        keys = {
+            { "<leader>t", ":UndotreeToggle<cr>", desc = "(NaaVim) Undotree" }
+        },
+    },
+    {
         "cshuaimin/ssr.nvim",
         lazy = true,
         keys = {
