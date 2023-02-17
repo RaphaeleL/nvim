@@ -45,7 +45,7 @@ The File Structure explained.
 ```
 ~/.config/nvim/                       # Base
 ~/.config/nvim/init.lua               # the start of every Configuration
-~/.config/nvim/lua/                    # Contains the configuration of NeoVim
+~/.config/nvim/lua/                   # Contains the configuration of NeoVim
 ~/.config/nvim/lua/*.lua              # Neovim Settings, Keymappings, ... 
 ~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
 ~/.config/nvim/after/                 # Automatically Load Vim / Lua Files
