@@ -82,7 +82,7 @@ The following plugins are really cool, useful and great. But they are not necess
 - Rainbow Parantheses: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
 - File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Auto Pairs: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Global Search: [cshuaimin/ssr.nvim](https://github.com/cshuaimin/ssr.nvim)
+- Global Search: [cshuaimin/ssr.nvim](https://github.com/windwp/nvim-spectre)
 
 ### Language Server Protocol
 
