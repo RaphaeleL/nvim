@@ -1,6 +1,5 @@
-# MacOS  
 .DS_Store
-plugin/packer_compiled.lua
+.lazy-lock.json
 
 # Compiled Lua sources
 luac.out
