@@ -5,7 +5,7 @@
 <b>Useable for </b>
 macOS · Linux · (Windows)
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete ide layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no dap. Windows should somehow working, it's not tested, maybe with some small changes. Uhh and it's LazyLoading the Plugins, so the startuptime is *Blazyingly Fast*.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no dap. Windows should somehow working, it's not tested, maybe with some small changes. Uhh and it's LazyLoading the Plugins, so the startuptime is *Blazyingly Fast*.
 
 ## Install
 
@@ -70,7 +70,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### Language Server Protocol
 
-The Language Server Protocol turns a text editor into an IDE with autocompletion.
+> The Language Server Protocol turns a text editor into an IDE with autocompletion.
 
 > Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim), which is not necessary, but quite more pleasant.
 
@@ -84,7 +84,9 @@ The Language Server Protocol turns a text editor into an IDE with autocompletion
 - Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
-The following plugins are really cool, useful and great. But they are not necessary. Thanks to LazyLoading there are no performance disadvantages through this and can therefore be maintained without any problems.
+### More Basic Plugins
+
+> The following plugins are really cool, useful and great. But they are not necessary. Thanks to Lazy Loading there are no performance disadvantages and can be keeped without any problems.
 
 - Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Classic File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
