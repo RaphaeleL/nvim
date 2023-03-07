@@ -11,7 +11,7 @@ return {
         end
     },
     -- ========================================
-    --      Some cool basic Colorschemes 
+    --      Some cool basic Colorschemes
     -- ========================================
     -- {
     --     "rebelot/kanagawa.nvim",
@@ -39,22 +39,25 @@ return {
     --     end
     -- },
     -- ========================================
-    --      Auto Dark / Light Colorscheme 
+    --      Auto Dark / Light Colorscheme
     -- ========================================
     -- {
     --     "catppuccin/nvim",
     --     name = "catppuccin",
     --     event = "VeryLazy",
     --     config = function()
-    --     require("catppuccin").setup({
-    --         flavour = "mocha",
-    --         background = {
-    --             light = "latte",
-    --             dark = "mocha",
-    --         },
-    --         transparent_background = false,
-    --     })
-    --     vim.cmd("colorscheme catppuccin")
+    --         require("catppuccin").setup({
+    --             flavour = "mocha",
+    --             background = {
+    --                 light = "latte",
+    --                 dark = "mocha",
+    --             },
+    --             transparent_background = true,
+    --             integrations = {
+    --                 illuminate = true
+    --             }
+    --         })
+    --         vim.cmd("colorscheme catppuccin")
     --     end
     -- },
     -- {
@@ -65,12 +68,12 @@ return {
     --         auto_dark_mode.setup({
     --             update_interval = 1000,
     --             set_dark_mode = function()
-    --                 vim.api.nvim_set_option('background', 'dark')
-    --                 vim.cmd('colorscheme gruvbox')
+    --                 vim.api.nvim_set_option('background', 'light')
+    --                 vim.cmd("colorscheme catppuccin")
     --             end,
     --             set_light_mode = function()
     --                 vim.api.nvim_set_option('background', 'light')
-    --                 vim.cmd('colorscheme gruvbox')
+    --                 vim.cmd("colorscheme catppuccin")
     --             end,
     --         })
     --         auto_dark_mode.init()
