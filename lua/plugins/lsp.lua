@@ -39,7 +39,7 @@ return {
             --     "pyright", "yamlls",
             -- })
             
-            lsp.configure("luals", {
+            lsp.configure("lua-language-server", {
                 settings = {
                     Lua = {
                         diagnostics = {
