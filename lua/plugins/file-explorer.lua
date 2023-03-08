@@ -1,17 +1,17 @@
 return {
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        lazy = true,
-        dependencies = {
-            "MunifTanjim/nui.nvim"
-        },
-        keys = {
-            { "<leader>f", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
-        },
-        config = function()
-            require("neo-tree").setup({})
-        end,
-    },
+    -- {
+    --     "nvim-neo-tree/neo-tree.nvim",
+    --     lazy = true,
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim"
+    --     },
+    --     keys = {
+    --         { "<leader>f", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
+    --     },
+    --     config = function()
+    --         require("neo-tree").setup({})
+    --     end,
+    -- },
     {
         "tamago324/lir.nvim",
         lazy = true,
