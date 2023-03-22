@@ -15,15 +15,19 @@ return {
     -- ========================================
     -- {
     --     "rebelot/kanagawa.nvim",
-    --     event = "VeryLazy",
     --     config = function()
-    --         require("kanagawa").setup({ transparent = true })
+    --         require("kanagawa").setup({ 
+    --             transparent = true,
+    --             background = {
+    --                 dark = "wave", 
+    --                 light = "lotus"
+    --             }
+    --         })
     --         vim.cmd("colorscheme kanagawa")
     --     end
     -- },
     -- {
     --     "rose-pine/neovim",
-    --     event = "VeryLazy",
     --     config = function()
     --         require("rose-pine").setup({ disable_background = true })
     --         vim.cmd("colorscheme rose-pine")
