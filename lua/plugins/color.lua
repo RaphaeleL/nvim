@@ -2,14 +2,14 @@ return {
     -- ========================================
     --      My Own Colorscheme
     -- ========================================
-    {
-        "RaphaeleL/my_vivid",
-        config = function()
-            vim.cmd("colorscheme my_vivid")
-            vim.cmd("hi @field guifg=#89A5AC")
-            vim.cmd("hi @parameter guifg=#77B0DA")
-        end
-    },
+    -- {
+    --     "RaphaeleL/my_vivid",
+    --     config = function()
+    --         vim.cmd("colorscheme my_vivid")
+    --         vim.cmd("hi @field guifg=#89A5AC")
+    --         vim.cmd("hi @parameter guifg=#77B0DA")
+    --     end
+    -- },
     -- ========================================
     --      Some cool basic Colorschemes
     -- ========================================
@@ -29,15 +29,23 @@ return {
     --         vim.cmd("colorscheme rose-pine")
     --     end
     -- },
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require("catppuccin").setup({ transparent_background = true })
-    --         vim.cmd("colorscheme catppuccin")
-    --     end
-    -- },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function()
+            require("catppuccin").setup({ 
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
+                transparent_background = true,
+                integrations = {
+                    illuminate = true
+                }
+            })
+            vim.cmd("colorscheme catppuccin")
+        end
+    },
     -- ========================================
     --      Auto Dark / Light Colorscheme
     -- ========================================
@@ -47,7 +55,6 @@ return {
     --     event = "VeryLazy",
     --     config = function()
     --         require("catppuccin").setup({
-    --             flavour = "mocha",
     --             background = {
     --                 light = "latte",
     --                 dark = "mocha",
