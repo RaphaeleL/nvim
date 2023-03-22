@@ -1,90 +1,56 @@
 return {
-    -- {
-    --     "nvim-neo-tree/neo-tree.nvim",
-    --     lazy = true,
-    --     dependencies = {
-    --         "MunifTanjim/nui.nvim"
-    --     },
-    --     keys = {
-    --         { "<leader>f", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
-    --     },
-    --     config = function()
-    --         require("neo-tree").setup({})
-    --     end,
-    -- },
     {
-        "tamago324/lir.nvim",
+        "nvim-neo-tree/neo-tree.nvim",
         lazy = true,
-        keys = {
-            { "e", ":lua require('lir.float').toggle()<cr>" },
-        },
         dependencies = {
-            "tamago324/lir-git-status.nvim"
+            "MunifTanjim/nui.nvim"
+        },
+        keys = {
+            { "<leader>e", ":Neotree toggle<cr>", "(NaaVim) Open Left File Explorer" }
         },
         config = function()
-            local has_lir, lir = pcall(require, "lir")
-            if not has_lir then
-                require("notify")("Couldn't require lir", "error")
-                return
-            end
-
-            local has_devicons, devicons = pcall(require, "nvim-web-devicons")
-            if has_devicons then
-                devicons.setup {
-                    override = {
-                        lir_folder_icon = {
-                            icon = "",
-                            color = "#7ebae4",
-                            name = "LirFolderNode",
+            require("neo-tree").setup({
+                window = {
+                    mappings = {
+                        ["<space>"] = { 
+                            "toggle_node", 
+                            nowait = false,
                         },
-                    },
+                        ["<2-LeftMouse>"] = "open",
+                        ["<tab>"] = "open",
+                        ["<esc>"] = "revert_preview",
+                        ["P"] = { "toggle_preview", config = { use_float = true } },
+                        ["l"] = "focus_preview",
+                        ["v"] = "open_split",
+                        ["h"] = "open_vsplit",
+                        ["t"] = "open_tabnew",
+                        ["C"] = "close_node",
+                        ["z"] = "close_all_nodes",
+                        ["a"] = { 
+                            "add",
+                            config = {
+                                show_path = "none"
+                            }
+                        },
+                        ["A"] = "add_directory", 
+                        ["d"] = "delete",
+                        ["r"] = "rename",
+                        ["y"] = "copy_to_clipboard",
+                        ["x"] = "cut_to_clipboard",
+                        ["p"] = "paste_from_clipboard",
+                        ["c"] = "copy", 
+                        ["m"] = "move",
+                        ["q"] = "close_window",
+                        ["R"] = "refresh",
+                        ["?"] = "show_help",
+                        ["<"] = "prev_source",
+                        [">"] = "next_source",
+                    }
                 }
-            end
-
-            local actions = require "lir.actions"
-            local mark_actions = require "lir.mark.actions"
-            local clipboard_actions = require "lir.clipboard.actions"
-
-            lir.setup {
-                show_hidden_files = true,
-                devicons = {
-                    enable = true,
-                    highlight_dirname = true,
-                },
-
-                float = { winblend = 15 },
-
-                mappings = {
-                    ["<CR>"] = actions.edit,
-                    ["H"] = actions.split,
-                    ["V"] = actions.vsplit,
-                    ["t"] = actions.tabedit,
-                    ["-"] = actions.up,
-
-                    ["m"] = actions.mkdir,
-                    ["n"] = actions.newfile,
-                    ["r"] = actions.rename,
-                    ["y"] = actions.yank_path,
-                    ["d"] = actions.delete,
-                    ["."] = actions.toggle_show_hidden,
-
-                    ["J"] = function()
-                        mark_actions.toggle_mark()
-                        vim.cmd("normal! j")
-                    end,
-
-                    ["c"] = clipboard_actions.copy,
-                    ["x"] = clipboard_actions.cut,
-                    ["p"] = clipboard_actions.paste,
-                },
-            }
-
-            require("lir.git_status").setup {
-                show_ignored = false,
-            }
+            })
         end,
     },
-    {
+    {    
         "nvim-telescope/telescope.nvim",
         lazy = true,
         keys = {
