@@ -32,12 +32,12 @@ return {
                 }
             })
             
-            lsp.ensure_installed({
-                "tsserver", "eslint", "luals",
-                "rust_analyzer", "bashls", "clangd",
-                "cmake", "jsonls", "marksman", 
-                "pyright", "yamlls",
-            })
+            -- lsp.ensure_installed({
+            --     "tsserver", "eslint", "luals",
+            --     "rust_analyzer", "bashls", "clangd",
+            --     "cmake", "jsonls", "marksman", 
+            --     "pyright", "yamlls",
+            -- })
             
             lsp.configure("lua-language-server", {
                 settings = {
