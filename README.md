@@ -48,8 +48,6 @@ The File Structure explained.
 ~/.config/nvim/lua/                   # Contains the configuration of NeoVim
 ~/.config/nvim/lua/*.lua              # Neovim Settings, Keymappings, ... 
 ~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
-~/.config/nvim/after/                 # Automatically Load Vim / Lua Files
-~/.config/nvim/after/ftplugin/*.vim   # some Languages own a setup File (in Vim Script)
 ```
 
 ## Plugins
@@ -97,6 +95,64 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Rainbow Brackets: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
 - Search and Replace: [cshuaimin/ssr.nvim](https://github.com/cshuaimin/ssr.nvim)
+
+### NaaVim Keymaps 
+
+> In this overview only NaaVim specific shortcuts are listed. (Neo-) Vim specific shortcuts are not included here! For this you will find a [Cheatsheet](https://github.com/RaphaeleL/Cheatsheet/blob/main/Vim.md) from me.
+
+- `<leader>sf`: Show Fuzzy File Finder
+- `<leader>sl`: Show Live Grep
+- `<leader>sg`: Show Git Files
+- `<leader>sb`: Show Buffers
+- `<leader>sd`: Show Diagnostics
+- `<leader>ss`: Show Grep
+- `<leader>so`: Show Outliner
+- `<leader>sk`: Show Keymaps
+- `<leader>?`: Show Oldfiles
+- `<leader>/`: Search in the Current File
+- `ca`: Code Action
+- `od`: Open Diagnostics
+- `gr`: Goto Reference
+- `gd`: Goto Definition
+- `gn`: Goto Next Diagnostic
+- `gp`: Goto Previous Diagnostic
+- `K`: Hover Documentation
+- `<leader>k`: Signature Documentation
+- `ff`: Format File
+- `kj`: Buffer: Go to Normal Mode
+- `jk`: Buffer: Go to Normal Mode
+- `<Space>`: Buffer: Leader
+- `ss`: Buffer: Force Write everything
+- `qq`: Buffer: Force Write and Quit everything
+- `<TAB>`: Buffer: Next Tab and Write Buffer
+- `<S-TAB>`: Buffer: Previous Tab and Write Buffer
+- `<C-h>`: Buffer: Move to the left Window
+- `<C-j>`: Buffer: Move to the bottom Window
+- `<C-k>`: Buffer: Move to the upper Window
+- `<C-l>`: Buffer: Move to the right Window
+- `sv`: Buffer: Vertical Split
+- `sh`: Buffer: Horizontal Split
+- `c`: Buffer: Close Buffer
+- `q`: Buffer: Quit Buffer
+- `<C-d>`: Buffer: Move Page up and stay in the Middle of the Screen
+- `<C-u>`: Buffer: Move Page up and stay in the Middle of the Screen
+- `<Leader>n`: Buffer: No Highlighting
+- `<leader>r`: Chars: Rename
+- `<leader>x`: Chars: Add Execution Permission to the File
+- `<leader>cc`: Run: Run the Compilation Command
+- `+`: Chars: Increment a Number
+- `-`: Chars: Decrement a Number
+- `<Leader>Y`: Chars: Yank line
+- `<Leader>p`: Chars: Paste without losing the Buffer
+- `x`: Chars: Delete Char without losing the Buffer
+- `<m-backspace>`: Chars: Delete a Word with Backspace
+- `<`: Line: Indent to Left
+- `>`: Line: Indent to Right
+- `<Leader>l`: Line: Comment Selection in/out
+- `<leader>a`: line: mark everything
+- `J`: Line: Line: Move Selection up
+- `K`: Line: Line: Move Selection down
+- `J`: Line: Concat Line without moving the Cursor
 
 # Acknowledgments
 
