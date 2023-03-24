@@ -56,7 +56,7 @@ return {
                 end
             
                 nmap("ca", ":lua vim.lsp.buf.code_action()<cr>", "(NaaVim) [C]ode [A]ction")
-                nmap("od", ":lua vim.diagnostic.open_float()<cr>", "(NaaVim) [O]pen [D]iagnostics")
+                nmap("sd", ":lua vim.diagnostic.open_float()<cr>", "(NaaVim) [O]pen [D]iagnostics")
                 nmap("gr", ":lua vim.lsp.buf.references()<cr>", "(NaaVim) [G]oto [R]eference")
                 nmap("gd", ":lua vim.lsp.buf.definition()<cr>", "(NaaVim) [G]oto [D]efinition")
                 nmap("gn", ":lua vim.diagnostic.goto_next()<cr>zz", "(NaaVim) [G]oto [N]ext Diagnostic")

@@ -106,7 +106,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - `<leader>?`: Show Oldfiles
 - `<leader>/`: Search in the Current File
 - `ca`: Code Action
-- `od`: Open Diagnostics
+- `sd`: Open Diagnostics
 - `gr`: Goto Reference
 - `gd`: Goto Definition
 - `gn`: Goto Next Diagnostic
