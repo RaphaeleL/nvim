@@ -119,40 +119,40 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - `K`: Hover Documentation
 - `<leader>k`: Signature Documentation
 - `ff`: Format File
-- `kj`: Buffer: Go to Normal Mode
-- `jk`: Buffer: Go to Normal Mode
-- `<Space>`: Buffer: Leader
-- `ss`: Buffer: Force Write everything
-- `qq`: Buffer: Force Write and Quit everything
-- `<TAB>`: Buffer: Next Tab and Write Buffer
-- `<S-TAB>`: Buffer: Previous Tab and Write Buffer
-- `<C-h>`: Buffer: Move to the left Window
-- `<C-j>`: Buffer: Move to the bottom Window
-- `<C-k>`: Buffer: Move to the upper Window
-- `<C-l>`: Buffer: Move to the right Window
-- `sv`: Buffer: Vertical Split
-- `sh`: Buffer: Horizontal Split
-- `c`: Buffer: Close Buffer
-- `q`: Buffer: Quit Buffer
-- `<C-d>`: Buffer: Move Page up and stay in the Middle of the Screen
-- `<C-u>`: Buffer: Move Page up and stay in the Middle of the Screen
-- `<Leader>n`: Buffer: No Highlighting
-- `<leader>r`: Chars: Rename
-- `<leader>x`: Chars: Add Execution Permission to the File
+- `kj`: Go to Normal Mode
+- `jk`: Go to Normal Mode
+- `<Space>`: Leader
+- `ss`: Force Write everything
+- `qq`: Force Write and Quit everything
+- `<TAB>`: Next Tab and Write Buffer
+- `<S-TAB>`: Previous Tab and Write Buffer
+- `<C-h>`: Move to the left Window
+- `<C-j>`: Move to the bottom Window
+- `<C-k>`: Move to the upper Window
+- `<C-l>`: Move to the right Window
+- `sv`: Vertical Split
+- `sh`: Horizontal Split
+- `c`: Close Buffer
+- `q`: Quit Buffer
+- `<C-d>`: Move Page up and stay in the Middle of the Screen
+- `<C-u>`: Move Page up and stay in the Middle of the Screen
+- `<Leader>n`: No Highlighting
+- `<leader>r`: Rename
+- `<leader>x`: Add Execution Permission to the File
 - `<leader>cc`: Run: Run the Compilation Command
-- `+`: Chars: Increment a Number
-- `-`: Chars: Decrement a Number
-- `<Leader>Y`: Chars: Yank line
-- `<Leader>p`: Chars: Paste without losing the Buffer
-- `x`: Chars: Delete Char without losing the Buffer
-- `<m-backspace>`: Chars: Delete a Word with Backspace
-- `<`: Line: Indent to Left
-- `>`: Line: Indent to Right
-- `<Leader>l`: Line: Comment Selection in/out
-- `<leader>a`: line: mark everything
-- `J`: Line: Line: Move Selection up
-- `K`: Line: Line: Move Selection down
-- `J`: Line: Concat Line without moving the Cursor
+- `+`: Increment a Number
+- `-`: Decrement a Number
+- `<Leader>Y`: Yank line
+- `<Leader>p`: Paste without losing the Buffer
+- `x`: Delete Char without losing the Buffer
+- `<m-backspace>`: Delete a Word with Backspace
+- `<`: Indent to Left
+- `>`: Indent to Right
+- `<Leader>l`: Comment Selection in/out
+- `<leader>a`: mark everything
+- `J`: Move Selection up
+- `K`: Move Selection down
+- `J`: Concat Line without moving the Cursor
 
 # Acknowledgments
 
