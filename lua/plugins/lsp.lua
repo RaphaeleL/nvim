@@ -55,18 +55,18 @@ return {
                     vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
                 end
             
-                nmap("ca", ":lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction")
-                nmap("od", ":lua vim.diagnostic.open_float()<cr>", "[O]pen [D]iagnostics")
-                nmap("gr", ":lua vim.lsp.buf.references()<cr>", "[G]oto [R]eference")
-                nmap("gd", ":lua vim.lsp.buf.definition()<cr>", "[G]oto [D]efinition")
-                nmap("gn", ":lua vim.diagnostic.goto_next()<cr>zz", "[G]oto [N]ext Diagnostic")
-                nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
-                nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
-                nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
+                nmap("ca", ":lua vim.lsp.buf.code_action()<cr>", "(NaaVim) [C]ode [A]ction")
+                nmap("od", ":lua vim.diagnostic.open_float()<cr>", "(NaaVim) [O]pen [D]iagnostics")
+                nmap("gr", ":lua vim.lsp.buf.references()<cr>", "(NaaVim) [G]oto [R]eference")
+                nmap("gd", ":lua vim.lsp.buf.definition()<cr>", "(NaaVim) [G]oto [D]efinition")
+                nmap("gn", ":lua vim.diagnostic.goto_next()<cr>zz", "(NaaVim) [G]oto [N]ext Diagnostic")
+                nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "(NaaVim) [G]oto [P]revious Diagnostic")
+                nmap("K", ":lua vim.lsp.buf.hover()<cr>", "(NaaVim) Hover Documentation")
+                nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "(NaaVim) Signature Documentation")
                 nmap("ff", function()
                     vim.cmd("silent LspZeroFormat!")
                     vim.cmd("lua require('notify')('Format File Async with lsp-zero', 'Info')")
-                end, "[F]ormat [F]ile")
+                end, "(NaaVim) [F]ormat [F]ile")
             
             end)
 
