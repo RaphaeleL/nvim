@@ -1,1 +1,0 @@
-nnoremap r :!runhaskell %<cr>
