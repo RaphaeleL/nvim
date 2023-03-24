@@ -63,7 +63,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Git Changes: [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - Fuzzy File Explorer: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Syntax Highlighting: [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- Colorscheme: [RaphaeleL/my_vivid](https://github.com/RaphaeleL/my_vivid)
 
 ### Language Server Protocol
 
@@ -85,16 +84,12 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 > The following plugins are really cool, useful and great. But they are not necessary. Thanks to Lazy Loading there are no performance disadvantages and can be keeped without any problems.
 
-- Undo History: [mbbill/undotree](https://github.com/mbbill/undotree)
 - Classic File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Show Indentlines: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - Highlight Words on Hover: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
-- Some Icons: [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
-- Rainbow Brackets: [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Search and Replace: [cshuaimin/ssr.nvim](https://github.com/cshuaimin/ssr.nvim)
 
 ### NaaVim Keymaps 
 
