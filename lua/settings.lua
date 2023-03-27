@@ -42,6 +42,7 @@ vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/zsh"
 vim.opt.relativenumber = true
 vim.opt.modifiable = true
+vim.opt.autochdir = true
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
