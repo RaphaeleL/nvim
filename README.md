@@ -84,7 +84,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 > The following plugins are really cool, useful and great. But they are not necessary. Thanks to Lazy Loading there are no performance disadvantages and can be keeped without any problems.
 
-- Classic File Explorer: [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - Show Indentlines: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - Highlight Words on Hover: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
@@ -93,7 +92,9 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ### NaaVim Keymaps 
 
-> In this overview only NaaVim specific shortcuts are listed. (Neo-) Vim specific shortcuts are not included here! For this you will find a [Cheatsheet](https://github.com/RaphaeleL/Cheatsheet/blob/main/Vim.md) from me.
+Short Overview of some NaaVim Keymaps
+
+> In this overview only NaaVim specific shortcuts are listed. (Neo-) Vim specific shortcuts are not included here! For this you will find a [Cheatsheet](https://github.com/RaphaeleL/Cheatsheet/blob/main/Vim.md) from me. 
 
 - `<leader>sf`: Show Fuzzy File Finder
 - `<leader>sl`: Show Live Grep
