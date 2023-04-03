@@ -49,14 +49,14 @@ return {
             { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
         },
     },
-    {
-        "RRethy/vim-illuminate",
-        event = "VeryLazy",
-        keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
-        },
-        config = function()
-            require("illuminate")
-        end,
-    },
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     event = "VeryLazy",
+    --     keys = {
+    --         { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
+    --     },
+    --     config = function()
+    --         require("illuminate")
+    --     end,
+    -- },
 }
