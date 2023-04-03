@@ -118,8 +118,8 @@ Short Overview of some NaaVim Keymaps
 - `kj`: Go to Normal Mode
 - `jk`: Go to Normal Mode
 - `<Space>`: Leader
-- `ss`: Force Write everything
-- `qq`: Force Write and Quit everything
+- `<C-s>`: Force Write everything
+- `<C-w>`: Force Write and Quit everything
 - `<TAB>`: Next Tab and Write Buffer
 - `<S-TAB>`: Previous Tab and Write Buffer
 - `<C-h>`: Move to the left Window
@@ -141,7 +141,6 @@ Short Overview of some NaaVim Keymaps
 - `<Leader>Y`: Yank line
 - `<Leader>p`: Paste without losing the Buffer
 - `x`: Delete Char without losing the Buffer
-- `<m-backspace>`: Delete a Word with Backspace
 - `<`: Indent to Left
 - `>`: Indent to Right
 - `<Leader>l`: Comment Selection in/out

@@ -4,8 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("i", "kj", "<ESC>", { desc = "(NaaVim) Buffer: Go to Normal Mode" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "(NaaVim) Buffer: Go to Normal Mode" })
 vim.keymap.set("n", "<Space>", "<NOP>", { desc = "(NaaVim) Buffer: Leader" })
-vim.keymap.set("n", "ss", ":wa!<cr>", { desc = "(NaaVim) Buffer: Force Write everything" })
-vim.keymap.set("n", "qq", ":wqa!<cr>", { desc = "(NaaVim) Buffer: Force Write and Quit everything" })
+vim.keymap.set("n", "<C-s>", ":wa!<cr>", { desc = "(NaaVim) Buffer: Force Write everything" })
+vim.keymap.set("n", "<C-w>", ":wqa!<cr>", { desc = "(NaaVim) Buffer: Force Write and Quit everything" })
 vim.keymap.set("n", "<TAB>", ":write<cr>:bprev<cr>", { desc = "(NaaVim) Buffer: Next Tab and Write Buffer" })
 vim.keymap.set("n", "<S-TAB>", ":write<cr>:bnext<cr>", { desc = "(NaaVim) Buffer: Previous Tab and Write Buffer" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "(NaaVim) Buffer: Move to the left Window" })
@@ -29,7 +29,6 @@ vim.keymap.set("n", "-", "<C-x>", { desc = "(NaaVim) Chars: Decrement a Number" 
 vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "(NaaVim) Chars: Yank line" })
 vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "(NaaVim) Chars: Paste without losing the Buffer" })
 vim.keymap.set("n", "x", '"_x', { desc = "(NaaVim) Chars: Delete Char without losing the Buffer" })
-vim.keymap.set({ "n", "i" }, "<m-backspace>", "<c-w", { desc = "(NaaVim) Chars: Delete a Word with Backspace" })
 
 -- Line Manipulation
 vim.keymap.set("v", "<", "<gv", { desc = "(NaaVim) Line: Indent to Left" })
