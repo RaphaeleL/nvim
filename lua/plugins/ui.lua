@@ -10,6 +10,10 @@ return {
         end
     },
     {
+        "nvim-treesitter/playground",
+        event = "VeryLazy",
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
         config = function()
