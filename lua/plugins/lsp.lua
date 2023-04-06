@@ -1,15 +1,15 @@
 return {
     {
-        'neovim/nvim-lspconfig',
+        "neovim/nvim-lspconfig",
         dependencies = {
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
-            'folke/neodev.nvim',
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-nvim-lsp',
-            'L3MON4D3/LuaSnip',
-            'saadparwaiz1/cmp_luasnip',
-            { 'j-hui/fidget.nvim', opts = {} },
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "folke/neodev.nvim",
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-nvim-lsp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            { "j-hui/fidget.nvim", opts = {} },
         },
         config = function()
             local on_attach = function(client, bufnr)
@@ -37,14 +37,14 @@ return {
                 },
             }
 
-            require('neodev').setup()
+            require("neodev").setup()
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+            capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-            require('mason').setup()
+            require("mason").setup()
 
-            local mason_lspconfig = require 'mason-lspconfig'
+            local mason_lspconfig = require "mason-lspconfig"
 
             mason_lspconfig.setup {
                 ensure_installed = vim.tbl_keys(servers),
@@ -52,7 +52,7 @@ return {
 
             mason_lspconfig.setup_handlers {
                 function(server_name)
-                    require('lspconfig')[server_name].setup {
+                    require("lspconfig")[server_name].setup {
                         capabilities = capabilities,
                         on_attach = on_attach,
                         settings = servers[server_name],
@@ -60,8 +60,8 @@ return {
                 end,
             }
 
-            local cmp = require 'cmp'
-            local luasnip = require 'luasnip'
+            local cmp = require "cmp"
+            local luasnip = require "luasnip"
 
             luasnip.config.setup {}
 
@@ -72,14 +72,14 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert {
-                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete {},
-                    ['<CR>'] = cmp.mapping.confirm {
+                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-Space>"] = cmp.mapping.complete {},
+                    ["<CR>"] = cmp.mapping.confirm {
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
                     },
-                    ['<Tab>'] = cmp.mapping(function(fallback)
+                    ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
                         elseif luasnip.expand_or_jumpable() then
@@ -87,8 +87,8 @@ return {
                         else
                             fallback()
                         end
-                    end, { 'i', 's' }),
-                    ['<S-Tab>'] = cmp.mapping(function(fallback)
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
                         elseif luasnip.jumpable(-1) then
@@ -96,11 +96,11 @@ return {
                         else
                             fallback()
                         end
-                    end, { 'i', 's' }),
+                    end, { "i", "s" }),
                 },
                 sources = {
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
                 },
             }
             vim.diagnostic.config({
