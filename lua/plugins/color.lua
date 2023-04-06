@@ -51,23 +51,23 @@ return {
     --         vim.cmd("colorscheme rose-pine")
     --     end
     -- },
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     config = function()
-    --         require("catppuccin").setup({
-    --             background = {
-    --                 light = "latte",
-    --                 dark = "mocha",
-    --             },
-    --             transparent_background = true,
-    --             integrations = {
-    --                 illuminate = true
-    --             }
-    --         })
-    --         vim.cmd("colorscheme catppuccin")
-    --     end
-    -- },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        config = function()
+            require("catppuccin").setup({
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
+                transparent_background = true,
+                integrations = {
+                    illuminate = true
+                }
+            })
+            -- vim.cmd("colorscheme catppuccin")
+        end
+    },
     -- ========================================
     --      Auto Dark / Light Colorscheme
     -- ========================================
