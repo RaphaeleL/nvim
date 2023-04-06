@@ -9,10 +9,10 @@ return {
             'hrsh7th/cmp-nvim-lsp',
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
-            { 'j-hui/fidget.nvim', opts = {} }
+            { 'j-hui/fidget.nvim', opts = {} },
         },
         config = function()
-            local on_attach = function(_, bufnr)
+            local on_attach = function(client, bufnr)
                 local nmap = function(keys, func, desc)
                     if desc then desc = "(NaaVim) LSP: " .. desc end
                     vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
@@ -106,6 +106,10 @@ return {
                     { name = 'luasnip' },
                 },
             }
+            vim.diagnostic.config({
+                virtual_text = true,
+                underline = false
+            })
         end,
     },
     -- {
