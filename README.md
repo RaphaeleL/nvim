@@ -68,17 +68,14 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 
 > The Language Server Protocol turns a text editor into an IDE with autocompletion.
 
-> Managed by [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim), which is not necessary, but quite more pleasant.
-
 - Lsp Configuration: [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - Lsp Package Manager: [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 - Lsp Package Manager Configuration: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - Auto Completion Enginge: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Auto Completion for Buffer: [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-- Auto Completion for Paths: [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path)
 - Auto Completion for LSP: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
 - Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
-- Snippets: [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+- Signature Help: [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
+- Lsp Status Information: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
 ### More Basic Plugins
 
@@ -89,10 +86,11 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Keymap Overview: [which-key.nvim](https://github.com/folke/which-key.nvim)
 
 ### NaaVim Keymaps 
 
-Short Overview of some NaaVim Keymaps
+Short Overview of some NaaVim Keymaps. If you want an overview while Coding just type `<leader>` to open the Help.
 
 > In this overview only NaaVim specific shortcuts are listed. (Neo-) Vim specific shortcuts are not included here! For this you will find a [Cheatsheet](https://github.com/RaphaeleL/Cheatsheet/blob/main/Vim.md) from me. 
 

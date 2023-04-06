@@ -50,7 +50,8 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         event = "VeryLazy",
         keys = {
-            { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
+            -- { "<leader>i", ":IlluminateToggle<cr>:IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
+            { "<leader>i", ":IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
         },
     },
     -- {
@@ -63,4 +64,5 @@ return {
     --         require("illuminate")
     --     end,
     -- },
+    { 'folke/which-key.nvim', opts = {} },
 }
