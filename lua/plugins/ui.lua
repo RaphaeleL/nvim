@@ -1,10 +1,9 @@
 return {
     {
-        "nvim-treesitter/playground",
-        event = "VeryLazy",
-    },
-    {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            { "nvim-treesitter/nvim-treesitter-context", opts = {} },
+        },
         event = "VeryLazy",
         config = function()
             local ok, treesitter = pcall(require, "nvim-treesitter.configs")
@@ -44,6 +43,17 @@ return {
             { "<leader>i", ":IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
         },
     },
+    { "nvim-tree/nvim-web-devicons" },
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+        },
+        opts = {
+            show_dirname = false,
+        },
+    },
     -- {
     --     "RRethy/vim-illuminate",
     --     event = "VeryLazy",
@@ -54,53 +64,46 @@ return {
     --         require("illuminate")
     --     end,
     -- },
-    {
-        'folke/which-key.nvim',
-        event = "VeryLazy",
-        opts = {}
-    },
-    {
-        "karb94/neoscroll.nvim",
-        event = "VeryLazy",
-        opts = {}
-    },
     -- {
-    --     "fgheng/winbar.nvim",
-    --     dependencies = {
-    --         "SmiteshP/nvim-gps",
-    --         "SmiteshP/nvim-navic",
-    --     },
+    --     "folke/which-key.nvim",
+    --     event = "VeryLazy",
+    --     opts = {}
+    -- },
+    -- {
+    --     "karb94/neoscroll.nvim",
+    --     event = "VeryLazy",
+    --     opts = {}
+    -- },
+    -- {
+    --     "folke/noice.nvim",
+    --     event = "VeryLazy",
     --     config = function()
-    --         require("nvim-gps").setup()
-    --         require('winbar').setup({
-    --             enabled = true,
-    --             show_file_path = true,
-    --             show_symbols = true,
-    --             colors = {
-    --                 path = '',
-    --                 file_name = '',
-    --                 symbols = '',
+    --         require("noice").setup({
+    --             cmdline = {
+    --                 view = "cmdline",
     --             },
-    --             highlight = true,
-    --             separator = ">",
-    --             depth_limit = 0,
-    --             depth_limit_indicator = "..",
-    --             exclude_filetype = {
-    --                 'help',
-    --                 'startify',
-    --                 'dashboard',
-    --                 'packer',
-    --                 'neogitstatus',
-    --                 'NvimTree',
-    --                 'Trouble',
-    --                 'alpha',
-    --                 'lir',
-    --                 'Outline',
-    --                 'spectre_panel',
-    --                 'toggleterm',
-    --                 'qf',
-    --             }
+    --             lsp = {
+    --                 progress = {
+    --                     enabled = false,
+    --                 },
+    --                 override = {
+    --                     ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+    --                     ["vim.lsp.util.stylize_markdown"] = true,
+    --                     ["cmp.entry.get_documentation"] = true,
+    --                 },
+    --             },
+    --             presets = {
+    --                 bottom_search = true,
+    --                 command_palette = true,
+    --                 long_message_to_split = true,
+    --                 inc_rename = false,
+    --                 lsp_doc_border = false,
+    --             },
     --         })
-    --     end
-    -- }
+    --     end,
+    --     dependencies = {
+    --         "MunifTanjim/nui.nvim",
+    --         "rcarriga/nvim-notify",
+    --     }
+    -- },
 }

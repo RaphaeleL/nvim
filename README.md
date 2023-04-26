@@ -82,7 +82,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 > The following plugins are really cool, useful and great. But they are not necessary. Thanks to Lazy Loading there are no performance disadvantages and can be keeped without any problems.
 
 - Show Indentlines: [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
-<!-- - Highlight Words on Hover: [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate) -->
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)

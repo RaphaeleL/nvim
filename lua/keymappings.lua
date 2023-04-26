@@ -19,6 +19,10 @@ vim.keymap.set("n", "q", ":bdelete!<cr>", { desc = "(NaaVim) Buffer: Quit Buffer
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "(NaaVim) Buffer: Move Page up and stay in the Middle of the Screen" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "(NaaVim) Buffer: Move Page up and stay in the Middle of the Screen" })
 vim.keymap.set("n", "<Leader>n", ":noh<cr>", { desc = "(NaaVim) Buffer: No Highlighting" })
+vim.keymap.set("n", "<S-Up>", ":resize -2<CR>", { desc = "(NaaVim) Buffer Resize up" })
+vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { desc = "(NaaVim) Buffer Resize down" })
+vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "(NaaVim) Buffer Resize left" })
+vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "(NaaVim) Buffer Resize right" })
 
 -- Char Manipulation
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "(NaaVim) Chars: Rename" })
