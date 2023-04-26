@@ -30,6 +30,12 @@ cd ~/.config
 git clone https://github.com/RaphaeleL/nvim
 ```
 
+The configuration file `vi.lua` is a separate `nvim` configuration file intended to replace `vi`/`vim` with a `nvim`-based configuration. This is necessary because there are compatibility issues with different types of terminals. Every `nvim` configuration is not available on the MacOS terminal, so `vi.lua` is a convenient replacement for small changes. Use this Command to start it.
+
+```bash
+NVIM_APPNAME=macnvim nvim
+```
+
 ## Uninstall 
 
 ```bash 
@@ -48,6 +54,13 @@ The File Structure explained.
 ~/.config/nvim/lua/                   # Contains the configuration of NeoVim
 ~/.config/nvim/lua/*.lua              # Neovim Settings, Keymappings, ... 
 ~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
+```
+
+The File Structure of `vi.lua` explained.
+
+```
+~/.config/macnvim/                    # Base
+~/.config/macnvim/vi.lua              # the start of every Configuration
 ```
 
 ## Plugins
@@ -85,8 +98,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-- Keymap Overview: [which-key.nvim](https://github.com/folke/which-key.nvim)
-- Smooth Scrolling: [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
 
 ### NaaVim Keymaps 
 
