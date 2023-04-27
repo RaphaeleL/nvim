@@ -1,9 +1,9 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        dependencies = {
-            { "nvim-treesitter/nvim-treesitter-context", opts = {} },
-        },
+        -- dependencies = {
+        --     { "nvim-treesitter/nvim-treesitter-context", opts = {} },
+        -- },
         event = "VeryLazy",
         config = function()
             local ok, treesitter = pcall(require, "nvim-treesitter.configs")
