@@ -34,7 +34,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.guifont = "monospace:h17"
+-- vim.opt.guifont = "SF Mono:h14"
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
@@ -46,3 +46,13 @@ vim.opt.autochdir = false
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+if vim.g.neovide then
+  vim.cmd("cd ~/")
+  vim.opt.linespace = 0
+  vim.opt.guifont = "SF Mono NF:h14"
+  vim.g.remember_window_size = true
+  vim.g.remember_window_position = true
+  vim.g.neovide_cursor_antialiasing = true
+  vim.opt.guifont = { "SF Mono", ":h14" }
+end
