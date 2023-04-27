@@ -31,6 +31,17 @@ return {
         keys = {
             { "<leader>e", ":NvimTreeToggle<cr>", desc = "(NaaVim) UI: File Explorer" },
         },
-        opts = {}
+        config = function()
+            local tree = require("nvim-tree")
+            tree.setup({
+                hijack_cursor = true,
+                open_on_setup = true,
+                open_on_setup_file = true,
+                sync_root_with_cwd = true,
+                view = {
+                    adaptive_size = true,
+                },
+            })
+        end
     },
 }
