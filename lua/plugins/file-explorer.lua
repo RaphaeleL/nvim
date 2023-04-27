@@ -41,6 +41,15 @@ return {
                 view = {
                     adaptive_size = true,
                 },
+                renderer = {
+                    full_name = true,
+                    group_empty = true,
+                    special_files = {},
+                    symlink_destination = false,
+                    indent_markers = {
+                        enable = true,
+                    },
+                },
             })
         end
     },
