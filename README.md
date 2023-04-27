@@ -159,6 +159,24 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `J`: Concat Line without moving the Cursor
 - <leader>S: Search and Replace
 
+#### NvimTree Keymaps
+
+- `<CR>`: Open 
+- `<C-v>`: Open Vertical
+- `<C-x>`: Open Horizontal 
+- `<C-k>`: Open Information 
+- `g?`: Toggle Help 
+- `-`: Up 
+- `R`: Refresh 
+- `S`: Search 
+- `gy`: Copy absolute Path 
+- `r`: Rename
+- `d`: Delete
+- `x`: Cut 
+- `c`: Copy 
+- `p`: Paste 
+- `a`: Create a File 
+
 # Acknowledgments
 
 This Configuration is inspired by:
