@@ -1,7 +1,7 @@
 --------------------
 -- Basic Settings --
 --------------------
-vim.cmd("syntax off")
+vim.cmd("syntax on")
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 0
@@ -19,13 +19,13 @@ vim.opt.updatetime = 50
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.number = false
 vim.opt.laststatus = 0
 vim.opt.showcmd = false
 vim.opt.signcolumn = "no"
 vim.opt.wrap = true
 vim.opt.shell = "/bin/bash"
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
+vim.opt.number = true
 vim.opt.modifiable = true
 
 -------------
@@ -77,19 +77,4 @@ vim.keymap.set("n", "J", "mzJ`z")
 --------------------
 -- Plugin Manager --
 --------------------
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "--single-branch",
-        "https://github.com/folke/lazy.nvim.git",
-        lazypath,
-    })
-end
-vim.opt.runtimepath:prepend(lazypath)
-
-require("lazy").setup("plugins", {
-	"folke/which-key.nvim",
-})
+require "plugins"
