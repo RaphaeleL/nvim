@@ -49,17 +49,19 @@ rm -rf ~/.local/state/nvim
 The File Structure explained.
 
 ```
-~/.config/nvim/                       # Base
+~/.config/nvim/                       # Base Folder
 ~/.config/nvim/init.lua               # the start of every Configuration
 ~/.config/nvim/lua/                   # Contains the configuration of NeoVim
 ~/.config/nvim/lua/*.lua              # Neovim Settings, Keymappings, ... 
 ~/.config/nvim/lua/plugins/*.lua      # List of the Plugins, sorted by Type 
+~/.config/nvim/after/ftplugin/*       # File Specific Settings 
+~/.config/nvim/ftplugin/*             # Language Specific Settings 
 ```
 
 The File Structure of `vi.lua` explained.
 
 ```
-~/.config/macnvim/                    # Base
+~/.config/macnvim/                    # Base Folder
 ~/.config/macnvim/vi.lua              # the start of every Configuration
 ```
 
