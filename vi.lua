@@ -77,4 +77,4 @@ vim.keymap.set("n", "J", "mzJ`z")
 --------------------
 -- Plugin Manager --
 --------------------
-require "plugins"
+-- require "plugins"
