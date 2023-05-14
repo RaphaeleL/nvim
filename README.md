@@ -91,10 +91,16 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Signature Help: [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
 - Lsp Status Information: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
 
-## A.I.
+### A.I.
 
 - Copilot: [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - Cmp for Copilot: [zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
+
+### Languages 
+
+> for some languages an extension plugin is very useful!
+
+- Java: [mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
 
 ### More Basic Plugins
 
