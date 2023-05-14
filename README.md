@@ -86,9 +86,15 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Lsp Package Manager Configuration: [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - Auto Completion Enginge: [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Auto Completion for LSP: [hrsh7th/cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- Auto Completion for Lua Snip: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - Signature Help: [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
 - Lsp Status Information: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
+
+## A.I.
+
+- Copilot: [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+- Cmp for Copilot: [zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 ### More Basic Plugins
 
@@ -98,6 +104,9 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Notifications: [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Comments: [terrortylor/nvim-comment](https://github.com/terrortylor/nvim-comment)
 - Auto Close the Brackets: [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Coloring the `f` - Movement: [jinh0/eyeliner.nvim](https://github.com/jinh0/eyeliner.nvim)
+- Configurable Bar in the Top: [SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic)
+- LSP Context in the Top: [utilyre/barbecue.nvim](https://github.com/utilyre/barbecue.nvim)
 
 ### NaaVim Keymaps 
 
