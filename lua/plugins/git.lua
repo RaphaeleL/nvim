@@ -8,8 +8,8 @@ return {
                 require("notify")("Couldn't require gitsigns", "error")
                 return
             end
-
             gitsigns.setup {
+                -- numhl = true,
                 signs = {
                     add = { text = "│" },
                     change = { text = "│" },
