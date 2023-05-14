@@ -6,7 +6,7 @@ return {
         config = function()
             require("copilot").setup({
                 panel = {
-                    enabled = true, -- false for copilot in cmp
+                    enabled = false, -- false for copilot in cmp, true for <c-l>
                     keymap = {
                         jump_next = "<c-j>",
                         jump_prev = "<c-k>",
@@ -16,7 +16,7 @@ return {
                     },
                 },
                 suggestion = {
-                    enabled = true, -- false for copilot in cmp
+                    enabled = false, -- false for copilot in cmp, true for <c-l>
                     auto_trigger = true,
                     keymap = {
                         accept = "<c-l>",
