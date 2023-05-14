@@ -1,9 +1,15 @@
+-- print hello world
+
 return {
     {
         "cshuaimin/ssr.nvim",
         lazy = true,
         keys = {
-            { "<leader>S", ":lua require('ssr').open()<cr>", desc = "(NaaVim) Structure [S]earch and Replace (hovered Element)" }
+            {
+                "<leader>S",
+                ":lua require('ssr').open()<cr>",
+                desc = "(NaaVim) Structure [S]earch and Replace (hovered Element)"
+            }
         },
         config = function()
             require("ssr").setup {
@@ -37,5 +43,14 @@ return {
         config = function()
             require("nvim-autopairs").setup()
         end,
+    },
+    {
+        "jinh0/eyeliner.nvim",
+        config = function()
+            require("eyeliner").setup {
+                highlight_on_key = true,
+                dim = false
+            }
+        end
     },
 }
