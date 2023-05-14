@@ -1,5 +1,3 @@
--- print hello world
-
 return {
     {
         "cshuaimin/ssr.nvim",
