@@ -62,5 +62,14 @@ return {
 
             })
         end
+    },
+    {
+        "ThePrimeagen/harpoon",
+        keys = {
+            { "m", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "(NaaVim) Open [M]ark Menu" },
+            { "ma", ":lua require('harpoon.mark').add_file()<cr>", desc = "(NaaVim) [M]ark a File" },
+            { "mn", ":lua require('harpoon.ui').nav_next()<cr>", desc = "(NaaVim) [M]ove to [n]ext File" },
+            { "mp", ":lua require('harpoon.ui').nav_prev()<cr>", desc = "(NaaVim) [M]ove to [p]revious File" },
+        }
     }
 }
