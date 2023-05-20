@@ -161,7 +161,7 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `<Leader>n`: No Highlighting
 - `<leader>r`: Rename
 - `<leader>x`: Add Execution Permission to the File
-- `<leader>cc`: Run: Run the Compilation Command
+- `<leader>c`: Run: Run the Compilation Command
 - `+`: Increment a Number
 - `-`: Decrement a Number
 - `<Leader>Y`: Yank line
@@ -174,7 +174,10 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `J`: Move Selection up
 - `K`: Move Selection down
 - `J`: Concat Line without moving the Cursor
-- <leader>S: Search and Replace
+- `<leader>S`: Search and Replace
+- `<Leader>gd`: Git toggle deleted
+- `<Leader>gn`: Git toggle Line Number Signs
+- `<Leader>gs`: Git toggle Signs
 
 #### NvimTree Keymaps
 
