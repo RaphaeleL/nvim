@@ -27,7 +27,7 @@ vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "(NaaVim) B
 -- Char Manipulation
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "(NaaVim) Chars: Rename" })
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<cr>", { desc = "(NaaVim) Chars: Add Execution Permission to the File" })
-vim.keymap.set("n", "<leader>cc", ":! make -j4", { desc = "(NaaVim) Run: Run the Compilation Command" })
+vim.keymap.set("n", "<leader>c", ":! make -j4", { desc = "(NaaVim) Run: Run the Compilation Command" })
 vim.keymap.set("n", "+", "<C-a>", { desc = "(NaaVim) Chars: Increment a Number" })
 vim.keymap.set("n", "-", "<C-x>", { desc = "(NaaVim) Chars: Decrement a Number" })
 vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "(NaaVim) Chars: Yank line" })
