@@ -53,4 +53,14 @@ return {
             vim.api.nvim_set_hl(0, 'EyelinerSecondary', { fg='#00ffff', underline = false })
         end
     },
+    {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup({
+
+            })
+        end
+    }
 }
