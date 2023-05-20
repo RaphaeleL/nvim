@@ -19,7 +19,7 @@ vim.cmd [[
 ]]
 
 -- Show line diagnostics automatically in hover window
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+-- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- Highlight line number instead of having icons in sign column
 -- vim.cmd [[
