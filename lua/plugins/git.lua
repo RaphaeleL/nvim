@@ -9,7 +9,7 @@ return {
                 return
             end
             gitsigns.setup {
-                -- numhl = true,
+                numhl = true,
                 signs = {
                     add = { text = "│" },
                     change = { text = "│" },
@@ -21,7 +21,9 @@ return {
             }
         end,
         keys = {
-            { "<Leader>gt", ":Gitsigns toggle_deleted<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle deleted" },
+            { "<Leader>gd", ":Gitsigns toggle_deleted<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle deleted" },
+            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gs", ":Gitsigns toggle_signs<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle Signs" },
         }
     },
 }
