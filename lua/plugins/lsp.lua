@@ -110,7 +110,7 @@ return {
             }
 
             vim.diagnostic.config({
-                virtual_text = true,
+                virtual_text = false,
                 underline = false
             })
         end,
