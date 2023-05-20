@@ -179,10 +179,12 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `<Leader>gd`: Git toggle deleted
 - `<Leader>gn`: Git toggle Line Number Signs
 - `<Leader>gs`: Git toggle Signs
-- m`: Open Mark Menu
-- ma`: Mark a File
-- mn`: Move to next File
+- `m`: Open Mark Menu
+- `ma`: Mark a File
+- `mn`: Move to next File
 - `mp`: Move to previous File
+- `mc`: Clear all Marks
+- `mr`: Remove Selected Mark
 
 #### NvimTree Keymaps
 
