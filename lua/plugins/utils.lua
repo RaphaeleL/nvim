@@ -65,10 +65,12 @@ return {
     },
     {
         "ThePrimeagen/harpoon",
+        event = "VeryLazy",
         keys = {
             { "<leader>ma", ":lua require('harpoon.mark').add_file()<cr>", desc = "(NaaVim) [M]ark a File" },
             { "<leader>mn", ":lua require('harpoon.ui').nav_next()<cr>", desc = "(NaaVim) [M]ove to [n]ext File" },
             { "<leader>mp", ":lua require('harpoon.ui').nav_prev()<cr>", desc = "(NaaVim) [M]ove to [p]revious File" },
+            { "<leader>mc", ":lua require('harpoon.mark').clear_all()<cr>", desc = "(NaaVim) [C]lear all Marks" },
         }
     }
 }
