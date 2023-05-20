@@ -57,5 +57,5 @@ if vim.g.neovide then
     vim.opt.guifont = { "SF Mono", ":h14" }
     vim.g.neovide_transparency = 0.0
     vim.g.transparency = 1 -- 0.95
-    vim.g.neovide_background_color = "#1e1e1e" .. string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+    vim.g.neovide_background_color = "#1e1e1e" .. string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
 end
