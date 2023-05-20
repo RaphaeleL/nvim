@@ -11,6 +11,7 @@ return {
             { "<leader>ss", ":Telescope grep_string theme=ivy<cr>", desc = "(NaaVim) Telescope: [S]how [G]rep" },
             { "<leader>so", ":Telescope lsp_document_symbols theme=ivy<cr>", desc = "(NaaVim) Telescope: [S]how [O]utliner" },
             { "<leader>sk", ":Telescope keymaps theme=ivy<cr>", desc = "(NaaVim) Telescope: [S]how [K]eymaps" },
+            { "<leader>sm", ":Telescope harpoon marks theme=ivy<cr>", desc = "(NaaVim) [S]how [M]ark Menu" },
             { "<leader>?", ":Telescope oldfiles theme=ivy<cr>", desc = "(NaaVim) Telescope: Show Oldfiles" },
             { "<leader>/", ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy { winblend = 10, previewer = false, })<cr>", desc = "(NaaVim) Telescope: Search in the Current File" },
         },
