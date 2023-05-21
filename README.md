@@ -175,15 +175,25 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `K`: Move Selection down
 - `J`: Concat Line without moving the Cursor
 - `<leader>S`: Search and Replace
+
+#### Git 
+
 - `<Leader>gd`: Git toggle deleted
 - `<Leader>gn`: Git toggle Line Number Signs
 - `<Leader>gs`: Git toggle Signs
+
+#### Harpoon 
+
 - `m`: Open Mark Menu
-- `ma`: Mark a File
+- `mm`: Mark a File
 - `mn`: Move to next File
 - `mp`: Move to previous File
 - `mc`: Clear all Marks
 - `mr`: Remove Selected Mark
+- `ma`: Move to 1
+- `ms`: Move to 2
+- `md`: Move to 3
+- `mf`: Move to 4
 
 #### NvimTree Keymaps
 
