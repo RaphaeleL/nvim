@@ -141,7 +141,7 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `gp`: Goto Previous Diagnostic
 - `K`: Hover Documentation
 - `<leader>k`: Signature Documentation
-- `ff`: Format File
+- `<leader>ff`: Format File
 - `kj`: Go to Normal Mode
 - `jk`: Go to Normal Mode
 - `<Space>`: Leader
