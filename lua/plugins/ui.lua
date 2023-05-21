@@ -35,13 +35,13 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         event = "VeryLazy",
-        keys = {
-            { "<leader>i", ":IndentBlanklineToggle<cr>", desc = "(NaaVim) UI: Toggle" },
-        },
+        -- event = "InsertEnter",
     },
     {
         "utilyre/barbecue.nvim",
         name = "barbecue",
+        event = "VeryLazy",
+        -- event = "InsertEnter",
         dependencies = {
             "SmiteshP/nvim-navic",
         },

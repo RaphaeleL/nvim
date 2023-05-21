@@ -27,7 +27,7 @@ return {
     },
     {
         "terrortylor/nvim-comment",
-        event = "VeryLazy",
+        lazy = true,
         config = function()
             require("nvim_comment").setup()
         end,
@@ -55,6 +55,7 @@ return {
     },
     {
         "folke/which-key.nvim",
+        event = "InsertEnter",
         config = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
