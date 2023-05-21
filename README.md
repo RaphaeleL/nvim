@@ -155,7 +155,7 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `sv`: Vertical Split
 - `sh`: Horizontal Split
 - `c`: Close Buffer
-- `q`: Quit Buffer
+- `<leader>q`: Quit Buffer
 - `<C-d>`: Move Page up and stay in the Middle of the Screen
 - `<C-u>`: Move Page up and stay in the Middle of the Screen
 - `<Leader>n`: No Highlighting
