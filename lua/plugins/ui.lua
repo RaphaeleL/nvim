@@ -12,7 +12,7 @@ return {
                 ensured_installed = {
                     "html", "markdown", "markdown-inline", "bash",
                     "comment", "scss", "css", "html", "javascript",
-                    "typescript", "lua", "markdown", "regex", "toml",
+                    "typescript", "lua", "vimdoc", "regex", "toml",
                     "yaml", "c", "cpp", "haskell", "java", "python",
                     "rust", "go", "php", "swift", "kotlin", "latex",
                 },
