@@ -96,6 +96,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 ### A.I.
 
 - Copilot: [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+- Copilot Autocompletion: [zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 ### Languages 
 
