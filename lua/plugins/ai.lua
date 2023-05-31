@@ -6,7 +6,7 @@ return {
         config = function()
             require("copilot").setup({
                 panel = {
-                    enabled = true, -- false for copilot in cmp, true for <c-l>
+                    enabled = false, -- false for copilot in cmp, true for <c-l>
                     keymap = {
                         jump_next = "<C-j>",
                         jump_prev = "<C-k>",
@@ -16,7 +16,7 @@ return {
                     },
                 },
                 suggestion = {
-                    enabled = true, -- false for copilot in cmp, true for <c-l>
+                    enabled = false, -- false for copilot in cmp, true for <c-l>
                     auto_trigger = true,
                     keymap = {
                         accept = "<c-l>",
@@ -29,11 +29,11 @@ return {
             require("copilot.suggestion").is_visible()
         end,
     },
-    -- {
-    --     "zbirenbaum/copilot-cmp",
-    --     after = { "copilot.lua" },
-    --     config = function()
-    --         require("copilot_cmp").setup()
-    --     end,
-    -- },
+    {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end,
+    },
 }

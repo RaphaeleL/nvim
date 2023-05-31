@@ -4,7 +4,7 @@ return {
     -- ========================================
     {
         "neovim/nvim-lspconfig",
-        event = "VeryLazy",
+        -- event = "VeryLazy",
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -13,7 +13,7 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
-            { "j-hui/fidget.nvim", opts = {} },
+            "j-hui/fidget.nvim",
         },
         config = function()
             local on_attach = function(client, bufnr)
@@ -42,6 +42,12 @@ return {
             }
 
             require("neodev").setup()
+
+            require("fidget").setup({
+                window = {
+                    blend = 0,
+                },
+            })
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -111,8 +117,14 @@ return {
             }
 
             vim.diagnostic.config({
-                virtual_text = false,
-                underline = false
+                -- virtual_text = false,
+                -- underline = false,
+                virtual_text = {
+                    source = "always",
+                },
+                float = {
+                    source = "always",
+                },
             })
         end,
     },
