@@ -23,10 +23,10 @@ vim.cmd [[
 
 -- Highlight line number instead of having icons in sign column
 vim.cmd [[
-    highlight! DiagnosticLineNrError guifg=#FF0000
-    highlight! DiagnosticLineNrWarn guifg=#FFA500
-    highlight! DiagnosticLineNrInfo guifg=#00FFFF
-    highlight! DiagnosticLineNrHint guifg=#0000FF
+    highlight! DiagnosticLineNrError guifg=#b5615d
+    highlight! DiagnosticLineNrWarn guifg=#c8b185
+    highlight! DiagnosticLineNrInfo guifg=#88a5a2
+    highlight! DiagnosticLineNrHint guifg=#85a5b2
 
     sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
     sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
