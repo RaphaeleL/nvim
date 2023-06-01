@@ -26,4 +26,11 @@ return {
             { "<Leader>gs", ":Gitsigns toggle_signs<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle Signs" },
         }
     },
+    {
+        "kdheepak/lazygit.nvim",
+        lazy = true,
+        keys = {
+            { "<Leader>gg", ":LazyGit<cr>", desc = "(NaaVim) [G]it: Lazy[G]it" },
+        }
+    },
 }
