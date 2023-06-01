@@ -116,6 +116,7 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Configurable Bar in the Top: [SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic)
 - LSP Context in the Top: [utilyre/barbecue.nvim](https://github.com/utilyre/barbecue.nvim)
 - Mark Files: [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
+- Git Client: [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 
 ### NaaVim Keymaps 
 
@@ -182,6 +183,7 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `<Leader>gd`: Git toggle deleted
 - `<Leader>gn`: Git toggle Line Number Signs
 - `<Leader>gs`: Git toggle Signs
+- `<Leader>gg`: Git Client open
 
 #### Harpoon 
 
