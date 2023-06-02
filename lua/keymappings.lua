@@ -14,6 +14,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "(NaaVim) Buffer: Move to the up
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "(NaaVim) Buffer: Move to the right Window" })
 vim.keymap.set("n", "sv", ":vsplit<cr>", { desc = "(NaaVim) Buffer: Vertical Split" })
 vim.keymap.set("n", "sh", ":split<cr>", { desc = "(NaaVim) Buffer: Horizontal Split" })
+vim.keymap.set("n", "q", ":bdelete!<cr>", { desc = "(NaaVim) Buffer: Delete Buffer" })
 vim.keymap.set("n", "c", ":close!<cr>", { desc = "(NaaVim) Buffer: Close Buffer" })
 vim.keymap.set("n", "<leader>q", ":bdelete!<cr>", { desc = "(NaaVim) Buffer: Quit Buffer" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "(NaaVim) Buffer: Move Page up and stay in the Middle of the Screen" })
@@ -33,8 +34,7 @@ vim.keymap.set("n", "-", "<C-x>", { desc = "(NaaVim) Chars: Decrement a Number" 
 vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "(NaaVim) Chars: Yank line" })
 vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "(NaaVim) Chars: Paste without losing the Buffer" })
 vim.keymap.set("n", "x", '"_x', { desc = "(NaaVim) Chars: Delete Char without losing the Buffer" })
-
-vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { })
+vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "(Naavim) Chars: Delete a Word." })
 
 -- Line Manipulation
 vim.keymap.set("v", "<", "<gv", { desc = "(NaaVim) Line: Indent to Left" })
