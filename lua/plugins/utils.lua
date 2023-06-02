@@ -27,7 +27,8 @@ return {
     },
     {
         "terrortylor/nvim-comment",
-        lazy = true,
+        event = "VeryLazy",
+        -- lazy = true,
         config = function()
             require("nvim_comment").setup()
         end,
