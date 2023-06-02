@@ -4,7 +4,6 @@ return {
     -- ========================================
     {
         "neovim/nvim-lspconfig",
-        -- event = "VeryLazy",
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -116,6 +115,13 @@ return {
                 },
             }
 
+            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+            for type, icon in pairs(signs) do
+                local hl = "DiagnosticSign" .. type
+                -- numhl = numhl to color linenumbers ---------------------vvv--
+                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = nil }) 
+            end
+
             vim.diagnostic.config({
                 -- virtual_text = false,
                 -- underline = false,
@@ -151,6 +157,11 @@ return {
     --
     --     },
     --     config = function()
+    --         require("fidget").setup({
+    --             window = {
+    --                 blend = 0,
+    --             },
+    --         })
     --         local lsp = require("lsp-zero").preset({})
     --
     --         lsp.on_attach(function(client, bufnr)
