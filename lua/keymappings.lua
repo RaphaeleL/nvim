@@ -34,6 +34,8 @@ vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "(NaaVim) Chars: Yank line" })
 vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "(NaaVim) Chars: Paste without losing the Buffer" })
 vim.keymap.set("n", "x", '"_x', { desc = "(NaaVim) Chars: Delete Char without losing the Buffer" })
 
+vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { })
+
 -- Line Manipulation
 vim.keymap.set("v", "<", "<gv", { desc = "(NaaVim) Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "(NaaVim) Line: Indent to Right" })
