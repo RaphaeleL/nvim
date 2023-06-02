@@ -15,7 +15,7 @@ return {
             "j-hui/fidget.nvim",
         },
         config = function()
-            local on_attach = function(client, bufnr)
+            local on_attach = function(_, bufnr)
                 local nmap = function(keys, func, desc)
                     if desc then desc = "(NaaVim) LSP: " .. desc end
                     vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
@@ -119,7 +119,7 @@ return {
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
                 -- numhl = numhl to color linenumbers ---------------------vvv--
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = nil }) 
+                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = nil })
             end
 
             vim.diagnostic.config({
