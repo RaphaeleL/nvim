@@ -1,3 +1,4 @@
+vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 0
