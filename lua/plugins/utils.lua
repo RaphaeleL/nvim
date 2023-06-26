@@ -28,7 +28,6 @@ return {
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
-        -- lazy = true,
         config = function()
             require("nvim_comment").setup()
         end,
@@ -45,6 +44,7 @@ return {
     },
     {
         "jinh0/eyeliner.nvim",
+        event = "VeryLazy",
         config = function()
             require("eyeliner").setup {
                 highlight_on_key = true,
@@ -60,14 +60,12 @@ return {
     --     config = function()
     --         vim.o.timeout = true
     --         vim.o.timeoutlen = 300
-    --         require("which-key").setup({
-    --
-    --         })
+    --         require("which-key").setup({ })
     --     end
     -- },
     {
         "ThePrimeagen/harpoon",
-        event = "VeryLazy",
+        lazy = true,
         keys = {
             { "mm", ":lua require('harpoon.mark').add_file()<cr>", desc = "(NaaVim) [M]ark a File" },
             { "mn", ":lua require('harpoon.ui').nav_next()<cr>", desc = "(NaaVim) [M]ove to [n]ext File" },
