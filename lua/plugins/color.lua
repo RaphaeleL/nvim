@@ -15,11 +15,11 @@ return {
 	-- {
 	--     -- "RaphaeleL/gruvbuddy.nvim",
 	--         dir = "~/Developer/gruvbuddy.nvim",
-	--         depencies = {
+	--         dependencies = {
 	--             "tjdevries/colorbuddy.nvim",
 	--         },
 	--     config = function()
-	--         require('colorbuddy').colorscheme('gruvbuddy')
+	--         require("colorbuddy").colorscheme("gruvbuddy")
 	--     end
 	-- },
 	-- ========================================
@@ -56,29 +56,6 @@ return {
 			vim.cmd("colorscheme kanagawa")
 		end
 	},
-    -- {
-    --     "ramojus/mellifluous.nvim",
-    --     config = function()
-    --         require("mellifluous").setup({
-    --             transparent_background = {
-    --                 enabled = true,
-    --             }
-    --         })
-    --         vim.cmd("colorscheme mellifluous")
-    --     end,
-    -- },
-    -- {
-    --     "LunarVim/primer.nvim",
-    --     config = function()
-    --         vim.cmd("colorscheme primer_dark")
-    --     end,
-    -- },
-    -- {
-    --     "LunarVim/darkplus.nvim",
-    --     config = function()
-    --         vim.cmd("colorscheme darkplus")
-    --     end,
-    -- },
 	-- {
 	--     "rose-pine/neovim",
 	--     config = function()
