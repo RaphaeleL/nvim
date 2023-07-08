@@ -1,7 +1,4 @@
 return {
-    -- ========================================
-    --      Own LSP Configuration
-    -- ========================================
     {
         "neovim/nvim-lspconfig",
         dependencies = {
