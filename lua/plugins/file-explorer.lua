@@ -37,7 +37,7 @@ return {
     },
     {
         "nvim-tree/nvim-tree.lua",
-        enabled = true,
+        lazy = true,
         config = function()
             local tree = require("nvim-tree")
             tree.setup({
@@ -56,6 +56,9 @@ return {
                     },
                 },
             })
-        end
+        end,
+        keys = {
+            {"<leader>e", ":NvimTreeToggle<cr>", desc = "(NaaVim) UI: File Explorer" }
+        }
     },
 }
