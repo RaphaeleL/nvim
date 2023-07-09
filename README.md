@@ -176,7 +176,6 @@ Short Overview of some NaaVim Keymaps. If you want an overview while Coding just
 - `J`: Move Selection up
 - `K`: Move Selection down
 - `J`: Concat Line without moving the Cursor
-- `<leader>S`: Search and Replace
 
 #### Git 
 
