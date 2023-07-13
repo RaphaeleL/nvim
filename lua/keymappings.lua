@@ -46,3 +46,6 @@ vim.keymap.set("n", "<leader>a", "GVgg", { desc = "(NaaVim) line: mark everythin
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "(NaaVim) Line: Line: Move Selection up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "(NaaVim) Line: Line: Move Selection down" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "(NaaVim) Line: Concat Line without moving the Cursor" })
+
+-- File System 
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = "(NaaVim) UI: File Explorer" })
