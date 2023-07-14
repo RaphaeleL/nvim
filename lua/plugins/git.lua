@@ -21,16 +21,16 @@ return {
             }
         end,
         keys = {
-            { "<Leader>gd", ":Gitsigns toggle_deleted<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle deleted" },
-            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle Line Number Signs" },
-            { "<Leader>gs", ":Gitsigns toggle_signs<cr>", desc = "(NaaVim) Gitsigns: [G]it [t]oggle Signs" },
+            { "<Leader>gd", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
+            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>", desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gs", ":Gitsigns toggle_signs<cr>", desc = " Gitsigns: [G]it [t]oggle Signs" },
         }
     },
     {
         "kdheepak/lazygit.nvim",
         lazy = true,
         keys = {
-            { "<Leader>gg", ":LazyGit<cr>", desc = "(NaaVim) [G]it: Lazy[G]it" },
+            { "<Leader>gg", ":LazyGit<cr>", desc = " [G]it: Lazy[G]it" },
         }
     },
 }

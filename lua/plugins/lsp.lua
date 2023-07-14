@@ -14,7 +14,7 @@ return {
         config = function()
             local on_attach = function(_, bufnr)
                 local nmap = function(keys, func, desc)
-                    if desc then desc = "(NaaVim) LSP: " .. desc end
+                    if desc then desc = " LSP: " .. desc end
                     vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
                 end
                 nmap("ca", ":lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction")
