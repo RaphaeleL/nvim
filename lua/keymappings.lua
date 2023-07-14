@@ -49,4 +49,4 @@ vim.keymap.set("n", "H", "0", { desc = " Line: Move to the start of a Line" })
 vim.keymap.set("n", "L", "$", { desc = " Line: Move to the end of a Line" })
 
 -- File System 
-vim.keymap.set("n", "<leader>se", ":NvimTreeToggle<cr>", { desc = " UI: File Explorer" })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = " UI: File Explorer" })
