@@ -46,6 +46,7 @@ return {
 						DiagnosticSignInfo = { bg = "NONE" },
 						DiagnosticSignHint = { bg = "NONE" },
 						TelescopeBorder = { bg = "NONE" },
+                        -- IlluminatedWordWrite = { bg = "#4c4c4c"}
 					}
 				end,
 				background = {
