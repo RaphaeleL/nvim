@@ -13,8 +13,8 @@ return {
             { "<leader>sk", ":Telescope keymaps theme=ivy<cr>", desc = " Telescope: [S]how [K]eymaps" },
             { "<leader>sm", ":Telescope harpoon marks theme=ivy<cr>", desc = " [S]how [M]ark Menu" },
             { "<leader>sc", ":Telescope colorscheme theme=ivy<cr>", desc = " Telescope: [S]how [C]olorscheme" },
-            { "<leader>?", ":Telescope oldfiles theme=ivy<cr>", desc = " Telescope: Show Oldfiles" },
-            { "<leader>/", ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy { winblend = 10, previewer = false, })<cr>", desc = " Telescope: Search in the Current File" },
+            { "<leader>s?", ":Telescope oldfiles theme=ivy<cr>", desc = " Telescope: Show Oldfiles" },
+            { "<leader>s/", ":lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy { winblend = 10, previewer = false, })<cr>", desc = " Telescope: Search in the Current File" },
         },
         config = function()
             require('telescope').setup({
