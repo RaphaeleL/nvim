@@ -98,12 +98,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Copilot: [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 - Copilot Autocompletion: [zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
-### Languages 
-
-> for some languages an extension plugin is very useful!
-
-- Java: [mfussenegger/nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
-
 ### More Basic Plugins
 
 > The following plugins are really cool, useful and great. But they are not necessary. Thanks to Lazy Loading there are no performance disadvantages and can be keeped without any problems.
