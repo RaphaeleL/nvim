@@ -25,7 +25,7 @@ return {
                 nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
                 nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
                 nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
-                nmap("<leader>ff", ":lua vim.lsp.buf.format()<cr>", "[F]ormat [F]ile")
+                nmap("<leader>bf", ":lua vim.lsp.buf.format()<cr>", "[F]ormat [F]ile")
             end
 
             local servers = {

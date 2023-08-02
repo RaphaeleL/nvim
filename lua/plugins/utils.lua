@@ -39,7 +39,7 @@ return {
                 ["<leader>S"] = { name = "Search / Replace" },
                 ["<leader>r"] = { name = "Rename" },
                 ["<leader>c"] = { name = "Compile" },
-                ["<leader>f"] = { name = "+File" },
+                ["<leader>f"] = { name = "+File / Buffer" },
                 ["<leader>g"] = { name = "+Git" },
                 ["<leader>s"] = { name = "+Telescope" },
                 ["<leader>d"] = { name = "+Diagnostics" },
