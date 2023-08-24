@@ -58,11 +58,12 @@ The File Structure explained.
 ~/.config/nvim/ftplugin/*             # Language Specific Settings 
 ```
 
-The File Structure of `vi.lua` explained.
+The Structure of `macnvim/` explained.
 
 ```
 ~/.config/macnvim/                    # Base Folder
-~/.config/macnvim/vi.lua              # the start of every Configuration
+~/.config/macnvim/init.lua            # the start of every Configuration
+~/.config/macnvim/lua/                # Contains the configuration of NeoVim
 ```
 
 ## Plugins
