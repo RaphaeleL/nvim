@@ -92,12 +92,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Auto Completion for Lua Snip: [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
 - Snippet Engine: [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - Signature Help: [folke/neodev.nvim](https://github.com/folke/neodev.nvim)
-- Lsp Status Information: [j-hui/fidget.nvim](https://github.com/j-hui/fidget.nvim)
-
-### A.I.
-
-- Copilot: [zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-- Copilot Autocompletion: [zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 ### More Basic Plugins
 
