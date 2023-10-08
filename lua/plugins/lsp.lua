@@ -9,7 +9,7 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
-            "j-hui/fidget.nvim",
+            -- "j-hui/fidget.nvim",
         },
         config = function()
             local on_attach = function(_, bufnr)
@@ -39,11 +39,11 @@ return {
 
             require("neodev").setup()
 
-            require("fidget").setup({
-                window = {
-                    blend = 0,
-                },
-            })
+            -- require("fidget").setup({
+            --     window = {
+            --         blend = 0,
+            --     },
+            -- })
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
@@ -112,19 +112,19 @@ return {
                 },
             }
 
-            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+            local signs = { Error = "E", Warn = "W", Hint = "H", Info = "I" }
             for type, icon in pairs(signs) do
                 local hl = "DiagnosticSign" .. type
                 -- numhl = numhl to color linenumbers ---------------------vvv--
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = nil }) 
+                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = nil })
             end
 
             vim.diagnostic.config({
-                -- virtual_text = false,
-                -- underline = false,
-                virtual_text = {
-                    source = "always",
-                },
+                virtual_text = false,
+                underline = false,
+                -- virtual_text = {
+                --     source = "always",
+                -- },
                 float = {
                     source = "always",
                 },
