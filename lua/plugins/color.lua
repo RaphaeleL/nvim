@@ -30,7 +30,7 @@ return {
 		config = function()
 			require("kanagawa").setup({
 				transparent = true,
-				overrides = function()
+				overrides = function(colors)
 					return {
 						StatusLine = { bg = "NONE" },
 						StatusLineNC = { bg = "NONE" },
@@ -46,7 +46,14 @@ return {
 						DiagnosticSignInfo = { bg = "NONE" },
 						DiagnosticSignHint = { bg = "NONE" },
 						TelescopeBorder = { bg = "NONE" },
-                        -- IlluminatedWordWrite = { bg = "#4c4c4c"}
+                        
+                        TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
+                        TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
+                        TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },
+                        TelescopeResultsNormal = { fg = colors.theme.ui.fg_dim, bg = colors.theme.ui.bg_m1 },
+                        TelescopeResultsBorder = { fg = colors.theme.ui.bg_m1, bg = colors.theme.ui.bg_m1 },
+                        TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
+                        TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
 					}
 				end,
 				background = {
