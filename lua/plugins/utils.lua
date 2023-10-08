@@ -44,6 +44,7 @@ return {
                 ["<leader>s"] = { name = "+Telescope" },
                 ["<leader>d"] = { name = "+Diagnostics" },
                 ["<leader>t"] = { name = "+Terminal" },
+                ["<leader>b"] = { name = "+Buffer" },
             },
         },
         config = function(_, opts)
