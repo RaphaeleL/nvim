@@ -1,4 +1,17 @@
 return {
+	{
+		"danymat/neogen",
+		keys = {
+			{
+				"<leader>cc",
+				function()
+					require("neogen").generate({})
+				end,
+				desc = "Neogen Doc Comment",
+			},
+		},
+		opts = { snippet_engine = "luasnip" },
+	},
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
@@ -28,31 +41,28 @@ return {
             vim.api.nvim_set_hl(0, "EyelinerSecondary", { fg = "#00ffff", underline = false })
         end
     },
-    {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-        opts = {
-            plugins = { spelling = true },
-            defaults = {
-                mode = { "n", "v" },
-                ["<leader>e"] = { name = "File Explorer" },
-                ["<leader>S"] = { name = "Search / Replace" },
-                ["<leader>r"] = { name = "Rename" },
-                ["<leader>c"] = { name = "Compile" },
-                ["<leader>f"] = { name = "+File / Buffer" },
-                ["<leader>g"] = { name = "+Git" },
-                ["<leader>s"] = { name = "+Telescope" },
-                ["<leader>d"] = { name = "+Diagnostics" },
-                ["<leader>t"] = { name = "+Terminal" },
-                ["<leader>b"] = { name = "+Buffer" },
-            },
-        },
-        config = function(_, opts)
-            local wk = require("which-key")
-            wk.setup(opts)
-            wk.register(opts.defaults)
-        end,
-    },
+    -- {
+    --     "folke/which-key.nvim",
+    --     event = "VeryLazy",
+    --     opts = {
+    --         plugins = { spelling = true },
+    --         defaults = {
+    --             mode = { "n", "v" },
+    --             ["<leader>e"] = { name = "File Explorer" },
+    --             ["<leader>S"] = { name = "Search / Replace" },
+    --             ["<leader>r"] = { name = "Rename" },
+    --             ["<leader>f"] = { name = "+File / Buffer" },
+    --             ["<leader>g"] = { name = "+Git" },
+    --             ["<leader>s"] = { name = "+Telescope" },
+    --             ["<leader>d"] = { name = "+Diagnostics" },
+    --         },
+    --     },
+    --     config = function(_, opts)
+    --         local wk = require("which-key")
+    --         wk.setup(opts)
+    --         wk.register(opts.defaults)
+    --     end,
+    -- },
     {
         "nvim-pack/nvim-spectre",
         cmd = "Spectre",
@@ -144,7 +154,7 @@ return {
         version = "*",
         config = true,
         keys = {
-            { "<Leader>tt", ":ToggleTerm<cr>", desc = "Terminal" }
+            { "tt", ":ToggleTerm<cr>", desc = "Terminal" }
         }
     },
     -- {
