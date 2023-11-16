@@ -147,16 +147,15 @@ return {
             },
         },
     },
-
-    {
-        "akinsho/toggleterm.nvim",
-        lazy = true,
-        version = "*",
-        config = true,
-        keys = {
-            { "tt", ":ToggleTerm<cr>", desc = "Terminal" }
-        }
-    },
+    -- {
+    --     "akinsho/toggleterm.nvim",
+    --     lazy = true,
+    --     version = "*",
+    --     config = true,
+    --     keys = {
+    --         { "tt", ":ToggleTerm<cr>", desc = "Terminal" }
+    --     }
+    -- },
     -- {
     --     "nvim-lualine/lualine.nvim",
     --     config = function()

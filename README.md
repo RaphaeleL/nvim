@@ -108,7 +108,6 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - Git Client: [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
 - Spectre: [nvim-pack/nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 - Trouble: [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
-- Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - Neogen: [danymat/neogen](https://github.com/danymat/neogen)
 
 # Acknowledgments
