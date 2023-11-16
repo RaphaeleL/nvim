@@ -3,13 +3,13 @@
 # NaaVim
 
 <b>Useable for </b>
-macOS · Linux · (Windows)
+macOS · Linux · Windows
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux and MacOS. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no dap. Windows should somehow working, it's not tested, maybe with some small changes. Uhh and it's LazyLoading the Plugins, so the startuptime is *Blazyingly Fast*.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux, MacOS and Windows. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no dap. Uhh and it's Lazy Loading the Plugins, so the startup time is *Blazyingly Fast*.
 
 ## Install
 
-> Neovim 0.9.1
+> Neovim 0.9.4
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -18,7 +18,7 @@ If you want to make sure `nvim` is only updated when you want, then I recommend 
 ```bash
 git clone https://github.com/neovim/neovim.git
 cd neovim
-git checkout v0.9.1
+git checkout v0.9.4
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 ```
@@ -106,10 +106,10 @@ Plugins are managed by [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
 - LSP Context in the Top: [utilyre/barbecue.nvim](https://github.com/utilyre/barbecue.nvim)
 - Mark Files: [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 - Git Client: [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-- Which Key: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - Spectre: [nvim-pack/nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 - Trouble: [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 - Terminal: [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+- Neogen: [danymat/neogen](https://github.com/danymat/neogen)
 
 # Acknowledgments
 
