@@ -6,7 +6,7 @@ local map = vim.keymap.set
 map("i", "kj", "<ESC>", { desc = " Buffer: Go to Normal Mode" })
 map("i", "jk", "<ESC>", { desc = " Buffer: Go to Normal Mode" })
 map("n", "<Space>", "<NOP>", { desc = " Buffer: Leader" })
-map("n", "q", ":q!<cr>", { desc = " Buffer: Quit Window" })
+map("n", "q", ":bdelete<cr>", { desc = " Buffer: Quit Window" })
 map("n", "<TAB>", ":write<cr>:bprev<cr>", { desc = " Buffer: Next Tab and Write Buffer" })
 map("n", "<S-TAB>", ":write<cr>:bnext<cr>", { desc = " Buffer: Previous Tab" })
 

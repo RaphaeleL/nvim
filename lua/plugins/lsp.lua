@@ -25,16 +25,16 @@ return {
                 nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
                 nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
                 -- nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
-                nmap("ff", ":lua vim.lsp.buf.format()<cr>", "[F]ormat [F]ile")
+                nmap("FF", ":lua vim.lsp.buf.format()<cr>", "[F]ormat [F]ile")
             end
 
             local servers = {
-                lua_ls = {
-                    Lua = {
-                        workspace = { checkThirdParty = false },
-                        telemetry = { enable = false },
-                    },
-                },
+                -- lua_ls = {
+                --     Lua = {
+                --         workspace = { checkThirdParty = false },
+                --         telemetry = { enable = false },
+                --     },
+                -- },
             }
 
             require("neodev").setup()
