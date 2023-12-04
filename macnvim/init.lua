@@ -72,8 +72,8 @@ map("i", "<C-BS>", "<Esc>cvb")
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
-map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = " Line: Move in a Linebreak up" })
-map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = " Line: Move in a Linebreak down" })
+map("n", "k", "v:count == 0 ? 'gk' : 'k'")
+map("n", "j", "v:count == 0 ? 'gj' : 'j'")
 
 map({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>")
 
