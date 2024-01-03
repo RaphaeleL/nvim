@@ -6,7 +6,6 @@ local map = vim.keymap.set
 map("i", "kj", "<ESC>", { desc = " Buffer: Go to Normal Mode" })
 map("i", "jk", "<ESC>", { desc = " Buffer: Go to Normal Mode" })
 map("n", "<Space>", "<NOP>", { desc = " Buffer: Leader" })
-map("n", "q", ":bdelete<cr>", { desc = " Buffer: Quit Window" })
 map("n", "<TAB>", ":write<cr>:bprev<cr>", { desc = " Buffer: Next Tab and Write Buffer" })
 map("n", "<S-TAB>", ":write<cr>:bnext<cr>", { desc = " Buffer: Previous Tab" })
 
@@ -26,6 +25,9 @@ map("n", "<S-Up>", ":resize -2<CR>", { desc = " Buffer Resize up" })
 map("n", "<S-Down>", ":resize +2<CR>", { desc = " Buffer Resize down" })
 map("n", "<S-Left>", ":vertical resize -2<CR>", { desc = " Buffer Resize left" })
 map("n", "<S-Right>", ":vertical resize +2<CR>", { desc = " Buffer Resize right" })
+
+-- Window
+map("n", "q", ":quit<cr>", { desc = " Window: Quit" })
 
 -- Char Manipulation
 map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = " Chars: Rename" })

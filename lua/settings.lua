@@ -44,19 +44,3 @@ vim.opt.shell = "/bin/zsh"
 vim.opt.relativenumber = true
 vim.opt.modifiable = true
 vim.opt.autochdir = false
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-if vim.g.neovide then
-    vim.cmd("cd ~/")
-    vim.opt.linespace = 0
-    vim.opt.guifont = "SF Mono NF:h14"
-    vim.g.remember_window_size = true
-    vim.g.remember_window_position = true
-    vim.g.neovide_cursor_antialiasing = true
-    vim.opt.guifont = { "SF Mono", ":h14" }
-    vim.g.neovide_transparency = 0.0
-    vim.g.transparency = 1 -- 0.95
-    vim.g.neovide_background_color = "#1e1e1e" .. string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
-end
