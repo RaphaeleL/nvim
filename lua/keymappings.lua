@@ -27,7 +27,7 @@ map("n", "<S-Left>", ":vertical resize -2<CR>", { desc = " Buffer Resize left" }
 map("n", "<S-Right>", ":vertical resize +2<CR>", { desc = " Buffer Resize right" })
 
 -- Window
-map("n", "q", ":quit<cr>", { desc = " Window: Quit" })
+map("n", "q", ":quit!<cr>", { desc = " Window: Quit" })
 
 -- Char Manipulation
 map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = " Chars: Rename" })
