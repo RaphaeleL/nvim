@@ -13,7 +13,7 @@ macOS · Linux · Windows
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
-If you want to make sure `nvim` is only updated when you want, then I recommend installing it from source.
+If you want to make sure `nvim` is only updated when you want, then installing it from source.
 
 Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically.
 
