@@ -2,6 +2,15 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                auto_install = true,
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = true,
+                },
+            }
+        end
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -31,8 +40,8 @@ return {
         end,
         keys = {
             { "<Leader>gd", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
-            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>", desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
-            { "<Leader>gs", ":Gitsigns toggle_signs<cr>", desc = " Gitsigns: [G]it [t]oggle Signs" },
+            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gs", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
         }
     },
 }
