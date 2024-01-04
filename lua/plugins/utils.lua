@@ -125,4 +125,17 @@ return {
             { "<Leader>gg", ":LazyGit<cr>", desc = " [G]it: Lazy[G]it" },
         }
     },
+    {
+        "danymat/neogen",
+        dependencies = "nvim-treesitter/nvim-treesitter",
+        config = true,
+        keys = {
+            { "<leader>g", ":lua require('neogen').generate()<cr>", desc = "Generate Docstring" },
+        }
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}
+    },
 }
