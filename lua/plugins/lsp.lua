@@ -105,8 +105,8 @@ return {
             end
 
             vim.diagnostic.config({
-                virtual_text = false,
-                underline = false,
+                virtual_text = true,
+                underline = true,
                 -- virtual_text = {
                 --     source = "always",
                 -- },
