@@ -1,12 +1,11 @@
 return {
     {
-        "neovim/nvim-lspconfig",
+        "VonHeikemen/lsp-zero.nvim",
+        branch = "v3.x",
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "folke/neodev.nvim",
-            "hrsh7th/nvim-cmp",
+            "neovim/nvim-lspconfig",
             "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/nvim-cmp",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
         },
@@ -115,5 +114,5 @@ return {
                 },
             })
         end,
-    },
+    }
 }

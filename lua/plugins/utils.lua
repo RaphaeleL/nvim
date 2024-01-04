@@ -1,17 +1,57 @@
 return {
-	{
-		"danymat/neogen",
-		keys = {
-			{
-				"<leader>cc",
-				function()
-					require("neogen").generate({})
-				end,
-				desc = "Neogen Doc Comment",
-			},
-		},
-		opts = { snippet_engine = "luasnip" },
-	},
+    {
+        "nvim-telescope/telescope.nvim",
+        lazy = true,
+        keys = {
+            { "<leader>sf", ":Telescope find_files theme=ivy<cr>", desc = " Telescope: [S]how [F]uzzy File Finder" },
+            { "<leader>sl", ":Telescope live_grep theme=ivy<cr>", desc = " Telescope: [S]how [L]ive Grep" },
+            { "<leader>sg", ":Telescope git_files theme=ivy<cr>", desc = " Telescope: [S]how [G]it Files" },
+            { "<leader>sd", ":Telescope diagnostics theme=ivy<cr>", desc = " Telescope: [S]how [D]iagnostics" },
+
+            { "<leader>sb", ":Telescope buffers theme=ivy<cr>", desc = " Telescope: [S]how Buffers" },
+            { "<leader>sk", ":Telescope keymaps theme=ivy<cr>", desc = " Telescope: [S]how [K]eymaps" },
+        },
+        config = function()
+            require('telescope').setup({
+                defaults = {
+                    file_ignore_patterns = {
+                        "node_modules",
+                        ".DS_Store"
+                    }
+                },
+                pickers = {
+                    find_files = {
+                        theme = "ivy",
+                    },
+                    colorscheme = {
+                        enable_preview = true
+                    }
+              },
+            })
+        end,
+    },
+    {
+        "nvim-tree/nvim-tree.lua",
+        config = function()
+            local tree = require("nvim-tree")
+            tree.setup({
+                hijack_cursor = true,
+                sync_root_with_cwd = true,
+                view = {
+                    adaptive_size = true,
+                },
+                renderer = {
+                    full_name = true,
+                    group_empty = true,
+                    special_files = {},
+                    symlink_destination = false,
+                    indent_markers = {
+                        enable = true,
+                    },
+                },
+            })
+        end,
+    },
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
@@ -19,15 +59,12 @@ return {
             require("nvim_comment").setup()
         end,
         keys = {
-            { "<Leader>l", ":CommentToggle<cr>", desc = " Comment Selection" }
+            { "<Leader>l", ":CommentToggle<cr>" }
         }
     },
     {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = function()
-            require("nvim-autopairs").setup()
-        end,
+        "nvim-lua/plenary.nvim",
+        lazy = true
     },
     {
         "nvim-pack/nvim-spectre",
@@ -39,42 +76,14 @@ return {
     },
     {
         "folke/trouble.nvim",
+        "lewis6991/impatient.nvim",
+        enabled = true,
+    },
+    {
+        "kdheepak/lazygit.nvim",
         lazy = true,
-        cmd = { "TroubleToggle", "Trouble" },
-        opts = { icons = false, use_diagnostic_signs = true },
         keys = {
-            { "<leader>ds", "<cmd>TroubleToggle document_diagnostics<cr>",  desc = "Document Diagnostics (Trouble)" },
-            { "<leader>dw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-            { "<leader>dl", "<cmd>TroubleToggle loclist<cr>",               desc = "Location List (Trouble)" },
-            { "<leader>dq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix List (Trouble)" },
-            {
-                "<leader>dn",
-                function()
-                    if require("trouble").is_open() then
-                        require("trouble").previous({ skip_groups = true, jump = true })
-                    else
-                        local ok, err = pcall(vim.cmd.cprev)
-                        if not ok then
-                            vim.notify(err, vim.log.levels.ERROR)
-                        end
-                    end
-                end,
-                desc = "Previous trouble/quickfix item",
-            },
-            {
-                "<leader>dp",
-                function()
-                    if require("trouble").is_open() then
-                        require("trouble").next({ skip_groups = true, jump = true })
-                    else
-                        local ok, err = pcall(vim.cmd.cnext)
-                        if not ok then
-                            vim.notify(err, vim.log.levels.ERROR)
-                        end
-                    end
-                end,
-                desc = "Next trouble/quickfix item",
-            },
-        },
+            { "<Leader>gg", ":LazyGit<cr>", desc = " [G]it: Lazy[G]it" },
+        }
     },
 }
