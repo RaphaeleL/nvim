@@ -2,9 +2,6 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
-        -- dependencies = {
-        --     "nvim-treesitter/playground",
-        -- },
         config = function()
             local ok, treesitter = pcall(require, "nvim-treesitter.configs")
 
@@ -33,30 +30,39 @@ return {
                         "#c7aA6D",
                     },
                 },
-                -- playground = {
-                --     enable = true,
-                --     disable = {},
-                --     updatetime = 25,
-                --     persist_queries = false,
-                --     keybindings = {
-                --         toggle_query_editor = 'o',
-                --         toggle_hl_groups = 'i',
-                --         toggle_injected_languages = 't',
-                --         toggle_anonymous_nodes = 'a',
-                --         toggle_language_display = 'I',
-                --         focus_language = 'f',
-                --         unfocus_language = 'F',
-                --         update = 'R',
-                --         goto_node = '<cr>',
-                --         show_help = '?',
-                --     },
-                -- }
             })
         end
     },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        event = "VeryLazy",
-    },
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     main = "ibl",
+    --     event = "VeryLazy",
+    --     opts = {}
+    -- },
+    -- {
+    --     "jinh0/eyeliner.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("eyeliner").setup {
+    --             highlight_on_key = true,
+    --             dim = false
+    --         }
+    --         vim.api.nvim_set_hl(0, "EyelinerPrimary", { fg = "#ff00ff", bold = true, underline = false })
+    --         vim.api.nvim_set_hl(0, "EyelinerSecondary", { fg = "#00ffff", underline = false })
+    --     end
+    -- },
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     event = { "BufReadPost", "BufNewFile" },
+    --     opts = {
+    --         delay = 200,
+    --         large_file_cutoff = 2000,
+    --         large_file_overrides = {
+    --             providers = { "lsp" },
+    --         },
+    --     },
+    --     config = function(_, opts)
+    --         require("illuminate").configure(opts)
+    --     end,
+    -- },
 }

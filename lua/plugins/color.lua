@@ -1,30 +1,4 @@
 return {
-	-- ========================================
-	--      My Own Colorscheme
-	-- ========================================
-	-- {
-	--     "RaphaeleL/my_vivid",
-	--         -- lazy = true,
-	--     config = function()
-	--         vim.cmd("colorscheme my_vivid")
-	--         vim.cmd("hi @field guifg=#89A5AC")
-	--         vim.cmd("hi @parameter guifg=#77B0DA")
-	--             -- TODO: Better Color for Web-Dev 
-	--     end
-	-- },
-	-- {
-	--     -- "RaphaeleL/gruvbuddy.nvim",
-	--         dir = "~/Developer/gruvbuddy.nvim",
-	--         dependencies = {
-	--             "tjdevries/colorbuddy.nvim",
-	--         },
-	--     config = function()
-	--         require("colorbuddy").colorscheme("gruvbuddy")
-	--     end
-	-- },
-	-- ========================================
-	--      Some cool basic Colorschemes
-	-- ========================================
 	-- {
 	-- 	"rebelot/kanagawa.nvim",
 	-- 	config = function()
@@ -46,7 +20,7 @@ return {
 	-- 					DiagnosticSignInfo = { bg = "NONE" },
 	-- 					DiagnosticSignHint = { bg = "NONE" },
 	-- 					TelescopeBorder = { bg = "NONE" },
-	--                        
+	--                       
 	--                         TelescopeTitle = { fg = colors.theme.ui.special, bold = true },
 	--                         TelescopePromptNormal = { bg = colors.theme.ui.bg_p1 },
 	--                         TelescopePromptBorder = { fg = colors.theme.ui.bg_p1, bg = colors.theme.ui.bg_p1 },

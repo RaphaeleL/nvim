@@ -9,7 +9,6 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
-            -- "j-hui/fidget.nvim",
         },
         config = function()
             local on_attach = function(_, bufnr)
@@ -24,26 +23,12 @@ return {
                 nmap("gn", ":lua vim.diagnostic.goto_next()<cr>zz", "[G]oto [N]ext Diagnostic")
                 nmap("gp", ":lua vim.diagnostic.goto_prev()<cr>zz", "[G]oto [P]revious Diagnostic")
                 nmap("K", ":lua vim.lsp.buf.hover()<cr>", "Hover Documentation")
-                -- nmap("<leader>k", ":lua vim.lsp.buf.signature_help()<cr>", "Signature Documentation")
                 nmap("FF", ":lua vim.lsp.buf.format()<cr>", "[F]ormat [F]ile")
             end
 
-            local servers = {
-                -- lua_ls = {
-                --     Lua = {
-                --         workspace = { checkThirdParty = false },
-                --         telemetry = { enable = false },
-                --     },
-                -- },
-            }
+            local servers = { }
 
             require("neodev").setup()
-
-            -- require("fidget").setup({
-            --     window = {
-            --         blend = 0,
-            --     },
-            -- })
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
