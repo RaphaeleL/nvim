@@ -119,13 +119,6 @@ return {
         },
     },
     {
-        "kdheepak/lazygit.nvim",
-        lazy = true,
-        keys = {
-            { "<Leader>gg", ":LazyGit<cr>", desc = " [G]it: Lazy[G]it" },
-        }
-    },
-    {
         "danymat/neogen",
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
