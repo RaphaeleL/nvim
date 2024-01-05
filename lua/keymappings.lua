@@ -21,10 +21,10 @@ map("n", "<C-u>", "<C-u>zz", { desc = " Buffer: Move Page up and stay in the Mid
 
 map("n", "<Leader>n", ":noh<cr>", { desc = " Buffer: No Highlighting" })
 
-map("n", "<S-Up>", ":resize -2<CR>", { desc = " Buffer Resize up" })
-map("n", "<S-Down>", ":resize +2<CR>", { desc = " Buffer Resize down" })
-map("n", "<S-Left>", ":vertical resize -2<CR>", { desc = " Buffer Resize left" })
-map("n", "<S-Right>", ":vertical resize +2<CR>", { desc = " Buffer Resize right" })
+-- map("n", "<S-Up>", ":resize -2<CR>", { desc = " Buffer Resize up" })
+-- map("n", "<S-Down>", ":resize +2<CR>", { desc = " Buffer Resize down" })
+-- map("n", "<S-Left>", ":vertical resize -2<CR>", { desc = " Buffer Resize left" })
+-- map("n", "<S-Right>", ":vertical resize +2<CR>", { desc = " Buffer Resize right" })
 
 map("n", "c", ":bd<cr>", { desc = " Window: Quit" })
 
