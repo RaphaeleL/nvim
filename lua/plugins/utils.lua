@@ -138,4 +138,15 @@ return {
         event = "InsertEnter",
         opts = {}
     },
+    {
+        "Theprimeagen/harpoon",
+        lazy = true,
+        keys = {
+            { "hm", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "[H]arpoon: [M]enu" },
+            { "ha", ":lua require('harpoon.mark').add_file()<cr>", desc = "[H]arpoon: [A]dd File" },
+
+            { "F", ":lua require('harpoon.ui').nav_next()<cr>", desc = "[H]arpoon: [N]ext" },
+            { "B", ":lua require('harpoon.ui').nav_prev()<cr>", desc = "[H]arpoon: [P]rev" },
+        }
+    }
 }
