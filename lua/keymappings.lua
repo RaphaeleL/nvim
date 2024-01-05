@@ -26,6 +26,8 @@ map("n", "<S-Down>", ":resize +2<CR>", { desc = " Buffer Resize down" })
 map("n", "<S-Left>", ":vertical resize -2<CR>", { desc = " Buffer Resize left" })
 map("n", "<S-Right>", ":vertical resize +2<CR>", { desc = " Buffer Resize right" })
 
+map("n", "c", ":bd<cr>", { desc = " Window: Quit" })
+
 -- Window
 map("n", "q", ":quit!<cr>", { desc = " Window: Quit" })
 
