@@ -63,20 +63,12 @@ return {
         }
     },
     {
-        "nvim-lua/plenary.nvim",
-        lazy = true
-    },
-    {
         "nvim-pack/nvim-spectre",
         cmd = "Spectre",
         opts = { open_cmd = "noswapfile vnew" },
         keys = {
             { "<leader>S", function() require("spectre").open() end, desc = "Search and Replace in files" },
         },
-    },
-    {
-        "lewis6991/impatient.nvim",
-        event = "VeryLazy",
     },
     {
         "folke/trouble.nvim",
