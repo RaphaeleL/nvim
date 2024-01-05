@@ -11,11 +11,4 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("plugins",
-    {
-        change_detection = {
-            notify = false,
-            enabled = true
-        }
-    }
-)
+require("lazy").setup("plugins", { change_detection = { notify = false } })
