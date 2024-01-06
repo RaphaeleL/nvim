@@ -16,7 +16,6 @@ vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
--- vim.opt.termguicolors = true
 vim.opt.timeoutlen = 250
 vim.opt.undofile = true
 vim.opt.updatetime = 50
@@ -35,7 +34,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
--- vim.opt.guifont = "SF Mono:h14"
 vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
@@ -48,3 +46,7 @@ vim.opt.autochdir = false
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
