@@ -31,28 +31,6 @@ return {
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        config = function()
-            local tree = require("nvim-tree")
-            tree.setup({
-                hijack_cursor = true,
-                sync_root_with_cwd = true,
-                view = {
-                    adaptive_size = true,
-                },
-                renderer = {
-                    full_name = true,
-                    group_empty = true,
-                    special_files = {},
-                    symlink_destination = false,
-                    indent_markers = {
-                        enable = true,
-                    },
-                },
-            })
-        end,
-    },
-    {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
         config = function()
