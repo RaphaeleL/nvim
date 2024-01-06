@@ -59,6 +59,3 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = " Line: Move Selection down" })
 
 map("n", "H", "0", { desc = " Line: Move to the start of a Line" })
 map("n", "L", "$", { desc = " Line: Move to the end of a Line" })
-
--- File System 
-map("n", "<leader>e", ":NvimTreeToggle<cr>", { desc = " UI: File Explorer" })
