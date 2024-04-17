@@ -16,7 +16,8 @@ return {
                 defaults = {
                     file_ignore_patterns = {
                         "node_modules",
-                        ".DS_Store"
+                        ".DS_Store",
+                        ".git"
                     }
                 },
                 pickers = {
