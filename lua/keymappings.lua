@@ -59,3 +59,6 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = " Line: Move Selection down" })
 
 map("n", "H", "0", { desc = " Line: Move to the start of a Line" })
 map("n", "L", "$", { desc = " Line: Move to the end of a Line" })
+
+-- Diagnostic
+map("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LSP: Open Diagnostic of Line" })

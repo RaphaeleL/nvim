@@ -4,7 +4,7 @@ return {
         event = "VeryLazy",
         config = function()
             require 'nvim-treesitter.configs'.setup {
-                ensure_installed = { "c", "cpp", "rust", "lua", "vim", "vimdoc", "query", "bash", "cmake", "make", "python", "dockerfile", "scss", "typescript", "javascript", "css", "html", "yaml"},
+                ensure_installed = { "c", "cpp", "rust", "lua", "vim", "vimdoc", "query", "bash", "cmake", "make", "python", "dockerfile", "scss", "typescript", "javascript", "css", "html", "yaml", "go"},
                 auto_install = true,
                 highlight = {
                     enable = true,

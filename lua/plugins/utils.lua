@@ -112,5 +112,12 @@ return {
             { "F", ":lua require('harpoon.ui').nav_next()<cr>", desc = "[H]arpoon: [N]ext" },
             { "B", ":lua require('harpoon.ui').nav_prev()<cr>", desc = "[H]arpoon: [P]rev" },
         }
+    },
+    {
+        "mbbill/undotree",
+        lazy = true,
+        keys = {
+            { "<leader>u", vim.cmd.UndotreeToggle, desc = "[U]ndotree" },
+        }
     }
 }
