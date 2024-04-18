@@ -6,4 +6,8 @@ return {
             { "<Leader>gg", ":LazyGit<cr>", desc = " [G]it: Lazy[G]it" },
         }
     },
+    {
+        "tpope/vim-fugitive",
+        -- lazy = true,
+    },
 }
