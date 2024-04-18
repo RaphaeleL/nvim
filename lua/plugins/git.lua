@@ -8,6 +8,12 @@ return {
     },
     {
         "tpope/vim-fugitive",
-        -- lazy = true,
+        lazy = true,
+        keys = {
+            { "<Leader>ga", ":Git add .<cr>", desc = " [G]it add ." },
+            { "<Leader>gc", ":Git commit<cr>", desc = " [G]it commit" },
+            { "<Leader>gp", ":Git push<cr>", desc = " [G]it push" },
+            { "<Leader>gP", ":Git pull --rebase<cr>", desc = " [G]it pull --rebase" },
+        }
     },
 }
