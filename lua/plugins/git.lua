@@ -17,5 +17,4 @@ return {
             { "<Leader>gd", ":Git diff<cr>", desc = " [G]it diff" },
         }
     },
-
 }
