@@ -13,9 +13,9 @@ return {
             }
         end
     },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        event = "VeryLazy",
-    },
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     main = "ibl",
+    --     event = "VeryLazy",
+    -- },
 }
