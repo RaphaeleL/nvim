@@ -24,7 +24,7 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
-                "bashls", "cssls", "eslint", "html", "jsonls", "lua_ls", "pyright", "pylsp", "rust_analyzer", "tailwindcss", "taplo", "tsserver", "yamlls"
+                "bashls", "cssls", "eslint", "html", "jsonls", "lua_ls", "pyright", "pylsp", "rust_analyzer", "tailwindcss", "taplo", "tsserver", "yamlls", "gopls"
             },
             handlers = {
                 function(server_name)
