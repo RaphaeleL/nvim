@@ -3,7 +3,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         event = "VeryLazy",
         config = function()
-            require 'nvim-treesitter.configs'.setup {
+            require "nvim-treesitter.configs".setup {
                 ensure_installed = { "c", "cpp", "rust", "lua", "vim", "vimdoc", "query", "bash", "cmake", "make", "python", "dockerfile", "scss", "typescript", "javascript", "css", "html", "yaml", "go" },
                 auto_install = true,
                 highlight = {
@@ -28,6 +28,52 @@ return {
         end,
     },
     -- {
+    --     "nvim-lualine/lualine.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("lualine").setup({
+    --             options = {
+    --                 icons_enabled = true,
+    --                 theme = "codedark", -- "auto"
+    --                 component_separators = { left = "", right = "" },
+    --                 section_separators = { left = "", right = "" },
+    --                 disabled_filetypes = {
+    --                     statusline = {},
+    --                     winbar = {},
+    --                 },
+    --                 ignore_focus = {},
+    --                 always_divide_middle = true,
+    --                 globalstatus = false,
+    --                 refresh = {
+    --                     statusline = 1000,
+    --                     tabline = 1000,
+    --                     winbar = 1000,
+    --                 }
+    --             },
+    --             sections = {
+    --                 lualine_a = { "mode" },
+    --                 lualine_b = { "branch", "diff", "diagnostics" },
+    --                 lualine_c = { "filename" },
+    --                 lualine_x = {},
+    --                 lualine_y = { "progress" },
+    --                 lualine_z = { "location" }
+    --             },
+    --             inactive_sections = {
+    --                 lualine_a = {},
+    --                 lualine_b = {},
+    --                 lualine_c = { "filename" },
+    --                 lualine_x = { "location" },
+    --                 lualine_y = {},
+    --                 lualine_z = {}
+    --             },
+    --             tabline = {},
+    --             winbar = {},
+    --             inactive_winbar = {},
+    --             extensions = {}
+    --         })
+    --     end,
+    -- }
+    -- {
     --     "tjdevries/express_line.nvim",
     --     dependencies = {
     --         "nvim-tree/nvim-web-devicons"
@@ -42,11 +88,8 @@ return {
     --                 local builtin = require("el.builtin")
     --                 local extensions = require("el.extensions")
     --                 local subscribe = require("el.subscribe")
-    --
-    --                 -- Mode
     --                 table.insert(segments, extensions.mode)
-    --
-    --                 -- Git Branch
+    --                 table.insert(segments, builtin.file)
     --                 table.insert(segments,
     --                     subscribe.buf_autocmd(
     --                         "el_git_branch",
@@ -58,8 +101,6 @@ return {
     --                             end
     --                         end
     --                     ))
-    --
-    --                 -- Git Changes 
     --                 table.insert(segments,
     --                     subscribe.buf_autocmd(
     --                         "el_git_status",
@@ -71,9 +112,6 @@ return {
     --                             end
     --                         end
     --                     ))
-    --
-    --                 -- File
-    --                 table.insert(segments, builtin.file)
     --
     --                 return segments
     --             end
