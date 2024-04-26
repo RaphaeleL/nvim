@@ -12,6 +12,11 @@ return {
                 panel_nc = "transparent",
                 border = "transparent",
             },
+            highlight_groups = {
+                StatusLine = { bg = "NONE" },
+                StatusLineNC = { bg = "NONE" },
+                CursorLineNr = { fg = "gold" },
+            },
         })
         vim.cmd("colorscheme rose-pine")
     end
