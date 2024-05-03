@@ -1,44 +1,45 @@
 return {
-    -- {
-    --     "scottmckendry/cyberdream.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     config = function()
-    --         require("cyberdream").setup({
-    --             transparent = true,
-    --             italic_comments = true,
-    --             hide_fillchars = true,
-    --             borderless_telescope = true,
-    --             terminal_colors = true,
-    --         })
-    --         vim.cmd("colorscheme cyberdream")
-    --     end,
-    -- },
     {
-        "rose-pine/neovim",
+        "scottmckendry/cyberdream.nvim",
+        event = "VeryLazy",
         config = function()
-            require("rose-pine").setup({
-                variant = "main",
-                dim_nc_background = true,
-                disable_background = true,
-                groups = {
-                    background = "transparent",
-                    background_nc = "transparent",
-                    -- panel = "transparent",
-                    panel_nc = "transparent",
-                    border = "transparent",
-                },
-                highlight_groups = {
-                    StatusLine = { bg = "NONE" },
-                    StatusLineNC = { bg = "NONE" },
-                    CursorLineNr = { fg = "gold" },
-                },
+            require("cyberdream").setup({
+                transparent = true,
+                italic_comments = true,
+                hide_fillchars = true,
+                borderless_telescope = true,
+                terminal_colors = true,
             })
-            vim.cmd("colorscheme rose-pine")
-        end
+            vim.cmd("colorscheme cyberdream")
+        end,
     },
     -- {
+    --     "rose-pine/neovim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("rose-pine").setup({
+    --             variant = "main",
+    --             dim_nc_background = true,
+    --             disable_background = true,
+    --             groups = {
+    --                 background = "transparent",
+    --                 background_nc = "transparent",
+    --                 -- panel = "transparent",
+    --                 panel_nc = "transparent",
+    --                 border = "transparent",
+    --             },
+    --             highlight_groups = {
+    --                 StatusLine = { bg = "NONE" },
+    --                 StatusLineNC = { bg = "NONE" },
+    --                 CursorLineNr = { fg = "gold" },
+    --             },
+    --         })
+    --         vim.cmd("colorscheme rose-pine")
+    --     end
+    -- },
+    -- {
     --     "catppuccin/nvim",
+    --     event = "VeryLazy",
     --     name = "catppuccin",
     --     config = function()
     --         require("catppuccin").setup({
@@ -91,6 +92,16 @@ return {
     --             }
     --         })
     --         vim.cmd("colorscheme kanagawa")
+    --     end
+    -- },
+    -- {
+    --     "ellisonleao/gruvbox.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("gruvbox").setup({
+    --             transparent_mode = true,
+    --         })
+    --         vim.cmd("colorscheme gruvbox")
     --     end
     -- }
 }
