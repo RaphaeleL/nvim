@@ -9,7 +9,6 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/nvim-cmp",
-        "hrsh7th/nvim-cmp",
         "L3MON4D3/LuaSnip",
         "j-hui/fidget.nvim",
     },
