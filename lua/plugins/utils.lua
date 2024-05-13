@@ -120,8 +120,4 @@ return {
             { "<leader>u", vim.cmd.UndotreeToggle, desc = "[U]ndotree" },
         }
     },
-    -- {
-    --     "mg979/vim-visual-multi",
-    --     event = "VeryLazy",
-    -- }
 }
