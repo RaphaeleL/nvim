@@ -149,6 +149,7 @@ return {
     },
     {
         "luckasRanarison/clear-action.nvim",
+        lazy = true,
         opts = {
             show_count = false,
             signs = {
