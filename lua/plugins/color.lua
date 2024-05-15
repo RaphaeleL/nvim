@@ -29,7 +29,7 @@ return {
                         TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
                         TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
                         Todo = { bg = colors.theme.ui.bg_p2 },
-                        -- VisualNonText = { fg = colors.theme.ui.bg_p3, bg = "#223249" },
+                        VisualNonText = { fg = colors.theme.ui.bg_p3, bg = "#223249" },
                     }
                 end,
                 background = {

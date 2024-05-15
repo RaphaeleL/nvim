@@ -146,5 +146,5 @@ return {
         },
         config = true,
         opts = {}
-    }
+    },
 }
