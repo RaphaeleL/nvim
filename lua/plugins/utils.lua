@@ -1,15 +1,24 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
+        dependencies = {
+            {
+                "isak102/telescope-git-file-history.nvim",
+                dependencies = { "tpope/vim-fugitive" }
+            }
+        },
         lazy = true,
         keys = {
-            { "<leader>sf", ":Telescope find_files theme=ivy<cr>", desc = " Telescope: [S]how [F]uzzy File Finder" },
-            { "<leader>sl", ":Telescope live_grep theme=ivy<cr>", desc = " Telescope: [S]how [L]ive Grep" },
-            { "<leader>sg", ":Telescope git_files theme=ivy<cr>", desc = " Telescope: [S]how [G]it Files" },
-            { "<leader>sd", ":Telescope diagnostics theme=ivy<cr>", desc = " Telescope: [S]how [D]iagnostics" },
+            { "<leader>sf", ":Telescope find_files<cr>", desc = " Telescope: [S]how [F]uzzy File Finder" },
+            { "<leader>sl", ":Telescope live_grep<cr>", desc = " Telescope: [S]how [L]ive Grep" },
+            { "<leader>sg", ":Telescope git_files<cr>", desc = " Telescope: [S]how [G]it Files" },
+            { "<leader>sd", ":Telescope diagnostics<cr>", desc = " Telescope: [S]how [D]iagnostics" },
 
-            { "<leader>sb", ":Telescope buffers theme=ivy<cr>", desc = " Telescope: [S]how Buffers" },
-            { "<leader>sk", ":Telescope keymaps theme=ivy<cr>", desc = " Telescope: [S]how [K]eymaps" },
+            { "<leader>sb", ":Telescope buffers<cr>", desc = " Telescope: [S]how Buffers" },
+            { "<leader>sk", ":Telescope keymaps<cr>", desc = " Telescope: [S]how [K]eymaps" },
+
+            { "<leader>sh", ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how GitGit  [H]istory of File" },
+
         },
         config = function()
             require('telescope').setup({
@@ -120,4 +129,22 @@ return {
             { "<leader>u", vim.cmd.UndotreeToggle, desc = "[U]ndotree" },
         }
     },
+    {
+        "NStefan002/visual-surround.nvim",
+        config = true
+    },
+    {
+        "theKnightsOfRohan/csvlens.nvim",
+        keys = {
+            { "<leader>c", ":Csvlens<cr>", desc = "[C]svlens" },
+        },
+        dependencies = {
+            {
+                "akinsho/toggleterm.nvim",
+                lazy = true,
+            }
+        },
+        config = true,
+        opts = {}
+    }
 }
