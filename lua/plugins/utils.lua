@@ -147,4 +147,23 @@ return {
         config = true,
         opts = {}
     },
+    {
+        "luckasRanarison/clear-action.nvim",
+        opts = {
+            show_count = false,
+            signs = {
+                icons = {
+                    quickfix = "Quickfix ",
+                    refactor = "Refactor ",
+                    source = "Source ",
+                    combined = "Combined ",
+                }
+            },
+            mappings = {
+                code_action = "<leader>ca",
+                quickfix = "<leader>cq",
+                refactor = "<leader>cr",
+            }
+        }
+    }
 }
