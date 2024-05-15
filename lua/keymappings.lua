@@ -62,3 +62,6 @@ map("n", "L", "$", { desc = " Line: Move to the end of a Line" })
 
 -- Diagnostic
 map("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LSP: Open Diagnostic of Line" })
+
+-- Filesystem
+map("n", "-", ":Oil<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
