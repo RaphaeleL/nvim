@@ -25,3 +25,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<F4>", function() vim.lsp.buf.code_action() end, opts)
     end
 })
+
+-- Open Oil in the default Folder View
+vim.cmd [[
+  augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'cd '.argv()[0] | exe 'Oil' | wincmd p | ene | exe 'cd '.getcwd() | endif
+  augroup END
+]]
