@@ -2,10 +2,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            {
-                "isak102/telescope-git-file-history.nvim",
-                dependencies = { "tpope/vim-fugitive" }
-            }
+            "isak102/telescope-git-file-history.nvim",
         },
         lazy = true,
         keys = {
@@ -148,26 +145,6 @@ return {
         opts = {}
     },
     {
-        "luckasRanarison/clear-action.nvim",
-        lazy = true,
-        opts = {
-            show_count = false,
-            signs = {
-                icons = {
-                    quickfix = "Quickfix ",
-                    refactor = "Refactor ",
-                    source = "Source ",
-                    combined = "Combined ",
-                }
-            },
-            mappings = {
-                code_action = "<leader>ca",
-                quickfix = "<leader>cq",
-                refactor = "<leader>cr",
-            }
-        }
-    },
-    {
       "stevearc/oil.nvim",
       opts = {
           columns = {
@@ -183,6 +160,6 @@ return {
               show_hidden = true,
               natural_order = true,
           },
-      },
+        },
     }
 }

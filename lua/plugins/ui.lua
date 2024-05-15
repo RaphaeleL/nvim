@@ -39,6 +39,7 @@ return {
     },
     {
         "mcauley-penney/visual-whitespace.nvim",
+        event = "InsertEnter",
         config = true,
         opts = {
             highlight = { link = 'Visual' },
