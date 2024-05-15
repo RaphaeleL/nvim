@@ -34,7 +34,7 @@ return {
     --                 CursorLineNr = { fg = "gold" },
     --             },
     --         })
-    --         vim.cmd("colorscheme rose-pine")
+    --         -- vim.cmd("colorscheme rose-pine")
     --     end
     -- },
     -- {
@@ -84,6 +84,7 @@ return {
                         TelescopeResultsBorder = { fg = colors.theme.ui.bg_m1, bg = colors.theme.ui.bg_m1 },
                         TelescopePreviewNormal = { bg = colors.theme.ui.bg_dim },
                         TelescopePreviewBorder = { bg = colors.theme.ui.bg_dim, fg = colors.theme.ui.bg_dim },
+                        Todo = { bg = colors.theme.ui.bg_p2 },
                     }
                 end,
                 background = {
