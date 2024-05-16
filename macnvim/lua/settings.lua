@@ -24,3 +24,4 @@ vim.opt.shell = "/bin/bash"
 vim.opt.modifiable = true
 vim.opt.number = false
 vim.opt.relativenumber = false
+vim.opt.conceallevel = 2

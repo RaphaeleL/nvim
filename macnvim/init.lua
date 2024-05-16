@@ -28,6 +28,7 @@ vim.opt.shell = "/bin/bash"
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.modifiable = true
+vim.opt.conceallevel = 2
 
 -------------
 -- Keymaps --

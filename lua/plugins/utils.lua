@@ -14,7 +14,7 @@ return {
             { "<leader>sb", ":Telescope buffers<cr>", desc = " Telescope: [S]how Buffers" },
             { "<leader>sk", ":Telescope keymaps<cr>", desc = " Telescope: [S]how [K]eymaps" },
 
-            { "<leader>sh", ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how GitGit  [H]istory of File" },
+            { "<leader>sh", ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how Git [H]istory of File" },
 
         },
         config = function()

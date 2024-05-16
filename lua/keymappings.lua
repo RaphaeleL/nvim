@@ -61,7 +61,13 @@ map("n", "H", "0", { desc = " Line: Move to the start of a Line" })
 map("n", "L", "$", { desc = " Line: Move to the end of a Line" })
 
 -- Diagnostic
-map("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LSP: Open Diagnostic of Line" })
+map("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = " LSP: Open Diagnostic of Line" })
 
 -- Filesystem
-map("n", "-", ":Oil<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
+map("n", "-", ":Oil<cr>", { desc = " Filesystem: Open Oil Filebrowser" })
+
+-- Treesitter
+map("n", "<Leader>ts", ":InspectTree<cr>", { desc = " Treesitter: Inspect Tree" })
+
+-- Terminal 
+map("n", "<Leader>t", ":botright terminal<cr>", { desc = " Terminal: Open" })
