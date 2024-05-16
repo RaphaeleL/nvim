@@ -9,7 +9,7 @@ macOS · Linux · Windows
 
 ## Install
 
-> Neovim 0.9.5
+> Neovim 0.10.0
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -20,12 +20,6 @@ Clone the Repository into `.config/` and start `nvim`. The Configuration is Inst
 ```bash 
 cd ~/.config
 git clone https://github.com/RaphaeleL/nvim
-```
-
-The configuration folder `macnvim` is a separate `nvim` configuration file intended to replace `vi`/`vim` with a `nvim`-based configuration. This is necessary because there are compatibility issues with different types of terminals. Every `nvim` configuration is not available on the MacOS terminal, so `macnvim` is a convenient replacement for small changes. Use this Command to start it.
-
-```bash
-NVIM_APPNAME=macnvim nvim
 ```
 
 ## Uninstall 
