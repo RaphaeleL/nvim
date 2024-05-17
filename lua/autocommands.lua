@@ -71,8 +71,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     end,
 })
 
--- no spell in markdown 
+-- no spell in markdown
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "markdown" },
-  command = "setlocal nospell",
+    pattern = { "markdown" },
+    command = "setlocal nospell",
 })

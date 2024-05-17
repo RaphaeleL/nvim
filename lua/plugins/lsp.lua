@@ -19,19 +19,19 @@ return {
             vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
             local border = {
-                {"🭽", "FloatBorder"},
-                {"▔", "FloatBorder"},
-                {"🭾", "FloatBorder"},
-                {"▕", "FloatBorder"},
-                {"🭿", "FloatBorder"},
-                {"▁", "FloatBorder"},
-                {"🭼", "FloatBorder"},
-                {"▏", "FloatBorder"},
+                { "🭽", "FloatBorder" },
+                { "▔", "FloatBorder" },
+                { "🭾", "FloatBorder" },
+                { "▕", "FloatBorder" },
+                { "🭿", "FloatBorder" },
+                { "▁", "FloatBorder" },
+                { "🭼", "FloatBorder" },
+                { "▏", "FloatBorder" },
             }
 
-            local handlers =  {
-                ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
-                ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+            local handlers = {
+                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
             }
 
             require("fidget").setup({
@@ -44,11 +44,12 @@ return {
             require("mason").setup()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "bashls", "cssls", "eslint", "html", "jsonls", "lua_ls", "pyright", "pylsp", "rust_analyzer", "tailwindcss", "taplo", "tsserver", "yamlls", "gopls"
+                    "bashls", "cssls", "eslint", "html", "jsonls", "lua_ls", "pyright", "pylsp", "rust_analyzer",
+                    "tailwindcss", "taplo", "tsserver", "yamlls", "gopls"
                 },
                 handlers = {
                     function(server_name)
-                        require("lspconfig")[server_name].setup({handlers = handlers})
+                        require("lspconfig")[server_name].setup({ handlers = handlers })
                     end,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
@@ -85,7 +86,8 @@ return {
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
                     format = function(entry, vim_item)
-                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry,
+                            vim_item)
                         local strings = vim.split(kind.kind, "%s", { trimempty = true })
                         kind.kind = " " .. (strings[1] or "") .. " "
                         kind.menu = strings[2]
@@ -142,7 +144,6 @@ return {
                     prefix = "",
                 },
             })
-
         end
     },
 }

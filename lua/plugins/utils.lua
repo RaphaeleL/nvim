@@ -6,13 +6,13 @@ return {
         },
         lazy = true,
         keys = {
-            { "<leader>sf", ":Telescope find_files<cr>", desc = " Telescope: [S]how [F]uzzy File Finder" },
-            { "<leader>sl", ":Telescope live_grep<cr>", desc = " Telescope: [S]how [L]ive Grep" },
-            { "<leader>sg", ":Telescope git_files<cr>", desc = " Telescope: [S]how [G]it Files" },
-            { "<leader>sd", ":Telescope diagnostics<cr>", desc = " Telescope: [S]how [D]iagnostics" },
+            { "<leader>sf", ":Telescope find_files<cr>",                                                    desc = " Telescope: [S]how [F]uzzy File Finder" },
+            { "<leader>sl", ":Telescope live_grep<cr>",                                                     desc = " Telescope: [S]how [L]ive Grep" },
+            { "<leader>sg", ":Telescope git_files<cr>",                                                     desc = " Telescope: [S]how [G]it Files" },
+            { "<leader>sd", ":Telescope diagnostics<cr>",                                                   desc = " Telescope: [S]how [D]iagnostics" },
 
-            { "<leader>sb", ":Telescope buffers<cr>", desc = " Telescope: [S]how Buffers" },
-            { "<leader>sk", ":Telescope keymaps<cr>", desc = " Telescope: [S]how [K]eymaps" },
+            { "<leader>sb", ":Telescope buffers<cr>",                                                       desc = " Telescope: [S]how Buffers" },
+            { "<leader>sk", ":Telescope keymaps<cr>",                                                       desc = " Telescope: [S]how [K]eymaps" },
 
             { "<leader>sh", ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how Git [H]istory of File" },
 
@@ -33,7 +33,7 @@ return {
                     colorscheme = {
                         enable_preview = true
                     }
-              },
+                },
             })
         end,
     },
@@ -113,10 +113,10 @@ return {
         lazy = true,
         keys = {
             { "<leader>hm", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "[H]arpoon: [M]enu" },
-            { "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>", desc = "[H]arpoon: [A]dd File" },
+            { "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>",        desc = "[H]arpoon: [A]dd File" },
 
-            { "F", ":lua require('harpoon.ui').nav_next()<cr>", desc = "[H]arpoon: [N]ext" },
-            { "B", ":lua require('harpoon.ui').nav_prev()<cr>", desc = "[H]arpoon: [P]rev" },
+            { "F",          ":lua require('harpoon.ui').nav_next()<cr>",          desc = "[H]arpoon: [N]ext" },
+            { "B",          ":lua require('harpoon.ui').nav_prev()<cr>",          desc = "[H]arpoon: [P]rev" },
         }
     },
     {

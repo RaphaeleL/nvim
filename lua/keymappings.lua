@@ -44,8 +44,10 @@ vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = " Chars: Delete a Word." })
 vim.keymap.set("v", "<", "<gv", { desc = " Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = " Line: Indent to Right" })
 
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = " Line: Move in a Linebreak up" })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = " Line: Move in a Linebreak down" })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'",
+    { expr = true, silent = true, desc = " Line: Move in a Linebreak up" })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
+    { expr = true, silent = true, desc = " Line: Move in a Linebreak down" })
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = " Line: Comment Selection in/out" })
 
@@ -58,14 +60,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = " Line: Move Selection dow
 vim.keymap.set("n", "H", "0", { desc = " Line: Move to the start of a Line" })
 vim.keymap.set("n", "L", "$", { desc = " Line: Move to the end of a Line" })
 
--- Diagnostic
+-- Elsewise 
 vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = " LSP: Open Diagnostic of Line" })
-
--- Filesystem
 vim.keymap.set("n", "_", ":Oil<cr>", { desc = " Filesystem: Open Oil Filebrowser" })
-
--- Treesitter
 vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = " Treesitter: Inspect Tree" })
-
--- Terminal 
 vim.keymap.set("n", "<Leader>t", ":botright terminal<cr>", { desc = " Terminal: Open" })
