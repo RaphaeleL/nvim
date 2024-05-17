@@ -13,30 +13,30 @@ return {
             }
         end
     },
-    -- {
-    --     "RRethy/vim-illuminate",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         delay = 10,
-    --         large_file_cutoff = 2000,
-    --         large_file_overrides = {
-    --             providers = { "lsp" },
-    --         },
-    --     },
-    --     config = function(_, opts)
-    --         require("illuminate").configure(opts)
-    --     end,
-    -- },
     {
-        "tjdevries/express_line.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            vim.opt.laststatus = 2
-            vim.opt.cmdheight = 1
-            vim.opt.showcmd = true
-            require("el").setup({})
-        end
+        "RRethy/vim-illuminate",
+        event = "VeryLazy",
+        opts = {
+            delay = 10,
+            large_file_cutoff = 2000,
+            large_file_overrides = {
+                providers = { "lsp" },
+            },
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
+        end,
     },
+    -- {
+    --     "tjdevries/express_line.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         vim.opt.laststatus = 2
+    --         vim.opt.cmdheight = 1
+    --         vim.opt.showcmd = true
+    --         require("el").setup({})
+    --     end
+    -- },
     {
         "mcauley-penney/visual-whitespace.nvim",
         event = "InsertEnter",
