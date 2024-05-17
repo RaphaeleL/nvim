@@ -13,20 +13,20 @@ return {
             }
         end
     },
-    -- {
-    --     "RRethy/vim-illuminate",
-    --     event = "VeryLazy",
-    --     opts = {
-    --         delay = 10,
-    --         large_file_cutoff = 2000,
-    --         large_file_overrides = {
-    --             providers = { "lsp" },
-    --         },
-    --     },
-    --     config = function(_, opts)
-    --         require("illuminate").configure(opts)
-    --     end,
-    -- },
+    {
+        "RRethy/vim-illuminate",
+        event = "VeryLazy",
+        opts = {
+            delay = 10,
+            large_file_cutoff = 2000,
+            large_file_overrides = {
+                providers = { "lsp" },
+            },
+        },
+        config = function(_, opts)
+            require("illuminate").configure(opts)
+        end,
+    },
     {
         "tjdevries/express_line.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },

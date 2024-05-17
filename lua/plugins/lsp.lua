@@ -14,6 +14,25 @@ return {
             "j-hui/fidget.nvim",
         },
         config = function()
+            vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+            vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+
+            local border = {
+                {"🭽", "FloatBorder"},
+                {"▔", "FloatBorder"},
+                {"🭾", "FloatBorder"},
+                {"▕", "FloatBorder"},
+                {"🭿", "FloatBorder"},
+                {"▁", "FloatBorder"},
+                {"🭼", "FloatBorder"},
+                {"▏", "FloatBorder"},
+            }
+
+            local handlers =  {
+                ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+                ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = border }),
+            }
+
             require("fidget").setup({
                 notification = {
                     window = {
@@ -28,7 +47,7 @@ return {
                 },
                 handlers = {
                     function(server_name)
-                        require("lspconfig")[server_name].setup({})
+                        require("lspconfig")[server_name].setup({handlers = handlers})
                     end,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
@@ -48,9 +67,20 @@ return {
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
+            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                opts = opts or {}
+                opts.border = opts.border or border
+                return orig_util_open_floating_preview(contents, syntax, opts, ...)
+            end
+
             luasnip.config.setup({})
 
             cmp.setup({
+                window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                },
                 snippet = {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
@@ -88,12 +118,14 @@ return {
                 underline = false,
                 float = {
                     focusable = false,
+                    border = "rounded",
                     style = "minimal",
                     source = "always",
                     header = "",
                     prefix = "",
                 },
             }))
+
         end
     },
 }
