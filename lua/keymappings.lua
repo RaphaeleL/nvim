@@ -62,7 +62,7 @@ vim.keymap.set("n", "L", "$", { desc = " Line: Move to the end of a Line" })
 vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = " LSP: Open Diagnostic of Line" })
 
 -- Filesystem
-vim.keymap.set("n", "-", ":Oil<cr>", { desc = " Filesystem: Open Oil Filebrowser" })
+vim.keymap.set("n", "_", ":Oil<cr>", { desc = " Filesystem: Open Oil Filebrowser" })
 
 -- Treesitter
 vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = " Treesitter: Inspect Tree" })
