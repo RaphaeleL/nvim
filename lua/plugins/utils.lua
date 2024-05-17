@@ -147,7 +147,7 @@ return {
     },
     {
         "stevearc/oil.nvim",
-        event = "InsertEnter",
+        event = "VeryLazy",
         opts = {
             columns = {
                 "icon",
