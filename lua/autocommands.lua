@@ -70,3 +70,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
         vim.opt_local.conceallevel = 0
     end,
 })
+
+-- no spell in markdown 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown" },
+  command = "setlocal nospell",
+})
