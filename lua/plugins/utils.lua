@@ -128,6 +128,7 @@ return {
     },
     {
         "NStefan002/visual-surround.nvim",
+        event = "InsertEnter",
         config = true
     },
     {
@@ -145,21 +146,22 @@ return {
         opts = {}
     },
     {
-      "stevearc/oil.nvim",
-      opts = {
-          columns = {
-              "icon",
-              "permissions",
-              "size",
-              "mtime",
-          },
-          skip_confirm_for_simple_edits = true,
-          experimental_watch_for_changes = false,
-          use_default_keymaps = true,
-          view_options = {
-              show_hidden = true,
-              natural_order = true,
-          },
+        "stevearc/oil.nvim",
+        event = "InsertEnter",
+        opts = {
+            columns = {
+                "icon",
+                "permissions",
+                "size",
+                "mtime",
+            },
+            skip_confirm_for_simple_edits = true,
+            experimental_watch_for_changes = false,
+            use_default_keymaps = true,
+            view_options = {
+                show_hidden = true,
+                natural_order = true,
+            },
         },
     }
 }
