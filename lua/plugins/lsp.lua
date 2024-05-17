@@ -89,24 +89,4 @@ return {
             })
         end
     },
-    {
-        "luckasRanarison/clear-action.nvim",
-        lazy = true,
-        opts = {
-            show_count = false,
-            signs = {
-                icons = {
-                    quickfix = "Quickfix ",
-                    refactor = "Refactor ",
-                    source = "Source ",
-                    combined = "Combined ",
-                }
-            },
-            mappings = {
-                code_action = "<leader>ca",
-                quickfix = "<leader>cq",
-                refactor = "<leader>cr",
-            }
-        }
-    },
 }
