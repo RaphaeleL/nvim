@@ -27,16 +27,16 @@ return {
             require("illuminate").configure(opts)
         end,
     },
-    {
-        "tjdevries/express_line.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            vim.opt.laststatus = 2
-            vim.opt.cmdheight = 1
-            vim.opt.showcmd = true
-            require("el").setup({})
-        end
-    },
+    -- {
+    --     "tjdevries/express_line.nvim",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    --     config = function()
+    --         vim.opt.laststatus = 2
+    --         vim.opt.cmdheight = 1
+    --         vim.opt.showcmd = true
+    --         require("el").setup({})
+    --     end
+    -- },
     {
         "mcauley-penney/visual-whitespace.nvim",
         event = "InsertEnter",

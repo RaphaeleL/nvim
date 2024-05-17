@@ -12,6 +12,7 @@ return {
             "L3MON4D3/LuaSnip",
             "saadparwaiz1/cmp_luasnip",
             "j-hui/fidget.nvim",
+            "onsails/lspkind.nvim",
         },
         config = function()
             vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
@@ -80,6 +81,16 @@ return {
                 window = {
                     completion = cmp.config.window.bordered(),
                     documentation = cmp.config.window.bordered(),
+                },
+                formatting = {
+                    fields = { "kind", "abbr", "menu" },
+                    format = function(entry, vim_item)
+                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+                        local strings = vim.split(kind.kind, "%s", { trimempty = true })
+                        kind.kind = " " .. (strings[1] or "") .. " "
+                        kind.menu = strings[2]
+                        return kind
+                    end,
                 },
                 snippet = {
                     expand = function(args)
