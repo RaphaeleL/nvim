@@ -36,10 +36,10 @@ return {
         config = true,
         opts = {
             highlight = { link = 'Visual' },
-            space_char = '·',
-            tab_char = '→',
-            nl_char = '↲',
-            cr_char = '←'
+            space_char = "·",
+            tab_char = "→",
+            nl_char = "↲",
+            cr_char = "←"
         },
     },
     {
@@ -52,4 +52,50 @@ return {
             require("el").setup({})
         end
     },
+	--     {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	event = "VeryLazy",
+	-- 	keys = {
+	-- 		{ "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indent-lines" },
+	-- 	},
+	-- 	opts = {
+	-- 		indent = {
+	-- 			char = "│",
+	-- 			tab_char = "│",
+	-- 		},
+	-- 		scope = { enabled = false },
+	-- 		exclude = {
+	-- 			filetypes = {
+	-- 				"alpha",
+	-- 				"checkhealth",
+	-- 				"dashboard",
+	-- 				"git",
+	-- 				"gitcommit",
+	-- 				"help",
+	-- 				"lazy",
+	-- 				"lazyterm",
+	-- 				"lspinfo",
+	-- 				"man",
+	-- 				"mason",
+	-- 				"neo-tree",
+	-- 				"notify",
+	-- 				"Outline",
+	-- 				"TelescopePrompt",
+	-- 				"TelescopeResults",
+	-- 				"terminal",
+	-- 				"toggleterm",
+	-- 				"Trouble",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		if vim.fn.has("nvim-0.10.0") == 0 then
+	-- 			local utils = require("ibl.utils")
+	-- 			---@diagnostic disable-next-line: deprecated
+	-- 			utils.tbl_join = vim.tbl_flatten
+	-- 		end
+	-- 		require("ibl").setup(opts)
+	-- 	end,
+	-- },
 }
