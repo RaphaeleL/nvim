@@ -16,20 +16,6 @@ return {
             }
         end
     },
-    -- {
-    --     "RRethy/vim-illuminate",
-    --     event = "InsertEnter",
-    --     opts = {
-    --         delay = 10,
-    --         large_file_cutoff = 2000,
-    --         large_file_overrides = {
-    --             providers = { "lsp" },
-    --         },
-    --     },
-    --     config = function(_, opts)
-    --         require("illuminate").configure(opts)
-    --     end,
-    -- },
     {
         "mcauley-penney/visual-whitespace.nvim",
         event = "InsertEnter",
@@ -52,7 +38,7 @@ return {
             require("el").setup({})
         end
     },
-	--     {
+	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",
 	-- 	main = "ibl",
 	-- 	event = "VeryLazy",
@@ -98,4 +84,18 @@ return {
 	-- 		require("ibl").setup(opts)
 	-- 	end,
 	-- },
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     event = "InsertEnter",
+    --     opts = {
+    --         delay = 10,
+    --         large_file_cutoff = 2000,
+    --         large_file_overrides = {
+    --             providers = { "lsp" },
+    --         },
+    --     },
+    --     config = function(_, opts)
+    --         require("illuminate").configure(opts)
+    --     end,
+    -- },
 }
