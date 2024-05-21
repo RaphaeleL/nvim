@@ -57,8 +57,8 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = " Line: Concat Line without moving th
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = " Line: Move Selection up" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = " Line: Move Selection down" })
 
-vim.keymap.set("n", "H", "0", { desc = " Line: Move to the start of a Line" })
-vim.keymap.set("n", "L", "$", { desc = " Line: Move to the end of a Line" })
+vim.keymap.set({ "n", "v" }, "H", "0", { desc = " Line: Move to the start of a Line" })
+vim.keymap.set({ "n", "v" }, "L", "$", { desc = " Line: Move to the end of a Line" })
 
 -- Elsewise 
 vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = " LSP: Open Diagnostic of Line" })
