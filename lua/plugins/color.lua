@@ -40,61 +40,61 @@ return {
     --         vim.cmd("colorscheme kanagawa")
     --     end
     -- },
-    {
-        "rose-pine/neovim",
-        event = "VeryLazy",
-        config = function()
-            require("rose-pine").setup({
-                variant = "auto",
-                dark_variant = "main",
-                dim_nc_background = true,
-                disable_background = true,
-                styles = {
-                    bold = true,
-                    italic = true,
-                    transparency = true,
-                },
-                groups = {},
-                highlight_groups = {
-                    StatusLine = { bg = "NONE" },
-                    StatusLineNC = { bg = "NONE" },
-                    CursorLineNr = { fg = "gold" },
-                },
-            })
-            vim.cmd("colorscheme rose-pine")
-        end
-    },
     -- {
-    --     "catppuccin/nvim",
+    --     "rose-pine/neovim",
     --     event = "VeryLazy",
-    --     name = "catppuccin",
     --     config = function()
-    --         require("catppuccin").setup({
-    --             highlight_overrides = {
-    --                 all = function(colors)
-    --                     return {
-    --                         NvimTreeNormal = { fg = colors.none },
-    --                         CmpBorder = { fg = "#3e4145" },
-    --                     }
-    --                 end,
+    --         require("rose-pine").setup({
+    --             variant = "auto",
+    --             dark_variant = "main",
+    --             dim_nc_background = true,
+    --             disable_background = true,
+    --             styles = {
+    --                 bold = true,
+    --                 italic = true,
+    --                 transparency = true,
     --             },
-    --             background = {
-    --                 light = "latte",
-    --                 dark = "mocha",
+    --             groups = {},
+    --             highlight_groups = {
+    --                 StatusLine = { bg = "NONE" },
+    --                 StatusLineNC = { bg = "NONE" },
+    --                 CursorLineNr = { fg = "gold" },
     --             },
-    --             show_end_of_buffer = false,
-    --             transparent_background = true,
-    --             integrations = {
-    --                 illuminate = true,
-    --                 cmp = true,
-    --                 gitsigns = true,
-    --                 nvimtree = true,
-    --                 treesitter = true,
-    --             }
     --         })
-    --         vim.cmd("colorscheme catppuccin")
+    --         vim.cmd("colorscheme rose-pine")
     --     end
     -- },
+    {
+        "catppuccin/nvim",
+        event = "VeryLazy",
+        name = "catppuccin",
+        config = function()
+            require("catppuccin").setup({
+                highlight_overrides = {
+                    all = function(colors)
+                        return {
+                            NvimTreeNormal = { fg = colors.none },
+                            CmpBorder = { fg = "#3e4145" },
+                        }
+                    end,
+                },
+                background = {
+                    light = "latte",
+                    dark = "mocha",
+                },
+                show_end_of_buffer = false,
+                transparent_background = true,
+                integrations = {
+                    illuminate = true,
+                    cmp = true,
+                    gitsigns = true,
+                    nvimtree = true,
+                    treesitter = true,
+                }
+            })
+            vim.cmd("colorscheme catppuccin")
+        end
+    },
     -- {
     --     "ellisonleao/gruvbox.nvim",
     --     event = "VeryLazy",
