@@ -1,4 +1,14 @@
 return {
+    {
+        "HoNamDuong/hybrid.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("hybrid").setup({
+                transparent = true,
+            })
+            vim.cmd("colorscheme hybrid")
+        end
+    },
     -- {
     --     "rebelot/kanagawa.nvim",
     --     event = "VeryLazy",
@@ -64,37 +74,37 @@ return {
     --         vim.cmd("colorscheme rose-pine")
     --     end
     -- },
-    {
-        "catppuccin/nvim",
-        event = "VeryLazy",
-        name = "catppuccin",
-        config = function()
-            require("catppuccin").setup({
-                highlight_overrides = {
-                    all = function(colors)
-                        return {
-                            NvimTreeNormal = { fg = colors.none },
-                            CmpBorder = { fg = "#3e4145" },
-                        }
-                    end,
-                },
-                background = {
-                    light = "latte",
-                    dark = "mocha",
-                },
-                show_end_of_buffer = false,
-                transparent_background = true,
-                integrations = {
-                    illuminate = true,
-                    cmp = true,
-                    gitsigns = true,
-                    nvimtree = true,
-                    treesitter = true,
-                }
-            })
-            vim.cmd("colorscheme catppuccin")
-        end
-    },
+    -- {
+    --     "catppuccin/nvim",
+    --     event = "VeryLazy",
+    --     name = "catppuccin",
+    --     config = function()
+    --         require("catppuccin").setup({
+    --             highlight_overrides = {
+    --                 all = function(colors)
+    --                     return {
+    --                         NvimTreeNormal = { fg = colors.none },
+    --                         CmpBorder = { fg = "#3e4145" },
+    --                     }
+    --                 end,
+    --             },
+    --             background = {
+    --                 light = "latte",
+    --                 dark = "mocha",
+    --             },
+    --             show_end_of_buffer = false,
+    --             transparent_background = true,
+    --             integrations = {
+    --                 illuminate = true,
+    --                 cmp = true,
+    --                 gitsigns = true,
+    --                 nvimtree = true,
+    --                 treesitter = true,
+    --             }
+    --         })
+    --         vim.cmd("colorscheme catppuccin")
+    --     end
+    -- },
     -- {
     --     "ellisonleao/gruvbox.nvim",
     --     event = "VeryLazy",

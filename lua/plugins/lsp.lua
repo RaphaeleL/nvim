@@ -15,6 +15,9 @@ return {
             "onsails/lspkind.nvim",
         },
         config = function()
+
+            local BORDER = not false
+
             vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
             vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
 
@@ -49,7 +52,11 @@ return {
                 },
                 handlers = {
                     function(server_name)
-                        require("lspconfig")[server_name].setup({ handlers = handlers })
+                        if BORDER == true then
+                            require("lspconfig")[server_name].setup({ handlers = handlers })
+                        else
+                            require("lspconfig")[server_name].setup({})
+                        end
                     end,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
@@ -69,11 +76,13 @@ return {
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
-            local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-            function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-                opts = opts or {}
-                opts.border = opts.border or border
-                return orig_util_open_floating_preview(contents, syntax, opts, ...)
+            if BORDER == true then
+                local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+                function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                    opts = opts or {}
+                    opts.border = opts.border or border
+                    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+                end
             end
 
             luasnip.config.setup({})
@@ -136,7 +145,7 @@ return {
                 virtual_text = true,
                 underline = false,
                 float = {
-                    focusable = false,
+                    focusable = true,
                     border = "rounded",
                     style = "minimal",
                     source = "always",
