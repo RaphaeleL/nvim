@@ -28,16 +28,18 @@ return {
             cr_char = "←"
         },
     },
-    {
-        "tjdevries/express_line.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        config = function()
-            vim.opt.laststatus = 2
-            vim.opt.cmdheight = 1
-            vim.opt.showcmd = true
-            require("el").setup({})
-        end
-    },
+    -- {
+    --     "tjdevries/express_line.nvim",
+    --     config = function()
+    --         vim.opt.laststatus = 2
+    --         vim.opt.cmdheight = 1
+    --         vim.opt.showcmd = true
+    --         require("el").setup({})
+    --         -- TODO: This is not working, but it should :D
+    --         -- vim.cmd [[autocmd! ColorScheme * highlight StatusLine guibg=None]]
+    --         -- vim.cmd [[autocmd! ColorScheme * highlight StatusLineNC guibg=None]]
+    --     end
+    -- },
 	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",
 	-- 	main = "ibl",
