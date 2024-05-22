@@ -16,26 +16,9 @@ return {
         },
         config = function()
 
-            local BORDER = not false
+            local BORDER = false
 
-            vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
-            vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
-
-            local border = {
-                { "🭽", "FloatBorder" },
-                { "▔", "FloatBorder" },
-                { "🭾", "FloatBorder" },
-                { "▕", "FloatBorder" },
-                { "🭿", "FloatBorder" },
-                { "▁", "FloatBorder" },
-                { "🭼", "FloatBorder" },
-                { "▏", "FloatBorder" },
-            }
-
-            local handlers = {
-                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-            }
+            local lspconfig_settings = {}
 
             require("fidget").setup({
                 notification = {
@@ -53,10 +36,28 @@ return {
                 handlers = {
                     function(server_name)
                         if BORDER == true then
-                            require("lspconfig")[server_name].setup({ handlers = handlers })
-                        else
-                            require("lspconfig")[server_name].setup({})
+                            vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
+                            vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
+
+                            local border = {
+                                { "🭽", "FloatBorder" },
+                                { "▔", "FloatBorder" },
+                                { "🭾", "FloatBorder" },
+                                { "▕", "FloatBorder" },
+                                { "🭿", "FloatBorder" },
+                                { "▁", "FloatBorder" },
+                                { "🭼", "FloatBorder" },
+                                { "▏", "FloatBorder" },
+                            }
+
+                            local handlers = {
+                                ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+                                ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+                            }
+
+                            lspconfig_settings = { handlers = handlers }
                         end
+                        require("lspconfig")[server_name].setup(lspconfig_settings)
                     end,
                     ["lua_ls"] = function()
                         local lspconfig = require("lspconfig")
@@ -76,27 +77,13 @@ return {
             local cmp = require("cmp")
             local luasnip = require("luasnip")
 
-            if BORDER == true then
-                local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-                function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-                    opts = opts or {}
-                    opts.border = opts.border or border
-                    return orig_util_open_floating_preview(contents, syntax, opts, ...)
-                end
-            end
-
             luasnip.config.setup({})
 
-            cmp.setup({
-                window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
-                },
+            local cmp_settings = {
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
                     format = function(entry, vim_item)
-                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry,
-                            vim_item)
+                        local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
                         local strings = vim.split(kind.kind, "%s", { trimempty = true })
                         kind.kind = " " .. (strings[1] or "") .. " "
                         kind.menu = strings[2]
@@ -133,7 +120,16 @@ return {
                 }, {
                     { name = 'buffer' },
                 })
-            })
+            }
+
+            if BORDER then
+                cmp_settings.window = {
+                    completion = cmp.config.window.bordered(),
+                    documentation = cmp.config.window.bordered(),
+                }
+            end
+
+            cmp.setup(cmp_settings)
 
             local signs = { Error = " ", Warn = " ", Hint = "󰌶 ", Info = " " }
             for type, icon in pairs(signs) do
@@ -141,18 +137,31 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
 
-            vim.diagnostic.config({
+            local diagnostic_settings = {
                 virtual_text = true,
                 underline = false,
-                float = {
+            }
+
+            if BORDER then
+                diagnostic_settings.float = {
                     focusable = true,
                     border = "rounded",
                     style = "minimal",
                     source = "always",
                     header = "",
                     prefix = "",
-                },
-            })
+                }
+
+                local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+                function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+                    opts = opts or {}
+                    opts.border = opts.border or border
+                    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+                end
+
+            end
+
+            vim.diagnostic.config(diagnostic_settings)
         end
     },
 }

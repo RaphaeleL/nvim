@@ -162,5 +162,5 @@ return {
                 natural_order = true,
             },
         },
-    }
+    },
 }
