@@ -20,6 +20,17 @@ return {
 
             local lspconfig_settings = {}
 
+            local border = {
+                { "🭽", "FloatBorder" },
+                { "▔", "FloatBorder" },
+                { "🭾", "FloatBorder" },
+                { "▕", "FloatBorder" },
+                { "🭿", "FloatBorder" },
+                { "▁", "FloatBorder" },
+                { "🭼", "FloatBorder" },
+                { "▏", "FloatBorder" },
+            }
+
             require("fidget").setup({
                 notification = {
                     window = {
@@ -38,17 +49,6 @@ return {
                         if BORDER == true then
                             vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]]
                             vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]]
-
-                            local border = {
-                                { "🭽", "FloatBorder" },
-                                { "▔", "FloatBorder" },
-                                { "🭾", "FloatBorder" },
-                                { "▕", "FloatBorder" },
-                                { "🭿", "FloatBorder" },
-                                { "▁", "FloatBorder" },
-                                { "🭼", "FloatBorder" },
-                                { "▏", "FloatBorder" },
-                            }
 
                             local handlers = {
                                 ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
