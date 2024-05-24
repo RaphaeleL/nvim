@@ -132,15 +132,17 @@ return {
         config = true
     },
     {
+        "akinsho/toggleterm.nvim",
+        lazy = true,
+        keys = {
+            { "<leader>t", ":ToggleTerm<cr>", desc = "[T]erminal" },
+        },
+        opts = {}
+    },
+    {
         "theKnightsOfRohan/csvlens.nvim",
         keys = {
             { "<leader>c", ":Csvlens<cr>", desc = "[C]svlens" },
-        },
-        dependencies = {
-            {
-                "akinsho/toggleterm.nvim",
-                lazy = true,
-            }
         },
         config = true,
         opts = {}

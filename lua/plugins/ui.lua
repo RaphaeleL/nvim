@@ -28,6 +28,20 @@ return {
             cr_char = "←"
         },
     },
+    {
+        "brenoprata10/nvim-highlight-colors",
+        event = "InsertEnter",
+        opts = {
+            render = 'background',
+            virtual_symbol = '■',
+            enable_named_colors = true,
+            enable_tailwind = false,
+            custom_colors = {
+                { label = '%-%-theme%-primary%-color', color = '#0f1219' },
+                { label = '%-%-theme%-secondary%-color', color = '#5a5d64' },
+            }
+        }
+    },
     -- {
     --     "tjdevries/express_line.nvim",
     --     config = function()
