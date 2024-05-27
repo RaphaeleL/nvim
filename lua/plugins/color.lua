@@ -1,4 +1,10 @@
 return {
+    -- {
+    --     "vague2k/huez.nvim",
+    --     config = function()
+    --         require("huez").setup({})
+    --     end,
+    -- },
     {
         "HoNamDuong/hybrid.nvim",
         event = "VeryLazy",
