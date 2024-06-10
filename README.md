@@ -5,7 +5,7 @@
 <b>Useable for </b>
 macOS · Linux · Windows
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux, MacOS and Windows. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no dap. Uhh and it's Lazy Loading the Plugins, so the startup time is *Blazyingly Fast*.
+> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux, MacOS and Windows. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no [dap](https://github.com/mfussenegger/nvim-dap). Uhh and it's Lazy Loading the Plugins, so the startup time is *Blazyingly Fast*.
 
 ## Install
 
@@ -15,7 +15,7 @@ You can install `nvim` using a package manager, but keep in mind that `nvim` may
 
 If you want to make sure `nvim` is only updated when you want, then installing it from source.
 
-Clone the Repository into `.config/` and start `nvim`. The Configuration is Installing every Plugin, Language Server and Syntax Highlighting automatically.
+Clone the Repository into `.config/` and start `nvim`, automatically every Plugin, Language Server and Syntax Highlighting will be installed.
 
 ```bash 
 cd ~/.config
@@ -25,6 +25,7 @@ git clone https://github.com/RaphaeleL/nvim
 ## Uninstall 
 
 ```bash 
+rm -f $(which nvim)
 rm -rf ~/.config/nvim
 rm -rf ~/.local/share/nvim
 rm -rf ~/.local/state/nvim
