@@ -18,7 +18,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, opts)
         vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
-        -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "<F2>", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("n", "<F3>", ":lua vim.lsp.buf.format()<cr>", { desc = "LSP: Format" })
@@ -27,12 +26,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Open Oil in the default Folder View
-vim.cmd [[
-  augroup ProjectDrawer
-    autocmd!
-    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'cd '.argv()[0] | exe 'Oil' | wincmd p | ene | exe 'cd '.getcwd() | endif
-  augroup END
-]]
+vim.api.nvim_create_autocmd("VimEnter", {
+    group = vim.api.nvim_create_augroup("ProjectDrawer", { clear = true }),
+    callback = function()
+        if #vim.v.argv == 1 and vim.fn.isdirectory(vim.v.argv[1]) and not vim.v.s.std_in then
+            vim.cmd("cd " .. vim.v.argv[1])
+            vim.cmd("Oil")
+            vim.cmd("wincmd p")
+            vim.cmd("ene")
+            vim.cmd("cd " .. vim.fn.getcwd())
+        end
+    end,
+
+})
 
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
@@ -75,4 +81,18 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown" },
     command = "setlocal nospell",
+})
+
+
+-- Set local settings for terminal buffers
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("custom-term-open", {}),
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.scrolloff = 0
+    vim.opt.numberwidth = 2
+
+    vim.bo.filetype = "terminal"
+  end,
 })
