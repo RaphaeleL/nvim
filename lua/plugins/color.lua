@@ -1,20 +1,30 @@
 return {
+    {
+        "Mofiqul/dracula.nvim",
+        config = function()
+            local dracula = require("dracula")
+            dracula.setup({
+                transparent_bg = true,
+            })
+            vim.cmd("colorscheme dracula")
+        end
+    },
     -- {
     --     "vague2k/huez.nvim",
     --     config = function()
     --         require("huez").setup({})
     --     end,
     -- },
-    {
-        "HoNamDuong/hybrid.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("hybrid").setup({
-                transparent = true,
-            })
-            vim.cmd("colorscheme hybrid")
-        end
-    },
+    -- {
+    --     "HoNamDuong/hybrid.nvim",
+    --     event = "VeryLazy",
+    --     config = function()
+    --         require("hybrid").setup({
+    --             transparent = true,
+    --         })
+    --         -- vim.cmd("colorscheme hybrid")
+    --     end
+    -- },
     -- {
     --     "rebelot/kanagawa.nvim",
     --     event = "VeryLazy",
