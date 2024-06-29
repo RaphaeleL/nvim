@@ -165,4 +165,21 @@ return {
             },
         },
     },
+    {
+        "kyazdani42/nvim-tree.lua",
+        lazy = true,
+        keys = {
+            { "<leader>f", ":NvimTreeToggle<cr>", desc = "[F]ile Explorer" },
+        },
+        opts = {
+            diagnostics = {
+                enable = true,
+                show_on_dirs = true,
+            },
+            view = {
+                width = 40,
+                side = "right",
+            },
+        }
+    }
 }
