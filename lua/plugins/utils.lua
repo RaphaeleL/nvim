@@ -166,7 +166,7 @@ return {
         },
     },
     {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         lazy = true,
         keys = {
             { "<leader>f", ":NvimTreeToggle<cr>", desc = "[F]ile Explorer" },
