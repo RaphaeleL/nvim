@@ -5,10 +5,10 @@ vim.keymap.set("n", "<Space>", "<NOP>", { desc = "Buffer: Leader" })
 vim.keymap.set("n", "<TAB>", ":write<cr>:bprev<cr>", { desc = "Buffer: Next Tab and Write Buffer" })
 vim.keymap.set("n", "<S-TAB>", ":write<cr>:bnext<cr>", { desc = "Buffer: Previous Tab" })
 
-vim.keymap.set("n", "sh", "<C-w>h", { desc = "Buffer: Move to the left Window" })
-vim.keymap.set("n", "sj", "<C-w>j", { desc = "Buffer: Move to the bottom Window" })
-vim.keymap.set("n", "sk", "<C-w>k", { desc = "Buffer: Move to the upper Window" })
-vim.keymap.set("n", "sl", "<C-w>l", { desc = "Buffer: Move to the right Window" })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Buffer: Move to the left Window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Buffer: Move to the bottom Window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Buffer: Move to the upper Window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Buffer: Move to the right Window" })
 vim.keymap.set("n", "sv", ":vsplit<cr>", { desc = "Buffer: Vertical Split" })
 vim.keymap.set("n", "ss", ":split<cr>", { desc = "Buffer: Horizontal Split" })
 
@@ -42,10 +42,18 @@ vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "Chars: Delete a Word." })
 vim.keymap.set("v", "<", "<gv", { desc = "Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Line: Indent to Right" })
 
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
+vim.keymap.set(
+	"n",
+	"k",
+	"v:count == 0 ? 'gk' : 'k'",
+	{ expr = true, silent = true, desc = "Line: Move in a Linebreak up" }
+)
+vim.keymap.set(
+	"n",
+	"j",
+	"v:count == 0 ? 'gj' : 'j'",
+	{ expr = true, silent = true, desc = "Line: Move in a Linebreak down" }
+)
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "Line: Comment Selection in/out" })
 
@@ -62,3 +70,8 @@ vim.keymap.set({ "n", "v" }, "L", "$", { desc = "Line: Move to the end of a Line
 vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LSP: Open Diagnostic of Line" })
 vim.keymap.set("n", "_", ":Oil<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
 vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "Treesitter: Inspect Tree" })
+
+-- Nvim Specific
+vim.keymap.set("n", "<space>tt", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+end)

@@ -1,7 +1,7 @@
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 2
 vim.opt.fileencoding = "utf-8"
@@ -26,7 +26,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.cursorline = true
 vim.opt.number = true
-vim.opt.laststatus = 0
+-- vim.opt.laststatus = 0
 vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.numberwidth = 4
@@ -54,5 +54,3 @@ vim.g.netrw_winsize = 25
 vim.opt.smoothscroll = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldtext = ""
-
-
