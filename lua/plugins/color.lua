@@ -1,9 +1,9 @@
 return {
-	{
-		"tjdevries/colorbuddy.nvim",
-		lazy = false,
-		priority = 1000,
-	},
+	-- {
+	-- 	"tjdevries/colorbuddy.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 	-- {
 	-- 	"Mofiqul/dracula.nvim",
 	-- 	config = function()
@@ -13,15 +13,15 @@ return {
 	-- 		})
 	-- 	end,
 	-- },
-	{
-		"HoNamDuong/hybrid.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("hybrid").setup({
-				transparent = true,
-			})
-		end,
-	},
+	-- {
+	-- 	"HoNamDuong/hybrid.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("hybrid").setup({
+	-- 			transparent = true,
+	-- 		})
+	-- 	end,
+	-- },
 	-- {
 	--     "rebelot/kanagawa.nvim",
 	--     event = "VeryLazy",
