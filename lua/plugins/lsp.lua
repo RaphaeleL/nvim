@@ -101,9 +101,6 @@ return {
 							},
 						},
 					},
-					on_attach = function(client, bufnr)
-						-- Additional on_attach configuration specific to pyright
-					end,
 				},
 			}
 
