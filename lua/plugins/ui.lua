@@ -21,15 +21,15 @@ return {
 			require("settings.statusline")
 		end,
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		event = "VeryLazy",
-		keys = require("keymaps.indent"),
-		config = function()
-			require("settings.indent")
-		end,
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	event = "VeryLazy",
+	-- 	keys = require("keymaps.indent"),
+	-- 	config = function()
+	-- 		require("settings.indent")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"RRethy/vim-illuminate",
 	-- 	opts = {

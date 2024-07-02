@@ -1,12 +1,9 @@
 return {
-	-- {
-	--     "tjdevries/colorbuddy.nvim",
-	--     lazy = false,
-	--     priority = 1000,
-	--     config = function()
-	--       vim.cmd.colorscheme("gruvbuddy")
-	--     end,
-	-- },
+	{
+		"tjdevries/colorbuddy.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	-- {
 	-- 	"Mofiqul/dracula.nvim",
 	-- 	config = function()
@@ -14,7 +11,6 @@ return {
 	-- 		dracula.setup({
 	-- 			transparent_bg = true,
 	-- 		})
-	-- 		vim.cmd("colorscheme dracula")
 	-- 	end,
 	-- },
 	{
@@ -24,7 +20,6 @@ return {
 			require("hybrid").setup({
 				transparent = true,
 			})
-			vim.cmd("colorscheme hybrid")
 		end,
 	},
 	-- {
@@ -65,7 +60,6 @@ return {
 	--                 light = "lotus"
 	--             }
 	--         })
-	--         vim.cmd("colorscheme kanagawa")
 	--     end
 	-- },
 	-- {
@@ -89,7 +83,6 @@ return {
 	--                 CursorLineNr = { fg = "gold" },
 	--             },
 	--         })
-	--         vim.cmd("colorscheme rose-pine")
 	--     end
 	-- },
 	-- {
@@ -120,7 +113,6 @@ return {
 	--                 treesitter = true,
 	--             }
 	--         })
-	--         vim.cmd("colorscheme catppuccin")
 	--     end
 	-- },
 	-- {
@@ -130,7 +122,6 @@ return {
 	--         require("gruvbox").setup({
 	--             transparent_mode = true,
 	--         })
-	--         vim.cmd("colorscheme gruvbox")
 	--     end
 	-- },
 	-- {
@@ -140,7 +131,6 @@ return {
 	--         require("tokyonight").setup({
 	--             transparent = true
 	--         })
-	--         vim.cmd("colorscheme tokyonight")
 	--     end
 	-- },
 	-- {
