@@ -37,3 +37,6 @@ Group.new("@property", c.blue)
 Group.new("@variable", c.superwhite, nil)
 Group.new("@variable.builtin", c.purple:light():light(), g.Normal)
 Group.new("@function.call.lua", c.blue:dark(), nil, nil)
+
+Group.new("LineNr", c.gray2, nil, s.none)
+Group.new("CursorLineNr", c.orange, nil, s.bold)

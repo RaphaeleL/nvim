@@ -1,4 +1,4 @@
-require("settings.color")
+require("plugins.settings.color")
 -- vim.cmd("colorscheme dracula")
 -- vim.cmd("colorscheme hybrid")
 -- vim.cmd("colorscheme kanagawa")

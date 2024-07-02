@@ -145,7 +145,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 
-		vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
+		vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, { buffer = 0 })
 		vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
 
 		local filetype = vim.bo[bufnr].filetype
@@ -154,8 +154,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		-- Override server capabilities
-		if settings.server_capabilities then
-			for k, v in pairs(settings.server_capabilities) do
+		if server_capabilities then
+			for k, v in pairs(server_capabilities) do
 				if v == vim.NIL then
 					---@diagnostic disable-next-line: cast-local-type
 					v = nil

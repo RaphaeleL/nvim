@@ -8,6 +8,6 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	config = function()
-		require("settings.completion")
+		require("plugins.settings.completion")
 	end,
 }

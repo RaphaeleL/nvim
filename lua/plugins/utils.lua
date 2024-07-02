@@ -5,8 +5,8 @@ return {
 			"isak102/telescope-git-file-history.nvim",
 		},
 		lazy = true,
-		keys = require("keymaps.telescope"),
-		opts = require("settings.telescope"),
+		keys = require("plugins.keymaps.telescope"),
+		opts = require("plugins.settings.telescope"),
 	},
 	{
 		"terrortylor/nvim-comment",
@@ -22,19 +22,19 @@ return {
 		"nvim-pack/nvim-spectre",
 		cmd = "Spectre",
 		opts = { open_cmd = "noswapfile vnew" },
-		keys = require("keymaps.spectre"),
+		keys = require("plugins.keymaps.spectre"),
 	},
 	{
 		"folke/trouble.nvim",
 		opts = {},
 		cmd = "Trouble",
-		keys = require("keymaps.trouble"),
+		keys = require("plugins.keymaps.trouble"),
 	},
 	{
 		"danymat/neogen",
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true,
-		keys = require("keymaps.comment_gen"),
+		keys = require("plugins.keymaps.comment_gen"),
 	},
 	{
 		"windwp/nvim-autopairs",
@@ -45,7 +45,7 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		config = function()
-			require("settings.harpoon")
+			require("plugins.settings.harpoon")
 		end,
 	},
 	{
@@ -62,12 +62,12 @@ return {
 	},
 	{
 		"stevearc/oil.nvim",
-		opts = require("settings.oil"),
+		opts = require("plugins.settings.oil"),
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
 		lazy = true,
-		keys = require("keymaps.nvim-tree"),
-		opts = require("settings.nvim-tree"),
+		keys = require("plugins.keymaps.nvim-tree"),
+		opts = require("plugins.settings.nvim-tree"),
 	},
 }
