@@ -21,22 +21,15 @@ return {
 			require("settings.statusline")
 		end,
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	event = "VeryLazy",
-	-- 	keys = {
-	-- 		{ "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indent-lines" },
-	-- 	},
-	-- 	config = function()
-	-- 		if vim.fn.has("nvim-0.10.0") == 0 then
-	-- 			local utils = require("ibl.utils")
-	-- 			---@diagnostic disable-next-line: deprecated
-	-- 			utils.tbl_join = vim.tbl_flatten
-	-- 		end
-	-- 		require("settings.indent")
-	-- 	end,
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = "VeryLazy",
+		keys = require("keymaps.indent"),
+		config = function()
+			require("settings.indent")
+		end,
+	},
 	-- {
 	-- 	"RRethy/vim-illuminate",
 	-- 	opts = {
