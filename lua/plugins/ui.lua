@@ -16,27 +16,7 @@ return {
 		branch = "main",
 		config = function()
 			require("nvim-treesitter").setup({
-				ensure_installed = {
-					"c",
-					"cpp",
-					"rust",
-					"lua",
-					"vim",
-					"vimdoc",
-					"query",
-					"bash",
-					"cmake",
-					"make",
-					"python",
-					"dockerfile",
-					"scss",
-					"typescript",
-					"javascript",
-					"css",
-					"html",
-					"yaml",
-					"go",
-				},
+				ensure_installed = "maintained",
 				auto_install = true,
 				highlight = {
 					enable = true,
