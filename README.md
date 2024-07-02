@@ -18,8 +18,7 @@ If you want to make sure `nvim` is only updated when you want, then installing i
 Clone the Repository into `.config/` and start `nvim`, automatically every Plugin, Language Server and Syntax Highlighting will be installed.
 
 ```bash 
-cd ~/.config
-git clone https://github.com/RaphaeleL/nvim
+git clone https://github.com/RaphaeleL/nvim ~/.config/nvim
 ```
 
 ## Uninstall 
