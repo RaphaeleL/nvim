@@ -31,12 +31,6 @@ return {
 		keys = require("plugins.keymaps.trouble"),
 	},
 	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = true,
-		keys = require("plugins.keymaps.comment_gen"),
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {},
