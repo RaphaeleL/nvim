@@ -9,7 +9,6 @@ local s = colorbuddy.styles
 
 Color.new("white", "#f2e5bc")
 Color.new("red", "#cc6666")
-Color.new("pink", "#fef601")
 Color.new("green", "#99cc99")
 Color.new("yellow", "#f8fe7a")
 Color.new("blue", "#81a2be")
@@ -40,3 +39,10 @@ Group.new("@function.call.lua", c.blue:dark(), nil, nil)
 
 Group.new("LineNr", c.gray2, nil, s.none)
 Group.new("CursorLineNr", c.orange, nil, s.bold)
+
+Group.new("IblIndent", c.gray2, nil, s.none)
+Group.new("IblScope", c.gray2, nil, s.none)
+
+Group.new("IlluminatedWordText", nil, c.gray2, s.none)
+Group.new("IlluminatedWordRead", nil, c.gray2, s.none)
+Group.new("IlluminatedWordWrite", nil, c.gray2, s.none)

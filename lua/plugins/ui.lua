@@ -21,26 +21,19 @@ return {
 			require("plugins.settings.statusline")
 		end,
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	event = "VeryLazy",
-	-- 	keys = require("plugins.keymaps.indent"),
-	-- 	config = function()
-	-- 		require("plugins.settings.indent")
-	-- 	end,
-	-- },
-	-- {
-	-- 	"RRethy/vim-illuminate",
-	-- 	opts = {
-	-- 		delay = 10,
-	-- 		large_file_cutoff = 2000,
-	-- 		large_file_overrides = {
-	-- 			providers = { "lsp" },
-	-- 		},
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("illuminate").configure(opts)
-	-- 	end,
-	-- },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = "VeryLazy",
+		keys = require("plugins.keymaps.indent"),
+		config = function()
+			require("plugins.settings.indent")
+		end,
+	},
+	{
+		"RRethy/vim-illuminate",
+		config = function()
+			require("illuminate").configure(require("plugins.settings.illuminate"))
+		end,
+	},
 }

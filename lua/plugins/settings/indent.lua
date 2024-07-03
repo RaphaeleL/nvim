@@ -9,7 +9,13 @@ require("ibl").setup({
 		char = "│",
 		tab_char = "│",
 	},
-	scope = { enabled = false },
+	scope = {
+		enabled = true,
+		show_start = true,
+		show_end = false,
+		injected_languages = true,
+		show_exact_scope = false,
+	},
 	exclude = {
 		filetypes = {
 			"alpha",
