@@ -154,7 +154,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		-- Override server capabilities
+		---@diagnostic disable-next-line: undefined-global
 		if server_capabilities then
+			---@diagnostic disable-next-line: undefined-global
 			for k, v in pairs(server_capabilities) do
 				if v == vim.NIL then
 					---@diagnostic disable-next-line: cast-local-type
