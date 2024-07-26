@@ -6,9 +6,10 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-			"j-hui/fidget.nvim",
 			"stevearc/conform.nvim",
 			"b0o/SchemaStore.nvim",
+			{ "j-hui/fidget.nvim", event = "VeryLazy" },
+			{ "rachartier/tiny-inline-diagnostic.nvim", event = "VeryLazy" },
 		},
 		config = function()
 			require("neodev").setup({})
@@ -111,7 +112,7 @@ return {
 				end
 			end, vim.tbl_keys(servers))
 
-			require("mason").setup()
+			require("mason").setup({ PATH = "prepend" })
 			local ensure_installed = {
 				"stylua",
 				"lua_ls",
@@ -197,6 +198,22 @@ return {
 						quiet = true,
 					})
 				end,
+			})
+
+			require("tiny-inline-diagnostic").setup({
+				signs = {
+					left = "",
+					right = "",
+					diag = "",
+					arrow = "",
+					up_arrow = "",
+					vertical = "",
+					vertical_end = "",
+				},
+			})
+
+			vim.diagnostic.config({
+				virtual_text = false,
 			})
 		end,
 	},
