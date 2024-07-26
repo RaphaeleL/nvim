@@ -1,8 +1,9 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
+		cmd = "Telescope",
 		dependencies = {
-			"isak102/telescope-git-file-history.nvim",
+			{ "isak102/telescope-git-file-history.nvim", lazy = true },
 		},
 		lazy = true,
 		keys = {
@@ -130,6 +131,7 @@ return {
 	},
 	{
 		"ThePrimeagen/harpoon",
+		event = { "BufReadPost", "BufNewFile" },
 		branch = "harpoon2",
 		config = function()
 			local harpoon = require("harpoon")
@@ -150,28 +152,28 @@ return {
 
 			harpoon:setup({})
 
-			local conf = require("telescope.config").values
-			local function toggle_telescope(harpoon_files)
-				local file_paths = {}
-				for _, item in ipairs(harpoon_files.items) do
-					table.insert(file_paths, item.value)
-				end
-
-				require("telescope.pickers")
-					.new({}, {
-						prompt_title = "Harpoon",
-						finder = require("telescope.finders").new_table({
-							results = file_paths,
-						}),
-						previewer = conf.file_previewer({}),
-						sorter = conf.generic_sorter({}),
-					})
-					:find()
-			end
-
-			vim.keymap.set("n", "<leader>sp", function()
-				toggle_telescope(harpoon:list())
-			end, { desc = "Telescope: [S]how Harpoon Window" })
+			-- local conf = require("telescope.config").values
+			-- local function toggle_telescope(harpoon_files)
+			-- 	local file_paths = {}
+			-- 	for _, item in ipairs(harpoon_files.items) do
+			-- 		table.insert(file_paths, item.value)
+			-- 	end
+			--
+			-- 	require("telescope.pickers")
+			-- 		.new({}, {
+			-- 			prompt_title = "Harpoon",
+			-- 			finder = require("telescope.finders").new_table({
+			-- 				results = file_paths,
+			-- 			}),
+			-- 			previewer = conf.file_previewer({}),
+			-- 			sorter = conf.generic_sorter({}),
+			-- 		})
+			-- 		:find()
+			-- end
+			--
+			-- vim.keymap.set("n", "<leader>sp", function()
+			-- 	toggle_telescope(harpoon:list())
+			-- end, { desc = "Telescope: [S]how Harpoon Window" })
 
 			-- Set <space>1..<space>5 be my shortcuts to moving to the files
 			for _, idx in ipairs({ 1, 2, 3, 4, 5 }) do
@@ -202,65 +204,6 @@ return {
 			view_options = {
 				show_hidden = true,
 				natural_order = true,
-			},
-		},
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		lazy = true,
-		keys = {
-			{ "<leader>f", ":NvimTreeToggle<cr>", desc = "[F]ile Explorer" },
-		},
-		opts = {
-			hijack_directories = {
-				enable = false,
-				auto_open = false,
-			},
-			update_focused_file = {
-				enable = true,
-				update_cwd = true,
-			},
-			renderer = {
-				root_folder_modifier = ":t",
-				icons = {
-					glyphs = {
-						default = "",
-						symlink = "",
-						folder = {
-							arrow_open = "",
-							arrow_closed = "",
-							default = "",
-							open = "",
-							empty = "",
-							empty_open = "",
-							symlink = "",
-							symlink_open = "",
-						},
-						git = {
-							unstaged = "",
-							staged = "S",
-							unmerged = "",
-							renamed = "➜",
-							untracked = "U",
-							deleted = "",
-							ignored = "◌",
-						},
-					},
-				},
-			},
-			diagnostics = {
-				enable = true,
-				show_on_dirs = true,
-				icons = {
-					hint = "",
-					info = "",
-					warning = "",
-					error = "",
-				},
-			},
-			view = {
-				width = 40,
-				side = "right",
 			},
 		},
 	},

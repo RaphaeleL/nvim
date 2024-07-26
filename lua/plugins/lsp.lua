@@ -1,14 +1,15 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"folke/neodev.nvim",
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"stevearc/conform.nvim",
-		"b0o/SchemaStore.nvim",
-		{ "j-hui/fidget.nvim", event = "VeryLazy" },
-		{ "rachartier/tiny-inline-diagnostic.nvim", event = "VeryLazy" },
+		{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
+		{ "b0o/SchemaStore.nvim", event = { "BufReadPre", "BufNewFile" } },
+		{ "j-hui/fidget.nvim", event = { "BufReadPre", "BufNewFile" } },
+		{ "rachartier/tiny-inline-diagnostic.nvim", event = { "BufReadPre", "BufNewFile" } },
 	},
 	config = function()
 		require("neodev").setup({})
@@ -140,11 +141,9 @@ return {
 					settings = {}
 				end
 
-				local builtin = require("telescope.builtin")
-
 				vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-				vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
-				vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
+				vim.keymap.set("n", "gd", ":Telescope lsp_definitions<cr>", { buffer = 0 })
+				vim.keymap.set("n", "gr", ":Telescope lsp_references<cr>", { buffer = 0 })
 				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
 				vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })

@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
 
@@ -47,7 +48,7 @@ return {
 	},
 	{
 		"mcauley-penney/visual-whitespace.nvim",
-		event = "InsertEnter",
+		event = { "BufReadPost", "BufNewFile" },
 		opts = {
 			highlight = { link = "Visual" },
 			space_char = "·",
@@ -72,6 +73,7 @@ return {
 	},
 	{
 		"tjdevries/express_line.nvim",
+		event = "VeryLazy",
 		config = function()
 			vim.opt.laststatus = 2
 			vim.opt.cmdheight = 1
@@ -84,69 +86,69 @@ return {
 			end, 100)
 		end,
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		event = "VeryLazy",
-		keys = {
-			{ "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indent-lines" },
-		},
-		config = function()
-			if vim.fn.has("nvim-0.10.0") == 0 then
-				local utils = require("ibl.utils")
-				---@diagnostic disable-next-line: deprecated
-				utils.tbl_join = vim.tbl_flatten
-			end
-
-			require("ibl").setup({
-				indent = {
-					char = "│",
-					tab_char = "│",
-				},
-				scope = {
-					enabled = true,
-					show_start = true,
-					show_end = false,
-					injected_languages = true,
-					show_exact_scope = false,
-				},
-				exclude = {
-					filetypes = {
-						"alpha",
-						"checkhealth",
-						"dashboard",
-						"git",
-						"gitcommit",
-						"help",
-						"lazy",
-						"lazyterm",
-						"lspinfo",
-						"man",
-						"mason",
-						"neo-tree",
-						"notify",
-						"Outline",
-						"TelescopePrompt",
-						"TelescopeResults",
-						"terminal",
-						"toggleterm",
-						"Trouble",
-					},
-				},
-			})
-		end,
-	},
-	{
-		"RRethy/vim-illuminate",
-		opts = {
-			delay = 0,
-			large_file_cutoff = 2000,
-			large_file_overrides = {
-				providers = { "lsp" },
-			},
-		},
-		config = function(_, opts)
-			require("illuminate").configure(opts)
-		end,
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	--  event = { "BufReadPost", "BufNewFile" },
+	-- 	keys = {
+	-- 		{ "<Leader>ue", "<cmd>IBLToggle<CR>", desc = "Toggle indent-lines" },
+	-- 	},
+	-- 	config = function()
+	-- 		if vim.fn.has("nvim-0.10.0") == 0 then
+	-- 			local utils = require("ibl.utils")
+	-- 			---@diagnostic disable-next-line: deprecated
+	-- 			utils.tbl_join = vim.tbl_flatten
+	-- 		end
+	--
+	-- 		require("ibl").setup({
+	-- 			indent = {
+	-- 				char = "│",
+	-- 				tab_char = "│",
+	-- 			},
+	-- 			scope = {
+	-- 				enabled = true,
+	-- 				show_start = true,
+	-- 				show_end = false,
+	-- 				injected_languages = true,
+	-- 				show_exact_scope = false,
+	-- 			},
+	-- 			exclude = {
+	-- 				filetypes = {
+	-- 					"alpha",
+	-- 					"checkhealth",
+	-- 					"dashboard",
+	-- 					"git",
+	-- 					"gitcommit",
+	-- 					"help",
+	-- 					"lazy",
+	-- 					"lazyterm",
+	-- 					"lspinfo",
+	-- 					"man",
+	-- 					"mason",
+	-- 					"neo-tree",
+	-- 					"notify",
+	-- 					"Outline",
+	-- 					"TelescopePrompt",
+	-- 					"TelescopeResults",
+	-- 					"terminal",
+	-- 					"toggleterm",
+	-- 					"Trouble",
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
+	-- {
+	-- 	"RRethy/vim-illuminate",
+	-- 	opts = {
+	-- 		delay = 0,
+	-- 		large_file_cutoff = 2000,
+	-- 		large_file_overrides = {
+	-- 			providers = { "lsp" },
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("illuminate").configure(opts)
+	-- 	end,
+	-- },
 }
