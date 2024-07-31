@@ -28,8 +28,8 @@ vim.keymap.set("n", "c", ":bd<cr>", { desc = "Window: Close" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Char
-vim.keymap.set("n", "+", "<C-a>", { desc = "Chars: Increment a Number" })
-vim.keymap.set("n", "-", "<C-x>", { desc = "Chars: Decrement a Number" })
+vim.keymap.set("n", "+", "<C-x>", { desc = "Chars: Increment a Number" })
+vim.keymap.set("n", "-", "<C-a>", { desc = "Chars: Decrement a Number" })
 
 vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "Chars: Yank line" })
 vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "Chars: Paste without losing the Buffer" })
