@@ -31,6 +31,7 @@ return {
 
 		local servers = {
 			bashls = true,
+			tailwindcss = true,
 			gopls = {
 				settings = {
 					gopls = {
