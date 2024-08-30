@@ -186,13 +186,28 @@ return {
 			end,
 		})
 
+		-- local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+		-- for type, icon in pairs(signs) do
+		-- 	local hl = "DiagnosticSign" .. type
+		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+		-- end
+
+		for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
+			vim.fn.sign_define("DiagnosticSign" .. diag, {
+				text = "",
+				texthl = "DiagnosticSign" .. diag,
+				linehl = "",
+				numhl = "DiagnosticSign" .. diag,
+			})
+		end
+
 		require("tiny-inline-diagnostic").setup({
 			signs = {
 				left = "",
 				right = "",
 				diag = "●",
-				arrow = "    ",
-				up_arrow = "    ",
+				arrow = "   ",
+				up_arrow = "   ",
 				vertical = " │",
 				vertical_end = " └",
 			},

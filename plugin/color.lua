@@ -38,6 +38,7 @@ Group.new("IblScope", c.gray2, nil, s.none)
 Group.new("IlluminatedWordText", nil, c.gray2, s.none)
 Group.new("IlluminatedWordRead", nil, c.gray2, s.none)
 Group.new("IlluminatedWordWrite", nil, c.gray2, s.none)
+Group.new("StatusLine", nil, nil, s.none)
 
 -- vim.cmd("colorscheme dracula")
 -- vim.cmd("colorscheme hybrid")
