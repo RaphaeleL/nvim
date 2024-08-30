@@ -145,7 +145,7 @@ return {
 				vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
 				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
 
-				vim.keymap.set("n", "<space>r", vim.lsp.buf.rename, { buffer = 0 })
+				vim.keymap.set("n", "<space>R", vim.lsp.buf.rename, { buffer = 0 })
 				vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
 
 				local filetype = vim.bo[bufnr].filetype
@@ -188,13 +188,25 @@ return {
 
 		require("tiny-inline-diagnostic").setup({
 			signs = {
-				left = "",
-				right = "",
-				diag = "",
-				arrow = "",
-				up_arrow = "",
-				vertical = "",
-				vertical_end = "",
+				left = "",
+				right = "",
+				diag = "●",
+				arrow = "    ",
+				up_arrow = "    ",
+				vertical = " │",
+				vertical_end = " └",
+			},
+			hi = {
+				error = "DiagnosticError",
+				warn = "DiagnosticWarn",
+				info = "DiagnosticInfo",
+				hint = "DiagnosticHint",
+				arrow = "NonText",
+				background = "CursorLine",
+				mixing_color = "None",
+			},
+			blend = {
+				factor = 0.27,
 			},
 		})
 
