@@ -74,20 +74,6 @@ return {
 		},
 	},
 	{
-		"nvim-pack/nvim-spectre",
-		cmd = "Spectre",
-		opts = { open_cmd = "noswapfile vnew" },
-		keys = {
-			{
-				"<leader>S",
-				function()
-					require("spectre").open()
-				end,
-				desc = "Search and Replace in files",
-			},
-		},
-	},
-	{
 		"folke/trouble.nvim",
 		opts = {},
 		cmd = "Trouble",
@@ -174,6 +160,19 @@ return {
 			view_options = {
 				show_hidden = true,
 				natural_order = true,
+			},
+		},
+	},
+	{
+		"MagicDuck/grug-far.nvim",
+		config = function()
+			require("grug-far").setup({})
+		end,
+		keys = {
+			{
+				"<leader>S",
+				":GrugFar<cr>",
+				desc = "Search and Replace in files",
 			},
 		},
 	},
