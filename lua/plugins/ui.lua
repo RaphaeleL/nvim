@@ -1,9 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"AndreM222/copilot-lualine",
-		},
+		dependencies = "AndreM222/copilot-lualine",
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
