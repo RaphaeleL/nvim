@@ -1,6 +1,9 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"AndreM222/copilot-lualine",
+		},
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
@@ -72,20 +75,68 @@ return {
 		},
 	},
 	{
-		"tjdevries/express_line.nvim",
-		event = "VeryLazy",
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
-			vim.opt.laststatus = 2
-			vim.opt.cmdheight = 1
-			vim.opt.showcmd = true
-			require("el").setup({})
-			vim.defer_fn(function()
-				-- NOTE: This is not working in certain filetypes, e.g. Python.
-				vim.cmd([[hi StatusLine guibg=None]])
-				vim.cmd([[hi StatusLineNC guibg=None]])
-			end, 100)
+			local custom_theme = require("lualine.themes.codedark")
+			custom_theme.normal.c.bg = "#1e1e1e"
+			require("lualine").setup({
+				options = {
+					icons_enabled = false,
+					theme = custom_theme,
+					component_separators = "",
+					section_separators = { left = "", right = "" },
+					disabled_filetypes = {
+						statusline = {},
+						winbar = {},
+					},
+					ignore_focus = {},
+					always_divide_middle = true,
+					globalstatus = true,
+					refresh = {
+						statusline = 1000,
+						tabline = 1000,
+						winbar = 1000,
+					},
+				},
+				sections = {
+					lualine_a = { "mode" },
+					lualine_b = { "branch", "diff", "diagnostics" },
+					lualine_c = { "filename" },
+					lualine_x = { "copilot" },
+					lualine_y = { "filetype" },
+					lualine_z = { "location" },
+				},
+				inactive_sections = {
+					lualine_a = {},
+					lualine_b = {},
+					lualine_c = { "filename" },
+					lualine_x = { "location" },
+					lualine_y = {},
+					lualine_z = {},
+				},
+				tabline = {},
+				winbar = {},
+				inactive_winbar = {},
+				extensions = {},
+			})
 		end,
 	},
+	-- {
+	-- 	"tjdevries/express_line.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		vim.opt.laststatus = 2
+	-- 		vim.opt.cmdheight = 1
+	-- 		vim.opt.showcmd = true
+	-- 		require("el").setup({})
+	-- 		vim.defer_fn(function()
+	-- 			-- NOTE: This is not working in certain filetypes, e.g. Python.
+	-- 			vim.cmd([[hi StatusLine guibg=None]])
+	-- 			vim.cmd([[hi StatusLineNC guibg=None]])
+	-- 		end, 100)
+	-- 	end,
+	-- },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
