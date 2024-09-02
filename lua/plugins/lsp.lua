@@ -223,13 +223,13 @@ return {
 
 		require("tiny-inline-diagnostic").setup({
 			signs = {
-				left = "",
-				right = "",
-				diag = "●",
-				arrow = "   ",
-				up_arrow = "   ",
-				vertical = " │",
-				vertical_end = " └",
+				left = "", -- ""
+				right = "", -- ""
+				diag = "", -- "●"
+				arrow = "", -- "   "
+				up_arrow = "", -- "   "
+				vertical = "", -- " │"
+				vertical_end = "", -- " └"
 			},
 			hi = {
 				error = "DiagnosticError",
