@@ -54,12 +54,12 @@ return {
 				},
 			},
 			pickers = {
-				find_files = {
-					theme = "ivy",
-				},
-				colorscheme = {
-					enable_preview = true,
-				},
+				-- find_files = {
+				-- 	theme = "ivy",
+				-- },
+				-- colorscheme = {
+				-- 	enable_preview = true,
+				-- },
 			},
 		},
 	},

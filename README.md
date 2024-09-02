@@ -1,11 +1,11 @@
 <img height="150" src="https://raw.githubusercontent.com/RaphaeleL/nvim/main/assets/logo.png" align="right" alt="Logo">
 
-# NaaVim
+# Neovim Configuration 
 
 <b>Useable for </b>
 macOS · Linux · Windows
 
-> **NaaVim** is my Personal `nvim` Configuration for daily usage that works completely fine on Linux, MacOS and Windows. **NaaVim** is a complete IDE layer for `nvim` and easily customizable. It includes some useful plugins, but not everything the `nvim` Community provides, for example no [dap](https://github.com/mfussenegger/nvim-dap). Uhh and it's Lazy Loading the Plugins, so the startup time is *Blazyingly Fast*.
+> This is my personal `nvim` configuration for daily use, designed to work seamlessly across Linux, macOS, and Windows. It provides a comprehensive IDE layer for `nvim` that is easily customizable to fit your needs. While it includes several essential plugins, it doesn't aim to include everything the `nvim` community offers—for example, it doesn't include [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap).
 
 ## Install
 
@@ -43,3 +43,4 @@ This Configuration is inspired by:
 
 <img src="./assets/demo/Demo-1.png" align="center" alt="Demo1">
 <img src="./assets/demo/Demo-2.png" align="center" alt="Demo2">
+<img src="./assets/demo/Demo-3.png" align="center" alt="Demo3">

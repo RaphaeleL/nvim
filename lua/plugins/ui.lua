@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = "AndreM222/copilot-lualine",
-		event = { "BufReadPost", "BufNewFile" },
+		event = "ColorScheme",
 		config = function()
 			local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
 
@@ -91,33 +91,43 @@ return {
 				orange = "#de935f",
 			}
 
-			local bubbles_theme = {
-				normal = {
-					a = { fg = colors.black, bg = colors.orange },
-					b = { fg = colors.white, bg = colors.grey },
-					c = { fg = colors.white },
-				},
-
-				insert = { a = { fg = colors.black, bg = colors.blue } },
-				visual = { a = { fg = colors.black, bg = colors.cyan } },
-				replace = { a = { fg = colors.black, bg = colors.red } },
-
-				inactive = {
-					a = { fg = colors.white, bg = colors.black },
-					b = { fg = colors.white, bg = colors.black },
-					c = { fg = colors.white },
-				},
+			local mode_map = {
+				["n"] = "N",
+				["i"] = "I",
+				["v"] = "V",
+				["V"] = "VL",
+				[""] = "VB",
+				["c"] = "C",
+				["R"] = "R",
+				["t"] = "T",
 			}
+
+			local custom_rosepine = require("lualine.themes.rose-pine-alt")
+			custom_rosepine.normal.a.bg = "NONE"
+			custom_rosepine.normal.b.bg = "NONE"
+			custom_rosepine.normal.c.bg = "NONE"
+			custom_rosepine.insert.a.bg = "NONE"
+			custom_rosepine.visual.a.bg = "NONE"
+			custom_rosepine.command.a.bg = "NONE"
+			custom_rosepine.replace.a.bg = "NONE"
+			custom_rosepine.inactive.a.bg = "NONE"
+			custom_rosepine.inactive.b.bg = "NONE"
+			custom_rosepine.inactive.c.bg = "NONE"
 
 			require("lualine").setup({
 				options = {
 					icons_enabled = false,
-					theme = bubbles_theme,
+					theme = custom_rosepine,
 					component_separators = "",
-					section_separators = { left = "", right = "" },
+					section_separators = "",
 				},
 				sections = {
-					lualine_a = { { "mode", separator = { left = "" } } },
+					lualine_a = {
+						function()
+							local mode = vim.fn.mode()
+							return mode_map[mode] or mode
+						end,
+					},
 					lualine_b = { "branch", "diff", "diagnostics" },
 					lualine_c = {
 						-- "%=",
@@ -133,9 +143,7 @@ return {
 					},
 					lualine_x = {},
 					lualine_y = { "copilot", "filetype" },
-					lualine_z = {
-						{ "location", separator = { right = "" } },
-					},
+					lualine_z = { "location" },
 				},
 				inactive_sections = {
 					lualine_a = { "filename" },
