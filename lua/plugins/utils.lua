@@ -51,6 +51,9 @@ return {
 					"node_modules",
 					".DS_Store",
 					".git",
+					"%.png",
+					"%.jpg",
+					"%.jpeg",
 				},
 			},
 			pickers = {
