@@ -36,6 +36,10 @@ return {
 					return kind
 				end,
 			},
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
+			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-p>"] = cmp.mapping.select_prev_item(),
 				["<C-n>"] = cmp.mapping.select_next_item(),

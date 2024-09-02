@@ -185,10 +185,10 @@ return {
 					tab_char = "│",
 				},
 				scope = {
-					enabled = true,
-					show_start = true,
+					enabled = false,
+					show_start = false,
 					show_end = false,
-					injected_languages = true,
+					injected_languages = false,
 					show_exact_scope = false,
 				},
 				exclude = {
