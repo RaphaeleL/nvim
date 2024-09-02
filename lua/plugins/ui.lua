@@ -79,18 +79,6 @@ return {
 			vim.opt.laststatus = 2
 			vim.opt.cmdheight = 1
 
-			local colors = {
-				blue = "#80a0ff",
-				cyan = "#79dac8",
-				black = "#080808",
-				white = "#c6c6c6",
-				red = "#ff5189",
-				violet = "#d183e8",
-				grey = "#303030",
-				yellow = "#f0c674",
-				orange = "#de935f",
-			}
-
 			local mode_map = {
 				["n"] = "N",
 				["i"] = "I",
