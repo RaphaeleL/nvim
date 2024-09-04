@@ -12,8 +12,17 @@ return {
 			})
 
 			local syntax_on = {
-				elixir = true,
-				php = true,
+				-- Languages
+				python = true,
+				cpp = true,
+				-- Helpers
+				make = true,
+				dockerfile = true,
+				-- Git
+				git_config = true,
+				git_rebase = true,
+				gitcommit = true,
+				gitignore = true,
 			}
 
 			vim.api.nvim_create_autocmd("FileType", {
