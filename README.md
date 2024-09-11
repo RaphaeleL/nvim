@@ -1,5 +1,3 @@
-<img height="150" src="https://raw.githubusercontent.com/RaphaeleL/nvim/main/assets/logo.png" align="right" alt="Logo">
-
 # Neovim Configuration 
 
 <b>Useable for </b>
@@ -41,6 +39,6 @@ This Configuration is inspired by:
 
 ## Showcase
 
-<img src="./assets/demo/Demo-1.png" align="center" alt="Demo1">
-<img src="./assets/demo/Demo-2.png" align="center" alt="Demo2">
-<img src="./assets/demo/Demo-3.png" align="center" alt="Demo3">
+<img src="./assets/Demo-1.png" align="center" alt="Demo1">
+<img src="./assets/Demo-2.png" align="center" alt="Demo2">
+<img src="./assets/Demo-3.png" align="center" alt="Demo3">
