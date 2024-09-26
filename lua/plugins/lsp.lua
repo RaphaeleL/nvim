@@ -196,15 +196,15 @@ return {
 		-- 	},
 		-- })
 
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			callback = function(args)
-				require("conform").format({
-					bufnr = args.buf,
-					lsp_fallback = true,
-					quiet = true,
-				})
-			end,
-		})
+		-- vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 	callback = function(args)
+		-- 		require("conform").format({
+		-- 			bufnr = args.buf,
+		-- 			lsp_fallback = true,
+		-- 			quiet = true,
+		-- 		})
+		-- 	end,
+		-- })
 
 		-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 		-- for type, icon in pairs(signs) do
