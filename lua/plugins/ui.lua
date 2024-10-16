@@ -130,7 +130,7 @@ return {
 						-- "%=",
 						{
 							"filename",
-							path = 4,
+							path = 3,
 							-- 0: Just the filename
 							-- 1: Relative path
 							-- 2: Absolute path

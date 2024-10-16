@@ -6,7 +6,7 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		-- { "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
+		{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
 		{ "b0o/SchemaStore.nvim", event = { "BufReadPre", "BufNewFile" } },
 		{ "j-hui/fidget.nvim", event = { "BufReadPre", "BufNewFile" } },
 		{ "rachartier/tiny-inline-diagnostic.nvim", event = { "BufReadPre", "BufNewFile" } },
@@ -190,21 +190,21 @@ return {
 		})
 
 		-- Autoformatting Setup
-		-- require("conform").setup({
-		-- 	formatters_by_ft = {
-		-- 		lua = { "stylua" },
-		-- 	},
-		-- })
+		require("conform").setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+			},
+		})
 
-		-- vim.api.nvim_create_autocmd("BufWritePre", {
-		-- 	callback = function(args)
-		-- 		require("conform").format({
-		-- 			bufnr = args.buf,
-		-- 			lsp_fallback = true,
-		-- 			quiet = true,
-		-- 		})
-		-- 	end,
-		-- })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			callback = function(args)
+				require("conform").format({
+					bufnr = args.buf,
+					lsp_fallback = true,
+					quiet = true,
+				})
+			end,
+		})
 
 		-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 		-- for type, icon in pairs(signs) do
