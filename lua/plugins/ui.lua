@@ -89,14 +89,14 @@ return {
 			vim.opt.cmdheight = 1
 
 			local mode_map = {
-				["n"] = "N", -- Normal Mode
-				["i"] = "I", -- Insert Mode
-				["v"] = "V", -- Visual Mode
-				["V"] = "VL", -- Visual Line Mode
+				["n"] = "N",   -- Normal Mode
+				["i"] = "I",   -- Insert Mode
+				["v"] = "V",   -- Visual Mode
+				["V"] = "VL",  -- Visual Line Mode
 				[""] = "VB", -- ??
-				["c"] = "C", -- Command Mode
-				["R"] = "R", -- Replace Mode
-				["t"] = "T", -- Terminal Mode
+				["c"] = "C",   -- Command Mode
+				["R"] = "R",   -- Replace Mode
+				["t"] = "T",   -- Terminal Mode
 			}
 
 			local custom_rosepine = require("lualine.themes.rose-pine-alt")
