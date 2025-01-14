@@ -2,13 +2,13 @@
 vim.keymap.set("i", "kj", "<ESC>", { desc = "Buffer: Go to Normal Mode" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Buffer: Go to Normal Mode" })
 vim.keymap.set("n", "<Space>", "<NOP>", { desc = "Buffer: Leader" })
-vim.keymap.set("n", "<TAB>", ":write<cr>:bprev<cr>", { desc = "Buffer: Next Tab and Write Buffer" })
-vim.keymap.set("n", "<S-TAB>", ":write<cr>:bnext<cr>", { desc = "Buffer: Previous Tab" })
+vim.keymap.set("n", "<TAB>", ":bprev<cr>", { desc = "Buffer: Next Tab and Write Buffer" })
+vim.keymap.set("n", "<S-TAB>", ":bnext<cr>", { desc = "Buffer: Previous Tab" })
 
-vim.keymap.set("n", "<leader>sh", "<C-w>h", { desc = "Buffer: Move to the left Window" })
-vim.keymap.set("n", "<leader>sj", "<C-w>j", { desc = "Buffer: Move to the bottom Window" })
-vim.keymap.set("n", "<leader>sk", "<C-w>k", { desc = "Buffer: Move to the upper Window" })
-vim.keymap.set("n", "<leader>sl", "<C-w>l", { desc = "Buffer: Move to the right Window" })
+vim.keymap.set("n", "sh", "<C-w>h", { desc = "Buffer: Move to the left Window" })
+vim.keymap.set("n", "sj", "<C-w>j", { desc = "Buffer: Move to the bottom Window" })
+vim.keymap.set("n", "sk", "<C-w>k", { desc = "Buffer: Move to the upper Window" })
+vim.keymap.set("n", "sl", "<C-w>l", { desc = "Buffer: Move to the right Window" })
 vim.keymap.set("n", "sv", ":vsplit<cr>", { desc = "Buffer: Vertical Split" })
 vim.keymap.set("n", "ss", ":split<cr>", { desc = "Buffer: Horizontal Split" })
 
@@ -22,7 +22,7 @@ vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { desc = "Buffer Resize down" 
 vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "Buffer Resize left" })
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "Buffer Resize right" })
 
-vim.keymap.set("n", "sc", ":quit!<cr>", { desc = "Buffer: Close" })
+vim.keymap.set("n", "q", ":quit!<cr>", { desc = "Buffer: Close" })
 vim.keymap.set("n", "c", ":bd<cr>", { desc = "Window: Close" })
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
@@ -31,7 +31,8 @@ vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 vim.keymap.set("n", "-", "<C-x>", { desc = "Chars: Increment a Number" })
 vim.keymap.set("n", "+", "<C-a>", { desc = "Chars: Decrement a Number" })
 
-vim.keymap.set("n", "<Leader>Y", '"+Y', { desc = "Chars: Yank line" })
+vim.keymap.set("n", "y", '"+y', { desc = "Chars: Yank to clipboard" })
+vim.keymap.set("n", "Y", '"+Y', { desc = "Chars: Yank line to clipboard" })
 vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "Chars: Paste without losing the Buffer" })
 vim.keymap.set("n", "x", '"_x', { desc = "Chars: Delete Char without losing the Buffer" })
 vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "Chars: Delete a Word." })
@@ -41,16 +42,16 @@ vim.keymap.set("v", "<", "<gv", { desc = "Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Line: Indent to Right" })
 
 vim.keymap.set(
-	"n",
-	"k",
-	"v:count == 0 ? 'gk' : 'k'",
-	{ expr = true, silent = true, desc = "Line: Move in a Linebreak up" }
+    "n",
+    "k",
+    "v:count == 0 ? 'gk' : 'k'",
+    { expr = true, silent = true, desc = "Line: Move in a Linebreak up" }
 )
 vim.keymap.set(
-	"n",
-	"j",
-	"v:count == 0 ? 'gj' : 'j'",
-	{ expr = true, silent = true, desc = "Line: Move in a Linebreak down" }
+    "n",
+    "j",
+    "v:count == 0 ? 'gj' : 'j'",
+    { expr = true, silent = true, desc = "Line: Move in a Linebreak down" }
 )
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "Line: Comment Selection in/out" })
@@ -71,5 +72,5 @@ vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "Treesitter: Insp
 
 -- Nvim Specific
 vim.keymap.set("n", "<space>tt", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
 end)
