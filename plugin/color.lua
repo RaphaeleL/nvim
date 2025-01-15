@@ -1,7 +1,8 @@
--- vim.cmd("colorscheme kanagawa")
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme kanagawa")
+-- vim.cmd("colorscheme rose-pine")
 -- vim.cmd("colorscheme tokyonight")
 
+-- -- Dark
 -- require("colorbuddy").colorscheme("gruvbuddy")
 -- local colorbuddy = require("colorbuddy")
 -- local Color = colorbuddy.Color
@@ -33,6 +34,50 @@ vim.cmd("colorscheme rose-pine")
 -- Group.new("@keyword.faded", g.nontext.fg:light(), nil, s.none)
 -- Group.new("@property", c.blue)
 -- Group.new("@variable", c.superwhite, nil)
+-- Group.new("@variable.builtin", c.purple:light():light(), g.Normal)
+-- Group.new("@function.call.lua", c.blue:dark(), nil, nil)
+-- Group.new("LineNr", c.gray2, nil, s.none)
+-- Group.new("CursorLineNr", c.orange, nil, s.bold)
+-- Group.new("IblIndent", c.gray2, nil, s.none)
+-- Group.new("IblScope", c.gray2, nil, s.none)
+-- Group.new("IlluminatedWordText", nil, c.gray2, s.none)
+-- Group.new("IlluminatedWordRead", nil, c.gray2, s.none)
+-- Group.new("IlluminatedWordWrite", nil, c.gray2, s.none)
+-- Group.new("StatusLine", nil, nil, s.none)
+
+-- -- Light
+-- require("colorbuddy").colorscheme("gruvbuddy")
+-- local colorbuddy = require("colorbuddy")
+-- local Color = colorbuddy.Color
+-- local Group = colorbuddy.Group
+-- local c = colorbuddy.colors
+-- local g = colorbuddy.groups
+-- local s = colorbuddy.styles
+-- Color.new("white", "#f2e5bc")
+-- Color.new("black", "#181818")
+-- Color.new("red", "#cc6666")
+-- Color.new("green", "#678E58")
+-- Color.new("yellow", "#979B40")
+-- Color.new("blue", "#81a2be")
+-- Color.new("aqua", "#8ec07c")
+-- Color.new("cyan", "#4C7771")
+-- Color.new("purple", "#5B4281")
+-- Color.new("violet", "#7C5489")
+-- Color.new("orange", "#de935f")
+-- Color.new("brown", "#a3685a")
+-- Color.new("seagreen", "#698b69")
+-- Color.new("turquoise", "#698b69")
+-- local background_string = "#f6f5f4"
+-- Color.new("background", background_string)
+-- Color.new("gray0", background_string)
+-- Group.new("Normal", c.black, c.gray0)
+-- Group.new("@constant", c.orange, nil, s.none)
+-- Group.new("@function", c.yellow, nil, s.none)
+-- Group.new("@function.bracket", c.black, nil, s.none)
+-- Group.new("@keyword", c.violet, nil, s.none)
+-- Group.new("@keyword.faded", c.black, nil, s.none)
+-- Group.new("@property", c.blue)
+-- Group.new("@variable", c.black, nil, s.none)
 -- Group.new("@variable.builtin", c.purple:light():light(), g.Normal)
 -- Group.new("@function.call.lua", c.blue:dark(), nil, nil)
 -- Group.new("LineNr", c.gray2, nil, s.none)
