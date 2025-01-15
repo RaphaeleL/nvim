@@ -44,32 +44,32 @@ return {
             })
         end,
     },
-    --     {
-    --         "rose-pine/neovim",
-    --         lazy = true,
-    --         config = function()
-    --             require("rose-pine").setup({
-    --                 variant = "auto",
-    --                 dark_variant = "main",
-    --                 dim_inactive_windows = true,
-    --                 extend_background_behind_borders = true,
-    --                 dim_nc_background = true,
-    --                 disable_background = true,
-    --                 styles = {
-    --                     bold = true,
-    --                     italic = true,
-    --                     transparency = true,
-    --                 },
-    --                 groups = {},
-    --                 highlight_groups = {
-    --                     Normal = { bg = "NONE" },
-    --                     NormalNC = { bg = "NONE" },
-    --                     NormalFloat = { bg = "NONE" },
-    --                     StatusLine = { bg = "NONE" },
-    --                     StatusLineNC = { bg = "NONE" },
-    --                     CursorLineNr = { fg = "gold" },
-    --                 },
-    --             })
-    --         end,
-    --     },
+    {
+        "rose-pine/neovim",
+        lazy = true,
+        config = function()
+            require("rose-pine").setup({
+                variant = "auto",
+                dark_variant = "main",
+                dim_inactive_windows = true,
+                extend_background_behind_borders = true,
+                dim_nc_background = true,
+                disable_background = true,
+                styles = {
+                    bold = true,
+                    italic = true,
+                    transparency = true,
+                },
+                groups = {},
+                highlight_groups = {
+                    Normal = { bg = "NONE" },
+                    NormalNC = { bg = "NONE" },
+                    NormalFloat = { bg = "NONE" },
+                    StatusLine = { bg = "NONE" },
+                    StatusLineNC = { bg = "NONE" },
+                    CursorLineNr = { fg = "gold" },
+                },
+            })
+        end,
+    },
 }
