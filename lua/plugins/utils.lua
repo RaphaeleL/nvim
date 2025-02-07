@@ -126,18 +126,14 @@ return {
             local harpoon = require("harpoon")
             harpoon:setup()
 
-            vim.keymap.set("n", "<leader>ha", function()
-                harpoon:list():add()
-            end)
-            vim.keymap.set("n", "<leader>hm", function()
-                harpoon.ui:toggle_quick_menu(harpoon:list())
-            end)
-            vim.keymap.set("n", "F", function()
-                harpoon:list():next()
-            end)
-            vim.keymap.set("n", "B", function()
-                harpoon:list():prev()
-            end)
+            vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
+            vim.keymap.set("n", "<leader>hm", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+            vim.keymap.set("n", "F", function() harpoon:list():next() end)
+            vim.keymap.set("n", "B", function() harpoon:list():prev() end)
+            vim.keymap.set("n", "<leader>ha", function() harpoon:list():select(1) end)
+            vim.keymap.set("n", "<leader>hs", function() harpoon:list():select(2) end)
+            vim.keymap.set("n", "<leader>hd", function() harpoon:list():select(3) end)
+            vim.keymap.set("n", "<leader>hf", function() harpoon:list():select(4) end)
 
             harpoon:setup({})
         end,
@@ -178,11 +174,7 @@ return {
             require("grug-far").setup({})
         end,
         keys = {
-            {
-                "<leader>S",
-                ":GrugFar<cr>",
-                desc = "Search and Replace in files",
-            },
+            { "<leader>sr", ":GrugFar<cr>", desc = "Search and Replace in files" },
         },
     },
     {
