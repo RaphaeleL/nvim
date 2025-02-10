@@ -1,5 +1,4 @@
 return {
-
     --     "nvim-telescope/telescope.nvim",
     --     cmd = "Telescope",
     --     dependencies = {
@@ -76,10 +75,10 @@ return {
             { "<leader>hm", function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end },
             { "F",          function() require('harpoon'):list():next() end },
             { "B",          function() require('harpoon'):list():prev() end },
-            { "<leader>ha", function() require('harpoon'):list():select(1) end },
-            { "<leader>hs", function() require('harpoon'):list():select(2) end },
-            { "<leader>hd", function() require('harpoon'):list():select(3) end },
-            { "<leader>hf", function() require('harpoon'):list():select(4) end }
+            { "<leader>h1", function() require('harpoon'):list():select(1) end },
+            { "<leader>h2", function() require('harpoon'):list():select(2) end },
+            { "<leader>h3", function() require('harpoon'):list():select(3) end },
+            { "<leader>h4", function() require('harpoon'):list():select(4) end }
         },
         init = function()
             local harpoon = require("harpoon")
