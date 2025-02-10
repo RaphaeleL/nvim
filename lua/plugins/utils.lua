@@ -1,71 +1,43 @@
 return {
-    {
-        "nvim-telescope/telescope.nvim",
-        cmd = "Telescope",
-        dependencies = {
-            { "isak102/telescope-git-file-history.nvim", lazy = true },
-        },
-        lazy = true,
-        keys = {
-            {
-                "<leader>sf",
-                ":Telescope find_files<cr>",
-                desc = " Telescope: [S]how [F]uzzy File Finder",
-            },
-            {
-                "<leader>sl",
-                ":Telescope live_grep<cr>",
-                desc = " Telescope: [S]how [L]ive Grep",
-            },
-            {
-                "<leader>sg",
-                ":Telescope git_files<cr>",
-                desc = " Telescope: [S]how [G]it Files",
-            },
-            {
-                "<leader>sd",
-                ":Telescope diagnostics<cr>",
-                desc = " Telescope: [S]how [D]iagnostics",
-            },
 
-            {
-                "<leader>sb",
-                ":Telescope buffers<cr>",
-                desc = " Telescope: [S]how Buffers",
-            },
-            {
-                "<leader>sk",
-                ":Telescope keymaps<cr>",
-                desc = " Telescope: [S]how [K]eymaps",
-            },
-
-            {
-                "<leader>sh",
-                ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>",
-                desc = " Telescope: [S]how Git [H]istory of File",
-            },
-        },
-        opts = {
-            defaults = {
-                file_ignore_patterns = {
-                    "node_modules",
-                    ".DS_Store",
-                    ".git",
-                    "%.png",
-                    "%.jpg",
-                    "%.jpeg",
-                },
-            },
-            pickers = {
-                -- find_files = {
-                -- 	theme = "ivy",
-                -- },
-                -- colorscheme = {
-                -- 	enable_preview = true,
-                -- },
-            },
-        },
-    },
+    --     "nvim-telescope/telescope.nvim",
+    --     cmd = "Telescope",
+    --     dependencies = {
+    --         { "isak102/telescope-git-file-history.nvim", lazy = true },
+    --     },
+    --     lazy = true,
+    --     keys = {
+    --         { "<leader>sf", ":Telescope find_files<cr>",                                                    desc = " Telescope: [S]how [F]uzzy File Finder", },
+    --         { "<leader>sl", ":Telescope live_grep<cr>",                                                     desc = " Telescope: [S]how [L]ive Grep", },
+    --         { "<leader>sg", ":Telescope git_files<cr>",                                                     desc = " Telescope: [S]how [G]it Files", },
+    --         { "<leader>sd", ":Telescope diagnostics<cr>",                                                   desc = " Telescope: [S]how [D]iagnostics", },
+    --
+    --         { "<leader>sb", ":Telescope buffers<cr>",                                                       desc = " Telescope: [S]how Buffers", },
+    --         { "<leader>sk", ":Telescope keymaps<cr>",                                                       desc = " Telescope: [S]how [K]eymaps", },
+    --
+    --         { "<leader>sh", ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how Git [H]istory of File", },
+    --     },
+    --     opts = {
+    --         defaults = {
+    --             file_ignore_patterns = {
+    --                 "node_modules",
+    --                 ".DS_Store",
+    --                 ".git",
+    --                 "%.png",
+    --                 "%.jpg",
+    --                 "%.jpeg",
+    --             },
+    --         },
+    --         pickers = {
+    --             -- find_files = {
+    --             -- 	theme = "ivy",
+    --             -- },
+    --             -- colorscheme = {
+    --             -- 	enable_preview = true,
+    --             -- },
+    --         },
+    --     },
+    -- },
     {
         "terrortylor/nvim-comment",
         event = "VeryLazy",
@@ -76,43 +48,19 @@ return {
             { "<Leader>l", ":CommentToggle<cr>" },
         },
     },
-    {
-        "folke/trouble.nvim",
-        opts = {},
-        cmd = "Trouble",
-        keys = {
-            {
-                "<leader>dd",
-                "<cmd>Trouble diagnostics toggle<cr>",
-                desc = "Diagnostics (Trouble)",
-            },
-            {
-                "<leader>db",
-                "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-                desc = "Buffer Diagnostics (Trouble)",
-            },
-            {
-                "<leader>ds",
-                "<cmd>Trouble symbols toggle focus=false<cr>",
-                desc = "Symbols (Trouble)",
-            },
-            {
-                "<leader>dD",
-                "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-                desc = "LSP Definitions / references / ... (Trouble)",
-            },
-            {
-                "<leader>dl",
-                "<cmd>Trouble loclist toggle<cr>",
-                desc = "Location List (Trouble)",
-            },
-            {
-                "<leader>dq",
-                "<cmd>Trouble qflist toggle<cr>",
-                desc = "Quickfix List (Trouble)",
-            },
-        },
-    },
+    -- {
+    --     "folke/trouble.nvim",
+    --     opts = {},
+    --     cmd = "Trouble",
+    --     keys = {
+    --         { "<leader>dd", "<cmd>Trouble diagnostics toggle<cr>",                        desc = "Diagnostics (Trouble)", },
+    --         { "<leader>db", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",           desc = "Buffer Diagnostics (Trouble)", },
+    --         { "<leader>ds", "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)", },
+    --         { "<leader>dD", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
+    --         { "<leader>dl", "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)", },
+    --         { "<leader>dq", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)", },
+    --     },
+    -- },
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -177,63 +125,66 @@ return {
             { "<leader>sr", ":GrugFar<cr>", desc = "Search and Replace in files" },
         },
     },
+
     {
-        "jake-stewart/multicursor.nvim",
-        branch = "1.0",
-        config = function()
-            local mc = require("multicursor-nvim")
-
-            mc.setup()
-
-            local set = vim.keymap.set
-
-            -- TODO: `<leader>n` is already used by `:noh`
-            -- TODO: Arrow Keys are not working on some keyboards, replace with `hjkl`
-
-            -- Add or skip cursor above/below the main cursor.
-            set({ "n", "v" }, "<up>", function() mc.lineAddCursor(-1) end)
-            set({ "n", "v" }, "<down>", function() mc.lineAddCursor(1) end)
-            set({ "n", "v" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
-            set({ "n", "v" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
-
-            -- Add or skip adding a new cursor by matching word/selection
-            set({ "n", "v" }, "<leader>n", function() mc.matchAddCursor(1) end)
-            set({ "n", "v" }, "<leader>s", function() mc.matchSkipCursor(1) end)
-            set({ "n", "v" }, "<leader>N", function() mc.matchAddCursor(-1) end)
-            set({ "n", "v" }, "<leader>S", function() mc.matchSkipCursor(-1) end)
-
-            -- Add all matches in the document
-            set({ "n", "v" }, "<leader>A", mc.matchAllAddCursors)
-
-            -- Rotate the main cursor.
-            set({ "n", "v" }, "<left>", mc.nextCursor)
-            set({ "n", "v" }, "<right>", mc.prevCursor)
-
-            -- Delete the main cursor.
-            set({ "n", "v" }, "<leader>x", mc.deleteCursor)
-
-            -- Add and remove cursors with control + left click.
-            set("n", "<c-leftmouse>", mc.handleMouse)
-
-            -- Disable Cursors (+ default ESC behavior)
-            set("n", "<esc>", function()
-                if not mc.cursorsEnabled() then
-                    mc.enableCursors()
-                elseif mc.hasCursors() then
-                    mc.clearCursors()
-                else
-                    -- Default <esc> handler.
-                end
-            end)
-
-            -- Customize the Cursors look
-            local hl = vim.api.nvim_set_hl
-            hl(0, "MultiCursorCursor", { link = "Cursor" })
-            hl(0, "MultiCursorVisual", { link = "Visual" })
-            hl(0, "MultiCursorSign", { link = "SignColumn" })
-            hl(0, "MultiCursorDisabledCursor", { link = "Visual" })
-            hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
-            hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
-        end
+        "folke/snacks.nvim",
+        lazy = true,
+        ---@type snacks.Config
+        opts = {
+            bigfile = { enabled = true },
+            input = { enabled = true },
+            picker = {
+                enabled = true,
+                layout = { border = "none" },
+            },
+            quickfile = { enabled = true },
+            scope = { enabled = true },
+            dashboard = { enabled = false },
+            scroll = { enabled = false },
+            indent = { enabled = false },
+            notifier = { enabled = false },
+            statuscolumn = { enabled = false },
+            words = { enabled = false },
+        },
+        keys = {
+            -- Old Keybinds
+            { "<leader>sf",      function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
+            { "<leader>sb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            -- Pickers
+            { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
+            { "<leader>,",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
+            { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
+            -- Find
+            { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+            { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
+            { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
+            { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
+            { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+            -- Git
+            { "<leader>sg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
+            { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
+            { "<leader>gl",      function() Snacks.picker.git_log() end,                                 desc = "Git Log" },
+            { "<leader>gf",      function() Snacks.picker.git_log_file() end,                            desc = "Git Log File" },
+            -- Grep
+            { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
+            { "<leader>sl",      function() Snacks.picker.grep() end,                                    desc = "Grep" },
+            -- Search
+            { '<leader>s/',      function() Snacks.picker.search_history() end,                          desc = "Search History" },
+            { "<leader>sa",      function() Snacks.picker.autocmds() end,                                desc = "Autocmds" },
+            { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
+            { "<leader>sc",      function() Snacks.picker.command_history() end,                         desc = "Command History" },
+            { "<leader>sC",      function() Snacks.picker.commands() end,                                desc = "Commands" },
+            { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
+            { "<leader>sD",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
+            { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
+            { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
+            { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
+            -- Other
+            { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
+            { "<leader>un",      function() Snacks.notifier.hide() end,                                  desc = "Dismiss All Notifications" },
+        },
     }
+
 }
