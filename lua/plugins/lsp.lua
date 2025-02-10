@@ -176,12 +176,12 @@ return {
 
         require("tiny-inline-diagnostic").setup({
             signs = {
-                left = "", -- ""
-                right = "", -- ""
-                diag = "", -- "●"
-                arrow = "", -- "   "
-                up_arrow = "", -- "   "
-                vertical = "", -- " │"
+                left = "",         -- ""
+                right = "",        -- ""
+                diag = "",         -- "●"
+                arrow = "",        -- "   "
+                up_arrow = "",     -- "   "
+                vertical = "",     -- " │"
                 vertical_end = "", -- " └"
             },
             hi = {
