@@ -67,24 +67,25 @@ return {
             cr_char = "←",
         },
     },
-    {
-        "brenoprata10/nvim-highlight-colors",
-        event = "InsertEnter",
-        opts = {
-            render = "background",
-            virtual_symbol = "■",
-            enable_named_colors = true,
-            enable_tailwind = true,
-            custom_colors = {
-                { label = "%-%-theme%-primary%-color",   color = "#0f1219" },
-                { label = "%-%-theme%-secondary%-color", color = "#5a5d64" },
-            },
-        },
-    },
+    -- {
+    --     "brenoprata10/nvim-highlight-colors",
+    --     event = "InsertEnter",
+    --     opts = {
+    --         render = "background",
+    --         virtual_symbol = "■",
+    --         enable_named_colors = true,
+    --         enable_tailwind = true,
+    --         custom_colors = {
+    --             { label = "%-%-theme%-primary%-color",   color = "#0f1219" },
+    --             { label = "%-%-theme%-secondary%-color", color = "#5a5d64" },
+    --         },
+    --     },
+    -- },
     {
         "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
+        init = function()
             vim.opt.laststatus = 2
             vim.opt.cmdheight = 1
 
