@@ -2,7 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         dependencies = "AndreM222/copilot-lualine",
-        event = "ColorScheme",
+        event = "VeryLazy",
         config = function()
             local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
 
