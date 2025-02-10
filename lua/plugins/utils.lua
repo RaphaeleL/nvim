@@ -61,38 +61,38 @@ return {
     --         { "<leader>dq", "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)", },
     --     },
     -- },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        opts = {},
-    },
+    -- {
+    --     "windwp/nvim-autopairs",
+    --     event = "InsertEnter",
+    --     opts = {},
+    -- },
     {
         "ThePrimeagen/harpoon",
-        event = { "BufReadPost", "BufNewFile" },
+        -- event = { "BufReadPost", "BufNewFile" },
+        lazy = true,
         branch = "harpoon2",
-        config = function()
+        keys = {
+            { "<leader>ha", function() require('harpoon'):list():add() end },
+            { "<leader>hm", function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end },
+            { "F",          function() require('harpoon'):list():next() end },
+            { "B",          function() require('harpoon'):list():prev() end },
+            { "<leader>ha", function() require('harpoon'):list():select(1) end },
+            { "<leader>hs", function() require('harpoon'):list():select(2) end },
+            { "<leader>hd", function() require('harpoon'):list():select(3) end },
+            { "<leader>hf", function() require('harpoon'):list():select(4) end }
+        },
+        init = function()
             local harpoon = require("harpoon")
             harpoon:setup()
-
-            vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end)
-            vim.keymap.set("n", "<leader>hm", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-            vim.keymap.set("n", "F", function() harpoon:list():next() end)
-            vim.keymap.set("n", "B", function() harpoon:list():prev() end)
-            vim.keymap.set("n", "<leader>ha", function() harpoon:list():select(1) end)
-            vim.keymap.set("n", "<leader>hs", function() harpoon:list():select(2) end)
-            vim.keymap.set("n", "<leader>hd", function() harpoon:list():select(3) end)
-            vim.keymap.set("n", "<leader>hf", function() harpoon:list():select(4) end)
-
-            harpoon:setup({})
         end,
     },
-    {
-        "mbbill/undotree",
-        lazy = true,
-        keys = {
-            { "<leader>u", ":UndotreeToggle<cr>", desc = "[U]ndotree" },
-        },
-    },
+    -- {
+    --     "mbbill/undotree",
+    --     lazy = true,
+    --     keys = {
+    --         { "<leader>u", ":UndotreeToggle<cr>", desc = "[U]ndotree" },
+    --     },
+    -- },
     {
         "NStefan002/visual-surround.nvim",
         event = "InsertEnter",
@@ -135,7 +135,10 @@ return {
             input = { enabled = true },
             picker = {
                 enabled = true,
-                layout = { border = "none" },
+                layout = {
+                    preset = 'ivy',
+                    border = "none"
+                },
             },
             quickfile = { enabled = true },
             scope = { enabled = true },
@@ -148,42 +151,34 @@ return {
         },
         keys = {
             -- Old Keybinds
-            { "<leader>sf",      function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-            { "<leader>sb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+            { "<leader>sf",      function() Snacks.picker.smart() end,           desc = "Smart Find Files" },
+            { "<leader>sb",      function() Snacks.picker.buffers() end,         desc = "Buffers" },
+            { "<leader>sg",      function() Snacks.picker.git_files() end,       desc = "Find Git Files" },
             -- Pickers
-            { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-            { "<leader>,",       function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-            { "<leader>/",       function() Snacks.picker.grep() end,                                    desc = "Grep" },
-            { "<leader>:",       function() Snacks.picker.command_history() end,                         desc = "Command History" },
+            { "<leader><space>", function() Snacks.picker.smart() end,           desc = "Smart Find Files" },
+            { "<leader>,",       function() Snacks.picker.buffers() end,         desc = "Buffers" },
+            { "<leader>/",       function() Snacks.picker.grep() end,            desc = "Grep" },
             -- Find
-            { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-            { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-            { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
-            { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
-            { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
-            { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+            { "<leader>fb",      function() Snacks.picker.buffers() end,         desc = "Buffers" },
+            { "<leader>ff",      function() Snacks.picker.files() end,           desc = "Find Files" },
+            { "<leader>fg",      function() Snacks.picker.git_files() end,       desc = "Find Git Files" },
+            { "<leader>fr",      function() Snacks.picker.recent() end,          desc = "Recent" },
             -- Git
-            { "<leader>sg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
-            { "<leader>gb",      function() Snacks.picker.git_branches() end,                            desc = "Git Branches" },
-            { "<leader>gl",      function() Snacks.picker.git_log() end,                                 desc = "Git Log" },
-            { "<leader>gf",      function() Snacks.picker.git_log_file() end,                            desc = "Git Log File" },
+            { "<leader>gs",      function() Snacks.picker.git_files() end,       desc = "Find Git Files" },
+            { "<leader>gb",      function() Snacks.picker.git_branches() end,    desc = "Git Branches" },
+            { "<leader>gl",      function() Snacks.picker.git_log() end,         desc = "Git Log" },
+            { "<leader>gf",      function() Snacks.picker.git_log_file() end,    desc = "Git Log File" },
+            { "<leader>gg",      function() Snacks.lazygit() end,                desc = "Lazygit" },
             -- Grep
-            { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
-            { "<leader>sl",      function() Snacks.picker.grep() end,                                    desc = "Grep" },
+            { "<leader>sb",      function() Snacks.picker.lines() end,           desc = "Buffer Lines" },
+            { "<leader>sl",      function() Snacks.picker.grep() end,            desc = "Grep" },
             -- Search
-            { '<leader>s/',      function() Snacks.picker.search_history() end,                          desc = "Search History" },
-            { "<leader>sa",      function() Snacks.picker.autocmds() end,                                desc = "Autocmds" },
-            { "<leader>sb",      function() Snacks.picker.lines() end,                                   desc = "Buffer Lines" },
-            { "<leader>sc",      function() Snacks.picker.command_history() end,                         desc = "Command History" },
-            { "<leader>sC",      function() Snacks.picker.commands() end,                                desc = "Commands" },
-            { "<leader>sd",      function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
-            { "<leader>sD",      function() Snacks.picker.diagnostics_buffer() end,                      desc = "Buffer Diagnostics" },
-            { "<leader>sk",      function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
-            { "<leader>su",      function() Snacks.picker.undo() end,                                    desc = "Undo History" },
-            { "<leader>uC",      function() Snacks.picker.colorschemes() end,                            desc = "Colorschemes" },
-            -- Other
-            { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
-            { "<leader>un",      function() Snacks.notifier.hide() end,                                  desc = "Dismiss All Notifications" },
+            { '<leader>s/',      function() Snacks.picker.search_history() end,  desc = "Search History" },
+            { "<leader>sc",      function() Snacks.picker.command_history() end, desc = "Command History" },
+            { "<leader>sd",      function() Snacks.picker.diagnostics() end,     desc = "Diagnostics" },
+            { "<leader>sk",      function() Snacks.picker.keymaps() end,         desc = "Keymaps" },
+            { "<leader>su",      function() Snacks.picker.undo() end,            desc = "Undo History" },
+            { "<leader>uC",      function() Snacks.picker.colorschemes() end,    desc = "Colorschemes" },
         },
     }
 
