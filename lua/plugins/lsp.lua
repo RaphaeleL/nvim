@@ -13,7 +13,6 @@ return {
     },
     config = function()
         require("neodev").setup({})
-
         require("fidget").setup({
             notification = {
                 window = {
@@ -113,12 +112,12 @@ return {
                 end
 
                 vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-                vim.keymap.set("n", "gd", ":Telescope lsp_definitions<cr>", { buffer = 0 })
-                vim.keymap.set("n", "gr", ":Telescope lsp_references<cr>", { buffer = 0 })
-                vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-                vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
+                -- vim.keymap.set("n", "gd", ":Telescope lsp_definitions<cr>", { buffer = 0 })
+                -- vim.keymap.set("n", "gr", ":Telescope lsp_references<cr>", { buffer = 0 })
+                -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+                -- vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-
+                --
                 vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
                 vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
 
