@@ -197,9 +197,25 @@ return {
                 enable = true,
                 update_cwd = true,
             },
+            filters = { custom = { "^.git$" } },
             renderer = {
-                root_folder_modifier = ":t",
+                -- root_folder_modifier = ":t",
+                full_name = true,
+                group_empty = true,
+                indent_markers = {
+                    enable = true,
+                },
                 icons = {
+                    show = {
+                        file = false,
+                        folder = false,
+                        folder_arrow = false,
+                        git = false,
+                        modified = false,
+                        hidden = false,
+                        diagnostics = false,
+                        bookmarks = false,
+                    },
                     glyphs = {
                         default = "",
                         symlink = "",
