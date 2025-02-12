@@ -41,18 +41,10 @@ vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "Chars: Delete a Word." })
 vim.keymap.set("v", "<", "<gv", { desc = "Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Line: Indent to Right" })
 
-vim.keymap.set(
-    "n",
-    "k",
-    "v:count == 0 ? 'gk' : 'k'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak up" }
-)
-vim.keymap.set(
-    "n",
-    "j",
-    "v:count == 0 ? 'gj' : 'j'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak down" }
-)
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'",
+    { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
+    { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "Line: Comment Selection in/out" })
 
@@ -72,6 +64,5 @@ vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "Treesitter: Insp
 vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
 
 -- Nvim Specific
-vim.keymap.set("n", "<space>tt", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
-end)
+vim.keymap.set("n", "<space>tt",
+    function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 }) end)
