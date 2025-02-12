@@ -1,4 +1,4 @@
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
