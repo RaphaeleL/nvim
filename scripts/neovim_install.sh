@@ -7,3 +7,5 @@ cd neovim
 git switch -c nightly
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
+cd .. 
+rm -rf neovim
