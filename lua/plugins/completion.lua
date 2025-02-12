@@ -2,11 +2,12 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
-        { "hrsh7th/cmp-buffer",   event = "InsertEnter" },
-        { "hrsh7th/cmp-path",     event = "InsertEnter" },
-        { "hrsh7th/cmp-cmdline",  event = "InsertEnter" },
-        { "onsails/lspkind.nvim", event = "InsertEnter" },
+        { "hrsh7th/cmp-nvim-lsp",   event = "InsertEnter" },
+        { "hrsh7th/cmp-buffer",     event = "InsertEnter" },
+        { "hrsh7th/cmp-path",       event = "InsertEnter" },
+        { "hrsh7th/cmp-cmdline",    event = "InsertEnter" },
+        { "onsails/lspkind.nvim",   event = "InsertEnter" },
+        { "zbirenbaum/copilot-cmp", event = "InsertEnter" },
     },
     config = function()
         local cmp = require("cmp")
@@ -16,6 +17,7 @@ return {
                 Copilot = "",
             },
         })
+        require("copilot_cmp").setup()
 
         local has_words_before = function()
             if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
