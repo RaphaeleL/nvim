@@ -80,7 +80,7 @@ return {
                 ["i"] = "I",  -- Insert Mode
                 ["v"] = "V",  -- Visual Mode
                 ["V"] = "VL", -- Visual Line Mode
-                [""] = "VB", -- ??
+                [""] = "VB", -- Visual Block Mode
                 ["c"] = "C",  -- Command Mode
                 ["R"] = "R",  -- Replace Mode
                 ["t"] = "T",  -- Terminal Mode
