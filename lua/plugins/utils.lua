@@ -101,18 +101,23 @@ return {
     {
         "stevearc/oil.nvim",
         opts = {
+            default_file_explorer = true,
             skip_confirm_for_simple_edits = true,
             experimental_watch_for_changes = false,
             use_default_keymaps = true,
             columns = {
                 -- "icon",
-                -- "permissions",
-                -- "size",
-                -- "mtime",
+                "permissions",
+                "size",
+                "mtime",
             },
             view_options = {
                 show_hidden = true,
                 natural_order = true,
+            },
+            float = {
+                max_width = (math.floor(vim.opt.columns:get() * 0.75)),
+                max_height = (math.floor(vim.opt.lines:get() * 0.75)),
             },
         },
     },
