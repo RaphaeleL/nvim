@@ -57,57 +57,15 @@ return {
             },
             filters = { custom = { "^.git$" } },
             renderer = {
-                -- root_folder_modifier = ":t",
                 full_name = true,
                 group_empty = true,
                 indent_markers = {
                     enable = true,
                 },
-                icons = {
-                    show = {
-                        file = false,
-                        folder = false,
-                        folder_arrow = false,
-                        git = false,
-                        modified = false,
-                        hidden = false,
-                        diagnostics = false,
-                        bookmarks = false,
-                    },
-                    glyphs = {
-                        default = "",
-                        symlink = "",
-                        folder = {
-                            arrow_open = "",
-                            arrow_closed = "",
-                            default = "",
-                            open = "",
-                            empty = "",
-                            empty_open = "",
-                            symlink = "",
-                            symlink_open = "",
-                        },
-                        git = {
-                            unstaged = "",
-                            staged = "S",
-                            unmerged = "",
-                            renamed = "➜",
-                            untracked = "U",
-                            deleted = "",
-                            ignored = "◌",
-                        },
-                    },
-                },
             },
             diagnostics = {
                 enable = false,
                 show_on_dirs = true,
-                icons = {
-                    hint = "",
-                    info = "",
-                    warning = "",
-                    error = "",
-                },
             },
             view = {
                 width = 40,
@@ -150,7 +108,6 @@ return {
             experimental_watch_for_changes = false,
             use_default_keymaps = true,
             columns = {
-                -- "icon",
                 "permissions",
                 "size",
                 "mtime",
