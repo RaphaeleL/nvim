@@ -1,44 +1,44 @@
 return {
-    {
-        "nvim-telescope/telescope.nvim",
-        cmd = "Telescope",
-        dependencies = {
-            { "isak102/telescope-git-file-history.nvim", lazy = true },
-        },
-        lazy = true,
-        keys = {
-            { "<leader>sf",      ":Telescope find_files theme=ivy<cr>",                                          desc = " Telescope: [S]how [F]uzzy File Finder", },
-            { "<leader>sl",      ":Telescope live_grep theme=ivy<cr>",                                           desc = " Telescope: [S]how [L]ive Grep", },
-            { "<leader>sd",      ":Telescope diagnostics theme=ivy<cr>",                                         desc = " Telescope: [S]how [D]iagnostics", },
-            { "<leader>sb",      ":Telescope buffers theme=ivy<cr>",                                             desc = " Telescope: [S]how Buffers", },
-            { "<leader>sk",      ":Telescope keymaps theme=ivy<cr>",                                             desc = " Telescope: [S]how [K]eymaps", },
-            { "<leader>sg",      ":Telescope git_files theme=ivy<cr>",                                           desc = " Telescope: [S]how [G]it Files", },
-            { "<leader>sc",      ":Telescope git_commits theme=ivy<cr>",                                         desc = " Telescope: [S]how Git [C]ommits", },
-            { "<leader>sh",      ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how Git [H]istory of File", },
-
-            { "<leader><space>", ":Telescope find_files theme=ivy<cr>",                                          desc = " Telescope: [S]how [F]uzzy File Finder", },
-            { "<leader>/",       ":Telescope live_grep theme=ivy<cr>",                                           desc = " Telescope: [S]how [L]ive Grep", },
-            { "<leader>,",       ":Telescope buffers theme=ivy<cr>",                                             desc = " Telescope: [S]how Buffers", },
-            { "<leader>.",       ":Telescope diagnostics theme=ivy<cr>",                                         desc = " Telescope: [S]how [D]iagnostics", },
-        },
-        opts = {
-            defaults = {
-                file_ignore_patterns = {
-                    "node_modules",
-                    ".DS_Store",
-                    ".git",
-                    "%.png",
-                    "%.jpg",
-                    "%.jpeg",
-                }
-            },
-            pickers = {
-                colorscheme = {
-                    enable_preview = true,
-                },
-            },
-        },
-    },
+    -- {
+    --     "nvim-telescope/telescope.nvim",
+    --     cmd = "Telescope",
+    --     dependencies = {
+    --         { "isak102/telescope-git-file-history.nvim", lazy = true },
+    --     },
+    --     lazy = true,
+    --     keys = {
+    --         { "<leader>sf",      ":Telescope find_files theme=ivy<cr>",                                          desc = " Telescope: [S]how [F]uzzy File Finder", },
+    --         { "<leader>sl",      ":Telescope live_grep theme=ivy<cr>",                                           desc = " Telescope: [S]how [L]ive Grep", },
+    --         { "<leader>sd",      ":Telescope diagnostics theme=ivy<cr>",                                         desc = " Telescope: [S]how [D]iagnostics", },
+    --         { "<leader>sb",      ":Telescope buffers theme=ivy<cr>",                                             desc = " Telescope: [S]how Buffers", },
+    --         { "<leader>sk",      ":Telescope keymaps theme=ivy<cr>",                                             desc = " Telescope: [S]how [K]eymaps", },
+    --         { "<leader>sg",      ":Telescope git_files theme=ivy<cr>",                                           desc = " Telescope: [S]how [G]it Files", },
+    --         { "<leader>sc",      ":Telescope git_commits theme=ivy<cr>",                                         desc = " Telescope: [S]how Git [C]ommits", },
+    --         { "<leader>sh",      ":lua require('telescope').extensions.git_file_history.git_file_history()<cr>", desc = " Telescope: [S]how Git [H]istory of File", },
+    --
+    --         { "<leader><space>", ":Telescope find_files theme=ivy<cr>",                                          desc = " Telescope: [S]how [F]uzzy File Finder", },
+    --         { "<leader>/",       ":Telescope live_grep theme=ivy<cr>",                                           desc = " Telescope: [S]how [L]ive Grep", },
+    --         { "<leader>,",       ":Telescope buffers theme=ivy<cr>",                                             desc = " Telescope: [S]how Buffers", },
+    --         { "<leader>.",       ":Telescope diagnostics theme=ivy<cr>",                                         desc = " Telescope: [S]how [D]iagnostics", },
+    --     },
+    --     opts = {
+    --         defaults = {
+    --             file_ignore_patterns = {
+    --                 "node_modules",
+    --                 ".DS_Store",
+    --                 ".git",
+    --                 "%.png",
+    --                 "%.jpg",
+    --                 "%.jpeg",
+    --             }
+    --         },
+    --         pickers = {
+    --             colorscheme = {
+    --                 enable_preview = true,
+    --             },
+    --         },
+    --     },
+    -- },
     {
 
         "nvim-tree/nvim-tree.lua",
@@ -160,8 +160,8 @@ return {
                 natural_order = true,
             },
             float = {
-                max_width = (math.floor(vim.opt.columns:get() * 0.75)),
-                max_height = (math.floor(vim.opt.lines:get() * 0.75)),
+                max_width = (math.floor(vim.opt.columns:get() * 0.6)),
+                max_height = (math.floor(vim.opt.lines:get() * 0.6)),
             },
         },
     },
