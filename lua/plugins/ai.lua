@@ -5,8 +5,14 @@ return {
     event = "BufReadPost",
     opts = {
         suggestion = {
-            enabled = false,
+            enabled = not vim.g.ai_cmp,
             auto_trigger = true,
+            hide_during_completion = vim.g.ai_cmp,
+            keymap = {
+                accept = "<M-l>",
+                next = "<M-n>",
+                prev = "<M-p>",
+            },
         },
         panel = { enabled = false },
         filetypes = {
