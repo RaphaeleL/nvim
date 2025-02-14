@@ -67,3 +67,13 @@ vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
 -- Nvim Specific
 vim.keymap.set("n", "<space>tt",
     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 }) end)
+
+-- Theme
+vim.keymap.set("n", "<Leader>th",
+    function()
+        if vim.o.background == "dark" then
+            vim.cmd("set background=light")
+        else
+            vim.cmd("set background=dark")
+        end
+    end, { desc = "Theme: Neovim Theme (dark / light)" })
