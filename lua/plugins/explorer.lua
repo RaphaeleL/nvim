@@ -44,7 +44,8 @@ return {
         "nvim-tree/nvim-tree.lua",
         lazy = true,
         keys = {
-            { "<leader>f", ":NvimTreeToggle<cr>", desc = "[F]ile Explorer" },
+            { "<leader>f",  ":NvimTreeToggle<cr>",  desc = "[F]ile Explorer" },
+            { "<leader>fr", ":NvimTreeRefresh<cr>", desc = "[F]ile Explorer" },
         },
         opts = {
             hijack_directories = {
