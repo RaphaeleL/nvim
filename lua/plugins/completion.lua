@@ -12,7 +12,7 @@ return {
     opts = {
         keymap = {
             preset = "enter",
-            ["<Tab>"] = {
+            ["<C-n>"] = {
                 function(cmp)
                     if cmp.is_menu_visible() then
                         return require("blink.cmp").select_next()
@@ -22,7 +22,7 @@ return {
                 end,
                 "fallback",
             },
-            ["<S-Tab>"] = {
+            ["<C-p>"] = {
                 function(cmp)
                     if cmp.is_menu_visible() then
                         return require("blink.cmp").select_prev()
@@ -32,8 +32,6 @@ return {
                 end,
                 "fallback",
             },
-            ['<C-n>'] = {},
-            ['<C-p>'] = {},
         },
         signature = {
             enabled = true,
