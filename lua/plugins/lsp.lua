@@ -132,14 +132,11 @@ return {
 				end
 
 				vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-				-- vim.keymap.set("n", "gd", ":Telescope lsp_definitions<cr>", { buffer = 0 })
-				-- vim.keymap.set("n", "gr", ":Telescope lsp_references<cr>", { buffer = 0 })
-				-- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-				-- vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
-				-- vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-				--
-				vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, { buffer = 0 })
-				vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, { buffer = 0 })
+
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
+				vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>", { desc = "LSP: Format" })
+				vim.keymap.set("n", "gn", vim.lsp.buf.rename, { desc = "LSP: Rename" })
+				vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "LSP: Code Action" })
 
 				local filetype = vim.bo[bufnr].filetype
 				if disable_semantic_tokens[filetype] then
@@ -168,15 +165,16 @@ return {
 				lua = { "stylua" },
 			},
 		})
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			callback = function(args)
-				require("conform").format({
-					bufnr = args.buf,
-					lsp_fallback = true,
-					quiet = true,
-				})
-			end,
-		})
+
+		-- vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 	callback = function(args)
+		-- 		require("conform").format({
+		-- 			bufnr = args.buf,
+		-- 			lsp_fallback = true,
+		-- 			quiet = true,
+		-- 		})
+		-- 	end,
+		-- })
 
 		-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 		-- for type, icon in pairs(signs) do
