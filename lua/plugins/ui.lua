@@ -1,45 +1,40 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        event = "VeryLazy",
+        build = ":TSUpdate",
         config = function()
-            local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
-
-            ---@diagnostic disable-next-line: redundant-parameter
-            require("nvim-treesitter").setup({
-                ensure_install = { "core", "stable" },
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {
+                    "vimdoc", "javascript", "typescript", "c", "lua", "python",
+                    "yaml", "bash",
+                },
+                sync_install = false,
+                auto_install = true,
+                indent = {
+                    enable = true
+                },
+                highlight = {
+                    enable = true,
+                    disable = function(lang, buf)
+                        if lang == "html" then
+                            print("disabled")
+                            return true
+                        end
+                        local max_filesize = 100 * 1024 -- 100 KB
+                        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                        if ok and stats and stats.size > max_filesize then
+                            vim.notify(
+                                "File larger than 100KB treesitter disabled for performance",
+                                vim.log.levels.WARN,
+                                {title = "Treesitter"}
+                            )
+                            return true
+                        end
+                    end,
+                    additional_vim_regex_highlighting = { "markdown" },
+                },
             })
-
-            local syntax_on = {
-                -- Languages
-                python = true,
-                c = true,
-                cpp = true,
-                -- Helpers
-                make = true,
-                dockerfile = true,
-                yaml = true,
-                xml = true,
-                -- Git
-                git_config = true,
-                git_rebase = true,
-                gitcommit = true,
-                gitignore = true,
-            }
-
-            vim.api.nvim_create_autocmd("FileType", {
-                group = group,
-                callback = function(args)
-                    local bufnr = args.buf
-                    local ft = vim.bo[bufnr].filetype
-                    pcall(vim.treesitter.start)
-
-                    if syntax_on[ft] then
-                        vim.bo[bufnr].syntax = "on"
-                    end
-                end,
-            })
-        end,
+        end
     },
     {
         "mcauley-penney/visual-whitespace.nvim",
@@ -157,66 +152,66 @@ return {
     -- 		end, 100)
     -- 	end,
     -- },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        event = { "BufReadPost", "BufNewFile" },
-        config = function()
-            if vim.fn.has("nvim-0.10.0") == 0 then
-                local utils = require("ibl.utils")
-                ---@diagnostic disable-next-line: deprecated
-                utils.tbl_join = vim.tbl_flatten
-            end
-
-            require("ibl").setup({
-                indent = {
-                    char = "│",
-                    tab_char = "│",
-                },
-                scope = {
-                    enabled = false,
-                    show_start = false,
-                    show_end = false,
-                    injected_languages = false,
-                    show_exact_scope = false,
-                },
-                exclude = {
-                    filetypes = {
-                        "alpha",
-                        "checkhealth",
-                        "dashboard",
-                        "git",
-                        "gitcommit",
-                        "help",
-                        "lazy",
-                        "lazyterm",
-                        "lspinfo",
-                        "man",
-                        "mason",
-                        "neo-tree",
-                        "notify",
-                        "Outline",
-                        "TelescopePrompt",
-                        "TelescopeResults",
-                        "terminal",
-                        "toggleterm",
-                        "Trouble",
-                    },
-                },
-            })
-        end,
-    },
-    {
-        "RRethy/vim-illuminate",
-        opts = {
-            delay = 0,
-            large_file_cutoff = 2000,
-            large_file_overrides = {
-                providers = { "lsp" },
-            },
-        },
-        config = function(_, opts)
-            require("illuminate").configure(opts)
-        end,
-    },
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     main = "ibl",
+    --     event = { "BufReadPost", "BufNewFile" },
+    --     config = function()
+    --         if vim.fn.has("nvim-0.10.0") == 0 then
+    --             local utils = require("ibl.utils")
+    --             ---@diagnostic disable-next-line: deprecated
+    --             utils.tbl_join = vim.tbl_flatten
+    --         end
+    --
+    --         require("ibl").setup({
+    --             indent = {
+    --                 char = "│",
+    --                 tab_char = "│",
+    --             },
+    --             scope = {
+    --                 enabled = false,
+    --                 show_start = false,
+    --                 show_end = false,
+    --                 injected_languages = false,
+    --                 show_exact_scope = false,
+    --             },
+    --             exclude = {
+    --                 filetypes = {
+    --                     "alpha",
+    --                     "checkhealth",
+    --                     "dashboard",
+    --                     "git",
+    --                     "gitcommit",
+    --                     "help",
+    --                     "lazy",
+    --                     "lazyterm",
+    --                     "lspinfo",
+    --                     "man",
+    --                     "mason",
+    --                     "neo-tree",
+    --                     "notify",
+    --                     "Outline",
+    --                     "TelescopePrompt",
+    --                     "TelescopeResults",
+    --                     "terminal",
+    --                     "toggleterm",
+    --                     "Trouble",
+    --                 },
+    --             },
+    --         })
+    --     end,
+    -- },
+    -- {
+    --     "RRethy/vim-illuminate",
+    --     opts = {
+    --         delay = 0,
+    --         large_file_cutoff = 2000,
+    --         large_file_overrides = {
+    --             providers = { "lsp" },
+    --         },
+    --     },
+    --     config = function(_, opts)
+    --         require("illuminate").configure(opts)
+    --     end,
+    -- },
 }
