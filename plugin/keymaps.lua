@@ -48,7 +48,7 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
 
 vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "Line: Comment Selection in/out" })
 
-vim.keymap.set("n", "<C-a>", "GVgg", { desc = "Line: mark everything" })
+-- vim.keymap.set("n", "<C-a>", "GVgg", { desc = "Line: mark everything" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Line: Concat Line without moving the Cursor" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Line: Move Selection up" })
@@ -60,7 +60,7 @@ vim.keymap.set({ "n", "v" }, "L", "$", { desc = "Line: Move to the end of a Line
 -- Plugin Specific
 vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LSP: Open Diagnostic of Line" })
 vim.keymap.set("n", "_", ":Oil --float<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
-vim.keymap.set("n", "<leader>d", ":Oil --float<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
+vim.keymap.set("n", "<leader>o", ":Oil --float<cr>", { desc = "Filesystem: Open Oil Filebrowser" })
 vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "Treesitter: Inspect Tree" })
 vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
 
