@@ -146,6 +146,7 @@ return {
             { "<leader>2", function() require('harpoon'):list():select(2) end,                                 desc = "[H]arpoon [2] Window" },
             { "<leader>3", function() require('harpoon'):list():select(3) end,                                 desc = "[H]arpoon [3] Window" },
             { "<leader>4", function() require('harpoon'):list():select(4) end,                                 desc = "[H]arpoon [4] Window" },
+            { "<leader>5", function() require('harpoon'):list():select(5) end,                                 desc = "[H]arpoon [5] Window" },
             { "F",          function() require('harpoon'):list():next() end,                                   desc = "Harpoon [F]orward" },
             { "B",          function() require('harpoon'):list():prev() end,                                   desc = "Harpoon [B]ackward" }
         },
