@@ -1,9 +1,9 @@
 # Neovim Configuration 
 
 <b>Useable for </b>
-macOS · Linux · Windows
+macOS · Linux
 
-> This is my personal `nvim` configuration for daily use, designed to work seamlessly across Linux, macOS, and Windows. It provides a comprehensive IDE layer for `nvim` that is easily customizable to fit your needs. While it includes several essential plugins, it doesn't aim to include everything the `nvim` community offers—for example, it doesn't include [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap).
+> This is my personal `nvim` configuration for daily use, designed to work seamlessly across Linux and macOS. It provides a comprehensive IDE layer for `nvim` that is easily customizable to fit your needs. While it includes several essential plugins, it doesn't aim to include everything the `nvim` community offers—for example, it doesn't include [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap).
 
 ## Install
 
