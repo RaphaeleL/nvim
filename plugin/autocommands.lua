@@ -85,3 +85,20 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.bo.filetype = "terminal"
     end,
 })
+
+-- Hide Copilot on suggestion
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'BlinkCmpMenuOpen',
+  callback = function()
+    require("copilot.suggestion").dismiss()
+    vim.b.copilot_suggestion_hidden = true
+  end,
+})
+
+-- Show Copilot on suggestion
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'BlinkCmpMenuClose',
+  callback = function()
+    vim.b.copilot_suggestion_hidden = false
+  end,
+})
