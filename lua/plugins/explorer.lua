@@ -39,80 +39,80 @@ return {
     --         },
     --     },
     -- },
-    {
-
-        "nvim-tree/nvim-tree.lua",
-        lazy = true,
-        keys = {
-            { "<leader>f",  ":NvimTreeToggle<cr>",  desc = "[F]ile Explorer" },
-            { "<leader>fr", ":NvimTreeRefresh<cr>", desc = "[F]ile Explorer" },
-        },
-        opts = {
-            hijack_directories = {
-                enable = false,
-                auto_open = false
-            },
-            update_focused_file = {
-                enable = true,
-                update_cwd = true,
-            },
-            filters = { custom = { "^.git$" } },
-            renderer = {
-                full_name = true,
-                group_empty = true,
-                indent_markers = {
-                    enable = true,
-                },
-                icons = {
-                    show = {
-                        file = false,
-                        folder = false,
-                        folder_arrow = false,
-                        git = false,
-                        modified = false,
-                        hidden = false,
-                        diagnostics = false,
-                        bookmarks = false,
-                    },
-                },
-            },
-            diagnostics = {
-                enable = false,
-                show_on_dirs = true,
-            },
-            view = {
-                width = 40,
-                side = "right",
-                float = {
-                    enable = true,
-                    open_win_config = function()
-                        local WIDTH_RATIO = 0.3
-                        local HEIGHT_RATIO = 0.925
-                        local OFFSET = 3
-                        local screen_w = vim.opt.columns:get()
-                        local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
-                        local window_w = screen_w * WIDTH_RATIO
-                        local window_h = screen_h * HEIGHT_RATIO
-                        local window_w_int = math.floor(window_w)
-                        local window_h_int = math.floor(window_h)
-
-                        local col_right_aligned = screen_w - window_w_int - OFFSET
-                        local row_offset = OFFSET - 3
-
-                        return {
-                            border = 'rounded',
-                            relative = 'editor',
-                            row = row_offset,
-                            col = col_right_aligned,
-                            width = window_w_int,
-                            height = window_h_int,
-                        }
-                    end,
-                },
-            },
-        }
-
-    },
+    -- {
+    --
+    --     "nvim-tree/nvim-tree.lua",
+    --     lazy = true,
+    --     keys = {
+    --         { "<leader>f",  ":NvimTreeToggle<cr>",  desc = "[F]ile Explorer" },
+    --         { "<leader>fr", ":NvimTreeRefresh<cr>", desc = "[F]ile Explorer" },
+    --     },
+    --     opts = {
+    --         hijack_directories = {
+    --             enable = false,
+    --             auto_open = false
+    --         },
+    --         update_focused_file = {
+    --             enable = true,
+    --             update_cwd = true,
+    --         },
+    --         filters = { custom = { "^.git$" } },
+    --         renderer = {
+    --             full_name = true,
+    --             group_empty = true,
+    --             indent_markers = {
+    --                 enable = true,
+    --             },
+    --             icons = {
+    --                 show = {
+    --                     file = false,
+    --                     folder = false,
+    --                     folder_arrow = false,
+    --                     git = false,
+    --                     modified = false,
+    --                     hidden = false,
+    --                     diagnostics = false,
+    --                     bookmarks = false,
+    --                 },
+    --             },
+    --         },
+    --         diagnostics = {
+    --             enable = false,
+    --             show_on_dirs = true,
+    --         },
+    --         view = {
+    --             width = 40,
+    --             side = "right",
+    --             float = {
+    --                 enable = true,
+    --                 open_win_config = function()
+    --                     local WIDTH_RATIO = 0.3
+    --                     local HEIGHT_RATIO = 0.925
+    --                     local OFFSET = 3
+    --                     local screen_w = vim.opt.columns:get()
+    --                     local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+    --                     local window_w = screen_w * WIDTH_RATIO
+    --                     local window_h = screen_h * HEIGHT_RATIO
+    --                     local window_w_int = math.floor(window_w)
+    --                     local window_h_int = math.floor(window_h)
+    --
+    --                     local col_right_aligned = screen_w - window_w_int - OFFSET
+    --                     local row_offset = OFFSET - 3
+    --
+    --                     return {
+    --                         border = 'rounded',
+    --                         relative = 'editor',
+    --                         row = row_offset,
+    --                         col = col_right_aligned,
+    --                         width = window_w_int,
+    --                         height = window_h_int,
+    --                     }
+    --                 end,
+    --             },
+    --         },
+    --     }
+    --
+    -- },
     {
         "stevearc/oil.nvim",
         opts = {
@@ -129,10 +129,10 @@ return {
                 show_hidden = true,
                 natural_order = true,
             },
-            float = {
-                max_width = (math.floor(vim.opt.columns:get() * 0.6)),
-                max_height = (math.floor(vim.opt.lines:get() * 0.6)),
-            },
+            -- float = {
+            --     max_width = (math.floor(vim.opt.columns:get() * 0.6)),
+            --     max_height = (math.floor(vim.opt.lines:get() * 0.6)),
+            -- },
         },
     },
     {
