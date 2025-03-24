@@ -98,7 +98,7 @@ return {
                     theme = custom_rosepine,
                     component_separators = "",
                     section_separators = "",
-                    ignore_focus = { "NvimTree" } -- TODO: Add more
+                    ignore_focus = { "NvimTree", "" } -- TODO: Add more
                 },
                 sections = {
                     lualine_a = {
