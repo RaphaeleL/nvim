@@ -59,7 +59,10 @@ return {
                 enabled = true,
                 layout = {
                     preset = 'ivy',
-                    border = "none"
+                    border = "none",
+                },
+                sources = {
+                    explorer = { layout = { layout = { position = "right" } }, },
                 },
             },
             quickfile = { enabled = true },
@@ -70,16 +73,21 @@ return {
             notifier = { enabled = false },
             statuscolumn = { enabled = false },
             words = { enabled = false },
+            explorer = {
+                enabled = true,
+                replace_netrw = true,
+            },
         },
         keys = {
             -- Main Stuff
             { "<leader><space>", function() Snacks.picker.smart() end,                desc = "Smart Find Files" },
-            { "<leader>.",       function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
-            { "<leader>,",       function() Snacks.picker.buffers() end,              desc = "Buffers" },
+            { "<leader>d",       function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
+            { "<leader>b",       function() Snacks.picker.buffers() end,              desc = "Buffers" },
             { "<leader>/",       function() Snacks.picker.grep() end,                 desc = "Grep" },
             { "<leader>sd",      function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
             { "<leader>sk",      function() Snacks.picker.keymaps() end,              desc = "Keymaps" },
             { "<leader>su",      function() Snacks.picker.undo() end,                 desc = "Undo History" },
+            { "<leader>f",       function() Snacks.picker.explorer() end,             desc = "Explorer"},
             -- LSP
             { "gd",              function() Snacks.picker.lsp_definitions() end,      desc = "Goto Definition" },
             { "gD",              function() Snacks.picker.lsp_declarations() end,     desc = "Goto Declaration" },
