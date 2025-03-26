@@ -56,6 +56,50 @@ return {
             bigfile = { enabled = true },
             input = { enabled = true },
             picker = {
+                icons = {
+                    files = {
+                        enabled = false, -- show file icons
+                        dir = "󰉋 ",
+                        dir_open = "󰝰 ",
+                        file = "󰈔 "
+                    },
+                    keymaps = {
+                        nowait = ""
+                    },
+                    tree = {
+                        vertical = "│ ",
+                        middle   = "├╴",
+                        last     = "└╴",
+                    },
+                    undo = {
+                        saved   = "",
+                    },
+                    ui = {
+                        live        = "󰐰 ",
+                        hidden      = "h",
+                        ignored     = "i",
+                        follow      = "f",
+                        selected    = "● ",
+                        unselected  = "○ ",
+                        -- selected = " ",
+                    },
+                    git = {
+                        enabled   = false,
+                    },
+                    diagnostics = {
+                        Error = "",
+                        Warn  = "",
+                        Hint  = "",
+                        Info  = "",
+                    },
+                    lsp = {
+                        unavailable = "",
+                        enabled = "",
+                        disabled = "",
+                        attached = ""
+                    },
+                    kinds = {}
+                },
                 enabled = true,
                 layout = {
                     preset = 'ivy',
