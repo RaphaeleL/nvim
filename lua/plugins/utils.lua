@@ -64,6 +64,13 @@ return {
                 sources = {
                     explorer = { layout = { layout = { position = "right" } }, },
                 },
+                win = {
+                    list = {
+                        keys = {
+                            ["<TAB>"] = "confirm",
+                        },
+                    },
+                },
             },
             quickfile = { enabled = true },
             scope = { enabled = true },
