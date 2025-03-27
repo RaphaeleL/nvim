@@ -76,3 +76,7 @@ vim.keymap.set("n", "<Leader>th",
             vim.cmd("set background=dark")
         end
     end, { desc = "Theme: Neovim Theme (dark / light)" })
+
+-- Fold
+vim.keymap.set("n", "fo", "zo<cr>", {desc = "Fold: Open"} )
+vim.keymap.set("n", "fc", "zc<cr>", {desc = "Fold: Close"} )
