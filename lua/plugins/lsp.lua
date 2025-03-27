@@ -2,8 +2,9 @@ return {
 	"williamboman/mason.nvim",
 	-- event = "InsertEnter",
 	dependencies = {
-		{ "stevearc/conform.nvim" },
-		{ "j-hui/fidget.nvim" },
+        {'saghen/blink.cmp', event = { "InsertEnter" }},
+		"stevearc/conform.nvim",
+		"j-hui/fidget.nvim",
 	},
 	config = function()
 		require("fidget").setup({
@@ -34,13 +35,14 @@ return {
 
 		-- Default LSP Settings for all LSP servers
 		vim.lsp.config("*", {
-			capabilities = {
-				textDocument = {
-					semanticTokens = {
-						multilineTokenSupport = true,
-					},
-				},
-			},
+			capabilities = require('blink.cmp').get_lsp_capabilities(),
+			-- capabilities = {
+			-- 	textDocument = {
+			-- 		semanticTokens = {
+			-- 			multilineTokenSupport = true,
+			-- 		},
+			-- 	},
+			-- },
 			root_markers = { ".git" },
 		})
 
@@ -57,18 +59,18 @@ return {
 					-- Create a keymap for vim.lsp.buf.implementation ...
 				end
 
-				if client:supports_method("textDocument/completion") then
-					-- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
-					-- Optional: trigger autocompletion on EVERY keypress. May be slow!
-					-- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-					-- client.server_capabilities.completionProvider.triggerCharacters = chars
-
+				-- if client:supports_method("textDocument/completion") then
+				-- 	-- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
+				-- 	-- Optional: trigger autocompletion on EVERY keypress. May be slow!
+				-- 	-- local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+				-- 	-- client.server_capabilities.completionProvider.triggerCharacters = chars
+				--
 					vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>", { desc = "LSP: Format" })
 					vim.keymap.set("n", "gR", ":lua vim.lsp.buf.rename()<cr>", { silent = true })
 					vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", { silent = true })
-
-					vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-				end
+				--
+				-- 	vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
+				-- end
 			end,
 		})
 
