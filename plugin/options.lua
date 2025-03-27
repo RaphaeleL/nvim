@@ -55,5 +55,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.opt.smoothscroll = true
-vim.opt.foldmethod = "expr"
-vim.opt.foldtext = ""
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldtext = ""
+vim.opt.foldmethod="indent"
+vim.opt.foldlevelstart=99
