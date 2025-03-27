@@ -55,5 +55,6 @@ vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 vim.opt.smoothscroll = true
+vim.opt.foldlevel = 99
 vim.opt.foldmethod = "expr"
 vim.opt.foldtext = ""

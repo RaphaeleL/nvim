@@ -1,8 +1,8 @@
--- LspStart on InsertEnter
-vim.api.nvim_create_autocmd("InsertEnter", {
-    pattern = "*",
-    command = "LspStart"
-})
+-- -- LspStart on InsertEnter
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--     pattern = "*",
+--     command = "LspStart"
+-- })
 
 -- Highlight Yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
