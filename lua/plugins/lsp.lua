@@ -76,6 +76,6 @@ return {
 
 		-- Enable LSP for specific languages
 		-- NOTE: those names are the files inside of `~/.config/nvim/lsp/*.lua`
-		vim.lsp.enable({ "python", "c_cpp", "lua", "typescript" })
+		vim.lsp.enable({ "python", "c_cpp", "lua", "typescript", 'tailwind' })
 	end,
 }
