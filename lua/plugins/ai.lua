@@ -6,7 +6,7 @@ return {
     event = "InsertEnter",
     opts = {
         suggestion = {
-            enabled = not false,
+            enabled = false,
             auto_trigger = true,
             hide_during_completion = false,
             keymap = {
