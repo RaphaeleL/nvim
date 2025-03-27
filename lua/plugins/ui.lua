@@ -1,5 +1,25 @@
 return {
     {
+        "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- numhl = true,
+            signs = {
+                add = { text = "▎" },
+                change = { text = "▎" },
+                delete = { text = "󰐊" },
+                topdelete = { text = "󰐊" },
+                changedelete = { text = "▎" },
+                untracked = { text = "▎" },
+            },
+        },
+        keys = {
+            { "<Leader>gR", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
+            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gs", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
+        },
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
@@ -47,20 +67,6 @@ return {
             cr_char = "←",
         },
     },
-    -- {
-    --     "brenoprata10/nvim-highlight-colors",
-    --     event = "InsertEnter",
-    --     opts = {
-    --         render = "background",
-    --         virtual_symbol = "■",
-    --         enable_named_colors = true,
-    --         enable_tailwind = true,
-    --         custom_colors = {
-    --             { label = "%-%-theme%-primary%-color",   color = "#0f1219" },
-    --             { label = "%-%-theme%-secondary%-color", color = "#5a5d64" },
-    --         },
-    --     },
-    -- },
     {
         "nvim-lualine/lualine.nvim",
         event = "VeryLazy",
