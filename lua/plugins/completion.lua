@@ -1,206 +1,146 @@
-return {
-    -- 'saghen/blink.cmp',
-    -- event = { "InsertEnter" },
-    -- dependencies = {
-    --     'rafamadriz/friendly-snippets',
-    --     'mikavilpas/blink-ripgrep.nvim',
-    --     'xzbdmw/colorful-menu.nvim',
-    -- },
-    -- version = '*',
-    -- ---@module 'blink.cmp'
-    -- ---@type blink.cmp.Config
-    -- opts = {
-    --     keymap = {
-    --         preset = "enter",
-    --         ["<C-n>"] = {
-    --             function(cmp)
-    --                 if cmp.is_menu_visible() then
-    --                     return require("blink.cmp").select_next()
-    --                 elseif cmp.snippet_active() then
-    --                     return cmp.snippet_forward()
-    --                 end
-    --             end,
-    --             "fallback",
-    --         },
-    --         ["<C-p>"] = {
-    --             function(cmp)
-    --                 if cmp.is_menu_visible() then
-    --                     return require("blink.cmp").select_prev()
-    --                 elseif cmp.snippet_active() then
-    --                     return cmp.snippet_backward()
-    --                 end
-    --             end,
-    --             "fallback",
-    --         },
-    --     },
-    --     signature = {
-    --         enabled = true,
-    --         window = {
-    --             border = "rounded",
-    --         },
-    --     },
-    --     sources = {
-    --         default = {
-    --             "lsp",
-    --             "path",
-    --             "snippets",
-    --             "buffer",
-    --             -- "lazydev",
-    --             "ripgrep",
-    --         },
-    --         providers = {
-    --             -- lazydev = {
-    --             --     name = "LazyDev",
-    --             --     module = "lazydev.integrations.blink",
-    --             --     fallbacks = { "lsp" },
-    --             -- },
-    --             ripgrep = {
-    --                 module = "blink-ripgrep",
-    --                 name = "Ripgrep",
-    --                 ---@module "blink-ripgrep"
-    --                 ---@type blink-ripgrep.Options
-    --                 opts = {
-    --                     prefix_min_len = 3,
-    --                     context_size = 5,
-    --                     max_filesize = "1M",
-    --                     ignore_paths = { "~/", "/" },
-    --                 },
-    --             },
-    --         },
-    --     },
-    --     completion = {
-    --         -- ghost_text = {
-    --         --     enabled = true,
-    --         -- },
-    --         keyword = {
-    --             range = "full",
-    --         },
-    --         list = {
-    --             selection = {
-    --                 preselect = false,
-    --                 auto_insert = true,
-    --             },
-    --         },
-    --         accept = {
-    --             auto_brackets = {
-    --                 enabled = true,
-    --                 override_brackets_for_filetypes = {
-    --                     tex = { "{", "}" },
-    --                 },
-    --             },
-    --         },
-    --         menu = {
-    --             -- auto_show = function(ctx) return ctx.mode ~= 'cmdline' end,
-    --             min_width = 20,
-    --             border = "rounded",
-    --             winhighlight =
-    --             "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
-    --             draw = {
-    --                 -- columns = { { "kind_icon" }, { "label", gap = 1 }, { "source" } },
-    --                 columns = { { "label", gap = 1 }, { "source" } },
-    --                 components = {
-    --                     label = {
-    --                         text = function(ctx)
-    --                             return require("colorful-menu").blink_components_text(ctx)
-    --                         end,
-    --                         highlight = function(ctx)
-    --                             return require("colorful-menu").blink_components_highlight(ctx)
-    --                         end,
-    --                     },
-    --                     source = {
-    --                         text = function(ctx)
-    --                             local map = {
-    --                                 ["lsp"] = "LSP",
-    --                                 ["path"] = "PATH",
-    --                                 ["snippets"] = "SNIP",
-    --                                 ["buffer"] = "BUFF",
-    --                             }
-    --                             return map[ctx.item.source_id]
-    --                         end,
-    --                         highlight = "BlinkCmpSource",
-    --                     },
-    --                 },
-    --             },
-    --         },
-    --         documentation = {
-    --             auto_show = true,
-    --             auto_show_delay_ms = 50,
-    --             update_delay_ms = 50,
-    --             window = {
-    --                 max_width = math.min(80, vim.o.columns),
-    --                 border = "rounded",
-    --             },
-    --         },
-    --     },
-    -- },
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-        { "hrsh7th/cmp-nvim-lsp",   event = "InsertEnter" },
-        { "hrsh7th/cmp-buffer",     event = "InsertEnter" },
-        { "hrsh7th/cmp-path",       event = "InsertEnter" },
-        { "hrsh7th/cmp-cmdline",    event = "InsertEnter" },
-        { "onsails/lspkind.nvim",   event = "InsertEnter" },
-        { "zbirenbaum/copilot-cmp", event = "InsertEnter" },
-    },
-    config = function()
-        local cmp = require("cmp")
-        local lspkind = require("lspkind")
-        lspkind.init({
-            symbol_map = {
-                Copilot = "",
-            },
-        })
-        require("copilot_cmp").setup()
+local function has_words_before()
+    local line, col = (unpack or table.unpack)(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+end
 
-        local has_words_before = function()
-            if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
-                return false
-            end
-            local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-            return col ~= 0 and vim.api.nvim_buf_get_text(0, line - 1, 0, line - 1, col, {})[1]:match("^%s*$") == nil
-        end
+---@type function?, function?
+local icon_provider, hl_provider
 
-        local cmp_settings = {
-            formatting = {
-                fields = { "kind", "abbr", "menu" },
-                format = function(entry, vim_item)
-                    local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
-                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                    kind.kind = " " .. (strings[1] or "") .. " "
-                    kind.menu = strings[2]
-                    return kind
-                end,
-            },
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
-            },
-            mapping = cmp.mapping.preset.insert({
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-n>"] = cmp.mapping.select_next_item(),
-                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-                ["<C-Space>"] = cmp.mapping.complete(),
-                ["<CR>"] = cmp.mapping.confirm({
-                    behavior = cmp.ConfirmBehavior.Replace,
-                    select = true,
-                }),
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() and has_words_before() then
-                        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-                    else
-                        fallback()
+local function get_kind_icon(CTX)
+    -- Evaluate icon provider
+    if not icon_provider then
+        local _, mini_icons = pcall(require, "mini.icons")
+        if _G.MiniIcons then
+            icon_provider = function(ctx)
+                local is_specific_color = ctx.kind_hl and ctx.kind_hl:match "^HexColor" ~= nil
+                if ctx.item.source_name == "LSP" then
+                    local icon, hl = mini_icons.get("lsp", ctx.kind or "")
+                    if icon then
+                        ctx.kind_icon = icon
+                        if not is_specific_color then ctx.kind_hl = hl end
                     end
-                end, { "i", "s" }),
-            }),
-            sources = cmp.config.sources({
-                { name = "copilot" },
-                { name = "nvim_lsp" },
-            }, {
-                { name = "buffer" },
-            }),
-        }
+                elseif ctx.item.source_name == "Path" then
+                    ctx.kind_icon, ctx.kind_hl = mini_icons.get(ctx.kind == "Folder" and "directory" or "file", ctx.label)
+                elseif ctx.item.source_name == "Snippets" then
+                    ctx.kind_icon, ctx.kind_hl = mini_icons.get("lsp", "snippet")
+                end
+            end
+        end
+        if not icon_provider then
+            local lspkind_avail, lspkind = pcall(require, "lspkind")
+            if lspkind_avail then
+                icon_provider = function(ctx)
+                    if ctx.item.source_name == "LSP" then
+                        local icon = lspkind.symbolic(ctx.kind, { mode = "symbol" })
+                        if icon then ctx.kind_icon = icon end
+                    elseif ctx.item.source_name == "Snippets" then
+                        local icon = lspkind.symbolic("snippet", { mode = "symbol" })
+                        if icon then ctx.kind_icon = icon end
+                    end
+                end
+            end
+        end
+        if not icon_provider then icon_provider = function() end end
+    end
+    -- Evaluate highlight provider
+    if not hl_provider then
+        local highlight_colors_avail, highlight_colors = pcall(require, "nvim-highlight-colors")
+        if highlight_colors_avail then
+            local kinds
+            hl_provider = function(ctx)
+                if not kinds then kinds = require("blink.cmp.types").CompletionItemKind end
+                if ctx.item.kind == kinds.Color then
+                    local doc = vim.tbl_get(ctx, "item", "documentation")
+                    if doc then
+                        local color_item = highlight_colors_avail and highlight_colors.format(doc, { kind = kinds[kinds.Color] })
+                        if color_item and color_item.abbr_hl_group then
+                            if color_item.abbr then ctx.kind_icon = color_item.abbr end
+                            ctx.kind_hl = color_item.abbr_hl_group
+                        end
+                    end
+                end
+            end
+        end
+        if not hl_provider then hl_provider = function() end end
+    end
+    -- Call resolved providers
+    icon_provider(CTX)
+    hl_provider(CTX)
+    -- Return text and highlight information
+    return { text = CTX.kind_icon .. CTX.icon_gap, highlight = CTX.kind_hl }
+end
 
-        cmp.setup(cmp_settings)
-    end,
+return {
+    "Saghen/blink.cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
+    opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
+    opts = {
+        sources = { default = { "lsp", "path", "snippets", "buffer" }, },
+        keymap = {
+            ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+            ["<Up>"] = { "select_prev", "fallback" },
+            ["<Down>"] = { "select_next", "fallback" },
+            ["<C-N>"] = { "select_next", "show" },
+            ["<C-P>"] = { "select_prev", "show" },
+            ["<C-J>"] = { "select_next", "fallback" },
+            ["<C-K>"] = { "select_prev", "fallback" },
+            ["<C-U>"] = { "scroll_documentation_up", "fallback" },
+            ["<C-D>"] = { "scroll_documentation_down", "fallback" },
+            ["<C-e>"] = { "hide", "fallback" },
+            ["<CR>"] = { "accept", "fallback" },
+            ["<Tab>"] = {
+                "snippet_forward",
+                "select_next",
+                function(cmp)
+                    if has_words_before() or vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
+                end,
+                "fallback",
+            },
+            ["<S-Tab>"] = {
+                "snippet_backward",
+                "select_prev",
+                function(cmp)
+                    if vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
+                end,
+                "fallback",
+            },
+        },
+        fuzzy = {
+            implementation = 'lua'
+        },
+        completion = {
+            list = { selection = { preselect = false, auto_insert = true } },
+            menu = {
+                auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
+                border = "rounded",
+                winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+                draw = {
+                    treesitter = { "lsp" },
+                    components = {
+                        kind_icon = {
+                            text = function(ctx) return get_kind_icon(ctx).text end,
+                            highlight = function(ctx) return get_kind_icon(ctx).highlight end,
+                        },
+                    },
+                },
+            },
+            accept = {
+                auto_brackets = { enabled = true },
+            },
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 0,
+                window = {
+                    border = "rounded",
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+                },
+            },
+        },
+        signature = {
+            window = {
+                border = "rounded",
+                winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+            },
+        },
+    }
 }
