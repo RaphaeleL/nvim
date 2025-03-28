@@ -1,3 +1,31 @@
+local servers = {
+    bashls = true,
+    lua_ls = {
+        server_capabilities = { semanticTokensProvider = vim.NIL, },
+    },
+    rust_analyzer = true,
+    clangd = {
+        init_options = { clangdFileStatus = true },
+        filetypes = { "c", "cpp" },
+    },
+    pyright = {
+        settings = {
+            python = {
+                analysis = {
+                    autoSearchPaths = true,
+                    diagnosticMode = "workspace",
+                    useLibraryCodeForTypes = true,
+                },
+            },
+        },
+    },
+    tailwindcss = true,
+    ts_ls = { enabled = true, },
+}
+local disable_semantic_tokens = { lua = true }
+local ensure_installed = { "pyright", "pylsp", "stylua", "lua_ls", "bashls",
+    "rust_analyzer", "vimls", "yamlls", "ts_ls", }
+
 return {
 	"neovim/nvim-lspconfig",
 	-- event = { "BufReadPre", "BufNewFile" },
@@ -7,10 +35,8 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
-		{ "b0o/SchemaStore.nvim", event = { "BufReadPre", "BufNewFile" } },
+        "saghen/blink.cmp",
 		{ "j-hui/fidget.nvim", event = { "BufReadPre", "BufNewFile" } },
-		{ "rachartier/tiny-inline-diagnostic.nvim", event = { "BufReadPre", "BufNewFile" } },
 	},
 	config = function()
 		require("neodev").setup({})
@@ -22,45 +48,6 @@ return {
 			},
 		})
 
-		vim.cmd([[autocmd! ColorScheme * highlight NormalFloat guibg=#1f2335]])
-		vim.cmd([[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=#1f2335]])
-
-		local capabilities = nil
-		if pcall(require, "cmp_nvim_lsp") then
-			capabilities = require("cmp_nvim_lsp").default_capabilities()
-		end
-
-		local lspconfig = require("lspconfig")
-
-		local servers = {
-			bashls = true,
-			lua_ls = {
-				server_capabilities = {
-					semanticTokensProvider = vim.NIL,
-				},
-			},
-			rust_analyzer = true,
-			clangd = {
-				init_options = { clangdFileStatus = true },
-				filetypes = { "c" },
-			},
-			pyright = {
-				settings = {
-					python = {
-						analysis = {
-							autoSearchPaths = true,
-							diagnosticMode = "workspace",
-							useLibraryCodeForTypes = true,
-						},
-					},
-				},
-			},
-			tailwindcss = true,
-			ts_ls = {
-				enabled = true,
-			},
-		}
-
 		local servers_to_install = vim.tbl_filter(function(key)
 			local t = servers[key]
 			if type(t) == "table" then
@@ -71,17 +58,6 @@ return {
 		end, vim.tbl_keys(servers))
 
 		require("mason").setup({ PATH = "prepend" })
-		local ensure_installed = {
-			"pyright",
-			"pylsp",
-			"stylua",
-			"lua_ls",
-			"bashls",
-			"rust_analyzer",
-			"vimls",
-			"yamlls",
-			"ts_ls",
-		}
 
 		vim.list_extend(ensure_installed, servers_to_install)
 		require("mason-tool-installer").setup({
@@ -90,20 +66,13 @@ return {
 		})
 
 		for name, config in pairs(servers) do
-			if config == true then
-				config = {}
-			end
+			if config == true then config = {} end
 			config = vim.tbl_deep_extend("force", {}, {
-				capabilities = capabilities,
-				handlers = handlers,
+                ocapabilities = require('blink.cmp').get_lsp_capabilities(),f
 			}, config)
 
-			lspconfig[name].setup(config)
+			require("lspconfig")[name].setup(config)
 		end
-
-		local disable_semantic_tokens = {
-			lua = true,
-		}
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(args)
@@ -127,13 +96,9 @@ return {
 					client.server_capabilities.semanticTokensProvider = nil
 				end
 
-				-- Override server capabilities
-				---@diagnostic disable-next-line: undefined-global
 				if server_capabilities then
-					---@diagnostic disable-next-line: undefined-global
 					for k, v in pairs(server_capabilities) do
 						if v == vim.NIL then
-							---@diagnostic disable-next-line: cast-local-type
 							v = nil
 						end
 
@@ -143,64 +108,6 @@ return {
 			end,
 		})
 
-		-- Autoformatting Setup
-		require("conform").setup({
-			formatters_by_ft = {
-				lua = { "stylua" },
-			},
-		})
-
-		-- vim.api.nvim_create_autocmd("BufWritePre", {
-		-- 	callback = function(args)
-		-- 		require("conform").format({
-		-- 			bufnr = args.buf,
-		-- 			lsp_fallback = true,
-		-- 			quiet = true,
-		-- 		})
-		-- 	end,
-		-- })
-
-		-- local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-		-- for type, icon in pairs(signs) do
-		-- 	local hl = "DiagnosticSign" .. type
-		-- 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-		-- end
-
-		for _, diag in ipairs({ "Error", "Warn", "Info", "Hint" }) do
-			vim.fn.sign_define("DiagnosticSign" .. diag, {
-				text = "",
-				texthl = "DiagnosticSign" .. diag,
-				linehl = "",
-				numhl = "DiagnosticSign" .. diag,
-			})
-		end
-
-		require("tiny-inline-diagnostic").setup({
-			signs = {
-				left = "", -- ""
-				right = "", -- ""
-				diag = "", -- "●"
-				arrow = "", -- "   "
-				up_arrow = "", -- "   "
-				vertical = "", -- " │"
-				vertical_end = "", -- " └"
-			},
-			hi = {
-				error = "DiagnosticError",
-				warn = "DiagnosticWarn",
-				info = "DiagnosticInfo",
-				hint = "DiagnosticHint",
-				arrow = "NonText",
-				background = "CursorLine",
-				mixing_color = "None",
-			},
-			blend = {
-				factor = 0.27,
-			},
-		})
-
-		vim.diagnostic.config({
-			virtual_text = false,
-		})
+		vim.diagnostic.config({ virtual_text = false, })
 	end,
 }
