@@ -1,4 +1,5 @@
 return {
+    -- { "j-hui/fidget.nvim", opts = {}, }, -- NOTE: This is not working.
     {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
@@ -104,7 +105,7 @@ return {
                     theme = custom_rosepine,
                     component_separators = "",
                     section_separators = "",
-                    ignore_focus = { "NvimTree", "" } -- TODO: Add more
+                    ignore_focus = {}
                 },
                 sections = {
                     lualine_a = {
@@ -127,7 +128,7 @@ return {
                         },
                     },
                     lualine_x = {},
-                    lualine_y = { "copilot", "filetype" },
+                    lualine_y = { "filetype" },
                     lualine_z = { "location" },
                 },
                 inactive_sections = {
