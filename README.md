@@ -7,7 +7,7 @@ macOS · Linux
 
 ## Install
 
-> Neovim 0.11.0-dev
+> Neovim 0.11.0
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
