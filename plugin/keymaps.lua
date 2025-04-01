@@ -46,9 +46,6 @@ vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'",
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
     { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
 
-vim.keymap.set({ "n", "v" }, "<Leader>l", ":CommentToggle<cr>", { desc = "Line: Comment Selection in/out" })
-
--- vim.keymap.set("n", "<C-a>", "GVgg", { desc = "Line: mark everything" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Line: Concat Line without moving the Cursor" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Line: Move Selection up" })
@@ -80,3 +77,14 @@ vim.keymap.set("n", "<Leader>th",
 -- Fold
 vim.keymap.set("n", "fo", "zo<cr>", {desc = "Fold: Open"} )
 vim.keymap.set("n", "fc", "zc<cr>", {desc = "Fold: Close"} )
+
+-- Load Fancy Plugins
+vim.keymap.set("n", "<Leader>fp", function()
+    require("lazy").load({
+        plugins = { "gitsigns.nvim", "indent-blankline.nvim", "vim-illuminate" }
+    })
+    print("Fancy plugins loaded!")
+end, { desc = "Load fancy plugins" })
+
+
+

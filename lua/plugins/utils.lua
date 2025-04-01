@@ -1,12 +1,13 @@
 return {
     {
         "terrortylor/nvim-comment",
-        event = "VeryLazy",
+        lazy = true,
         config = function()
             require("nvim_comment").setup()
         end,
         keys = {
-            { "<Leader>l", ":CommentToggle<cr>" },
+            { "<Leader>l", ":CommentToggle<cr>"},              -- normal mode
+            { "<Leader>l", ":CommentToggle<cr>", mode = "v" }  -- visual mode
         },
     },
     {
@@ -21,6 +22,7 @@ return {
     },
     {
         "MagicDuck/grug-far.nvim",
+        lazy = true,
         config = function()
             require("grug-far").setup({})
         end,
