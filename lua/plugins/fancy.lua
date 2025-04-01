@@ -2,8 +2,8 @@ return {
     -- { "j-hui/fidget.nvim", opts = {}, }, -- NOTE: This is not working in nvim's v0.11 LSP Setup.
     {
         "lewis6991/gitsigns.nvim",
-        lazy = true,
-        -- event = "VeryLazy",
+        -- lazy = true,
+        event = "VeryLazy",
         opts = {
             -- numhl = true,
             signs = {
@@ -15,17 +15,17 @@ return {
                 untracked = { text = "▎" },
             },
         },
-        -- keys = {
-        --     { "<Leader>gR", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
-        --     { "<Leader>gn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
-        --     { "<Leader>gs", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
-        -- },
+        keys = {
+            { "<Leader>gR", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
+            { "<Leader>gn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gs", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
+        },
     },
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
-        lazy = true,
-        -- event = { "BufReadPost", "BufNewFile" },
+        -- lazy = true,
+        event = { "BufReadPost", "BufNewFile" },
         config = function()
             if vim.fn.has("nvim-0.10.0") == 0 then
                 local utils = require("ibl.utils")
@@ -72,7 +72,8 @@ return {
     },
     {
         "RRethy/vim-illuminate",
-        lazy = true,
+        -- lazy = true,
+        event = { "BufReadPost", "BufNewFile" },
         opts = {
             delay = 0,
             large_file_cutoff = 2000,

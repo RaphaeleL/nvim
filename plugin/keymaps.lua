@@ -79,12 +79,9 @@ vim.keymap.set("n", "fo", "zo<cr>", {desc = "Fold: Open"} )
 vim.keymap.set("n", "fc", "zc<cr>", {desc = "Fold: Close"} )
 
 -- Load Fancy Plugins
-vim.keymap.set("n", "<Leader>fp", function()
-    require("lazy").load({
-        plugins = { "gitsigns.nvim", "indent-blankline.nvim", "vim-illuminate" }
-    })
-    print("Fancy plugins loaded!")
-end, { desc = "Load fancy plugins" })
-
-
-
+-- vim.keymap.set("n", "<Leader>fp", function()
+--     require("lazy").load({
+--         plugins = { "gitsigns.nvim", "indent-blankline.nvim", "vim-illuminate" }
+--     })
+--     print("Fancy plugins loaded!")
+-- end, { desc = "Load fancy plugins" })
