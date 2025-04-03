@@ -1,5 +1,4 @@
 return {
-    'echasnovski/mini.icons',
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
@@ -55,7 +54,7 @@ return {
         init = function()
             vim.opt.laststatus = 2
             vim.opt.cmdheight = 1
-    
+
             local mode_map = {
                 ["n"] = "N",  -- Normal Mode
                 ["i"] = "I",  -- Insert Mode
@@ -66,7 +65,7 @@ return {
                 ["R"] = "R",  -- Replace Mode
                 ["t"] = "T",  -- Terminal Mode
             }
-    
+
             local custom_rosepine = require("lualine.themes.rose-pine-alt")
             custom_rosepine.normal.a.bg = "NONE"
             custom_rosepine.normal.b.bg = "NONE"
@@ -78,7 +77,7 @@ return {
             custom_rosepine.inactive.a.bg = "NONE"
             custom_rosepine.inactive.b.bg = "NONE"
             custom_rosepine.inactive.c.bg = "NONE"
-    
+
             require("lualine").setup({
                 options = {
                     icons_enabled = false,

@@ -5,13 +5,13 @@
 -- })
 
 -- Attach LSP (right now it's just for the keymaps - https://gpanders.com/blog/whats-new-in-neovim-0-11/#builtin-auto-completion)
--- vim.api.nvim_create_autocmd("LspAttach", {
---     callback = function(args)
---         vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>", { desc = "LSP: Format" })
---         vim.keymap.set("n", "gR", ":lua vim.lsp.buf.rename()<cr>", { silent = true })
---         vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", { silent = true })
---     end,
--- })
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>", { desc = "LSP: Format" })
+        vim.keymap.set("n", "gR", ":lua vim.lsp.buf.rename()<cr>", { silent = true })
+        vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", { silent = true })
+    end,
+})
 
 -- Highlight Yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
