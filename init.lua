@@ -17,11 +17,5 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({ import = "plugins" }, { change_detection = { notify = false } })
 
--- LSP Setup
-vim.lsp.config("*", { -- Default LSP Settings for all LSP servers
-    capabilities = require('blink.cmp').get_lsp_capabilities(),
-    root_markers = { ".git" },
-})
-vim.diagnostic.config({ virtual_lines = false, virtual_text = false })
-vim.lsp.enable({ "c", "lua", "python", "tailwind", 'typescript' })
-
+-- Set the LSP Version
+vim.g.should_use_new_lsp = false
