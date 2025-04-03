@@ -204,7 +204,7 @@ return {
             for name, config in pairs(servers) do
                 if config == true then config = {} end
                 config = vim.tbl_deep_extend("force", {}, {
-                    ocapabilities = require('blink.cmp').get_lsp_capabilities(),f
+                    capabilities = require('blink.cmp').get_lsp_capabilities(),
                 }, config)
 
                 require("lspconfig")[name].setup(config)
