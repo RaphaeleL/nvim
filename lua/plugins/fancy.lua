@@ -1,5 +1,47 @@
 return {
-    -- { "j-hui/fidget.nvim", opts = {}, }, -- NOTE: This is not working in nvim's v0.11 LSP Setup.
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            -- "rcarriga/nvim-notify",
+        },
+        opts = {
+            presets = {
+                bottom_search = true,
+                command_palette = true,
+                long_message_to_split = true,
+                inc_rename = false,
+                lsp_doc_border = false,
+            },
+            cmdline = {
+                enabled = true,
+                view = "cmdline",
+                opts = {},
+                format = {
+                    cmdline = { pattern = "^:", icon = "", lang = "vim" },
+                    search_down = { kind = "search", pattern = "^/", icon = "", lang = "regex" },
+                    search_up = { kind = "search", pattern = "^%?", icon = "", lang = "regex" },
+                    filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+                    input = { view = "cmdline_input", icon = "󰥻 " },
+                },
+                lsp = {
+                    override = {
+                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                        ["vim.lsp.util.stylize_markdown"] = true,
+                        ["cmp.entry.get_documentation"] = true,
+                    },
+                    progress = {
+                        enabled = true,
+                        format = "lsp_progress",
+                        format_done = "lsp_progress_done",
+                        throttle = 1000 / 30,
+                        view = "mini",
+                    }
+                }
+            }
+        }
+    },
     {
         "lewis6991/gitsigns.nvim",
         -- lazy = true,
