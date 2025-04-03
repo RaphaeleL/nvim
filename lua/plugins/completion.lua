@@ -90,6 +90,13 @@ local servers = {
 }
 local disable_semantic_tokens = { lua = true }
 local ensure_installed = { "pyright", "lua_ls", "bashls", "clangd", "vimls", "ts_ls", "tailwindcss" }
+local function read_file_names_of_dir(dir)
+    local files = {}
+    for file in io.popen('ls "' .. dir .. '"'):lines() do
+        table.insert(files, file:match('(.+)%..+'))
+    end
+    return files
+end
 
 local SHOULD_USE_NEW_LSP = false
 
@@ -174,13 +181,13 @@ return {
                 },
             },
         })
-        if SHOULD_USE_NEW_LSP then 
+        if SHOULD_USE_NEW_LSP then
             vim.lsp.config("*", {
                 capabilities = require('blink.cmp').get_lsp_capabilities(),
                 root_markers = { ".git" },
             })
             vim.diagnostic.config({ virtual_lines = false, virtual_text = false })
-            vim.lsp.enable({ "c", "lua", "python", "tailwind", 'typescript' })
+            vim.lsp.enable(read_file_names_of_dir("lsp"))
         else
             require("neodev").setup({})
 
