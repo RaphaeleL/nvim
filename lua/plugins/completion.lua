@@ -103,6 +103,7 @@ local SHOULD_USE_NEW_LSP = false
 return {
     "Saghen/blink.cmp",
     -- event = { "InsertEnter", "CmdlineEnter" },
+    event = { "VeryLazy" },
     -- opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
     dependencies = not SHOULD_USE_NEW_LSP and {
 	    "neovim/nvim-lspconfig",
