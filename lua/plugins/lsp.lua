@@ -87,6 +87,22 @@ local servers = {
     },
     tailwindcss = true,
     ts_ls = { enabled = true, },
+    gopls = {
+        manual_install = true,
+        settings = {
+            gopls = {
+                hints = {
+                    assignVariableTypes = true,
+                    compositeLiteralFields = true,
+                    compositeLiteralTypes = true,
+                    constantValues = true,
+                    functionTypeParameters = true,
+                    parameterNames = true,
+                    rangeVariableTypes = true,
+                },
+            },
+        },
+    },
 }
 local disable_semantic_tokens = { lua = true }
 local ensure_installed = { "pyright", "lua_ls", "bashls", "clangd", "vimls", "ts_ls", "tailwindcss" }
@@ -103,7 +119,7 @@ local SHOULD_USE_NEW_LSP = false
 return {
     "Saghen/blink.cmp",
     -- event = { "InsertEnter", "CmdlineEnter" },
-    event = { "VeryLazy" },
+    -- event = { "VeryLazy" },
     -- opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
     dependencies = not SHOULD_USE_NEW_LSP and {
 	    "neovim/nvim-lspconfig",
