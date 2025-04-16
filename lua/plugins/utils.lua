@@ -35,8 +35,6 @@ return {
         lazy = true,
         ---@type snacks.Config
         opts = {
-            bigfile = { enabled = true },
-            input = { enabled = true },
             picker = {
                 icons = {
                     files = {
@@ -98,6 +96,8 @@ return {
                     },
                 },
             },
+            bigfile = { enabled = true },
+            input = { enabled = true },
             quickfile = { enabled = true },
             scope = { enabled = true },
             dashboard = { enabled = false },
