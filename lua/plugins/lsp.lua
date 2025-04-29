@@ -8,22 +8,6 @@ local icon_provider, hl_provider
 local function get_kind_icon(CTX)
     if not icon_provider then
         local _, mini_icons = pcall(require, "mini.icons")
-        if _G.MiniIcons then
-            icon_provider = function(ctx)
-                local is_specific_color = ctx.kind_hl and ctx.kind_hl:match "^HexColor" ~= nil
-                if ctx.item.source_name == "LSP" then
-                    local icon, hl = mini_icons.get("lsp", ctx.kind or "")
-                    if icon then
-                        ctx.kind_icon = icon
-                        if not is_specific_color then ctx.kind_hl = hl end
-                    end
-                elseif ctx.item.source_name == "Path" then
-                    ctx.kind_icon, ctx.kind_hl = mini_icons.get(ctx.kind == "Folder" and "directory" or "file", ctx.label)
-                elseif ctx.item.source_name == "Snippets" then
-                    ctx.kind_icon, ctx.kind_hl = mini_icons.get("lsp", "snippet")
-                end
-            end
-        end
         if not icon_provider then
             local lspkind_avail, lspkind = pcall(require, "lspkind")
             if lspkind_avail then
@@ -127,10 +111,21 @@ return {
         "williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+        "giuxtaposition/blink-cmp-copilot",
 	},
     config = function()
         require("blink.cmp").setup({
-            sources = { default = { "lsp", "path", "snippets", "buffer" }, },
+            sources = { 
+                default = { "lsp", "path", "snippets", "buffer", 'copilot' },
+                providers = {
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-cmp-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
+                },
+            },
             keymap = {
                 ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
                 ["<Up>"] = { "select_prev", "fallback" },
