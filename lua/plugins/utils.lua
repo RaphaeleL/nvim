@@ -16,7 +16,6 @@ return {
             vim.api.nvim_set_hl(0, "MultiCursorDisabledSign", { link = "SignColumn"})
         end,
         keys = {
-            -- NOTE: multicursor.nvim is able to add/skip a cursor based on a search result
             { "mj", function() require("multicursor-nvim").lineAddCursor(1) end},
             { "mj", function() require("multicursor-nvim").lineAddCursor(1) end, mode="x"},
             { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end},
