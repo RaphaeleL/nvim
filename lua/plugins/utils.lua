@@ -64,23 +64,14 @@ return {
         opts = {
             picker = {
                 icons = {
-                    files = {
-                        enabled = false, -- show file icons
-                        dir = "󰉋 ",
-                        dir_open = "󰝰 ",
-                        file = "󰈔 "
-                    },
-                    keymaps = {
-                        nowait = ""
-                    },
+                    files = { enabled = false, },
+                    keymaps = { nowait = "" },
                     tree = {
                         vertical = "│ ",
                         middle   = "├╴",
                         last     = "└╴",
                     },
-                    undo = {
-                        saved   = "",
-                    },
+                    undo = { saved   = "", },
                     ui = {
                         live        = "󰐰 ",
                         hidden      = "h",
@@ -90,9 +81,7 @@ return {
                         unselected  = "○ ",
                         -- selected = " ",
                     },
-                    git = {
-                        enabled   = false,
-                    },
+                    git = { enabled   = false },
                     diagnostics = {
                         Error = "",
                         Warn  = "",
@@ -113,15 +102,9 @@ return {
                     border = "none",
                 },
                 sources = {
-                    explorer = { layout = { layout = { position = "right" } }, },
+                    explorer = { layout = { layout = { position = "right" }}},
                 },
-                win = {
-                    list = {
-                        keys = {
-                            ["<TAB>"] = "confirm",
-                        },
-                    },
-                },
+                win = { list = { keys = { ["<TAB>"] = "confirm"}}},
             },
             bigfile = { enabled = true },
             input = { enabled = true },

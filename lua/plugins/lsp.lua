@@ -251,15 +251,6 @@ return {
                         client.server_capabilities.semanticTokensProvider = nil
                     end
 
-                    if server_capabilities then
-                        for k, v in pairs(server_capabilities) do
-                            if v == vim.NIL then
-                                v = nil
-                            end
-
-                            client.server_capabilities[k] = v
-                        end
-                    end
                 end,
             })
 
