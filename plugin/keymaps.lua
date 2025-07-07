@@ -78,6 +78,8 @@ vim.keymap.set("n", "<Leader>th",
 vim.keymap.set("n", "fo", "zo<cr>", {desc = "Fold: Open"} )
 vim.keymap.set("n", "fc", "zc<cr>", {desc = "Fold: Close"} )
 
+-- TMS: HARPOON FOR TMUX SESSIONS
+
 -- Load Fancy Plugins
 -- vim.keymap.set("n", "<Leader>fp", function()
 --     require("lazy").load({
