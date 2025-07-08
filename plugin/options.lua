@@ -41,7 +41,6 @@ vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/bash"
 vim.opt.relativenumber = true
-vim.opt.modifiable = true
 vim.opt.autochdir = false
 
 vim.opt.background = "dark"
