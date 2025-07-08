@@ -1,5 +1,13 @@
 return {
     {
+        -- A Harpoon-inspired Neovim plugin for managing and jumping to your favorite tmux 
+        -- sessions, with Telescope integration and an editable popup UI.
+        -- * Pin the current tmux session to a persistent list
+        -- * Edit pinned sessions in a floating, editable popup window
+        -- * Jump to any pinned session with a single function or keymap
+        -- * Telescope picker for all tmux sessions
+        -- * All actions use tms -c <session> to switch sessions
+        -- https://github.com/RaphaeleL/tms needs to be installed
         'RaphaeleL/hartoon',
         dependencies = {
             'nvim-lua/plenary.nvim',
