@@ -1,5 +1,6 @@
 .DS_Store
 lazy-lock.json
+hartoon_tmux_sessions.txt
 
 # Compiled Lua sources
 luac.out
