@@ -3,7 +3,7 @@
 <b>Useable for </b>
 macOS · Linux
 
-> This is my personal `nvim` configuration for daily use, designed to work seamlessly across Linux and macOS. It provides a comprehensive IDE layer for `nvim` that is easily customizable to fit your needs. While it includes several essential plugins, it doesn't aim to include everything the `nvim` community offers—for example, it doesn't include [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap).
+> This is my personal `nvim` configuration for daily use, designed to work seamlessly across Linux and macOS. It provides a comprehensive IDE layer for `nvim` that is easily customizable to fit your needs. While it includes several essential plugins, it doesn't aim to include everything the `nvim` community offers—for example, it doesn't include [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap), but it contains some custom Plugins! Check out [hartoon](https://github.com/RaphaeleL/hartoon.nvim).
 
 ## Install
 
