@@ -8,7 +8,7 @@ return {
         -- * Telescope picker for all tmux sessions
         -- * All actions use tms -c <session> to switch sessions
         -- https://github.com/RaphaeleL/tms needs to be installed
-        'RaphaeleL/hartoon',
+        'RaphaeleL/hartoon.nvim',
         lazy = true,
         dependencies = {
             'nvim-lua/plenary.nvim',
