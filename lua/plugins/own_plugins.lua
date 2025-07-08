@@ -9,6 +9,7 @@ return {
         -- * All actions use tms -c <session> to switch sessions
         -- https://github.com/RaphaeleL/tms needs to be installed
         'RaphaeleL/hartoon',
+        lazy = true,
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope.nvim',
