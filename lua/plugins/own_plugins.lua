@@ -6,9 +6,13 @@ return {
         -- * Edit pinned sessions in a floating, editable popup window
         -- * Jump to any pinned session with a single function or keymap
         -- * Telescope picker for all tmux sessions
-        -- * All actions use tms -c <session> to switch sessions
-        -- https://github.com/RaphaeleL/tms needs to be installed
-        'RaphaeleL/hartoon.nvim',
+        -- * All actions use direct tmux commands to switch sessions
+
+        -- 'RaphaeleL/hartoon.nvim',
+        dir = '~/.config/nvim/own_plugins/hartoon.nvim',
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+        },
         lazy = true,
         config = function()
             require('hartoon').setup()
