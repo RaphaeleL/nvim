@@ -10,11 +10,6 @@ return {
         -- https://github.com/RaphaeleL/tms needs to be installed
         'RaphaeleL/hartoon.nvim',
         lazy = true,
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim',
-            'nvim-telescope/telescope-fzf-native.nvim',
-        },
         config = function()
             require('hartoon').setup()
         end,
