@@ -1,0 +1,3 @@
+[submodule "own_plugins/hartoon.nvim"]
+	path = own_plugins/hartoon.nvim
+	url = git@github.com:RaphaeleL/hartoon.nvim
