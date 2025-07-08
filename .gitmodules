@@ -1,0 +1,3 @@
+[submodule "own_plugins/-f"]
+	path = own_plugins/-f
+	url = git@github.com:RaphaeleL/hartoon
