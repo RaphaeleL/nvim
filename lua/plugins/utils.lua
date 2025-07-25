@@ -9,21 +9,21 @@ return {
 
             vim.api.nvim_set_hl(0, "MultiCursorCursor", { reverse = true })
             vim.api.nvim_set_hl(0, "MultiCursorVisual", { link = "Visual" })
-            vim.api.nvim_set_hl(0, "MultiCursorSign", { link = "SignColumn"})
+            vim.api.nvim_set_hl(0, "MultiCursorSign", { link = "SignColumn" })
             vim.api.nvim_set_hl(0, "MultiCursorMatchPreview", { link = "Search" })
             vim.api.nvim_set_hl(0, "MultiCursorDisabledCursor", { reverse = true })
             vim.api.nvim_set_hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
-            vim.api.nvim_set_hl(0, "MultiCursorDisabledSign", { link = "SignColumn"})
+            vim.api.nvim_set_hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
         end,
         keys = {
-            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end},
-            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end, mode="x"},
-            { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end},
-            { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end, mode="x"},
-            { "mc", function() require("multicursor-nvim").clearCursors() end},
-            { "mc", function() require("multicursor-nvim").clearCursors() end, mode="x"},
-            { "mm", function() require("multicursor-nvim").matchCursors() end},
-            { "mm", function() require("multicursor-nvim").matchCursors() end, mode="x"},
+            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end },
+            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end,  mode = "x" },
+            { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end },
+            { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end, mode = "x" },
+            { "mc", function() require("multicursor-nvim").clearCursors() end },
+            { "mc", function() require("multicursor-nvim").clearCursors() end,    mode = "x" },
+            { "mm", function() require("multicursor-nvim").matchCursors() end },
+            { "mm", function() require("multicursor-nvim").matchCursors() end,    mode = "x" },
         },
     },
     {
@@ -33,8 +33,8 @@ return {
             require("nvim_comment").setup()
         end,
         keys = {
-            { "<Leader>l", ":CommentToggle<cr>"},              -- normal mode
-            { "<Leader>l", ":CommentToggle<cr>", mode = "v" }  -- visual mode
+            { "<Leader>l", ":CommentToggle<cr>" },            -- normal mode
+            { "<Leader>l", ":CommentToggle<cr>", mode = "v" } -- visual mode
         },
     },
     {
@@ -71,17 +71,17 @@ return {
                         middle   = "├╴",
                         last     = "└╴",
                     },
-                    undo = { saved   = "", },
+                    undo = { saved = "", },
                     ui = {
-                        live        = "󰐰 ",
-                        hidden      = "h",
-                        ignored     = "i",
-                        follow      = "f",
-                        selected    = "● ",
-                        unselected  = "○ ",
+                        live       = "󰐰 ",
+                        hidden     = "h",
+                        ignored    = "i",
+                        follow     = "f",
+                        selected   = "● ",
+                        unselected = "○ ",
                         -- selected = " ",
                     },
-                    git = { enabled   = false },
+                    git = { enabled = false },
                     diagnostics = {
                         Error = "",
                         Warn  = "",
@@ -96,15 +96,19 @@ return {
                     },
                     kinds = {}
                 },
+                files = {
+                    hidden = true,
+                    ignored = false,
+                },
                 enabled = true,
                 layout = {
                     preset = 'ivy',
                     border = "none",
                 },
                 sources = {
-                    explorer = { layout = { layout = { position = "right" }}},
+                    explorer = { layout = { layout = { position = "right" } } },
                 },
-                win = { list = { keys = { ["<TAB>"] = "confirm"}}},
+                win = { list = { keys = { ["<TAB>"] = "confirm" } } },
             },
             bigfile = { enabled = true },
             input = { enabled = true },
@@ -130,7 +134,7 @@ return {
             { "<leader>sd",      function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
             { "<leader>sk",      function() Snacks.picker.keymaps() end,              desc = "Keymaps" },
             { "<leader>su",      function() Snacks.picker.undo() end,                 desc = "Undo History" },
-            { "<leader>f",       function() Snacks.picker.explorer() end,             desc = "Explorer"},
+            { "<leader>se",      function() Snacks.picker.explorer() end,             desc = "Explorer" },
             -- LSP
             { "gd",              function() Snacks.picker.lsp_definitions() end,      desc = "Goto Definition" },
             { "gD",              function() Snacks.picker.lsp_declarations() end,     desc = "Goto Declaration" },
