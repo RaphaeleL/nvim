@@ -33,7 +33,8 @@ local function get_kind_icon(CTX)
                 if ctx.item.kind == kinds.Color then
                     local doc = vim.tbl_get(ctx, "item", "documentation")
                     if doc then
-                        local color_item = highlight_colors_avail and highlight_colors.format(doc, { kind = kinds[kinds.Color] })
+                        local color_item = highlight_colors_avail and
+                            highlight_colors.format(doc, { kind = kinds[kinds.Color] })
                         if color_item and color_item.abbr_hl_group then
                             if color_item.abbr then ctx.kind_icon = color_item.abbr end
                             ctx.kind_hl = color_item.abbr_hl_group
@@ -88,119 +89,23 @@ local servers = {
         },
     },
 }
+
 local disable_semantic_tokens = { lua = true }
 local ensure_installed = { "pyright", "lua_ls", "bashls", "clangd", "vimls", "ts_ls", "tailwindcss" }
-local function read_file_names_of_dir(dir)
-    local files = {}
-    for file in io.popen('ls "' .. dir .. '"'):lines() do
-        table.insert(files, file:match('(.+)%..+'))
-    end
-    return files
-end
-
-local SHOULD_USE_NEW_LSP = false
 
 return {
-    "Saghen/blink.cmp",
-    -- event = { "InsertEnter", "CmdlineEnter" },
-    -- event = { "VeryLazy" },
-    -- opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
-    dependencies = not SHOULD_USE_NEW_LSP and {
-	    "neovim/nvim-lspconfig",
-		"folke/neodev.nvim",
-        "williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-        "giuxtaposition/blink-cmp-copilot",
-	},
-    config = function()
-        require("blink.cmp").setup({
-            sources = { 
-                default = { "lsp", "path", "snippets", "buffer", 'copilot' },
-                providers = {
-                    copilot = {
-                        name = "copilot",
-                        module = "blink-cmp-copilot",
-                        score_offset = 100,
-                        async = true,
-                    },
-                },
-            },
-            keymap = {
-                ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
-                ["<Up>"] = { "select_prev", "fallback" },
-                ["<Down>"] = { "select_next", "fallback" },
-                ["<C-N>"] = { "select_next", "show" },
-                ["<C-P>"] = { "select_prev", "show" },
-                ["<C-J>"] = { "select_next", "fallback" },
-                ["<C-K>"] = { "select_prev", "fallback" },
-                ["<C-U>"] = { "scroll_documentation_up", "fallback" },
-                ["<C-D>"] = { "scroll_documentation_down", "fallback" },
-                ["<C-e>"] = { "hide", "fallback" },
-                ["<CR>"] = { "accept", "fallback" },
-                ["<Tab>"] = {
-                    "snippet_forward",
-                    "select_next",
-                    function(cmp)
-                        if has_words_before() or vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
-                    end,
-                    "fallback",
-                },
-                ["<S-Tab>"] = {
-                    "snippet_backward",
-                    "select_prev",
-                    function(cmp)
-                        if vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
-                    end,
-                    "fallback",
-                },
-            },
-            fuzzy = {
-                implementation = 'lua'
-            },
-            completion = {
-                list = { selection = { preselect = false, auto_insert = true } },
-                menu = {
-                    auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
-                    border = "rounded",
-                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-                    draw = {
-                        treesitter = { "lsp" },
-                        components = {
-                            kind_icon = {
-                                text = function(ctx) return get_kind_icon(ctx).text end,
-                                highlight = function(ctx) return get_kind_icon(ctx).highlight end,
-                            },
-                        },
-                    },
-                },
-                accept = {
-                    auto_brackets = { enabled = true },
-                },
-                documentation = {
-                    auto_show = true,
-                    auto_show_delay_ms = 0,
-                    window = {
-                        border = "rounded",
-                        winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
-                    },
-                },
-            },
-            signature = {
-                window = {
-                    border = "rounded",
-                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
-                },
-            },
-        })
-        if SHOULD_USE_NEW_LSP then
-            vim.lsp.config("*", {
-                capabilities = require('blink.cmp').get_lsp_capabilities(),
-                root_markers = { ".git" },
-            })
-            vim.diagnostic.config({ virtual_lines = false, virtual_text = false })
-            vim.lsp.enable(read_file_names_of_dir("lsp"))
-        else
+    {
+        "neovim/nvim-lspconfig",
+        -- event = { "InsertEnter", "CmdlineEnter" },
+        -- event = { "VeryLazy" },
+        -- opts_extend = { "sources.default", "cmdline.sources", "term.sources" },
+        dependencies = {
+            "folke/neodev.nvim",
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        config = function()
             require("neodev").setup({})
 
             local servers_to_install = vim.tbl_filter(function(key)
@@ -232,7 +137,8 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
                     local bufnr = args.buf
-                    local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
+                    local client = assert(vim.lsp.get_client_by_id(args.data.client_id),
+                        "must have valid client")
 
                     local settings = servers[client.name]
                     if type(settings) ~= "table" then
@@ -242,7 +148,8 @@ return {
                     vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
 
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
-                    vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>", { desc = "LSP: Format" })
+                    vim.keymap.set("n", "gf", ":lua require('conform').format()<cr>",
+                        { desc = "LSP: Format" })
                     vim.keymap.set("n", "gn", vim.lsp.buf.rename, { desc = "LSP: Rename" })
                     vim.keymap.set("n", "ga", vim.lsp.buf.code_action, { desc = "LSP: Code Action" })
 
@@ -250,11 +157,165 @@ return {
                     if disable_semantic_tokens[filetype] then
                         client.server_capabilities.semanticTokensProvider = nil
                     end
-
                 end,
             })
 
             vim.diagnostic.config({ virtual_text = false, })
         end
-    end,
+    },
+    {
+        "Saghen/blink.cmp",
+        event = { "InsertEnter", "CmdlineEnter" },
+        dependencies = {
+            "giuxtaposition/blink-cmp-copilot",
+        },
+        opts = {
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer", 'copilot' },
+                providers = {
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-cmp-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
+                },
+            },
+            keymap = {
+                ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+                ["<Up>"] = { "select_prev", "fallback" },
+                ["<Down>"] = { "select_next", "fallback" },
+                ["<C-N>"] = { "select_next", "show" },
+                ["<C-P>"] = { "select_prev", "show" },
+                ["<C-J>"] = { "select_next", "fallback" },
+                ["<C-K>"] = { "select_prev", "fallback" },
+                ["<C-U>"] = { "scroll_documentation_up", "fallback" },
+                ["<C-D>"] = { "scroll_documentation_down", "fallback" },
+                ["<C-e>"] = { "hide", "fallback" },
+                ["<CR>"] = { "accept", "fallback" },
+                ["<Tab>"] = {
+                    "snippet_forward",
+                    "select_next",
+                    function(cmp)
+                        if has_words_before() or vim.api.nvim_get_mode().mode == "c" then
+                            return
+                                cmp.show()
+                        end
+                    end,
+                    "fallback",
+                },
+                ["<S-Tab>"] = {
+                    "snippet_backward",
+                    "select_prev",
+                    function(cmp)
+                        if vim.api.nvim_get_mode().mode == "c" then return cmp.show() end
+                    end,
+                    "fallback",
+                },
+            },
+            fuzzy = {
+                implementation = 'lua'
+            },
+            completion = {
+                list = { selection = { preselect = false, auto_insert = true } },
+                menu = {
+                    auto_show = function(ctx) return ctx.mode ~= "cmdline" end,
+                    border = "rounded",
+                    winhighlight =
+                    "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+                    draw = {
+                        treesitter = { "lsp" },
+                        components = {
+                            kind_icon = {
+                                text = function(ctx) return get_kind_icon(ctx).text end,
+                                highlight = function(ctx)
+                                    return get_kind_icon(ctx)
+                                        .highlight
+                                end,
+                            },
+                        },
+                    },
+                },
+                accept = {
+                    auto_brackets = { enabled = true },
+                },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 0,
+                    window = {
+                        border = "rounded",
+                        winhighlight =
+                        "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+                    },
+                },
+            },
+            signature = {
+                window = {
+                    border = "rounded",
+                    winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+                },
+            },
+        }
+    },
+    {
+        "stevearc/conform.nvim",
+        -- event = { "InsertEnter", "CmdlineEnter" },
+        event = { "BufWritePre" },
+        keys = {
+            {
+                "<leader>f",
+                function()
+                    require("conform").format({ async = true, lsp_format = "fallback" })
+                end,
+                desc = "[F]ormat buffer",
+            },
+            {
+                "<leader>rf",
+                function()
+                    local mode = vim.fn.mode()
+                    local start_pos, end_pos
+
+                    -- Support for visual selection
+                    if mode == "v" or mode == "V" or mode == "" then
+                        -- Get visual selection range
+                        vim.cmd("normal! \\<Esc>")
+                        start_pos = vim.fn.getpos("'<")
+                        end_pos = vim.fn.getpos("'>")
+
+                        local start_line = start_pos[2] - 1
+                        local end_line = end_pos[2] - 1
+                        local end_col = #vim.fn.getline(end_line + 1)
+
+                        require("conform").format({
+                            async = true,
+                            lsp_format = "fallback",
+                            range = {
+                                start = { start_line, 0 },
+                                ["end"] = { end_line, end_col },
+                            },
+                        })
+                    else
+                        require("conform").format({
+                            async = true,
+                            lsp_format = "fallback",
+                        })
+                    end
+                end,
+                mode = { "n", "v" },
+                desc = "[F]ormat selected range",
+            },
+        },
+        opts = {
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_format = "fallback",
+            },
+            formatters_by_ft = { -- more under: https://github.com/stevearc/conform.nvim
+                lua = { "stylua" },
+                python = { "isort", "black" },
+                rust = { "rustfmt", lsp_format = "fallback" },
+                javascript = { "prettierd", "prettier", stop_after_first = true },
+            },
+        }
+    }
 }
