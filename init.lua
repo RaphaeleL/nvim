@@ -1,4 +1,4 @@
--- Set Leader to Space 
+-- Set Leader to Space
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
