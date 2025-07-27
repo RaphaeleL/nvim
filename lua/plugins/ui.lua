@@ -28,7 +28,7 @@ return {
                             vim.notify(
                                 "File larger than 100KB treesitter disabled for performance",
                                 vim.log.levels.WARN,
-                                {title = "Treesitter"}
+                                { title = "Treesitter" }
                             )
                             return true
                         end
