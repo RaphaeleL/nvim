@@ -38,6 +38,3 @@ ide:
 minimal:
 	@mv init.lua init.ide.lua
 	@mv init.minimal.lua init.lua
-
-
-
