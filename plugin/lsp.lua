@@ -1,4 +1,3 @@
-
 local function has_words_before()
     local line, col = (unpack or table.unpack)(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
@@ -96,8 +95,6 @@ local servers = {
 local ensure_installed = { "pyright", "lua_ls", "bashls", "clangd", "vimls", "ts_ls", "tailwindcss" }
 vim.lsp.enable(ensure_installed)
 
-require("neodev").setup({})
-
 local servers_to_install = vim.tbl_filter(function(key)
     local t = servers[key]
     if type(t) == "table" then
@@ -107,20 +104,19 @@ local servers_to_install = vim.tbl_filter(function(key)
     end
 end, vim.tbl_keys(servers))
 
-for name, config in pairs(servers) do
-    if config == true then config = {} end
-    config = vim.tbl_deep_extend("force", {}, {
-        capabilities = require('blink.cmp').get_lsp_capabilities(),
-    }, config)
-
-    require("lspconfig")[name].setup(config)
-end
+-- for name, config in pairs(servers) do
+--     if config == true then config = {} end
+--     config = vim.tbl_deep_extend("force", {}, {
+--         capabilities = require('blink.cmp').get_lsp_capabilities(),
+--     }, config)
+--
+--     require("lspconfig")[name].setup(config)
+-- end
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local bufnr = args.buf
-        local client = assert(vim.lsp.get_client_by_id(args.data.client_id),
-            "must have valid client")
+        local client = assert(vim.lsp.get_client_by_id(args.data.client_id), "must have valid client")
 
         local settings = servers[client.name]
         if type(settings) ~= "table" then
@@ -250,7 +246,7 @@ vim.keymap.set("n", "<leader>f", function()
 end, { desc = "[F]ormat buffer" })
 vim.keymap.set({ "n", "v" }, "<leader>rf", function()
     local mode = vim.fn.mode()
-    local start_pos, end_pos    
+    local start_pos, end_pos
     -- Support for visual selection
     if mode == "v" or mode == "V" or mode == "" then
         -- Get visual selection range

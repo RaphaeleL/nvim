@@ -28,7 +28,7 @@ vim.pack.add({
     -- "https://github.com/windwp/nvim-autopairs",
     -- "https://github.com/NStefan002/visual-surround.nvim",
     -- "https://github.com/MagicDuck/grug-far.nvim",
-    "https://github.com/folke/snacks.nvim",
+    "https://github.com/nvim-telescope/telescope.nvim",
 
 
 })
