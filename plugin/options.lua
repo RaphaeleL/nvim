@@ -56,3 +56,5 @@ vim.opt.smoothscroll = true
 -- vim.opt.foldtext = ""
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 99
+
+vim.o.winborder = "rounded"
