@@ -1,8 +1,8 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        -- event = { "BufReadPost", "BufNewFile" },
-        event = { "VeryLazy" },
+        event = { "BufReadPost", "BufNewFile" },
+        -- event = { "VeryLazy" },
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
@@ -28,7 +28,7 @@ return {
                             vim.notify(
                                 "File larger than 100KB treesitter disabled for performance",
                                 vim.log.levels.WARN,
-                                {title = "Treesitter"}
+                                { title = "Treesitter" }
                             )
                             return true
                         end

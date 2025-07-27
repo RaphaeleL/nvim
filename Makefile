@@ -29,4 +29,15 @@ neovim_install:
 neovim_remove:
 	@rm -rf $(which nvim)
 
+.PHONY: ide 
+ide:
+	@mv init.lua init.minimal.lua
+	@mv init.ide.lua init.lua
+
+.PHONY: minimal
+minimal:
+	@mv init.lua init.ide.lua
+	@mv init.minimal.lua init.lua
+
+
 

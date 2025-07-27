@@ -1,27 +1,14 @@
 return {
-    -- {
-    --     "craftzdog/solarized-osaka.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --         transparent = true,
-    --         terminal_colors = true,
-    --         styles = {
-    --             comments = { italic = true },
-    --             keywords = { italic = true },
-    --             functions = {},
-    --             variables = {},
-    --             sidebars = "dark",
-    --             floats = "dark",
-    --         },
-    --         sidebars = { "qf", "help" },
-    --         day_brightness = 0.3,
-    --         hide_inactive_statusline = false,
-    --         dim_inactive = false,
-    --         lualine_bold = false,
-    --         on_colors = function(colors) end,
-    --     },
-    -- },
+    {
+        "vague2k/vague.nvim",
+        config = function()
+            require("vague").setup({
+                transparent = true
+            })
+            vim.cmd("colorscheme vague")
+            vim.cmd("hi statusline guibg=NONE")
+        end
+    },
     {
         "rose-pine/neovim",
         lazy = true,
@@ -48,7 +35,7 @@ return {
                     CursorLineNr = { fg = "gold" },
                 },
             })
-            vim.cmd("colorscheme rose-pine")
+            -- vim.cmd("colorscheme rose-pine")
         end,
     },
     -- {
