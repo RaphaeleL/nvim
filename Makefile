@@ -9,6 +9,11 @@ config_remove:
 	@rm -rf ~/.local/share/nvim
 	@rm -rf ~/.local/state/nvim 
 
+.PHONY: share_remove
+share_remove:
+	@rm -rf ~/.local/share/nvim
+	@rm -rf ~/.local/state/nvim 
+
 .PHONY: config_unbackup
 config_unbackup:
 	mv ~/.config/nvim.bat ~/.config/nvim
