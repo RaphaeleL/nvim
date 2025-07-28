@@ -5,6 +5,10 @@ vim.keymap.set("n", "<Space>", "<NOP>", { desc = "Buffer: Leader" })
 vim.keymap.set("n", "<TAB>", ":bprev<cr>", { desc = "Buffer: Next Tab and Write Buffer" })
 vim.keymap.set("n", "<S-TAB>", ":bnext<cr>", { desc = "Buffer: Previous Tab" })
 
+vim.keymap.set({"i","n"}, "<C-w>", ":q!<cr>", { desc = "Buffer: Quit" })
+vim.keymap.set({"i","n"}, "<C-q>", ":qa!<cr>", { desc = "Buffer: Quit All" })
+vim.keymap.set({"i","n"}, "<C-s>", "<esc>:wa!<cr>", { desc = "Buffer: Save All" })
+
 vim.keymap.set("n", "sh", "<C-w>h", { desc = "Buffer: Move to the left Window" })
 vim.keymap.set("n", "sj", "<C-w>j", { desc = "Buffer: Move to the bottom Window" })
 vim.keymap.set("n", "sk", "<C-w>k", { desc = "Buffer: Move to the upper Window" })
