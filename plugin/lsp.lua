@@ -1,3 +1,6 @@
+-- https://github.com/Rishabh672003/Neovim/blob/main/lua%2Frj%2Flsp.lua
+-- https://github.com/NTBBloodbath/nvim/blob/main/lua/core/lsp.lua
+
 -- Diagnostics
 local config = {
     signs = {
@@ -23,18 +26,18 @@ local config = {
 }
 vim.diagnostic.config(config)
 
--- -- Lsp capabilities and on_attach
--- -- Here we grab default Neovim capabilities and extend them with ones we want on top
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
---
+-- Lsp capabilities and on_attach
+-- Here we grab default Neovim capabilities and extend them with ones we want on top
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 -- capabilities.textDocument.foldingRange = {
 --     dynamicRegistration = true,
 --     lineFoldingOnly = true,
 -- }
---
--- capabilities.textDocument.semanticTokens.multilineTokenSupport = true
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
---
+
+capabilities.textDocument.semanticTokens.multilineTokenSupport = true
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 -- vim.lsp.config("*", {
 --     capabilities = capabilities,
 --     on_attach = function(client, bufnr)
@@ -129,6 +132,9 @@ vim.lsp.config.lua_ls = {
         Lua = {
             telemetry = {
                 enable = false,
+            },
+            diagnostics = {
+                globals = { 'vim' },
             },
         },
     },
