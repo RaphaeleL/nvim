@@ -1,7 +1,10 @@
 -- https://github.com/Rishabh672002/Neovim/blob/main/lua%2Frj%2Flsp.lua
 -- https://github.com/NTBBloodbath/nvim/blob/main/lua/core/lsp.lua
---
--- TODO: move into lsp/ folder
+-- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+
+-- LSP is supporting
+-- - Lua, Python, Go, C/C++, Rust, Java, Bash
+-- - TypeScript/JavaScript, CSS, TailwindCSS, HTML
 
 -- Diagnostics
 local config = {
@@ -295,6 +298,54 @@ vim.lsp.config.htmlls = {
 }
 
 vim.lsp.enable({ "ts_ls", "cssls", "tailwindcssls", "htmlls" })
+
+-- Java
+vim.lsp.config.jdtls = {
+  cmd = { "jdtls" },
+  filetypes = { "java" },
+  root_markers = {
+    ".git",
+    "mvnw",
+    "gradlew",
+    "pom.xml",
+    "build.gradle",
+    "build.gradle.kts",
+  },
+  settings = {
+    java = {
+      configuration = {
+        updateBuildConfiguration = "interactive",
+      },
+      format = {
+        enabled = true,
+      },
+      completion = {
+        favoriteStaticMembers = {
+          "org.hamcrest.MatcherAssert.assertThat",
+          "org.hamcrest.Matchers.*",
+          "org.hamcrest.CoreMatchers.*",
+          "org.junit.jupiter.api.Assertions.*",
+          "java.util.Objects.requireNonNull",
+          "java.util.Objects.requireNonNullElse",
+        },
+      },
+      contentProvider = { preferred = "fernflower" },
+      sources = {
+        organizeImports = {
+          starThreshold = 9999,
+          staticStarThreshold = 9999,
+        },
+      },
+      codeGeneration = {
+        toString = {
+          template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+        },
+      },
+    },
+  },
+}
+
+vim.lsp.enable("jdtls")
 
 -- Start, Stop, Restart, Log commands
 vim.api.nvim_create_user_command("LspStart", function()
