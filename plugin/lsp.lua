@@ -41,6 +41,7 @@ for _, bind in ipairs({ "grn", "gra", "gri", "grr" }) do
 end
 
 -- Create keybindings, commands, inlay hints and autocommands on LSP attach
+-- see plugin/autocommands.lua
 
 -- Servers
 
