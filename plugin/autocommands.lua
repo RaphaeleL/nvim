@@ -4,13 +4,49 @@
 --     command = "LspStart"
 -- })
 
--- Attach LSP (right now it's just for the keymaps - https://gpanders.com/blog/whats-new-in-neovim-0-11/#builtin-auto-completion)
+-- Attach LSP 
 vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function()
-		vim.keymap.set("n", "gf", ":lua vim.lsp.buf.format()<cr>", { desc = "LSP: Format" })
-		vim.keymap.set("n", "gR", ":lua vim.lsp.buf.rename()<cr>", { silent = true })
-		vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", { silent = true })
-	end,
+    callback = function(ev)
+        local bufnr = ev.buf
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if not client then
+            return
+        end
+
+        -- NOTE: inbuilt completions, this can replace all completion plugins
+        --         C-x C-o -> trigger completion
+        --         C-n     -> next completion
+        --         C-p     -> previous completion
+        --         C-y     -> confirm completion
+
+        -- if client.server_capabilities.completionProvider then
+        --     vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+        -- end
+        -- if client.server_capabilities.definitionProvider then
+        --     vim.bo[bufnr].tagfunc = "v:lua.vim.lsp.tagfunc"
+        -- end
+        -- if client:supports_method("textDocument/completion", bufnr) then
+        --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = not true })
+        -- end
+
+        --- Disable semantic tokens
+        client.server_capabilities.semanticTokensProvider = nil
+
+        -- All the keymaps
+        local function opt(desc, others)
+            return vim.tbl_extend("force", { silent = true }, { desc = desc }, others or {})
+        end
+        vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opt("Go to definition"))
+        vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", opt("Show References"))
+        vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<cr>", opt("Go to implementation"))
+		vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", opt("Toggle Signature Help"))
+        vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<cr>", opt("Open diagnostic in float"))
+        vim.keymap.set("n", "<Leader>la", ":lua vim.lsp.buf.code_action()<cr>", opt("Code Action"))
+        vim.keymap.set("n", "<Leader>lr", ":lua vim.lsp.buf.rename()<cr>", opt("Rename"))
+        vim.keymap.set("n", "<Leader>ls", ":lua vim.lsp.buf.document_symbol()<cr>", opt("Doument Symbols"))
+        vim.keymap.set("n", "<Leader>dn", function() vim.diagnostic.jump({ count = 1, float = true }) end, opt("Next Diagnostic"))
+        vim.keymap.set("n", "<Leader>dp", function() vim.diagnostic.jump({ count = -1, float = true }) end, opt("Prev Diagnostic"))
+    end,
 })
 
 -- Highlight Yanking
