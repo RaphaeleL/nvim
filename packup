@@ -1,0 +1,119 @@
+#!/bin/sh
+
+# https://github.com/gpanders/dotfiles/tree/master/.config/nvim
+
+set -euf
+
+packpath="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack/plugins"
+
+plugins=""
+
+plug() {
+	url="https://$1"
+	name=${url##*/}
+	type=${2:-start}
+	after=${4:-''}
+	path="$packpath/$type/$name"
+	plugins="$plugins $path"
+
+	(
+		if [ -d "$path" ]; then
+			git -C "$path" fetch --quiet
+		elif [ "$type" = start ] && [ -d "$packpath/opt/$name" ]; then
+			printf 'Moving %s from opt to start\n' "$name"
+			mv "$packpath/opt/$name" "$path"
+		elif [ "$type" = opt ] && [ -d "$packpath/start/$name" ]; then
+			printf 'Moving %s from start to opt\n' "$name"
+			mv "$packpath/start/$name" "$path"
+		else
+			printf 'Cloning %s\n' "$name"
+			git clone -q --recurse-submodules --shallow-submodules --depth=1 ${3:+--branch "$3"} "$url" "$path"
+		fi
+
+		if [ -n "$after" ]; then
+			cd "$path" && sh -c "$after" >/dev/null
+		fi
+	) &
+}
+
+prompt() {
+	path="$1"
+	quit=0
+	while true; do
+		printf 'Update? [y/N/l/s/q] '
+		read -r ans
+		case "$ans" in
+		[yY])
+			if ! git -C "$path" merge --ff-only '@{u}'; then
+				printf 'Upstream branch diverged. Force update? [y/N] '
+				read -r ans
+				case "$ans" in
+				[yY]) git -C "$path" reset --hard '@{u}' ;;
+				*) ;;
+				esac
+			fi
+			break
+			;;
+		[lL])
+			git -C "$path" log --patch --color 'HEAD...@{u}'
+			;;
+		[qQ])
+			quit=1
+			break
+			;;
+		[sS])
+			(
+				cd "$path"
+				printf 'Opening subshell in %s. Press Ctrl-D to exit.\n' "$path"
+				$SHELL
+			) || true
+			;;
+		*)
+			break
+			;;
+		esac
+	done
+
+	return "$quit"
+}
+
+packup() {
+	wait
+
+	tmp=$(mktemp)
+	trap 'rm -f $tmp' EXIT
+	printf '%s\n' "$plugins" >"$tmp"
+	installed="$(find "$packpath" -mindepth 2 -maxdepth 2 -type d)"
+	for path in $installed; do
+		name=${path##*/}
+		if ! grep -qF "$path" "$tmp"; then
+			printf 'Remove %s? [Y/n] ' "$name"
+			read -r ans
+			case "$ans" in
+			[Nn]) ;;
+			*)
+				rm -rf "$path"
+				;;
+			esac
+			continue
+		fi
+
+		count="$(git -C "$path" rev-list --count 'HEAD...@{u}')"
+		if [ "$count" -gt 0 ]; then
+			printf '%s has %d new commits:\n' "$name" "$count"
+			git -C "$path" log --color --format='%>(12)%C(auto)%h %s' 'HEAD...@{u}'
+			if ! prompt "$path"; then
+				break
+			fi
+		fi
+	done
+
+	if command -v nvim >/dev/null 2>&1; then
+		nvim --headless +'helptags ALL' +q
+	fi
+}
+
+plug github.com/zbirenbaum/copilot.lua
+plug github.com/giuxtaposition/blink-cmp-copilot
+
+packup

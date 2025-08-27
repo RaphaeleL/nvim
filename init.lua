@@ -16,3 +16,35 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({ import = "plugins" }, { change_detection = { notify = false } })
+
+-- reset packpath to sane defaults (you broke it by pointing at /start/)
+vim.opt.packpath = table.concat({
+  vim.fn.stdpath("data") .. "/site",
+  vim.fn.stdpath("config") .. "/site",
+  "/usr/local/share/nvim/site",
+  "/usr/share/nvim/site",
+}, ",")
+
+-- plugin in start/ is auto-loaded; just require it
+-- require("vague").setup({})
+-- require("solarized-osaka").setup({})
+-- vim.cmd("colorscheme vague")
+--
+require('copilot').setup({
+        suggestion = {
+            enabled = not true,
+            auto_trigger = true,
+            hide_during_completion = false,
+            keymap = {
+                accept = "<M-l>",
+                next = "<M-n>",
+                prev = "<M-p>",
+            },
+        },
+        panel = { enabled = not true },
+        filetypes = {
+            markdown = true,
+            yaml = true,
+            help = true,
+        },
+    })
