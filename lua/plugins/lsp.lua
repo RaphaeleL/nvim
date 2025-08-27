@@ -6,25 +6,30 @@ return {
     --  However, Mason installs all LSP Servers under $HOME/.local/share/nvim/mason/bin. So in case you need
     --  those LSP Servers somewhere else (e.g. Emacs), you might want to add that path to your $PATH variable.
     --  $ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-    "mason-org/mason.nvim",
-    event = "VeryLazy",
-    -- dependencies = {
-    --     { "mason-org/mason-lspconfig.nvim", opts={} },
-    --     { "neovim/nvim-lspconfig", opts={} },
+    --  Technically, you could use Mason to install a new LSP Server and then use it in Emacs or other Editors,
+    --  or even remove Mason after installing the LSP Servers you want, like its done here. 
+    --
+    -- NOTE: Enable to install new LSP Servers (automatically)
+    --
+    -- "mason-org/mason.nvim",
+    -- event = "VeryLazy",
+    -- -- dependencies = {
+    -- --     { "mason-org/mason-lspconfig.nvim", opts={} },
+    -- --     { "neovim/nvim-lspconfig", opts={} },
+    -- -- },
+    -- opts = {
+    --     ensure_installed = {
+    --         "lua_ls",
+    --         "pyright-langserver",
+    --         "gopls",
+    --         "clangd",
+    --         "rust_analyzer",
+    --         "bashls",
+    --         "ts_ls",
+    --         "cssls",
+    --         "tailwindcssls",
+    --         "htmlls",
+    --         "jdtls",
+    --     },
     -- },
-    opts = {
-        ensure_installed = {
-            "lua_ls",
-            "pyright-langserver",
-            "gopls",
-            "clangd",
-            "rust_analyzer",
-            "bashls",
-            "ts_ls",
-            "cssls",
-            "tailwindcssls",
-            "htmlls",
-            "jdtls",
-        },
-    },
 }
