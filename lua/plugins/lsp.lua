@@ -1,5 +1,13 @@
 return {
+    -- NOTE: This is only here to install the LSP Servers properly and kinda easy. This is not quite needed if
+    --  you install them manually. In case you don't wanna lookup where all those LSP Servers are located and 
+    --  how to install them, just look at the Registry of Mason itself: github.com/mason-org/mason-registry
+    --  and download the ones you want. Then you can remove this Plugin.
+    --  However, Mason installs all LSP Servers under $HOME/.local/share/nvim/mason/bin. So in case you need
+    --  those LSP Servers somewhere else (e.g. Emacs), you might want to add that path to your $PATH variable.
+    --  $ export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
     "mason-org/mason.nvim",
+    event = "VeryLazy",
     -- dependencies = {
     --     { "mason-org/mason-lspconfig.nvim", opts={} },
     --     { "neovim/nvim-lspconfig", opts={} },
