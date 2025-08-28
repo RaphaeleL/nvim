@@ -19,7 +19,6 @@ neovim_install:
 	@echo '----'
 	@echo 'git clone --depth 1 https://github.com/neovim/neovim ~/neovim'
 	@echo 'cd ~/neovim'
-	@echo 'git checkout nightly'
 	@echo 'make CMAKE_BUILD_TYPE=RelWithDebInfo'
 	@echo 'sudo make install'
 	@echo 'cd ..'
