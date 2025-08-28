@@ -115,5 +115,24 @@ packup() {
 
 plug github.com/zbirenbaum/copilot.lua
 plug github.com/giuxtaposition/blink-cmp-copilot
+plug github.com/neovim/nvim-lspconfig
+plug github.com/rose-pine/neovim
+plug github.com/nvim-treesitter/nvim-treesitter
+plug github.com/mcauley-penney/visual-whitespace.nvim
+plug github.com/nvim-lualine/lualine.nvim
+plug github.com/nvim-lua/plenary.nvim
+plug github.com/lewis6991/impatient.nvim
+plug github.com/jake-stewart/multicursor.nvim
+plug github.com/terrortylor/nvim-comment
+plug github.com/windwp/nvim-autopairs
+plug github.com/NStefan002/visual-surround.nvim
+plug github.com/MagicDuck/grug-far.nvim
+plug github.com/folke/snacks.nvim
+plug github.com/Saghen/blink.cmp
+plug github.com/stevearc/conform.nvim
+plug github.com/stevearc/oil.nvim
+plug github.com/ThePrimeagen/harpoon
+plug github.com/folke/noice.nvim
+plug github.com/MunifTanjim/nui.nvim
 
 packup
