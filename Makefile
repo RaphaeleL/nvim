@@ -15,8 +15,6 @@ config_unbackup:
 
 .PHONY: neovim_install
 neovim_install:
-	@echo 'TODO'
-	@echo '----'
 	@echo 'git clone --depth 1 https://github.com/neovim/neovim ~/neovim'
 	@echo 'cd ~/neovim'
 	@echo 'make CMAKE_BUILD_TYPE=RelWithDebInfo'
