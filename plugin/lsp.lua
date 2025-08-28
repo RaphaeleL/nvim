@@ -56,6 +56,7 @@ vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("bashls")
 vim.lsp.enable({ "ts_ls", "cssls", "html", "tailwindcss" })
 vim.lsp.enable("jdtls")
+vim.lsp.enable("yamlls")
 
 -- Start, Stop, Restart, Log commands
 vim.api.nvim_create_user_command("LspStart", function()
