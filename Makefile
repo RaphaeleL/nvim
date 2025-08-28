@@ -21,8 +21,6 @@ neovim_install:
 	@echo 'cd ~/neovim'
 	@echo 'make CMAKE_BUILD_TYPE=RelWithDebInfo'
 	@echo 'sudo make install'
-	@echo 'cd ..'
-	@echo 'rm -rf neovim'
 
 .PHONY: neovim_remove
 neovim_remove:
