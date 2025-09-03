@@ -29,6 +29,7 @@ local config = {
         suffix = "",
     },
 }
+
 vim.diagnostic.config(config)
 
 -- Lsp capabilities and on_attach
