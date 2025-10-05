@@ -37,11 +37,11 @@ return {
             { "<Leader>l", ":CommentToggle<cr>", mode = "v" } -- visual mode
         },
     },
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        opts = {},
-    },
+    -- {
+    --     "windwp/nvim-autopairs",
+    --     event = "InsertEnter",
+    --     opts = {},
+    -- },
     {
         "NStefan002/visual-surround.nvim",
         event = "InsertEnter",
@@ -79,7 +79,7 @@ return {
                         follow     = "f",
                         selected   = "● ",
                         unselected = "○ ",
-                        -- selected = " ",
+                        selected = " ",
                     },
                     git = { enabled = false },
                     diagnostics = {

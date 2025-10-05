@@ -27,7 +27,7 @@ vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "Buffer Resi
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "Buffer Resize right" })
 
 -- vim.keymap.set("n", "q", ":quit!<cr>", { desc = "Buffer: Close" })
-vim.keymap.set("n", "c", ":bd<cr>", { desc = "Window: Close" })
+vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "Window: Close" })
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 

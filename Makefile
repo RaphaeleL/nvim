@@ -17,6 +17,7 @@ config_unbackup:
 neovim_install:
 	@echo 'git clone --depth 1 https://github.com/neovim/neovim ~/neovim'
 	@echo 'cd ~/neovim'
+	@echo 'git pull && git clean -fdx' # in case when the repo already exists
 	@echo 'make CMAKE_BUILD_TYPE=RelWithDebInfo'
 	@echo 'sudo make install'
 
