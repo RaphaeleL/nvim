@@ -26,7 +26,6 @@ vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { desc = "Buffer Resize down" 
 vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "Buffer Resize left" })
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "Buffer Resize right" })
 
--- vim.keymap.set("n", "q", ":quit!<cr>", { desc = "Buffer: Close" })
 vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "Window: Close" })
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
@@ -45,10 +44,8 @@ vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "Chars: Delete a Word." })
 vim.keymap.set("v", "<", "<gv", { desc = "Line: Indent to Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Line: Indent to Right" })
 
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'",
-    { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Line: Concat Line without moving the Cursor" })
 
@@ -64,30 +61,3 @@ vim.keymap.set("n", "<leader>o", ":Oil<cr>", { desc = "Filesystem: Open Oil File
 vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "Treesitter: Inspect Tree" })
 vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
 
--- -- Nvim Specific
--- vim.keymap.set("n", "<space>tt",
---     function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 }) end)
-
--- -- Theme
--- vim.keymap.set("n", "<Leader>th",
---     function()
---         if vim.o.background == "dark" then
---             vim.cmd("set background=light")
---         else
---             vim.cmd("set background=dark")
---         end
---     end, { desc = "Theme: Neovim Theme (dark / light)" })
---
--- -- Fold
--- vim.keymap.set("n", "fo", "zo<cr>", {desc = "Fold: Open"} )
--- vim.keymap.set("n", "fc", "zc<cr>", {desc = "Fold: Close"} )
-
--- TMS: HARPOON FOR TMUX SESSIONS
-
--- Load Fancy Plugins
--- vim.keymap.set("n", "<Leader>fp", function()
---     require("lazy").load({
---         plugins = { "gitsigns.nvim", "indent-blankline.nvim", "vim-illuminate" }
---     })
---     print("Fancy plugins loaded!")
--- end, { desc = "Load fancy plugins" })
