@@ -42,27 +42,27 @@ return {
             }
         }
     },
-    -- {
-    --     "lewis6991/gitsigns.nvim",
-    --     -- lazy = true,
-    --     event = "VeryLazy",
-    --     opts = {
-    --         -- numhl = true,
-    --         signs = {
-    --             add = { text = "▎" },
-    --             change = { text = "▎" },
-    --             delete = { text = "󰐊" },
-    --             topdelete = { text = "󰐊" },
-    --             changedelete = { text = "▎" },
-    --             untracked = { text = "▎" },
-    --         },
-    --     },
-    --     keys = {
-    --         { "<Leader>gR", ":Gitsigns toggle_deleted<cr>", desc = " Gitsigns: [G]it [t]oggle deleted" },
-    --         { "<Leader>gn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
-    --         { "<Leader>gs", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
-    --     },
-    -- },
+    {
+        "lewis6991/gitsigns.nvim",
+        -- lazy = true,
+        event = "VeryLazy",
+        opts = {
+            numhl = false,
+            signcolumn = false,
+            signs = {
+                add = { text = "▎" },
+                change = { text = "▎" },
+                delete = { text = "󰐊" },
+                topdelete = { text = "󰐊" },
+                changedelete = { text = "▎" },
+                untracked = { text = "▎" },
+            },
+        },
+        keys = {
+            { "<Leader>gtn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gts", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
+        },
+    },
     -- {
     --     "lukas-reineke/indent-blankline.nvim",
     --     main = "ibl",
