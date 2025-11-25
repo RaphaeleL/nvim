@@ -48,7 +48,7 @@ return {
         event = "VeryLazy",
         opts = {
             numhl = false,
-            signcolumn = false,
+            signcolumn = true,
             signs = {
                 add = { text = "▎" },
                 change = { text = "▎" },
