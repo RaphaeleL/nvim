@@ -47,6 +47,10 @@ vim.keymap.set("v", ">", ">gv", { desc = "Line: Indent to Right" })
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
 
+-- NOTE: unsure if i want to keep them
+vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "Line: Move in a Linebreak up" })
+vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "Line: Move in a Linebreak down" })
+
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Line: Concat Line without moving the Cursor" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Line: Move Selection up" })
