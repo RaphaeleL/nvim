@@ -1,8 +1,6 @@
 return {
     "zbirenbaum/copilot.lua",
-    dependencies = {
-        "giuxtaposition/blink-cmp-copilot",
-    },
+    dependencies = { "giuxtaposition/blink-cmp-copilot" },
     cmd = "Copilot",
     build = ":Copilot auth",
     -- event = "BufReadPost",

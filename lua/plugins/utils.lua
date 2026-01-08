@@ -60,7 +60,6 @@ return {
     {
         "folke/snacks.nvim",
         lazy = true,
-        ---@type snacks.Config
         opts = {
             picker = {
                 icons = {
