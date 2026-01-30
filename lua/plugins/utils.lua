@@ -100,13 +100,13 @@ return {
                     ignored = false,
                 },
                 enabled = true,
-                layout = {
-                    preset = 'ivy',
-                    border = "none",
-                },
-                sources = {
-                    explorer = { layout = { layout = { position = "right" } } },
-                },
+                -- layout = {
+                --     preset = 'ivy',
+                --     border = "none",
+                -- },
+                -- sources = {
+                --     explorer = { layout = { layout = { position = "right" } } },
+                -- },
                 win = { list = { keys = { ["<TAB>"] = "confirm" } } },
             },
             bigfile = { enabled = true },
