@@ -6,6 +6,16 @@ return {
             skip_confirm_for_simple_edits = true,
             experimental_watch_for_changes = false,
             use_default_keymaps = true,
+            float = {
+                max_width = 0.8,
+                max_height = 0.7,
+            },
+            preview_win = {
+                update_on_cursor_moved = true,
+                preview_method = "fast_scratch",
+                disable_preview = function(filename) return false end,
+                win_options = {},
+            },
             columns = {
                 "permissions",
                 "size",
