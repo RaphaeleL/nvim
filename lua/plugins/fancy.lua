@@ -59,8 +59,8 @@ return {
             },
         },
         keys = {
-            { "<Leader>gtn", ":Gitsigns toggle_numhl<cr>",   desc = " Gitsigns: [G]it [t]oggle Line Number Signs" },
-            { "<Leader>gts", ":Gitsigns toggle_signs<cr>",   desc = " Gitsigns: [G]it [t]oggle Signs" },
+            { "<Leader>gtn", ":Gitsigns toggle_numhl<cr>",   desc = "LR -  Gitsigns: [G]it [t]oggle Line Number Signs" },
+            { "<Leader>gts", ":Gitsigns toggle_signs<cr>",   desc = "LR -  Gitsigns: [G]it [t]oggle Signs" },
         },
     },
     -- {

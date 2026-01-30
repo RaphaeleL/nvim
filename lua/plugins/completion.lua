@@ -166,7 +166,7 @@ return {
                     require("conform").format({ async = true, lsp_format = "fallback" })
                     print("Formatted buffer")
                 end,
-                desc = "[F]ormat buffer",
+                desc = "LR - [F]ormat buffer",
             },
             {
                 "<leader>rf",
@@ -203,7 +203,7 @@ return {
                     end
                 end,
                 mode = { "n", "v" },
-                desc = "[F]ormat selected range",
+                desc = "LR - [F]ormat selected range",
             },
         },
         opts = {

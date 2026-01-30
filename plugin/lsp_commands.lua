@@ -1,7 +1,7 @@
 -- Start, Stop, Restart, Log commands
 vim.api.nvim_create_user_command("LspStart", function()
     vim.cmd.e()
-end, { desc = "Starts LSP clients in the current buffer" })
+end, { desc = "LR - Starts LSP clients in the current buffer" })
 
 vim.api.nvim_create_user_command("LspStop", function(opts)
     for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
@@ -11,7 +11,7 @@ vim.api.nvim_create_user_command("LspStop", function(opts)
         end
     end
 end, {
-    desc = "Stop all LSP clients or a specific client attached to the current buffer.",
+    desc = "LR - Stop all LSP clients or a specific client attached to the current buffer.",
     nargs = "?",
     complete = function(_, _, _)
         local clients = vim.lsp.get_clients({ bufnr = 0 })
@@ -55,18 +55,18 @@ vim.api.nvim_create_user_command("LspRestart", function()
         end)
     )
 end, {
-    desc = "Restart all the language client(s) attached to the current buffer",
+    desc = "LR - Restart all the language client(s) attached to the current buffer",
 })
 
 vim.api.nvim_create_user_command("LspLog", function()
     vim.cmd.vsplit(vim.lsp.log.get_filename())
 end, {
-    desc = "Get all the lsp logs",
+    desc = "LR - Get all the lsp logs",
 })
 
 vim.api.nvim_create_user_command("LspInfo", function()
     vim.cmd("silent checkhealth vim.lsp")
 end, {
-    desc = "Get all the information about all LSP attached",
+    desc = "LR - Get all the information about all LSP attached",
 })
 
