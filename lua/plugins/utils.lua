@@ -54,13 +54,14 @@ return {
             require("grug-far").setup({})
         end,
         keys = {
-            { "<leader>gr", ":GrugFar<cr>", desc = "Search and Replace in files" },
+            { "<leader>gr", ":GrugFar<cr>", desc = "LR - Search and Replace in files" },
         },
     },
     {
         "folke/snacks.nvim",
         lazy = true,
         opts = {
+            -- picker = { example = "github" },
             picker = {
                 icons = {
                     files = { enabled = false, },
@@ -126,38 +127,37 @@ return {
         },
         keys = {
             -- Main Stuff
-            { "<leader><space>", function() Snacks.picker.smart() end,                desc = "Smart Find Files" },
-            { "<leader>d",       function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
-            { "<leader>b",       function() Snacks.picker.buffers() end,              desc = "Buffers" },
-            { "<leader>/",       function() Snacks.picker.grep() end,                 desc = "Grep" },
-            { "<leader>sd",      function() Snacks.picker.diagnostics() end,          desc = "Diagnostics" },
-            { "<leader>sk",      function() Snacks.picker.keymaps() end,              desc = "Keymaps" },
-            { "<leader>su",      function() Snacks.picker.undo() end,                 desc = "Undo History" },
-            { "<leader>se",      function() Snacks.picker.explorer() end,             desc = "Explorer" },
+            { "<leader><space>", function() Snacks.picker.smart() end,                desc = "LR - Smart Find Files" },
+            { "<leader>.",       function() Snacks.picker.files() end,                desc = "LR - Find Files" },
+            { "<leader>b",       function() Snacks.picker.buffers() end,              desc = "LR - Buffers" },
+            { "<leader>sl",      function() Snacks.picker.grep() end,                 desc = "LR - Grep" },
+            { "<leader>sd",      function() Snacks.picker.diagnostics() end,          desc = "LR - Diagnostics" },
+            { "<leader>sk",      function() Snacks.picker.keymaps() end,              desc = "LR - Keymaps" },
+            { "<leader>su",      function() Snacks.picker.undo() end,                 desc = "LR - Undo History" },
+            { "<leader>se",      function() Snacks.picker.explorer() end,             desc = "LR - Explorer" },
             -- LSP
-            { "gd",              function() Snacks.picker.lsp_definitions() end,      desc = "Goto Definition" },
-            { "gD",              function() Snacks.picker.lsp_declarations() end,     desc = "Goto Declaration" },
-            { "gr",              function() Snacks.picker.lsp_references() end,       desc = "References",            nowait = true, },
-            { "gi",              function() Snacks.picker.lsp_implementations() end,  desc = "Goto Implementation" },
-            { "gt",              function() Snacks.picker.lsp_type_definitions() end, desc = "Goto T[y]pe Definition" },
-            { "<leader>ss",      function() Snacks.picker.lsp_symbols() end,          desc = "LSP Symbols" },
+            { "gd",              function() Snacks.picker.lsp_definitions() end,      desc = "LR - Goto Definition" },
+            { "gD",              function() Snacks.picker.lsp_declarations() end,     desc = "LR - Goto Declaration" },
+            { "gr",              function() Snacks.picker.lsp_references() end,       desc = "LR - References",            nowait = true, },
+            { "gi",              function() Snacks.picker.lsp_implementations() end,  desc = "LR - Goto Implementation" },
+            { "gt",              function() Snacks.picker.lsp_type_definitions() end, desc = "LR - Goto T[y]pe Definition" },
+            { "<leader>ss",      function() Snacks.picker.lsp_symbols() end,          desc = "LR - LSP Symbols" },
             -- Find
-            { "<leader>sf",      function() Snacks.picker.smart() end,                desc = "Smart Find Files" },
-            { "<leader>sb",      function() Snacks.picker.buffers() end,              desc = "Buffers" },
-            { "<leader>sf",      function() Snacks.picker.files() end,                desc = "Find Files" },
-            { "<leader>sg",      function() Snacks.picker.git_files() end,            desc = "Find Git Files" },
-            { "<leader>sr",      function() Snacks.picker.recent() end,               desc = "Recent" },
-            { "<leader>sl",      function() Snacks.picker.grep() end,                 desc = "Grep" },
+            { "<leader>sb",      function() Snacks.picker.buffers() end,              desc = "LR - Buffers" },
+            { "<leader>sf",      function() Snacks.picker.files() end,                desc = "LR - Find Files" },
+            { "<leader>sg",      function() Snacks.picker.git_files() end,            desc = "LR - Find Git Files" },
+            { "<leader>sr",      function() Snacks.picker.recent() end,               desc = "LR - Recent" },
+            { "<leader>/",       function() Snacks.picker.grep() end,                 desc = "LR - Grep" },
             -- Git
-            { "<leader>gs",      function() Snacks.picker.git_files() end,            desc = "Find Git Files" },
-            { "<leader>gb",      function() Snacks.picker.git_branches() end,         desc = "Git Branches" },
-            { "<leader>gl",      function() Snacks.picker.git_log() end,              desc = "Git Log" },
-            { "<leader>gf",      function() Snacks.picker.git_log_file() end,         desc = "Git Log File" },
-            { "<leader>gg",      function() Snacks.lazygit() end,                     desc = "Lazygit" },
+            { "<leader>gs",      function() Snacks.picker.git_files() end,            desc = "LR - Find Git Files" },
+            { "<leader>gb",      function() Snacks.picker.git_branches() end,         desc = "LR - Git Branches" },
+            { "<leader>gl",      function() Snacks.picker.git_log() end,              desc = "LR - Git Log" },
+            { "<leader>gf",      function() Snacks.picker.git_log_file() end,         desc = "LR - Git Log File" },
+            { "<leader>gg",      function() Snacks.lazygit() end,                     desc = "LR - Lazygit" },
             -- Search
-            { '<leader>s/',      function() Snacks.picker.search_history() end,       desc = "Search History" },
-            { "<leader>sc",      function() Snacks.picker.command_history() end,      desc = "Command History" },
-            { "<leader>uC",      function() Snacks.picker.colorschemes() end,         desc = "Colorschemes" },
+            { '<leader>s/',      function() Snacks.picker.search_history() end,       desc = "LR - Search History" },
+            { "<leader>sc",      function() Snacks.picker.command_history() end,      desc = "LR - Command History" },
+            { "<leader>uC",      function() Snacks.picker.colorschemes() end,         desc = "LR - Colorschemes" },
         },
     }
 }
