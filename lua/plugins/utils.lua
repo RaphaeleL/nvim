@@ -17,13 +17,13 @@ return {
         end,
         keys = {
             { "mj", function() require("multicursor-nvim").lineAddCursor(1) end },
-            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end,  mode = "x" },
+            { "mj", function() require("multicursor-nvim").lineAddCursor(1) end, mode = "x" },
             { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end },
             { "mk", function() require("multicursor-nvim").lineAddCursor(-1) end, mode = "x" },
             { "mm", function() require("multicursor-nvim").matchAddCursor(1) end },
-            { "mm", function() require("multicursor-nvim").matchAddCursor(1) end,  mode = "x" },
+            { "mm", function() require("multicursor-nvim").matchAddCursor(1) end, mode = "x" },
             { "mc", function() require("multicursor-nvim").clearCursors() end },
-            { "mc", function() require("multicursor-nvim").clearCursors() end,    mode = "x" },
+            { "mc", function() require("multicursor-nvim").clearCursors() end, mode = "x" },
         },
     },
     {
