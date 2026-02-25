@@ -4,6 +4,14 @@
 --     command = "LspStart"
 -- })
 
+-- Start Treesitter on the supported buffers
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp", "lua", "make" },
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
 -- Attach LSP 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(ev)

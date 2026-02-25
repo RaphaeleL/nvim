@@ -13,7 +13,7 @@ vim.lsp.config.clangd = {
         "--header-insertion-decorators",
         "--pch-storage=memory",
     },
-    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+    filetypes = { "c", "h", "cpp", "objc", "objcpp", "cuda", "proto" },
     root_markers = {
         "CMakeLists.txt",
         ".clangd",

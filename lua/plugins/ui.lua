@@ -1,20 +1,14 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        -- event = { "BufReadPost", "BufNewFile" },
-        event = { "VeryLazy" },
+        lazy = false,
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({
-                ensure_installed = {
-                    "vimdoc", "javascript", "typescript", "c", "lua",
-                    "python", "yaml", "bash", "make"
-                },
-                sync_install = false,
+            require("nvim-treesitter.config").setup({
+                ensure_installed = { "make", "c", "lua", "python" },
+                sync_install = true,
                 auto_install = true,
-                indent = {
-                    enable = true
-                },
+                indent = { enable = true },
                 highlight = {
                     enable = true,
                     disable = function(lang, buf)
