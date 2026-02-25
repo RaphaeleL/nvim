@@ -19,9 +19,9 @@ return {
                 view = "cmdline",
                 opts = {},
                 format = {
-                    cmdline = { pattern = "^:", icon = "", lang = "vim" },
-                    search_down = { kind = "search", pattern = "^/", icon = "", lang = "regex" },
-                    search_up = { kind = "search", pattern = "^%?", icon = "", lang = "regex" },
+                    cmdline = { pattern = "^:", icon = ">", lang = "vim" },
+                    search_down = { kind = "search", pattern = "^/", icon = "/", lang = "regex" },
+                    search_up = { kind = "search", pattern = "^%?", icon = "/", lang = "regex" },
                     filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
                     input = { view = "cmdline_input", icon = "󰥻 " },
                 },
