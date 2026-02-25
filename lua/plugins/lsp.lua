@@ -9,15 +9,15 @@ return {
     opts = {
         ensure_installed = {
             "clangd",          -- C/C++
-            "pyright",         -- PYTHON
-            "gopls",           -- GO
-            "rust_analyzer",   -- RUST
-            "jdtls",           -- JAVA
+            -- "pyright",         -- PYTHON
+            -- "gopls",           -- GO
+            -- "rust_analyzer",   -- RUST
+            -- "jdtls",           -- JAVA
             "lua_ls",          -- LUA
             "bashls",          -- BASH
-            "ts_ls",           -- TYPESCRIPT 
-            "cssls",           -- CSS
-            "tailwindcss",     -- TAILWIND CSS
+            -- "ts_ls",           -- TYPESCRIPT 
+            -- "cssls",           -- CSS
+            -- "tailwindcss",     -- TAILWIND CSS
             -- "checkmake",       -- MAKEFILE
             -- "html-lsp"         -- HTML
         },
