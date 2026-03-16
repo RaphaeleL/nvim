@@ -1,25 +1,27 @@
-return {
-    -- NOTE: This is only here to install the LSP Servers properly and kinda easy. This is not quite needed if you install them manually. In case you don't wanna lookup where all those LSP Servers are located and how to install them, just look at the Registry of Mason itself: github.com/mason-org/mason-registry and download the ones you want. Then you can remove this Plugin. However, Mason installs all LSP Servers under $HOME/.local/share/nvim/mason/bin. So in case you need those LSP Servers somewhere else (e.g. Emacs), you might want to add that path to your $PATH variable. export PATH="$HOME/.local/share/nvim/mason/bin:$PATH". Technically, you could use Mason to install a new LSP Server and then use it in Emacs or other Editors, or even remove Mason after installing the LSP Servers you want.
-    "mason-org/mason-lspconfig.nvim",
-    event = "VeryLazy",
-    dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
-        "neovim/nvim-lspconfig",
-    },
-    opts = {
-        ensure_installed = {
-            "clangd",          -- C/C++
-            -- "pyright",         -- PYTHON
-            -- "gopls",           -- GO
-            -- "rust_analyzer",   -- RUST
-            -- "jdtls",           -- JAVA
-            "lua_ls",          -- LUA
-            "bashls",          -- BASH
-            -- "ts_ls",           -- TYPESCRIPT 
-            -- "cssls",           -- CSS
-            -- "tailwindcss",     -- TAILWIND CSS
-            -- "checkmake",       -- MAKEFILE
-            -- "html-lsp"         -- HTML
+vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" }, { confirm = false })
+vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/mason-org/mason-lspconfig.nvim" }, { confirm = false })
+vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" }, { confirm = false })
+
+-- see `:h lspconfig-all` for available servers and their settings
+local lsp_servers = {
+    lua_ls = { Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) }}},
+    clangd = {}
+}
+
+for server, config in pairs(lsp_servers) do
+    vim.lsp.enable(server)
+    vim.lsp.config(server, { settings = config })
+end
+
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "E",
+            [vim.diagnostic.severity.WARN] = "W",
+            [vim.diagnostic.severity.INFO] = "I",
+            [vim.diagnostic.severity.HINT] = "H",
         },
     },
-}
+    virtual_text = true,
+})

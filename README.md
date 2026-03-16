@@ -7,7 +7,7 @@ macOS · Linux
 
 ## Install
 
-> Neovim 0.11.0
+> Neovim 0.12.0
 
 You can install `nvim` using a package manager, but keep in mind that `nvim` may be updated to a newer version when you update packages. This can lead to a plugin suddenly not working anymore.
 
@@ -35,4 +35,4 @@ This Configuration is inspired by:
 - [NvChad](https://github.com/NvChad)
 - [LunarVim](https://github.com/LunarVim)
 - [ThePrimeagen](https://github.com/ThePrimeagen)
-- [T DeVries](https://github.com/tjdevries)
+- [TjDeVries](https://github.com/tjdevries)
