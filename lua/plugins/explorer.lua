@@ -17,14 +17,12 @@ vim.keymap.set("n", "<leader>5", function() harpoon:list():select(5) end)
 vim.keymap.set("n", "F", function() harpoon:list():next() end)
 vim.keymap.set("n", "B", function() harpoon:list():prev() end)
 
-require("telescope").setup({ pickers = { find_files = { theme = "ivy" } } })
-local pickers = require("telescope.builtin")
-vim.keymap.set("n", "<leader><leader>", pickers.find_files)
-vim.keymap.set("n", "<leader>sf", pickers.find_files)
-vim.keymap.set("n", "<leader>sb", pickers.buffers)
-vim.keymap.set("n", "<leader>/", pickers.live_grep)
-vim.keymap.set("n", "<leader>sh", pickers.help_tags)
-vim.keymap.set("n", "<leader>sm", pickers.man_pages)
+require("telescope").setup({})
+vim.keymap.set("n", "<leader>sf", ":Telescope find_files theme=ivy<cr>")
+vim.keymap.set("n", "<leader>sb", ":Telescope buffers theme=ivy<cr>")
+vim.keymap.set("n", "<leader>sg", ":Telescope live_grep theme=ivy<cr>")
+vim.keymap.set("n", "<leader>sh", ":Telescope help_tags theme=ivy<cr>")
+vim.keymap.set("n", "<leader>sm", ":Telescope man_pages theme=ivy<cr>")
 
 require("oil").setup({
     default_file_explorer = true,
