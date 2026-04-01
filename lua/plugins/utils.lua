@@ -7,6 +7,9 @@ if vim.g.config and vim.g.config.fancy then
     vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
     vim.pack.add({ "https://github.com/stevearc/conform.nvim" }, { confirm = false })
 end
+vim.cmd("packadd nvim.undotree")
+
+vim.keymap.set("n", "<leader>u", require("undotree").open)
 
 local mc = require("multicursor-nvim")
 mc.setup()
