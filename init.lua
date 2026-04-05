@@ -12,3 +12,6 @@ require("plugins.theme")
 require("plugins.explorer")
 require("plugins.completion")
 require("plugins.lsp")
+
+-- TODO: https://dotfiles.substack.com/p/whats-new-in-neovim-012
+-- require('vim._core.ui1').enable()
