@@ -2,7 +2,6 @@ vim.opt.guicursor = ""
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 0
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
@@ -27,9 +26,6 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.cursorline = true
 vim.opt.number = true
-vim.opt.laststatus = 0
-vim.opt.showcmd = false
-vim.opt.ruler = false
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
@@ -42,20 +38,80 @@ vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/zsh"
 vim.opt.relativenumber = true
 vim.opt.autochdir = false
+vim.opt.smoothscroll = true
+
+-----------
+-- NETRW --
+----------- 
+
+vim.o.winborder = "single"
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+
+------------- 
+-- COPILOT -- 
+------------- 
 
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-
-vim.opt.smoothscroll = true
+------------- 
+-- FOLDING -- 
+------------- 
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldtext = ""
 vim.opt.foldenable = false
 -- vim.opt.foldmethod = "indent"
 -- vim.opt.foldlevelstart = 99
 
-vim.o.winborder = "single"
+---------------- 
+-- STATUSLINE --
+----------------
+function _G.git_branch()
+    local head = vim.fn.findfile(".git/HEAD", ".;")
+    if head == "" then return "" end
+    local file = io.open(head, "r")
+    if not file then return "" end
+    local line = file:read()
+    file:close()
+    local branch = line and line:match("ref: refs/heads/(.+)")
+    if branch then
+        return "[" .. branch .. "]"
+    end
+    local commit = line and line:sub(1, 7)
+    return commit and ("[" .. commit .. "]") or ""
+end
+
+if vim.g.config and vim.g.config.statusline == "full" then
+    vim.opt.statusline = table.concat({
+      " %f",
+      " %{v:lua.git_branch()}",
+      " %m",
+      "%=",
+      " %y",
+      " %l:%c",
+      " [%p%%]"
+    })
+    vim.opt.cmdheight = 0
+    vim.opt.laststatus = 3
+    vim.opt.showcmd = false
+    vim.opt.ruler = false
+elseif vim.g.config and vim.g.config.statusline == "minimal" then
+    vim.opt.statusline = table.concat({
+      " %f",
+      " %m",
+      "%=",
+      " %l:%c",
+    })
+    vim.opt.cmdheight = 0
+    vim.opt.laststatus = 3
+    vim.opt.showcmd = false
+    vim.opt.ruler = false
+elseif vim.g.config and vim.g.config.statusline == "disabled" then
+    vim.opt.cmdheight = 0
+    vim.opt.laststatus = 0
+    vim.opt.showcmd = false
+    vim.opt.ruler = false
+end
