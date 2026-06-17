@@ -2,12 +2,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.config = {
-    -- true || false
-    fancy = false,
-    -- rose-pine || kanagawa || catppuccin
-    theme = "rose-pine",
-    -- full || minimal || disabled
-    statusline = "full"
+    fancy = false,          -- true || false
+    theme = "rose-pine",    -- rose-pine || kanagawa || catppuccin
+    statusline = "disabled" -- full || minimal || disabled
 }
 
 require("plugins.utils")
