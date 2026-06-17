@@ -18,7 +18,7 @@ vim.keymap.set("n", "F", function() harpoon:list():next() end)
 vim.keymap.set("n", "B", function() harpoon:list():prev() end)
 
 require("telescope").setup({})
-vim.keymap.set("n", "<leader>sf", ":Telescope find_files theme=ivy<cr>")
+vim.keymap.set("n", "<leader>sf", ":Telescope find_files no_ignore=true theme=ivy<cr>")
 vim.keymap.set("n", "<leader>sb", ":Telescope buffers theme=ivy<cr>")
 vim.keymap.set("n", "<leader>sg", ":Telescope live_grep theme=ivy<cr>")
 vim.keymap.set("n", "<leader>sh", ":Telescope help_tags theme=ivy<cr>")
