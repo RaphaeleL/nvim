@@ -1,4 +1,5 @@
-vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
+-- follow release tags instead of main (recommended by blink.cmp)
+vim.pack.add({ { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") } }, { confirm = false })
 
 require("blink.cmp").setup({
     sources = { default = { "lsp", "path", "snippets", "buffer" }, },

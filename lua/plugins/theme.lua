@@ -1,4 +1,6 @@
-if vim.g.config and vim.g.config.theme == "rose-pine" then
+local config = require("config")
+
+if config.theme == "rose-pine" then
     vim.pack.add({ "https://github.com/rose-pine/neovim" }, { confirm = false })
     require("rose-pine").setup({
         variant = "auto",
@@ -23,7 +25,7 @@ if vim.g.config and vim.g.config.theme == "rose-pine" then
         },
     })
     vim.cmd("colorscheme rose-pine")
-elseif vim.g.config and vim.g.config.theme == "kanagawa" then
+elseif config.theme == "kanagawa" then
     vim.pack.add({ "https://github.com/rebelot/kanagawa.nvim" }, { confirm = false })
     require("kanagawa").setup({
         transparent = true,
@@ -60,7 +62,7 @@ elseif vim.g.config and vim.g.config.theme == "kanagawa" then
         },
     })
     vim.cmd("colorscheme kanagawa")
-elseif vim.g.config and vim.g.config.theme == "catppuccin" then
+elseif config.theme == "catppuccin" then
     vim.pack.add({ "https://github.com/catppuccin/nvim"}, { confirm = false })
     require("catppuccin").setup({ transparent_background = true, })
     vim.cmd.colorscheme "catppuccin"

@@ -1,5 +1,5 @@
-vim.pack.add({ "https://github.com/stevearc/oil.nvim" }, { confirm = false })
-vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" }, { confirm = false })
+vim.pack.add({ { src = "https://github.com/stevearc/oil.nvim", version = vim.version.range("*") } }, { confirm = false })
+vim.pack.add({ { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") } }, { confirm = false })
 vim.pack.add({ { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" } }, { confirm = false })
 
 local harpoon = require("harpoon")

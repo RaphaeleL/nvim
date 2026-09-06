@@ -3,10 +3,13 @@ vim.loader.enable() -- builtin module cache, replaces impatient.nvim
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- User settings, validated and defaulted in lua/config.lua
 vim.g.config = {
-    fancy = false,          -- true || false
-    theme = "rose-pine",    -- rose-pine || kanagawa || catppuccin
-    statusline = "disabled" -- full || minimal || disabled
+    theme = "rose-pine",     -- rose-pine || kanagawa || catppuccin || default
+    statusline = "disabled", -- full || minimal || disabled
+    git = false,             -- gitsigns.nvim
+    format = false,          -- conform.nvim + format keymaps
+    extras = false,          -- visual-surround, grug-far, visual-whitespace
 }
 
 require("plugins.utils")

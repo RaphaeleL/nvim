@@ -1,6 +1,6 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" }, { confirm = false })
-vim.pack.add({ "https://github.com/mason-org/mason.nvim" }, { confirm = false })
-vim.pack.add({ "https://github.com/mason-org/mason-lspconfig.nvim" }, { confirm = false })
+vim.pack.add({ { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range("2.*") } }, { confirm = false })
+vim.pack.add({ { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range("2.*") } }, { confirm = false })
 vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" }, { confirm = false })
 
 -- see `:h lspconfig-all` for available servers and their settings

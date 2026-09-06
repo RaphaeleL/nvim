@@ -1,9 +1,13 @@
+local config = require("config")
+
 vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" }, { confirm = false })
 vim.pack.add({ "https://github.com/terrortylor/nvim-comment" }, { confirm = false })
-if vim.g.config and vim.g.config.fancy then
+if config.extras then
     vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
     vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
-    vim.pack.add({ "https://github.com/stevearc/conform.nvim" }, { confirm = false })
+end
+if config.format then
+    vim.pack.add({ { src = "https://github.com/stevearc/conform.nvim", version = vim.version.range("*") } }, { confirm = false })
 end
 vim.cmd("packadd nvim.undotree")
 
@@ -49,10 +53,12 @@ for _, mode in ipairs({ "n", "x" }) do
     vim.keymap.set(mode, "<Leader>l", ":CommentToggle<CR>")
 end
 
-if vim.g.config and vim.g.config.fancy then
+if config.extras then
     require("grug-far").setup({})
     vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
+end
 
+if config.format then
     require("conform").setup({})
     vim.keymap.set("n", "<leader>f", function()
         require("conform").format({ async = true, lsp_format = "fallback" })

@@ -40,14 +40,7 @@ vim.opt.relativenumber = true
 vim.opt.autochdir = false
 vim.opt.smoothscroll = true
 
------------
--- NETRW --
------------ 
-
 vim.o.winborder = "single"
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
 
 ------------- 
 -- FOLDING -- 
@@ -76,7 +69,9 @@ function _G.git_branch()
     return commit and ("[" .. commit .. "]") or ""
 end
 
-if vim.g.config and vim.g.config.statusline == "full" then
+local config = require("config")
+
+if config.statusline == "full" then
     vim.opt.statusline = table.concat({
       " %f",
       " %{v:lua.git_branch()}",
@@ -90,7 +85,7 @@ if vim.g.config and vim.g.config.statusline == "full" then
     vim.opt.laststatus = 3
     vim.opt.showcmd = false
     vim.opt.ruler = false
-elseif vim.g.config and vim.g.config.statusline == "minimal" then
+elseif config.statusline == "minimal" then
     vim.opt.statusline = table.concat({
       " %f",
       " %m",
@@ -101,7 +96,7 @@ elseif vim.g.config and vim.g.config.statusline == "minimal" then
     vim.opt.laststatus = 3
     vim.opt.showcmd = false
     vim.opt.ruler = false
-elseif vim.g.config and vim.g.config.statusline == "disabled" then
+elseif config.statusline == "disabled" then
     vim.opt.cmdheight = 0
     vim.opt.laststatus = 0
     vim.opt.showcmd = false

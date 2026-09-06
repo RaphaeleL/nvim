@@ -34,9 +34,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
         --- Disable semantic tokens
         client.server_capabilities.semanticTokensProvider = nil
 
-        -- All the keymaps
+        -- All the keymaps, buffer-local to the LSP-attached buffer
         local function opt(desc, others)
-            return vim.tbl_extend("force", { silent = true }, { desc = desc }, others or {})
+            return vim.tbl_extend("force", { silent = true, buffer = bufnr, desc = desc }, others or {})
         end
         vim.keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", opt("Go to definition"))
         vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", opt("Show References"))
