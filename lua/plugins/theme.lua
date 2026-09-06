@@ -63,7 +63,7 @@ elseif vim.g.config and vim.g.config.theme == "kanagawa" then
 elseif vim.g.config and vim.g.config.theme == "catppuccin" then
     vim.pack.add({ "https://github.com/catppuccin/nvim"}, { confirm = false })
     require("catppuccin").setup({ transparent_background = true, })
-    vim.cmd.colorscheme "catppuccin-nvim"
+    vim.cmd.colorscheme "catppuccin"
 else
     vim.cmd("colorscheme default")
 end

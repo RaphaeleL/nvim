@@ -1,6 +1,4 @@
 vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" }, { confirm = false })
-vim.pack.add({ "https://github.com/lewis6991/impatient.nvim" }, { confirm = false })
-vim.pack.add({ "https://github.com/jake-stewart/multicursor.nvim" }, { confirm = false })
 vim.pack.add({ "https://github.com/terrortylor/nvim-comment" }, { confirm = false })
 if vim.g.config and vim.g.config.fancy then
     vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
@@ -11,21 +9,40 @@ vim.cmd("packadd nvim.undotree")
 
 vim.keymap.set("n", "<leader>u", require("undotree").open)
 
-local mc = require("multicursor-nvim")
-mc.setup()
-vim.api.nvim_set_hl(0, "MultiCursorCursor", { reverse = true })
-vim.api.nvim_set_hl(0, "MultiCursorVisual", { link = "Visual" })
-vim.api.nvim_set_hl(0, "MultiCursorSign", { link = "SignColumn" })
-vim.api.nvim_set_hl(0, "MultiCursorMatchPreview", { link = "Search" })
-vim.api.nvim_set_hl(0, "MultiCursorDisabledCursor", { reverse = true })
-vim.api.nvim_set_hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
-vim.api.nvim_set_hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
-for _, mode in ipairs({ "n", "x" }) do
-    vim.keymap.set(mode, "mj", function() mc.lineAddCursor(1) end)
-    vim.keymap.set(mode, "mk", function() mc.lineAddCursor(-1) end)
-    vim.keymap.set(mode, "mm", function() mc.matchAddCursor(1) end)
-    vim.keymap.set(mode, "mc", function() mc.clearCursors() end)
+-- Multicursor: built into nvim 0.13, see :h multicursor
+-- Builtin extras: Q toggles a cursor, [count]Q places one at every search
+-- match, {Visual}Q at every match of the selection, q= toggles follow mode,
+-- gQ restores cleared cursors, ]C / [C jump between cursors.
+vim.api.nvim_set_hl(0, "MCursor", { reverse = true })
+vim.api.nvim_set_hl(0, "MCursorVisual", { link = "Visual" })
+
+local function mc_clear()
+    local ns = vim.api.nvim_get_namespaces()["nvim.multicursor"]
+    if ns then
+        vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
+    end
 end
+
+vim.keymap.set("n", "mj", "Qj", { desc = "LR - Multicursor: Add Cursor and move down" })
+vim.keymap.set("n", "mk", "Qk", { desc = "LR - Multicursor: Add Cursor and move up" })
+vim.keymap.set("n", "mm", "Q*", { desc = "LR - Multicursor: Add Cursor and go to next Match of Word" })
+-- One-by-one match cursors like the old plugin's matchAddCursor:
+-- add a cursor on the current match of the selected text, then jump to and
+-- select the next match. Press mm repeatedly to collect matches one by one.
+vim.keymap.set("x", "mm", function()
+    local text = table.concat(
+        vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos("."), { type = vim.fn.mode() }),
+        "\n"
+    )
+    if text == "" then return end
+    vim.fn.setreg("/", "\\V" .. (vim.fn.escape(text, "\\/"):gsub("\n", "\\n")))
+    -- <Esc>Q: drop a cursor inside the current match, ngn: select next match.
+    -- Feed as typed keys ("t"): a Visual selection entered from mapping-fed
+    -- keys is not replayable at the other cursors (:h dev-cmdatom), so the
+    -- final change would only apply to the primary cursor.
+    vim.api.nvim_feedkeys(vim.keycode("<Esc>Qngn"), "t", false)
+end, { desc = "LR - Multicursor: Add Cursor on Match and select next Match" })
+vim.keymap.set({ "n", "x" }, "mc", mc_clear, { desc = "LR - Multicursor: Clear all Cursors" })
 
 require("nvim_comment").setup()
 for _, mode in ipairs({ "n", "x" }) do

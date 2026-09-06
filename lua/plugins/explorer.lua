@@ -1,9 +1,6 @@
 vim.pack.add({ "https://github.com/stevearc/oil.nvim" }, { confirm = false })
 vim.pack.add({ "https://github.com/nvim-telescope/telescope.nvim" }, { confirm = false })
--- manually switch the branch to harpoon2
--- cd ~/.local/share/nvim/site/pack/core/opt/harpoon/
--- git switch harpoon2 
-vim.pack.add({ "https://github.com/ThePrimeagen/harpoon" }, { confirm = false })
+vim.pack.add({ { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" } }, { confirm = false })
 
 local harpoon = require("harpoon")
 harpoon:setup()

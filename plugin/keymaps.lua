@@ -31,8 +31,8 @@ vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "LR - Window: Close" })
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Char
-vim.keymap.set("n", "-", "<C-x>", { desc = "LR - Chars: Increment a Number" })
-vim.keymap.set("n", "+", "<C-a>", { desc = "LR - Chars: Decrement a Number" })
+vim.keymap.set("n", "-", "<C-x>", { desc = "LR - Chars: Decrement a Number" })
+vim.keymap.set("n", "+", "<C-a>", { desc = "LR - Chars: Increment a Number" })
 
 vim.keymap.set({ "n", "v" }, "y", '"+y', { desc = "LR - Chars: Yank to clipboard" })
 vim.keymap.set({ "n", "v" }, "Y", '"+Y', { desc = "LR - Chars: Yank line to clipboard" })

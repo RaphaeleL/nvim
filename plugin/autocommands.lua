@@ -42,37 +42,44 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "gr", ":lua vim.lsp.buf.references()<cr>", opt("Show References"))
         vim.keymap.set("n", "gi", ":lua vim.lsp.buf.implementation()<cr>", opt("Go to implementation"))
 		vim.keymap.set("n", "K", ":lua vim.lsp.buf.signature_help()<cr>", opt("Toggle Signature Help"))
-        vim.keymap.set("n", "<leader>e", ":lua vim.diagnostic.open_float()<cr>", opt("Open diagnostic in float"))
         vim.keymap.set("n", "<Leader>la", ":lua vim.lsp.buf.code_action()<cr>", opt("Code Action"))
         vim.keymap.set("n", "<Leader>lr", ":lua vim.lsp.buf.rename()<cr>", opt("Rename"))
         vim.keymap.set("n", "<Leader>ls", ":lua vim.lsp.buf.document_symbol()<cr>", opt("Doument Symbols"))
-        vim.keymap.set("n", "<Leader>dn", function() vim.diagnostic.jump({ count = 1, float = true }) end, opt("Next Diagnostic"))
-        vim.keymap.set("n", "<Leader>dp", function() vim.diagnostic.jump({ count = -1, float = true }) end, opt("Prev Diagnostic"))
+        -- "float = true" is deprecated, "on_jump" is the replacement
+        local function jump_with_float(count)
+            vim.diagnostic.jump({ count = count, on_jump = function() vim.diagnostic.open_float() end })
+        end
+        vim.keymap.set("n", "<Leader>dn", function() jump_with_float(1) end, opt("Next Diagnostic"))
+        vim.keymap.set("n", "<Leader>dp", function() jump_with_float(-1) end, opt("Prev Diagnostic"))
     end,
 })
 
--- Highlight Yanking
-vim.api.nvim_create_autocmd("TextYankPost", {
+-- Highlight Yanking and Putting (vim.hl.hl_op is new in 0.13,
+-- vim.highlight.on_yank is deprecated)
+vim.api.nvim_create_autocmd({ "TextYankPost", "TextPutPost" }, {
 	group = vim.api.nvim_create_augroup("HighlightYank", {}),
 	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank({
+		vim.hl.hl_op({
 			higroup = "IncSearch",
 			timeout = 40,
 		})
 	end,
 })
 
--- Open Oil in the default Folder View
+-- Open Oil in the default Folder View when started with a directory argument
 vim.api.nvim_create_autocmd("VimEnter", {
 	group = vim.api.nvim_create_augroup("ProjectDrawer", { clear = true }),
 	callback = function()
-		if #vim.v.argv == 1 and vim.fn.isdirectory(vim.v.argv[1]) and not vim.v.s.std_in then
-			vim.cmd("cd " .. vim.v.argv[1])
-			vim.cmd("Oil")
-			vim.cmd("wincmd p")
-			vim.cmd("ene")
-			vim.cmd("cd " .. vim.fn.getcwd())
+		if vim.fn.argc() ~= 1 then return end
+		-- oil (default_file_explorer) rewrites a directory arg to oil://<dir>
+		local arg = vim.fn.argv(0)
+		local dir = arg:match("^oil://(.*)") or arg
+		if vim.fn.isdirectory(dir) == 1 then
+			vim.cmd.cd(dir)
+			if vim.bo.filetype ~= "oil" then
+				vim.cmd("Oil")
+			end
 		end
 	end,
 })

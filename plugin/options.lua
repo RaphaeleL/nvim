@@ -1,7 +1,8 @@
 vim.opt.guicursor = ""
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
+-- no clipboard=unnamedplus: y/Y are mapped to "+ explicitly (keymaps.lua),
+-- so yanks reach the clipboard but deletes stay out of it
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
@@ -31,7 +32,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-vim.opt.fillchars.eob = " "
 vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
@@ -48,14 +48,6 @@ vim.o.winborder = "single"
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
-------------- 
--- COPILOT -- 
-------------- 
-
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_tab_fallback = ""
 
 ------------- 
 -- FOLDING -- 

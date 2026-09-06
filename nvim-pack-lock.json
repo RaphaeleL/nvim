@@ -4,6 +4,10 @@
       "rev": "ba174a5819b0d1eb4e3bab8c0231a26293f58338",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "conform.nvim": {
+      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "7c4faa3540d0781a28588cafbd4dd187a28ac6e3",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -14,11 +18,12 @@
     },
     "harpoon": {
       "rev": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3",
-      "src": "https://github.com/ThePrimeagen/harpoon"
+      "src": "https://github.com/ThePrimeagen/harpoon",
+      "version": "'harpoon2'"
     },
-    "impatient.nvim": {
-      "rev": "47302af74be7b79f002773011f0d8e85679a7618",
-      "src": "https://github.com/lewis6991/impatient.nvim"
+    "kanagawa.nvim": {
+      "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
     },
     "mason-lspconfig.nvim": {
       "rev": "a676ab7282da8d651e175118bcf54483ca11e46d",
@@ -32,21 +37,13 @@
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
     },
-    "multicursor.nvim": {
-      "rev": "811681faf44d8031685614cc00a148cd3ece697c",
-      "src": "https://github.com/jake-stewart/multicursor.nvim"
-    },
     "neovim": {
       "rev": "cf2a288696b03d0934da713d66c6d71557b5c997",
       "src": "https://github.com/rose-pine/neovim"
     },
-    "noice.nvim": {
-      "rev": "7bfd942445fb63089b59f97ca487d605e715f155",
-      "src": "https://github.com/folke/noice.nvim"
-    },
-    "nui.nvim": {
-      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
-      "src": "https://github.com/MunifTanjim/nui.nvim"
+    "nvim": {
+      "rev": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf",
+      "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-comment": {
       "rev": "e9ac16ab056695cad6461173693069ec070d2b23",
@@ -55,10 +52,6 @@
     "nvim-lspconfig": {
       "rev": "dd261ad5266ab5bbec249d21efeceda98ff3e1a6",
       "src": "https://github.com/neovim/nvim-lspconfig"
-    },
-    "nvim-notify": {
-      "rev": "8701bece920b38ea289b457f902e2ad184131a5d",
-      "src": "https://github.com/rcarriga/nvim-notify"
     },
     "nvim-treesitter": {
       "rev": "2f5d4c3f3c675962242096bcc8e586d76dd72eb2",
