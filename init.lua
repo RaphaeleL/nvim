@@ -12,10 +12,3 @@ vim.g.config = {
     extras = false,          -- visual-surround, grug-far, visual-whitespace
     status = true,           -- lsp fidget status
 }
-
-require("plugins.utils")
-require("plugins.ui")
-require("plugins.theme")
-require("plugins.explorer")
-require("plugins.completion")
-require("plugins.lsp")
