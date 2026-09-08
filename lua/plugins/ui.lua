@@ -9,6 +9,11 @@ if config.git then
     vim.pack.add({ { src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range("*") } }, { confirm = false })
 end
 
+if config.status then
+    vim.pack.add({ "https://github.com/j-hui/fidget.nvim", }, { confirm = false })
+end
+
+require("fidget").setup({})
 require("nvim-treesitter.install").update("all")
 require("nvim-treesitter.config").setup({
     install_dir = vim.fn.stdpath('data') .. '/site',

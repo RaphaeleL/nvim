@@ -10,6 +10,7 @@ vim.g.config = {
     git = false,             -- gitsigns.nvim
     format = false,          -- conform.nvim + format keymaps
     extras = false,          -- visual-surround, grug-far, visual-whitespace
+    status = true,           -- lsp fidget status
 }
 
 require("plugins.utils")
