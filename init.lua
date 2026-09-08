@@ -6,7 +6,7 @@ vim.g.maplocalleader = " "
 -- User settings, validated and defaulted in lua/config.lua
 vim.g.config = {
     theme = "rose-pine",     -- rose-pine || kanagawa || catppuccin || default
-    statusline = "disabled", -- full || minimal || disabled
+    statusline = "minimal",  -- full || minimal || disabled
     git = false,             -- gitsigns.nvim
     format = false,          -- conform.nvim + format keymaps
     extras = false,          -- visual-surround, grug-far, visual-whitespace
