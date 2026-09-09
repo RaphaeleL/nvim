@@ -5,46 +5,46 @@ vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 
 require("mason").setup()
 require("mason-tool-installer").setup({
-ensure_installed = {
-    -- C / C++ ecosystem
-    "clangd",                         -- C / C++ LSP
-    "codelldb",                       -- C / C++ / Rust debugger (LLDB)
-    "neocmake",                       -- CMake LSP
-    "cpplint",                        -- C / C++ linting
+    ensure_installed = {
+        -- C / C++ ecosystem
+        "clangd",                         -- C / C++ LSP
+        "codelldb",                       -- C / C++ / Rust debugger (LLDB)
+        "neocmake",                       -- CMake LSP
+        "cpplint",                        -- C / C++ linting
 
-    -- Systems
-    "rust-analyzer",                  -- Rust LSP
+        -- Systems
+        "rust-analyzer",                  -- Rust LSP
 
-    -- Scripting / general purpose
-    "lua-language-server",            -- Lua LSP
-    "pyright",                        -- Python LSP
+        -- Scripting / general purpose
+        "lua-language-server",            -- Lua LSP
+        "pyright",                        -- Python LSP
 
-    -- Web
-    "typescript-language-server",     -- JavaScript / TypeScript LSP
-    "html-lsp",                       -- HTML LSP
-    "css-lsp",                        -- CSS / SCSS LSP
+        -- Web
+        "typescript-language-server",     -- JavaScript / TypeScript LSP
+        "html-lsp",                       -- HTML LSP
+        "css-lsp",                        -- CSS / SCSS LSP
 
-    -- Configuration / project files
-    "yaml-language-server",           -- YAML LSP
-    "json-lsp",                       -- JSON LSP
-    "taplo",                          -- TOML LSP
-    "dockerfile-language-server",     -- Dockerfile LSP
+        -- Configuration / project files
+        "yaml-language-server",           -- YAML LSP
+        "json-lsp",                       -- JSON LSP
+        "taplo",                          -- TOML LSP
+        "dockerfile-language-server",     -- Dockerfile LSP
 
-    -- Shell
-    "bash-language-server",           -- Bash / Shell LSP
-    "shellcheck",                     -- Bash / Shell linting
+        -- Shell
+        "bash-language-server",           -- Bash / Shell LSP
+        "shellcheck",                     -- Bash / Shell linting
 
-    -- Documentation
-    "marksman",                       -- Markdown LSP
+        -- Documentation
+        "marksman",                       -- Markdown LSP
 
-    -- C / C++ formatting & tooling
-    "clang-format",                   -- C / C++ formatting
-    "cmakelang",                      -- CMake formatting / linting
+        -- C / C++ formatting & tooling
+        "clang-format",                   -- C / C++ formatting
+        "cmakelang",                      -- CMake formatting / linting
 
-    -- Other formatting
-    "shfmt",                          -- Shell formatting
-    "stylua",                         -- Lua formatting
-},
+        -- Other formatting
+        "shfmt",                          -- Shell formatting
+        "stylua",                         -- Lua formatting
+    },
     run_on_start = true,
     start_delay = 3000,
 })
