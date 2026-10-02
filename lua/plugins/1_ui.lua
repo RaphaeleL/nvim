@@ -32,12 +32,12 @@ if config.git then
         numhl = false,
         signcolumn = true,
         signs = {
-            add = { text = "▎" },
-            change = { text = "▎" },
-            delete = { text = "󰐊" },
-            topdelete = { text = "󰐊" },
-            changedelete = { text = "▎" },
-            untracked = { text = "▎" },
+            add = { text = "+" },
+            change = { text = "~" },
+            delete = { text = "-" },
+            topdelete = { text = "-" },
+            changedelete = { text = "-" },
+            untracked = { text = "+" },
         },
     })
 end
