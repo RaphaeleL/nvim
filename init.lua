@@ -11,4 +11,5 @@ vim.g.config = {
     format = false,          -- conform.nvim + format keymaps
     extras = false,          -- visual-surround, grug-far, visual-whitespace
     status = true,           -- lsp fidget status
+    extended_fs = true,      -- harpoon2
 }
