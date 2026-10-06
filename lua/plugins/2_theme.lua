@@ -3,22 +3,25 @@ local config = require("config")
 if config.theme == "rose-pine" then
     vim.pack.add({ "https://github.com/rose-pine/neovim" }, { confirm = false })
     require("rose-pine").setup({
-        variant = "auto",
+        variant = (config.transparent and "auto" or "moon"),
         dark_variant = "moon",
         dim_inactive_windows = true,
         extend_background_behind_borders = true,
         dim_nc_background = true,
-        disable_background = true,
-        styles = {
-            bold = true,
+        disable_background = config.transparent,
+        styles = { bold = true,
             italic = true,
-            transparency = true,
+            transparency = config.transparent,
         },
         groups = {},
         highlight_groups = {
-            Normal = { bg = "NONE" },
-            NormalNC = { bg = "NONE" },
-            NormalFloat = { bg = "NONE" },
+            Normal = (not config.transparent and { bg = "#181818" } or { bg = "NONE" }),
+            NormalNC = (not config.transparent and { bg = "#181818" } or { bg = "NONE" }),
+            NormalFloat = (not config.transparent and { bg = "#181818" } or { bg = "NONE" }),
+            FloatBorder = (not config.transparent and { bg = "#181818" } or {}),
+            WinSeparator = (not config.transparent and { bg = "#181818" } or {}),
+            TelescopeNormal = (not config.transparent and { bg = "#181818" } or {}),
+            TelescopeBorder = (not config.transparent and { bg = "#181818", fg = "#181818" } or {}),
             StatusLine = { bg = "NONE" },
             StatusLineNC = { bg = "NONE" },
             CursorLineNr = { fg = "gold" },
