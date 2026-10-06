@@ -5,6 +5,7 @@ vim.pack.add({ "https://github.com/terrortylor/nvim-comment" }, { confirm = fals
 if config.extras then
     vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
     vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
+    vim.pack.add({ "https://github.com/nvim-mini/mini.align" }, { confirm = false })
 end
 if config.format then
     vim.pack.add({ { src = "https://github.com/stevearc/conform.nvim", version = vim.version.range("*") } }, { confirm = false })
@@ -56,6 +57,14 @@ end
 if config.extras then
     require("grug-far").setup({})
     vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
+
+    require("mini.align").setup({
+        mappings = {
+            start = "<leader>a",
+            start_with_preview = "<leader>A",
+        },
+    })
+
 end
 
 if config.format then
