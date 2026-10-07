@@ -11,9 +11,12 @@ end
 if config.format then
     vim.pack.add({ { src = "https://github.com/stevearc/conform.nvim", version = vim.version.range("*") } }, { confirm = false })
 end
-vim.cmd("packadd nvim.undotree")
+if config.git then
+    vim.pack.add({ "https://github.com/kdheepak/lazygit.nvim" }, { confirm = false })
+end
+vim.pack.add({ "https://github.com/mbbill/undotree" }, { confirm = false })
 
-vim.keymap.set("n", "<leader>u", require("undotree").open)
+vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>", { desc = "LR - Undo: Toggle Undotree" })
 
 -- Multicursor: built into nvim 0.13, see :h multicursor
 -- Builtin extras: Q toggles a cursor, [count]Q places one at every search
@@ -27,6 +30,11 @@ local function mc_clear()
     if ns then
         vim.api.nvim_buf_clear_namespace(0, ns, 0, -1)
     end
+end
+
+if config.git then
+    vim.keymap.set("n", "<leader>g", ":LazyGit<cr>", { desc = "LR - Git: Open Lazygit" })
+    vim.keymap.set("n", "<leader>gf", ":LazyGitFilterCurrentFile<cr>", { desc = "LR - Git: Open Lazygit" })
 end
 
 vim.keymap.set("n", "mj", "Qj", { desc = "LR - Multicursor: Add Cursor and move down" })
@@ -55,21 +63,31 @@ for _, mode in ipairs({ "n", "x" }) do
     vim.keymap.set(mode, "<Leader>l", ":CommentToggle<CR>")
 end
 
-if config.grugfar then
-    require("grug-far").setup({})
-    vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
-
+if config.alignment then
     require("mini.align").setup({
         mappings = {
             start = "<leader>a",
             start_with_preview = "<leader>A",
         },
     })
+end
 
+if config.grugfar then
+    require("grug-far").setup({})
+    vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
 end
 
 if config.format then
-    require("conform").setup({})
+    require("conform").setup({
+        formatters_by_ft = {
+            lua = { "stylua" },
+            c = { "clang-format" },
+            cpp = { "clang-format" },
+            sh = { "shfmt" },
+            bash = { "shfmt" },
+            cmake = { "cmakelang" },
+        },
+    })
     vim.keymap.set("n", "<leader>f", function()
         require("conform").format({ async = true, lsp_format = "fallback" })
         print("Formatted buffer")

@@ -1,10 +1,5 @@
--- Start Treesitter on the supported buffers
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "lua", "make" },
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-  end,
-})
+-- Treesitter is started automatically by the nvim-treesitter setup for
+-- supported filetypes, no manual autocmd needed.
 
 -- Attach LSP 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -97,13 +92,15 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- wrap and check for spell in text filetypes
+-- wrap prose; spellcheck only in git commits (markdown has native tooling)
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("wrap_spell", { clear = true }),
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
 		vim.opt_local.wrap = true
-		vim.opt_local.spell = true
+		if vim.bo.filetype == "gitcommit" then
+			vim.opt_local.spell = true
+		end
 	end,
 })
 
@@ -116,11 +113,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- no spell in markdown
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "markdown" },
-	command = "setlocal nospell",
-})
+-- no spell in markdown (see wrap_spell above; spell is gitcommit-only)
 
 -- Set local settings for terminal buffers
 vim.api.nvim_create_autocmd("TermOpen", {
@@ -129,7 +122,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 		vim.opt_local.number = false
 		vim.opt_local.relativenumber = false
 		vim.opt_local.scrolloff = 0
-		vim.opt.numberwidth = 2
+		vim.opt_local.numberwidth = 2
 
 		vim.bo.filetype = "terminal"
 	end,

@@ -1,6 +1,5 @@
 vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" }, { confirm = false })
 vim.pack.add({ { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range("2.*") } }, { confirm = false })
-vim.pack.add({ { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range("2.*") } }, { confirm = false })
 vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" }, { confirm = false })
 
 require("mason").setup()
@@ -8,9 +7,9 @@ require("mason-tool-installer").setup({
     ensure_installed = {
         -- C / C++ ecosystem
         "clangd",                         -- C / C++ LSP
-        "codelldb",                       -- C / C++ / Rust debugger (LLDB)
-        "neocmake",                       -- CMake LSP
-        "cpplint",                        -- C / C++ linting
+        -- "codelldb",                       -- C / C++ / Rust debugger (LLDB)
+        -- "neocmake",                       -- CMake LSP
+        -- "cpplint",                        -- C / C++ linting
 
         -- Systems
         "rust-analyzer",                  -- Rust LSP
@@ -32,7 +31,7 @@ require("mason-tool-installer").setup({
 
         -- Shell
         "bash-language-server",           -- Bash / Shell LSP
-        "shellcheck",                     -- Bash / Shell linting
+        -- "shellcheck",                     -- Bash / Shell linting
 
         -- Documentation
         "marksman",                       -- Markdown LSP

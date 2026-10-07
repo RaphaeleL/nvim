@@ -54,19 +54,28 @@ vim.opt.foldenable = false
 ---------------- 
 -- STATUSLINE --
 ----------------
+-- Works with plain repos, worktrees and submodules (where .git is a file)
 function _G.git_branch()
-    local head = vim.fn.findfile(".git/HEAD", ".;")
-    if head == "" then return "" end
-    local file = io.open(head, "r")
-    if not file then return "" end
-    local line = file:read()
-    file:close()
-    local branch = line and line:match("ref: refs/heads/(.+)")
+    local gitdir = vim.fn.finddir(".git", ".;")
+    if gitdir == "" then return "" end
+    local file = io.open(gitdir, "r")
+    if file then
+        local target = file:read()
+        file:close()
+        gitdir = target and target:match("^gitdir: (.+)$") or ""
+    end
+    if gitdir == "" then return "" end
+    local head = io.open(gitdir .. "/HEAD", "r")
+    if not head then return "" end
+    local line = head:read()
+    head:close()
+    if not line then return "" end
+    local branch = line:match("ref: refs/heads/(.+)")
     if branch then
         return "[" .. branch .. "]"
     end
-    local commit = line and line:sub(1, 7)
-    return commit and ("[" .. commit .. "]") or ""
+    local commit = line:match("^%x+$")
+    return commit and ("[" .. commit:sub(1, 7) .. "]") or ""
 end
 
 local config = require("config")

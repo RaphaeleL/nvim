@@ -26,7 +26,8 @@ vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { desc = "LR - Buffer Resize d
 vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "LR - Buffer Resize left" })
 vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "LR - Buffer Resize right" })
 
-vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "LR - Window: Close" })
+vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "LR - Buffer: Delete" })
+vim.keymap.set("n", "<leader>q", ":q!<cr>", { desc = "LR - Window: Quit" })
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
@@ -67,5 +68,7 @@ vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "LR - Treesitter:
 vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
 
 -- Theme
-vim.api.nvim_set_keymap("n","<leader>t",":lua vim.o.background = (vim.o.background=='dark' and 'light' or 'dark')<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>t", function()
+    vim.o.background = vim.o.background == "dark" and "light" or "dark"
+end, { desc = "LR - Theme: Toggle Background" })
 

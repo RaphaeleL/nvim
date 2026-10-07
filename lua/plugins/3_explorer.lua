@@ -3,8 +3,9 @@ local config = require("config")
 vim.pack.add({ { src = "https://github.com/stevearc/oil.nvim", version = vim.version.range("*") } }, { confirm = false })
 vim.pack.add({ { src = "https://github.com/nvim-telescope/telescope.nvim", version = vim.version.range("*") } }, { confirm = false })
 
-if config.extended_fs then
-    vim.pack.add({ { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" } }, { confirm = false })
+if config.harpoon then
+    -- harpoon v2 (harpoon2 branch) is the default on main now
+    vim.pack.add({ "https://github.com/ThePrimeagen/harpoon" }, { confirm = false })
 
     local harpoon = require("harpoon")
     harpoon:setup()
