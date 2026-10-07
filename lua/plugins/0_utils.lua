@@ -3,7 +3,7 @@ local config = require("config")
 vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" }, { confirm = false })
 vim.pack.add({ "https://github.com/terrortylor/nvim-comment" }, { confirm = false })
 if config.extras then
-    vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
+    -- vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
     vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
     vim.pack.add({ "https://github.com/nvim-mini/mini.align" }, { confirm = false })
 end

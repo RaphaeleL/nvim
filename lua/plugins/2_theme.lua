@@ -22,6 +22,7 @@ if config.theme == "rose-pine" then
             WinSeparator = (not config.transparent and { bg = "#181818" } or {}),
             TelescopeNormal = (not config.transparent and { bg = "#181818" } or {}),
             TelescopeBorder = (not config.transparent and { bg = "#181818", fg = "#181818" } or {}),
+            Visual = (not config.transparent and { bg = "#7f1d1d" } or {}),
             StatusLine = { bg = "NONE" },
             StatusLineNC = { bg = "NONE" },
             CursorLineNr = { fg = "gold" },

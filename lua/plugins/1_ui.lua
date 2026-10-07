@@ -2,9 +2,9 @@ local config = require("config")
 
 -- nvim-treesitter must stay on the main branch (new API, no releases)
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
-if config.extras then
-    vim.pack.add({ "https://github.com/mcauley-penney/visual-whitespace.nvim" }, { confirm = false })
-end
+-- if config.extras then
+--     vim.pack.add({ "https://github.com/mcauley-penney/visual-whitespace.nvim" }, { confirm = false })
+-- end
 if config.git then
     vim.pack.add({ { src = "https://github.com/lewis6991/gitsigns.nvim", version = vim.version.range("*") } }, { confirm = false })
 end

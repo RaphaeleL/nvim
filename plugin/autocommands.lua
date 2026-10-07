@@ -59,12 +59,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd({ "TextYankPost", "TextPutPost" }, {
 	group = vim.api.nvim_create_augroup("HighlightYank", {}),
 	pattern = "*",
-	callback = function()
-		vim.hl.hl_op({
-			higroup = "IncSearch",
-			timeout = 40,
-		})
-	end,
+	callback = function() vim.hl.hl_op({ higroup = "IncSearch", timeout = 40, }) end,
 })
 
 -- Open Oil in the default Folder View when started with a directory argument
