@@ -7,11 +7,12 @@ local defaults = {
     theme       = "rose-pine",  -- rose-pine || kanagawa || catppuccin || default
     statusline  = "minimal",    -- full || minimal || disabled
     transparent = false,        -- makes the color theme transparent, only works in rose-pine
-    git         = not false,    -- gitsigns.nvim
-    format      = false,        -- conform.nvim + format keymaps
-    extras      = false,        -- visual-surround, grug-far, visual-whitespace, align
-    status      = true,         -- lsp fidget status
-    extended_fs = true,         -- harpoon2
+    git         = true,         -- show git signs
+    format      = false,        -- format the source code
+    alignment   = true,         -- align selection with regex 
+    grugfar     = false,        -- search and replace
+    lsp_status  = true,         -- fidget lsp status
+    harpoon     = true,         -- extended navigation
 }
 
 local choices = {

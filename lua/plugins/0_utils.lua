@@ -2,9 +2,10 @@ local config = require("config")
 
 vim.pack.add({ "https://github.com/nvim-lua/plenary.nvim" }, { confirm = false })
 vim.pack.add({ "https://github.com/terrortylor/nvim-comment" }, { confirm = false })
-if config.extras then
-    -- vim.pack.add({ "https://github.com/NStefan002/visual-surround.nvim" }, { confirm = false })
+if config.grugfar then
     vim.pack.add({ "https://github.com/MagicDuck/grug-far.nvim" }, { confirm = false })
+end
+if config.alignment then
     vim.pack.add({ "https://github.com/nvim-mini/mini.align" }, { confirm = false })
 end
 if config.format then
@@ -54,7 +55,7 @@ for _, mode in ipairs({ "n", "x" }) do
     vim.keymap.set(mode, "<Leader>l", ":CommentToggle<CR>")
 end
 
-if config.extras then
+if config.grugfar then
     require("grug-far").setup({})
     vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
 
