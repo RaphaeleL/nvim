@@ -40,9 +40,9 @@ syn match kraitOperator /\.\.\.\|:=\|==\|!=\|<=\|>=\|<<\|>>\|+=\|-=\|\*=\|\/=\|%
 " ---------------------------------------------------------------------------
 syn keyword kraitTodo TODO FIXME XXX NOTE HACK contained
 
-syn region kraitCommentBlock start="/\*\%(\*[\/\*]\@!\)\@!" end="\*\/" contains=kraitCommentBlockNest,kraitTodo,@Spell
+syn region kraitCommentBlock matchgroup=kraitCommentBlock start="/\*\%(\*[\/\*]\@!\)\@!" end="\*\/" contains=kraitCommentBlockNest,kraitTodo,@Spell
 syn region kraitCommentBlockNest matchgroup=kraitCommentBlock start="/\*" end="\*\/" contained transparent contains=kraitCommentBlockNest,kraitTodo,@Spell
-syn region kraitDocComment start="/\*\*[\/\*]\@!" end="\*\/" contains=kraitCommentBlockNest,kraitTodo,@Spell
+syn region kraitDocComment matchgroup=kraitDocComment start="/\*\*[\/\*]\@!" end="\*\/" contains=kraitCommentBlockNest,kraitTodo,@Spell
 syn match  kraitCommentLine "//.*$" contains=kraitTodo,@Spell
 
 " ---------------------------------------------------------------------------
