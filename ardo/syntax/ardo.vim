@@ -5,7 +5,7 @@
 " Last Change: 2026-10-18
 "
 " Ardo is a strictly typed, ahead-of-time compiled systems language with
-" Python-flavored keywords (`fn`, `for x in`, `and`/`or`/`not`,
+" Python-flavored keywords (`function`, `for x in`, `and`/`or`/`not`,
 " `match`/`case`/`then`) and C-style `{ }` braces.  Comments are `//` and
 " nestable `/* */`; `#` introduces compile-time directives.
 
@@ -67,15 +67,15 @@ syn region ardoFString start=/\<f"/ skip=/\\\\\|\\"/ end=/"/ contains=ardoEscape
 syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ end=/}/ contained contains=@ardoInterpContents
 
 " ---------------------------------------------------------------------------
-" Directives: #import, #load, #library, #assert, #all, #bake, #copy, #on, #extern, #char, #repeat, #type, #entrypoint (`#` is never a comment)
+" Directives: #import, #load, #library, #assert, #all, #copy, #on, #extern, #char, #repeat, #type, #entrypoint (`#` is never a comment)
 " ---------------------------------------------------------------------------
 syn match ardoDirective /#\a\w*/
-syn match ardoBakeName  /#bake\s\+\zs\w\+/
+syn match ardoBakeName  /\<const\s\+\zs\w\+/
 
 " ---------------------------------------------------------------------------
 " Keywords, types, names
 " ---------------------------------------------------------------------------
-syn keyword ardoKeyword and as break case continue default defer deinit else enum fails fn for if in match not or pub ref return struct then to until while using
+syn keyword ardoKeyword and as break case const continue default defer deinit else enum fails function for if in match not or pub ref return struct then to try until while using xx
 syn keyword ardoBoolean true false
 syn keyword ardoReserved async await class comptime impl module nil none some trait use yield ok error
 syn keyword ardoBuiltin alloc free sizeof alignof offset move_out assert
@@ -84,7 +84,9 @@ syn keyword ardoBuiltinType bool char byte short ushort int uint long ulong i8 i
 
 syn match ardoType     /\<[A-Z]\w*\>/
 syn match ardoConstant /\<[A-Z][A-Z_0-9]\+\>/
-syn match ardoFunction /\<fn\s\+\zs\w\+/
+syn match ardoFunction /\<function\s\+\zs\w\+/
+" `str(x)` is a builtin only when called: `str.concat` is the str module.
+syn match ardoBuiltin  /\<str\ze\s*(/
 
 " Expressions usable inside f-string `{...}` interpolation.
 syn cluster ardoInterpContents contains=ardoNumber,ardoHexNumber,ardoBinNumber,ardoOctNumber,ardoFloat,ardoString,ardoFString,ardoCharacter,ardoEscape,ardoFStringEscape,ardoInterpolation,ardoOperator,ardoBoolean,ardoBuiltinType,ardoType,ardoConstant,ardoFunction,ardoBakeName,ardoKeyword,ardoReserved,ardoBuiltin,ardoError
