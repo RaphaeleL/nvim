@@ -9,3 +9,9 @@ vim.lsp.config("ardo", {
     root_markers = { "modules", ".git" },
 })
 vim.lsp.enable("ardo")
+
+-- Ardo treesitter
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ardo",
+  callback = function(ev) vim.treesitter.start(ev.buf, "ardo") end,
+})

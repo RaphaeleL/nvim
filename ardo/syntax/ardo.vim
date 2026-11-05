@@ -67,7 +67,7 @@ syn region ardoFString start=/\<f"/ skip=/\\\\\|\\"/ end=/"/ contains=ardoEscape
 syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ end=/}/ contained contains=@ardoInterpContents
 
 " ---------------------------------------------------------------------------
-" Directives: #import, #load, #library, #assert, #all, #copy, #on, #extern, #char, #repeat, #type, #entrypoint (`#` is never a comment)
+" Directives: #import, #load, #library, #assert, #all, #copy, #on, #extern, #char, #repeat, #type, #cast, #entrypoint (`#` is never a comment)
 " ---------------------------------------------------------------------------
 syn match ardoDirective /#\a\w*/
 syn match ardoBakeName  /\<const\s\+\zs\w\+/
