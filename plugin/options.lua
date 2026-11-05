@@ -1,8 +1,7 @@
 vim.opt.guicursor = ""
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
--- no clipboard=unnamedplus: y/Y are mapped to "+ explicitly (keymaps.lua),
--- so yanks reach the clipboard but deletes stay out of it
+vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"
@@ -69,36 +68,33 @@ function _G.git_branch()
     return commit and ("[" .. commit .. "]") or ""
 end
 
-local config = require("config")
-
-if config.statusline == "full" then
-    vim.opt.statusline = table.concat({
-      " %f",
-      " %{v:lua.git_branch()}",
-      " %m",
-      "%=",
-      " %y",
-      " %l:%c",
-      " [%p%%]"
-    })
-    vim.opt.cmdheight = 0
-    vim.opt.laststatus = 3
-    vim.opt.showcmd = false
-    vim.opt.ruler = false
-elseif config.statusline == "minimal" then
-    vim.opt.statusline = table.concat({
-      " %f",
-      " %m",
-      "%=",
-      " %l:%c",
-    })
-    vim.opt.cmdheight = 0
-    vim.opt.laststatus = 3
-    vim.opt.showcmd = false
-    vim.opt.ruler = false
-elseif config.statusline == "disabled" then
-    vim.opt.cmdheight = 0
-    vim.opt.laststatus = 0
-    vim.opt.showcmd = false
-    vim.opt.ruler = false
-end
+-- "full"
+--     vim.opt.statusline = table.concat({
+--       " %f",
+--       " %{v:lua.git_branch()}",
+--       " %m",
+--       "%=",
+--       " %y",
+--       " %l:%c",
+--       " [%p%%]"
+--     })
+--     vim.opt.cmdheight = 0
+--     vim.opt.laststatus = 3
+--     vim.opt.showcmd = false
+--     vim.opt.ruler = false
+-- "minimal"
+vim.opt.statusline = table.concat({
+  " %f",
+  " %m",
+  "%=",
+  " %l:%c",
+})
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
+vim.opt.showcmd = false
+vim.opt.ruler = false
+-- "disabled"
+--     vim.opt.cmdheight = 0
+--     vim.opt.laststatus = 0
+--     vim.opt.showcmd = false
+--     vim.opt.ruler = false

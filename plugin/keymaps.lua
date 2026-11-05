@@ -1,71 +1,87 @@
--- Buffer and Window
-vim.keymap.set("i", "kj", "<ESC>", { desc = "LR - Buffer: Go to Normal Mode" })
-vim.keymap.set("i", "jk", "<ESC>", { desc = "LR - Buffer: Go to Normal Mode" })
-vim.keymap.set("n", "<Space>", "<NOP>", { desc = "LR - Buffer: Leader" })
-vim.keymap.set("n", "<TAB>", ":bprev<cr>", { desc = "LR - Buffer: Next Tab and Write Buffer" })
-vim.keymap.set("n", "<S-TAB>", ":bnext<cr>", { desc = "LR - Buffer: Previous Tab" })
 
-vim.keymap.set({"i","n"}, "<C-w>", ":q!<cr>", { desc = "LR - Buffer: Quit" })
-vim.keymap.set({"i","n"}, "<C-q>", ":qa!<cr>", { desc = "LR - Buffer: Quit All" })
-vim.keymap.set({"i","n"}, "<C-s>", "<esc>:wa!<cr>", { desc = "LR - Buffer: Save All" })
+local keymap = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "sh", "<C-w>h", { desc = "LR - Buffer: Move to the left Window" })
-vim.keymap.set("n", "sj", "<C-w>j", { desc = "LR - Buffer: Move to the bottom Window" })
-vim.keymap.set("n", "sk", "<C-w>k", { desc = "LR - Buffer: Move to the upper Window" })
-vim.keymap.set("n", "sl", "<C-w>l", { desc = "LR - Buffer: Move to the right Window" })
-vim.keymap.set("n", "sv", ":vsplit<cr>", { desc = "LR - Buffer: Vertical Split" })
-vim.keymap.set("n", "ss", ":split<cr>", { desc = "LR - Buffer: Horizontal Split" })
+-- Increment / Decrement
+keymap("n", "-", "<C-x>", opts)                  -- Decrement the number under the cursor
+keymap("n", "+", "<C-a>", opts)                  -- Increment the number under the cursor
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "LR - Buffer: Move Page up and stay in the Middle of the Screen" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "LR - Buffer: Move Page up and stay in the Middle of the Screen" })
+-- Selection
+keymap("n", "<C-a>", "gg<S-v>G", opts)           -- Select the entire buffer
 
-vim.keymap.set("n", "<Leader>n", ":noh<cr>", { desc = "LR - Buffer: No Highlighting" })
+-- Insert Mode
+keymap("i", "kj", "<ESC>", opts)                 -- Exit Insert mode
+keymap("i", "jk", "<ESC>", opts)                 -- Exit Insert mode
 
-vim.keymap.set("n", "<S-Up>", ":resize -2<CR>", { desc = "LR - Buffer Resize up" })
-vim.keymap.set("n", "<S-Down>", ":resize +2<CR>", { desc = "LR - Buffer Resize down" })
-vim.keymap.set("n", "<S-Left>", ":vertical resize -2<CR>", { desc = "LR - Buffer Resize left" })
-vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", { desc = "LR - Buffer Resize right" })
+-- Buffer Navigation
+keymap("n", "<Space>", "<NOP>", opts)            -- Disable the default Space behavior (reserve as Leader)
+keymap("n", "<TAB>", ":bprev<CR>", opts)         -- Switch to the previous buffer
+keymap("n", "<S-TAB>", ":bnext<CR>", opts)       -- Switch to the next buffer
+keymap("n", "<Leader>bd", ":bd<CR>", opts)       -- Delete the current buffer
 
-vim.keymap.set("n", "<leader>c", ":bd<cr>", { desc = "LR - Window: Close" })
+-- Window Splits
+keymap("n", "sv", ":vsplit<CR>", opts)           -- Create a vertical split
+keymap("n", "ss", ":split<CR>", opts)            -- Create a horizontal split
 
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+-- Window Navigation
+keymap("n", "sh", "<C-w>h", opts)                -- Move to the window on the left
+keymap("n", "sj", "<C-w>j", opts)                -- Move to the window below
+keymap("n", "sk", "<C-w>k", opts)                -- Move to the window above
+keymap("n", "sl", "<C-w>l", opts)                -- Move to the window on the right
 
--- Char
-vim.keymap.set("n", "-", "<C-x>", { desc = "LR - Chars: Decrement a Number" })
-vim.keymap.set("n", "+", "<C-a>", { desc = "LR - Chars: Increment a Number" })
+-- Window Resizing
+keymap("n", "<S-Up>", ":resize -2<CR>", opts)    -- Decrease window height
+keymap("n", "<S-Down>", ":resize +2<CR>", opts)  -- Increase window height
+keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)  -- Decrease window width
+keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts) -- Increase window width
 
-vim.keymap.set({ "n", "v" }, "y", '"+y', { desc = "LR - Chars: Yank to clipboard" })
-vim.keymap.set({ "n", "v" }, "Y", '"+Y', { desc = "LR - Chars: Yank line to clipboard" })
-vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "LR - Chars: Paste without losing the Buffer" })
-vim.keymap.set("n", "x", '"_x', { desc = "LR - Chars: Delete Char without losing the Buffer" })
-vim.keymap.set("i", "<C-BS>", "<Esc>cvb", { desc = "LR - Chars: Delete a Word." })
+-- Scrolling
+keymap("n", "<C-d>", "<C-d>zz", opts)            -- Scroll down and center the cursor
+keymap("n", "<C-u>", "<C-u>zz", opts)            -- Scroll up and center the cursor
 
--- Line
-vim.keymap.set("v", "<", "<gv", { desc = "LR - Line: Indent to Left" })
-vim.keymap.set("v", ">", ">gv", { desc = "LR - Line: Indent to Right" })
+-- Search
+keymap("n", "<Leader>n", ":noh<CR>", opts)       -- Clear search highlighting
 
-vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "LR - Line: Move in a Linebreak up" })
-vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "LR - Line: Move in a Linebreak down" })
+-- Indentation
+keymap("v", "<", "<gv", opts)                    -- Decrease indentation and reselect the selection
+keymap("v", ">", ">gv", opts)                    -- Increase indentation and reselect the selection
 
--- NOTE: unsure if i want to keep them
-vim.keymap.set("v", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true, desc = "LR - Line: Move in a Linebreak up" })
-vim.keymap.set("v", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true, desc = "LR - Line: Move in a Linebreak down" })
+-- Wrapped Line Navigation
+keymap({ "n", "v" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true }) -- Move up by display line unless a count is given
+keymap({ "n", "v" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true }) -- Move down by display line unless a count is given
 
-vim.keymap.set("n", "J", "mzJ`z", { desc = "LR - Line: Concat Line without moving the Cursor" })
+-- Line Manipulation
+keymap("n", "J", "mzJ`z", opts)                  -- Join the next line without moving the cursor
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)        -- Move the selected lines down
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)        -- Move the selected lines up
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "LR - Line: Move Selection up" })
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "LR - Line: Move Selection down" })
-
-vim.keymap.set({ "n", "v" }, "H", "0", { desc = "LR - Line: Move to the start of a Line" })
-vim.keymap.set({ "n", "v" }, "L", "$", { desc = "LR - Line: Move to the end of a Line" })
+-- Line Navigation
+keymap({ "n", "v" }, "H", "0", opts)             -- Move to the first column of the line
+keymap({ "n", "v" }, "L", "$", opts)             -- Move to the last character of the line
 
 -- Plugin Specific
-vim.keymap.set("n", "<Leader>e", ":lua vim.diagnostic.open_float()<cr>", { desc = "LR - LSP: Open Diagnostic of Line" })
-vim.keymap.set("n", "<leader>o", ":Oil<cr>", { desc = "LR - Filesystem: Open Oil Filebrowser" })
-vim.keymap.set("n", "<leader>of", ":Oil --float<cr>", { desc = "LR - Filesystem: Open Oil Filebrowser Floating" })
-vim.keymap.set("n", "<Leader>ts", ":InspectTree<cr>", { desc = "LR - Treesitter: Inspect Tree" })
-vim.keymap.set("n", "<Leader>z", ":Lazy<cr>")
+keymap("n", "<Leader>e", ":lua vim.diagnostic.open_float()<CR>", opts) -- Show diagnostic information in a floating window
+keymap("n", "<Leader>o", ":Oil --float<CR>", opts)        -- Open Oil file explorer
+keymap("n", "<Leader>ts", ":InspectTree<CR>", opts) -- Open the Treesitter syntax tree inspector
+keymap("n", "<Leader>z", ":Lazy<CR>", opts)       -- Open Lazy plugin manager
 
--- Theme
-vim.api.nvim_set_keymap("n","<leader>t",":lua vim.o.background = (vim.o.background=='dark' and 'light' or 'dark')<CR>", { noremap = true, silent = true })
+-- Register Management
+keymap("n", "x", '"_x', opts)                    -- Delete character without overwriting the yank register
+keymap("n", "<Leader>p", '"0p', opts)            -- Paste the last yanked text after the cursor
+keymap("n", "<Leader>P", '"0P', opts)            -- Paste the last yanked text before the cursor
+keymap("n", "<Leader>c", '"_c', opts)            -- Change text without overwriting the yank register
+keymap("n", "<Leader>C", '"_C', opts)            -- Change from cursor to end of line without overwriting the yank register
+keymap("v", "<Leader>c", '"_c', opts)            -- Change selection without overwriting the yank register
+keymap("n", "<Leader>d", '"_d', opts)            -- Delete text without overwriting the yank register
+keymap("n", "<Leader>D", '"_D', opts)            -- Delete from cursor to end of line without overwriting the yank register
+keymap("v", "<Leader>d", '"_d', opts)            -- Delete selection without overwriting the yank register
+
+-- Clipboard
+keymap({ "n", "v" }, "y", '"+y', opts)           -- Yank text to the system clipboard
+keymap({ "n", "v" }, "Y", '"+Y', opts)           -- Yank line or selection to the system clipboard
+keymap("x", "<Leader>p", '"_d"0P', opts)         -- Replace selection with last yanked text without overwriting the yank register
+
+-- Miscellaneous
+keymap("i", "<C-BS>", "<C-w>", opts)             -- Delete the word before the cursor in Insert mode
+keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)   -- Exit Terminal mode and enter Terminal-Normal mode
 

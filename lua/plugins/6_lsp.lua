@@ -1,8 +1,3 @@
-vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" }, { confirm = false })
-vim.pack.add({ { src = "https://github.com/mason-org/mason.nvim", version = vim.version.range("2.*") } }, { confirm = false })
-vim.pack.add({ { src = "https://github.com/mason-org/mason-lspconfig.nvim", version = vim.version.range("2.*") } }, { confirm = false })
-vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" }, { confirm = false })
-
 require("mason").setup()
 require("mason-tool-installer").setup({
     ensure_installed = {
