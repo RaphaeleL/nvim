@@ -4,20 +4,20 @@ vim.pack.add({
 
 	{ src = gh("nvim-lua/plenary.nvim") },
 	{ src = gh("terrortylor/nvim-comment") },
-	{ src = gh("NStefan002/visual-surround.nvim") },
+	-- { src = gh("NStefan002/visual-surround.nvim") },
 	{ src = gh("MagicDuck/grug-far.nvim") },
 	{ src = gh("nvim-mini/mini.align") },
 	{ src = gh("stevearc/conform.nvim"), version = vim.version.range("*")},
 	{ src = gh("kdheepak/lazygit.nvim") },
 
 	{ src = gh("nvim-treesitter/nvim-treesitter") },
-	{ src = gh("mcauley-penney/visual-whitespace.nvim") },
+	-- { src = gh("mcauley-penney/visual-whitespace.nvim") },
 	{ src = gh("lewis6991/gitsigns.nvim"), version = vim.version.range("*") },
 	{ src = gh("j-hui/fidget.nvim") },
 
 	{ src = gh("rose-pine/neovim") },
-	{ src = gh("rebelot/kanagawa.nvim") },
-	{ src = gh("catppuccin/nvim") },
+	-- { src = gh("rebelot/kanagawa.nvim") },
+	-- { src = gh("catppuccin/nvim") },
 
 	{ src = gh("stevearc/oil.nvim"), version = vim.version.range("*")  },
 	{ src = gh("nvim-telescope/telescope.nvim"), version = vim.version.range("*")  },
