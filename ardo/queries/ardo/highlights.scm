@@ -52,7 +52,10 @@
 
 ((call_expression function: (identifier) @function.builtin)
   (#any-of? @function.builtin
-    "assert" "str" "alloc" "free" "sizeof" "alignof" "offset" "move_out"))
+    "assert" "str" "alloc" "free" "sizeof" "alignof" "offset" "move_out"
+    "volatile_load" "volatile_store" "fence"
+    "atomic_load" "atomic_store" "atomic_swap" "atomic_add" "atomic_sub"
+    "atomic_and" "atomic_or" "atomic_xor" "atomic_cas"))
 
 ; Capitalized callee: `Point(1, 2)` constructs a struct
 ((call_expression function: (identifier) @constructor)
@@ -120,18 +123,22 @@
 ] @keyword.operator
 
 [
-  "fails"
   "try"
+  "with"
   "error"
 ] @keyword.exception
 
 [
   "defer"
   "using"
-  "ref"
 ] @keyword
 
 (visibility) @keyword.modifier
+
+; Reserved words: identifiers to the grammar, rejected by the compiler
+((identifier) @keyword
+  (#any-of? @keyword
+    "async" "await" "class" "impl" "module" "nil" "none" "some" "trait" "use" "yield"))
 (function_declaration name: (identifier) @keyword.function
   (#eq? @keyword.function "deinit"))
 
@@ -144,18 +151,15 @@
 
 [
   "#assert"
-  "#bake"
   "#on"
   "#all"
   "#char"
+  "#embed"
   "#repeat"
   "#type"
   "#ignore"
-  "#entrypoint"
-  "#pointer"
-  "#deref"
   "#empty"
-  "#ref"
+  "#borrow"
   "#go"
   "#call"
   "#error"
@@ -163,9 +167,16 @@
   "#if"
   "#target"
   "#bits"
+  "#fields"
 ] @keyword.directive
 
+; Attributes in front of a declaration: `#packed struct`, `#memo function`
 (attribute) @attribute
+(attribute
+  [
+    "#copy" "#autoinit" "#packed" "#c_callback" "#export" "#trace" "#time"
+    "#memo" "#retry" "#deprecated" "#align" "#extern"
+  ] @keyword.directive)
 
 (variant_pattern name: (identifier) @keyword.exception
   (#any-of? @keyword.exception "ok" "error"))
@@ -176,6 +187,8 @@
 (float_literal) @number.float
 (boolean_literal) @boolean
 (null_literal) @constant.builtin
+(default_value) @constant.builtin
+(trace_level (identifier) @constant)
 (char_literal) @character
 (wildcard_pattern) @character.special
 
@@ -196,7 +209,7 @@
 ; ------------------------------------------------------------------ operators
 
 [
-  "=" ":=" "+=" "-=" "*=" "/=" "%=" "+%=" "-%=" "*%="
+  "=" ":=" "+=" "-=" "*=" "/=" "%=" "+%=" "-%=" "*%=" "++" "--"
   "+" "-" "*" "/" "%" "+%" "-%" "*%"
   "==" "!=" "<" "<=" ">" ">="
   "&" "|" "^" "~" "<<" ">>"
@@ -222,3 +235,6 @@
 
 ((block_comment) @comment.documentation
   (#lua-match? @comment.documentation "^/%*%*[^/]"))
+
+"compile_time" @keyword
+

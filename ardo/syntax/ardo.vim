@@ -2,7 +2,7 @@
 " Language:    Ardo
 " Maintainer:  Ardo compiler repository
 " Filenames:   *.ardo
-" Last Change: 2026-10-18
+" Last Change: 2026-11-06
 "
 " Ardo is a strictly typed, ahead-of-time compiled systems language with
 " Python-flavored keywords (`function`, `for x in`, `and`/`or`/`not`,
@@ -32,7 +32,9 @@ syn match ardoFloat     /\<\d[0-9_]*[eE][+-]\?\d\+\>/
 " ---------------------------------------------------------------------------
 " Operators (`to` / `until` are keywords; they are listed with the keywords)
 " ---------------------------------------------------------------------------
-syn match ardoOperator /\.\.\.\|:=\|==\|!=\|<=\|>=\|<<\|>>\|+=\|-=\|\*=\|\/=\|%=\|[-+*\/%&|^~<>=]/
+" `---` is the default value of the declared type, not an operator.
+syn match ardoOperator /\.\.\.\|\.\.\|:=\|==\|!=\|<=\|>=\|<<\|>>\|+%=\|-%=\|\*%=\|++\|--\|+%\|-%\|\*%\|+=\|-=\|\*=\|\/=\|%=\|[-+*\/%&|^~<>=!]/
+syn match ardoDefault  /---/
 
 " ---------------------------------------------------------------------------
 " Comments:  // line comments ; nestable /* block */ comments ;
@@ -67,19 +69,25 @@ syn region ardoFString start=/\<f"/ skip=/\\\\\|\\"/ end=/"/ contains=ardoEscape
 syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ end=/}/ contained contains=@ardoInterpContents
 
 " ---------------------------------------------------------------------------
-" Directives: #import, #load, #library, #assert, #all, #copy, #on, #extern, #char, #repeat, #type, #cast, #entrypoint (`#` is never a comment)
+" Directives: exactly the ones the lexer knows (`#` is never a comment)
 " ---------------------------------------------------------------------------
-syn match ardoDirective /#\a\w*/
-syn match ardoBakeName  /\<const\s\+\zs\w\+/
+syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|trace\|time\|memo\|retry\|deprecated\|fields\|autoinit\|embed\|packed\|align\|bits\|if\|target\|empty\)\>/
+syn match ardoConstName  /\<const\s\+\zs\w\+/
 
 " ---------------------------------------------------------------------------
 " Keywords, types, names
 " ---------------------------------------------------------------------------
-syn keyword ardoKeyword and as break case const continue default defer deinit else enum fails function for if in match not or pub ref return struct then to try until while using xx
+syn keyword ardoKeyword and as break case const continue compile_time default defer deinit else enum fails function for if in match not or pub return struct then to try until while xx
+" Contextual keywords: plain identifiers to the lexer, keywords where they appear.
+syn keyword ardoKeyword using union var
 syn keyword ardoBoolean true false
-syn keyword ardoReserved async await class comptime impl module nil none some trait use yield ok error
-syn keyword ardoBuiltin alloc free sizeof alignof offset move_out assert
+syn keyword ardoReserved async await class impl module nil none some trait use yield
+syn keyword ardoBuiltin alloc free sizeof alignof offset move_out assert volatile_load volatile_store fence atomic_load atomic_store atomic_swap atomic_add atomic_sub atomic_and atomic_or atomic_xor atomic_cas
 syn keyword ardoError error
+" `ok(v)` / `error(e)` patterns
+syn match ardoError /\<ok\ze\s*(/
+syn keyword ardoNull null
+syn keyword ardoSelf self it
 syn keyword ardoBuiltinType bool char byte short ushort int uint long ulong i8 i16 i32 i64 u8 u16 u32 u64 f32 f64 float double string
 
 syn match ardoType     /\<[A-Z]\w*\>/
@@ -89,7 +97,7 @@ syn match ardoFunction /\<function\s\+\zs\w\+/
 syn match ardoBuiltin  /\<str\ze\s*(/
 
 " Expressions usable inside f-string `{...}` interpolation.
-syn cluster ardoInterpContents contains=ardoNumber,ardoHexNumber,ardoBinNumber,ardoOctNumber,ardoFloat,ardoString,ardoFString,ardoCharacter,ardoEscape,ardoFStringEscape,ardoInterpolation,ardoOperator,ardoBoolean,ardoBuiltinType,ardoType,ardoConstant,ardoFunction,ardoBakeName,ardoKeyword,ardoReserved,ardoBuiltin,ardoError
+syn cluster ardoInterpContents contains=ardoNumber,ardoHexNumber,ardoBinNumber,ardoOctNumber,ardoFloat,ardoString,ardoFString,ardoCharacter,ardoEscape,ardoFStringEscape,ardoInterpolation,ardoOperator,ardoBoolean,ardoBuiltinType,ardoType,ardoConstant,ardoFunction,ardoConstName,ardoKeyword,ardoReserved,ardoBuiltin,ardoError,ardoNull,ardoSelf,ardoDefault
 
 " ---------------------------------------------------------------------------
 " Highlighting
@@ -113,8 +121,11 @@ hi def link ardoBinNumber          Number
 hi def link ardoOctNumber          Number
 hi def link ardoFloat              Float
 hi def link ardoOperator           Operator
+hi def link ardoDefault            Constant
+hi def link ardoNull               Constant
+hi def link ardoSelf               Identifier
 hi def link ardoDirective          PreProc
-hi def link ardoBakeName           Constant
+hi def link ardoConstName           Constant
 hi def link ardoKeyword            Keyword
 hi def link ardoBoolean            Boolean
 hi def link ardoReserved           Keyword
