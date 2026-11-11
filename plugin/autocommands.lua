@@ -1,9 +1,19 @@
 -- Start Treesitter on the supported buffers
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "c", "cpp", "lua", "make" },
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf)
-  end,
+    pattern = { "c", "cpp", "lua", "make" },
+    callback = function(args)
+        pcall(vim.treesitter.start, args.buf)
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "ardo",
+    callback = function()
+        vim.opt_local.tabstop = 4
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.softtabstop = 4
+        vim.opt_local.expandtab = true
+    end,
 })
 
 -- Attach LSP 
