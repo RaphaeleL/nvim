@@ -19,6 +19,10 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": ">=0.0.0"
     },
+    "gruber-darker.nvim": {
+      "rev": "35cb97959ef01f7193c94c404c13ddb3d4346654",
+      "src": "https://github.com/blazkowolf/gruber-darker.nvim"
+    },
     "grug-far.nvim": {
       "rev": "dc4684e163971bb1f5bfb93fbd4bb3e892bf9b15",
       "src": "https://github.com/MagicDuck/grug-far.nvim"

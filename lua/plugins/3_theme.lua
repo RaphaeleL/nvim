@@ -68,3 +68,20 @@ vim.cmd("colorscheme rose-pine")
 
 -- vim.cmd("colorscheme default")
 
+-- require("gruber-darker").setup({
+--     bold = true,
+--     invert = {
+--         signs = false,
+--         tabline = false,
+--         visual = false,
+--     },
+--     italic = {
+--         strings = true,
+--         comments = true,
+--         operators = false,
+--         folds = true,
+--     },
+--     undercurl = not true,
+--     underline = not true,
+-- })
+-- vim.cmd.colorscheme("gruber-darker")
