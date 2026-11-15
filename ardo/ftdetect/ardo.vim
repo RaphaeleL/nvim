@@ -1,5 +1,5 @@
-" Ardo (.ardo) filetype detection.
+" Ardo (.ao) filetype detection.
 augroup ardo_ftdetect
   autocmd!
-  autocmd BufRead,BufNewFile *.ardo setfiletype ardo
+  autocmd BufRead,BufNewFile *.ao setfiletype ardo
 augroup END

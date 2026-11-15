@@ -20,6 +20,12 @@
 
 (type_identifier) @type
 (primitive_type) @type.builtin
+
+; `long(x)`: a checked conversion written like a call
+(call_expression
+  function: (identifier) @type.builtin
+  (#any-of? @type.builtin "byte" "short" "ushort" "int" "uint" "long" "ulong" "i8" "i16" "i32"
+    "i64" "u8" "u16" "u32" "u64" "f32" "f64" "float" "double" "char"))
 (scoped_type (identifier) @module)
 (scoped_type (identifier) @type .)
 (generic_type type: (scoped_type (identifier) @type .))
@@ -34,6 +40,13 @@
   (#lua-match? @type "^[A-Z]")
   (#not-lua-match? @type "^[A-Z][A-Z0-9_]+$"))
 
+; `geo.Point.new(3)`: a capitalized middle segment names a type too (ADR-180)
+((field_expression value: (field_expression field: (identifier) @type))
+  (#lua-match? @type "^[A-Z]")
+  (#not-lua-match? @type "^[A-Z][A-Z0-9_]+$"))
+
+(const_declaration receiver: (type_identifier) @type) ; `const #on Point ORIGIN` (ADR-181)
+
 (variant name: (identifier) @constant)
 (variant_pattern name: (identifier) @constant .)
 (variant_pattern name: (identifier) @type
@@ -43,6 +56,7 @@
 
 (function_declaration name: (identifier) @function)
 (function_declaration receiver: (_) name: (identifier) @function.method)
+(function_declaration name: (operator_name) @operator) ; ADR-162
 
 (call_expression function: (identifier) @function.call)
 (call_expression function: (field_expression field: (identifier) @function.method.call))
@@ -66,6 +80,7 @@
 ; ------------------------------------------------------------ fields, modules
 
 (field_declaration name: (identifier) @variable.member)
+(payload_field name: (identifier) @variable.member)
 (field_initializer name: (identifier) @variable.member)
 (field_expression field: (identifier) @variable.member)
 (target_expression field: (identifier) @variable.member)
@@ -83,6 +98,8 @@
   "enum"
   "union"
   "const"
+  "type"
+  "distinct"
   "var"
 ] @keyword.type
 
@@ -138,7 +155,11 @@
 ; Reserved words: identifiers to the grammar, rejected by the compiler
 ((identifier) @keyword
   (#any-of? @keyword
-    "async" "await" "class" "impl" "module" "nil" "none" "some" "trait" "use" "yield"))
+    "async" "await" "class" "impl" "module" "nil" "trait" "use" "yield"))
+
+; `some(v)` / `none`: optional values (ADR-158)
+((identifier) @constant.builtin
+  (#any-of? @constant.builtin "some" "none"))
 (function_declaration name: (identifier) @keyword.function
   (#eq? @keyword.function "deinit"))
 
@@ -161,6 +182,9 @@
   "#empty"
   "#borrow"
   "#go"
+  "#unsafe"
+  "is"
+  "#require"
   "#call"
   "#error"
   "#cast"
@@ -174,7 +198,7 @@
 (attribute) @attribute
 (attribute
   [
-    "#copy" "#autoinit" "#packed" "#c_callback" "#export" "#trace" "#time"
+    "#copy" "#autoinit" "#no_eq" "#value" "#flags" "#packed" "#c_callback" "#export" "#trace" "#time"
     "#memo" "#retry" "#deprecated" "#align" "#extern"
   ] @keyword.directive)
 
@@ -210,7 +234,7 @@
 
 [
   "=" ":=" "+=" "-=" "*=" "/=" "%=" "+%=" "-%=" "*%=" "++" "--"
-  "+" "-" "*" "/" "%" "+%" "-%" "*%"
+  "+" "-" "*" "/" "%" "+%" "-%" "*%" "??" "?"
   "==" "!=" "<" "<=" ">" ">="
   "&" "|" "^" "~" "<<" ">>"
   ".."

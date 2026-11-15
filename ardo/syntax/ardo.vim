@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:    Ardo
 " Maintainer:  Ardo compiler repository
-" Filenames:   *.ardo
+" Filenames:   *.ao
 " Last Change: 2026-11-06
 "
 " Ardo is a strictly typed, ahead-of-time compiled systems language with
@@ -33,7 +33,7 @@ syn match ardoFloat     /\<\d[0-9_]*[eE][+-]\?\d\+\>/
 " Operators (`to` / `until` are keywords; they are listed with the keywords)
 " ---------------------------------------------------------------------------
 " `---` is the default value of the declared type, not an operator.
-syn match ardoOperator /\.\.\.\|\.\.\|:=\|==\|!=\|<=\|>=\|<<\|>>\|+%=\|-%=\|\*%=\|++\|--\|+%\|-%\|\*%\|+=\|-=\|\*=\|\/=\|%=\|[-+*\/%&|^~<>=!]/
+syn match ardoOperator /??\|\.\.\.\|\.\.\|:=\|==\|!=\|<=\|>=\|<<\|>>\|+%=\|-%=\|\*%=\|++\|--\|+%\|-%\|\*%\|+=\|-=\|\*=\|\/=\|%=\|[-+*\/%&|^~<>=!]/
 syn match ardoDefault  /---/
 
 " ---------------------------------------------------------------------------
@@ -71,22 +71,24 @@ syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ e
 " ---------------------------------------------------------------------------
 " Directives: exactly the ones the lexer knows (`#` is never a comment)
 " ---------------------------------------------------------------------------
-syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|trace\|time\|memo\|retry\|deprecated\|fields\|autoinit\|embed\|packed\|align\|bits\|if\|target\|empty\)\>/
-syn match ardoConstName  /\<const\s\+\zs\w\+/
+syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|unsafe\|require\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|trace\|time\|memo\|retry\|deprecated\|fields\|autoinit\|no_eq\|value\|flags\|embed\|packed\|align\|bits\|if\|target\|empty\)\>/
+syn match ardoConstName  /\<const\s\+\(#on\s\+\w\+\s\+\)\=\zs\w\+/
 
 " ---------------------------------------------------------------------------
 " Keywords, types, names
 " ---------------------------------------------------------------------------
 syn keyword ardoKeyword and as break case const continue compile_time default defer deinit else enum fails function for if in match not or pub return struct then to try until while xx
 " Contextual keywords: plain identifiers to the lexer, keywords where they appear.
-syn keyword ardoKeyword using union var
+syn keyword ardoKeyword using union var is
+" `type Name = T;` / `distinct type Name = T;` only at the start of a declaration (`it.type` stays a name)
+syn match ardoKeyword /^\s*\(pub\s\+\)\=\zs\(distinct\s\+\)\=type\ze\s\+\h/
 syn keyword ardoBoolean true false
-syn keyword ardoReserved async await class impl module nil none some trait use yield
+syn keyword ardoReserved async await class impl module nil trait use yield
 syn keyword ardoBuiltin alloc free sizeof alignof offset move_out assert volatile_load volatile_store fence atomic_load atomic_store atomic_swap atomic_add atomic_sub atomic_and atomic_or atomic_xor atomic_cas
 syn keyword ardoError error
 " `ok(v)` / `error(e)` patterns
 syn match ardoError /\<ok\ze\s*(/
-syn keyword ardoNull null
+syn keyword ardoNull null some none
 syn keyword ardoSelf self it
 syn keyword ardoBuiltinType bool char byte short ushort int uint long ulong i8 i16 i32 i64 u8 u16 u32 u64 f32 f64 float double string
 

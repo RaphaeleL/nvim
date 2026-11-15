@@ -1,6 +1,6 @@
--- Addo: syntax files live in ~/.config/nvim/ardo (copied from editors/vim)
+-- Ardo: syntax files live in ~/.config/nvim/ardo (copied from editors/vim)
 vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/ardo")
-vim.filetype.add({ extension = { ardo = "ardo" } })
+vim.filetype.add({ extension = { ao = "ardo" } })
 
 -- Ardo language server
 vim.lsp.config("ardo", {

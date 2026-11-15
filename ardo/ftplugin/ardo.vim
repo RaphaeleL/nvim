@@ -10,7 +10,7 @@ let b:undo_ftplugin = "setlocal commentstring< comments< suffixesadd< shiftwidth
 setlocal commentstring=//\ %s
 " `/* */` (nm: nestable) and `//` comments, as used in the language.
 setlocal comments=s1:/*,mb:*,ex:*/,://
-setlocal suffixesadd=.ardo
+setlocal suffixesadd=.ao
 
 " The compiler's examples/ use 4 spaces and no hard tabs.
 " Set g:ardo_recommended_style = 0 to keep your own whitespace settings.

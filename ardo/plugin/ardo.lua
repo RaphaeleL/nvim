@@ -2,7 +2,7 @@
 --
 -- The syntax definitions are shared with Vim and live in the sibling
 -- `../vim` directory (a complete Vim plugin: syntax/, ftdetect/, ...).
--- This script registers the `ardo` filetype for *.ardo files and puts the
+-- This script registers the `ardo` filetype for *.ao files and puts the
 -- shared directory on 'runtimepath'.  Load this directory one of these ways:
 --
 --   vim.opt.runtimepath:append(vim.fn.expand("~/.../editors/neovim"))
@@ -30,7 +30,7 @@ elseif not vim.tbl_contains(rtp, shared) then
   vim.opt.runtimepath:append(shared)
 end
 
-vim.filetype.add({ extension = { ardo = "ardo" } })
+vim.filetype.add({ extension = { ao = "ardo" } })
 
 -- Tree-sitter (editors/tree-sitter-ardo): when a parser named `ardo` can be
 -- loaded, highlighting, folds and indentation come from it instead of the
@@ -44,7 +44,7 @@ if vim.fn.isdirectory(ts_dir .. "/queries") == 1 and not vim.tbl_contains(vim.op
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ardo",
+  pattern = "ao",
   callback = function(args)
     if vim.g.ardo_treesitter == false then
       return
@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- `vim.g.ardo_lsp = false`, or point at another binary with
 -- `vim.g.ardo_lsp_cmd = { "/path/to/ardo", "--lsp" }`.
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ardo",
+  pattern = "ao",
   callback = function(args)
     if vim.g.ardo_lsp == false then
       return
