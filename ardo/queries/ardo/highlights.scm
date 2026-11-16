@@ -24,8 +24,8 @@
 ; `long(x)`: a checked conversion written like a call
 (call_expression
   function: (identifier) @type.builtin
-  (#any-of? @type.builtin "byte" "short" "ushort" "int" "uint" "long" "ulong" "i8" "i16" "i32"
-    "i64" "u8" "u16" "u32" "u64" "f32" "f64" "float" "double" "char"))
+  (#any-of? @type.builtin "byte" "short" "ushort" "int" "uint" "long" "ulong" "s8" "s16" "s32"
+    "s64" "u8" "u16" "u32" "u64" "f32" "f64" "float" "double" "char"))
 (scoped_type (identifier) @module)
 (scoped_type (identifier) @type .)
 (generic_type type: (scoped_type (identifier) @type .))
@@ -46,6 +46,10 @@
   (#not-lua-match? @type "^[A-Z][A-Z0-9_]+$"))
 
 (const_declaration receiver: (type_identifier) @type) ; `const #on Point ORIGIN` (ADR-181)
+
+; `Box<int>.of(1)`: the generic head of an associated call is a type (ADR-183)
+((field_expression value: (generic_expression function: (identifier) @type))
+  (#lua-match? @type "^[A-Z]"))
 
 (variant name: (identifier) @constant)
 (variant_pattern name: (identifier) @constant .)
@@ -262,3 +266,10 @@
 
 "compile_time" @keyword
 
+
+; `case Shape.rect(h = hh)`: a named payload field (ADR-184)
+(field_pattern name: (identifier) @property)
+(struct_pattern type: (identifier) @type)
+
+(bind_pattern name: (identifier) @variable)
+"@" @operator

@@ -44,7 +44,7 @@ if vim.fn.isdirectory(ts_dir .. "/queries") == 1 and not vim.tbl_contains(vim.op
 end
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ao",
+  pattern = "ardo",
   callback = function(args)
     if vim.g.ardo_treesitter == false then
       return
@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- `vim.g.ardo_lsp = false`, or point at another binary with
 -- `vim.g.ardo_lsp_cmd = { "/path/to/ardo", "--lsp" }`.
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ao",
+  pattern = "ardo",
   callback = function(args)
     if vim.g.ardo_lsp == false then
       return
