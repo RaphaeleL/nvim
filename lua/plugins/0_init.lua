@@ -15,7 +15,7 @@ vim.pack.add({
 	{ src = gh("lewis6991/gitsigns.nvim"), version = vim.version.range("*") },
 	{ src = gh("j-hui/fidget.nvim") },
 
-	{ src = gh("rose-pine/neovim") },
+	-- { src = gh("rose-pine/neovim") },
 	{ src = gh("blazkowolf/gruber-darker.nvim") },
 	-- { src = gh("rebelot/kanagawa.nvim") },
 	-- { src = gh("catppuccin/nvim") },
