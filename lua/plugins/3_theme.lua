@@ -1,31 +1,50 @@
-require("rose-pine").setup({
-    variant                          = "auto",
-    dark_variant                     = "moon",
-    dim_inactive_windows             = true,
-    extend_background_behind_borders = true,
-    dim_nc_background                = true,
-    disable_background               = true,
-    styles = {
-        bold         = true,
-        italic       = true,
-        transparency = true,
-    },
-    groups = {},
-    highlight_groups = {
-        Normal          = { bg = "NONE" },
-        NormalNC        = { bg = "NONE" },
-        NormalFloat     = { bg = "NONE" },
-        FloatBorder     = {},
-        WinSeparator    = {},
-        TelescopeNormal = {},
-        Visual          = { bg = "#7f1d1d" },
-        TelescopeBorder = { bg = "#181818", fg = "#181818" },
-        StatusLine      = { bg = "NONE" },
-        StatusLineNC    = { bg = "NONE" },
-        CursorLineNr    = { fg = "gold" },
-    },
+local function make_transparent()
+  local normal_bg = vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg
+  for name, hl in pairs(vim.api.nvim_get_hl(0, {})) do
+    if not hl.link and (hl.bg == normal_bg or name:match("^Normal") or name:match("Float")
+        or name:match("SignColumn") or name:match("LineNr") or name:match("StatusLine")
+        or name:match("Telescope") or name:match("^GitSigns") or name:match("^DiagnosticSign")) then
+      hl.bg, hl.ctermbg = nil, nil
+      vim.api.nvim_set_hl(0, name, hl)
+    end
+  end
+end
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "gruber-darker",
+  callback = make_transparent,
 })
-vim.cmd("colorscheme rose-pine")
+
+vim.cmd.colorscheme("gruber-darker")
+
+-- require("rose-pine").setup({
+--     variant                          = "auto",
+--     dark_variant                     = "moon",
+--     dim_inactive_windows             = true,
+--     extend_background_behind_borders = true,
+--     dim_nc_background                = true,
+--     disable_background               = true,
+--     styles = {
+--         bold         = true,
+--         italic       = true,
+--         transparency = true,
+--     },
+--     groups = {},
+--     highlight_groups = {
+--         Normal          = { bg = "NONE" },
+--         NormalNC        = { bg = "NONE" },
+--         NormalFloat     = { bg = "NONE" },
+--         FloatBorder     = {},
+--         WinSeparator    = {},
+--         TelescopeNormal = {},
+--         Visual          = { bg = "#7f1d1d" },
+--         TelescopeBorder = { bg = "#181818", fg = "#181818" },
+--         StatusLine      = { bg = "NONE" },
+--         StatusLineNC    = { bg = "NONE" },
+--         CursorLineNr    = { fg = "gold" },
+--     },
+-- })
+-- vim.cmd("colorscheme rose-pine")
 
 -- require("kanagawa").setup({
 --     transparent = true,
