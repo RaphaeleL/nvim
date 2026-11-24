@@ -10,12 +10,15 @@
 -- vim.keymap.set("n", "F", function() harpoon:list():next() end)
 -- vim.keymap.set("n", "B", function() harpoon:list():prev() end)
 
-require("telescope").setup({})
-vim.keymap.set("n", "<leader>sf", ":Telescope find_files no_ignore=true theme=ivy<cr>")
-vim.keymap.set("n", "<leader>sb", ":Telescope buffers theme=ivy<cr>")
-vim.keymap.set("n", "<leader>sg", ":Telescope live_grep theme=ivy<cr>")
-vim.keymap.set("n", "<leader>sh", ":Telescope help_tags theme=ivy<cr>")
-vim.keymap.set("n", "<leader>sm", ":Telescope man_pages theme=ivy<cr>")
+-- require("telescope").setup({})
+vim.keymap.set("n", "<leader>sf", function() require("telescope.builtin").find_files(require("telescope.themes").get_ivy({ no_ignore = true })) end)
+vim.keymap.set("n", "<leader>sb", function() require("telescope.builtin").buffers(require("telescope.themes").get_ivy()) end)
+vim.keymap.set("n", "<leader>sg", function() require("telescope.builtin").live_grep(require("telescope.themes").get_ivy()) end)
+-- vim.keymap.set("n", "<leader>sf", ":Telescope find_files no_ignore=true theme=ivy<cr>")
+-- vim.keymap.set("n", "<leader>sb", ":Telescope buffers theme=ivy<cr>")
+-- vim.keymap.set("n", "<leader>sg", ":Telescope live_grep theme=ivy<cr>")
+-- vim.keymap.set("n", "<leader>sh", ":Telescope help_tags theme=ivy<cr>")
+-- vim.keymap.set("n", "<leader>sm", ":Telescope man_pages theme=ivy<cr>")
 
 require("oil").setup({
     default_file_explorer = true,

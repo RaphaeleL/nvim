@@ -1,7 +1,7 @@
 vim.opt.guicursor = ""
 vim.opt.fillchars = { eob = " " }
 vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
+vim.schedule(function() vim.opt.clipboard = "unnamedplus" end)
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
 vim.opt.fileencoding = "utf-8"

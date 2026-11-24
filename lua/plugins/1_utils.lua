@@ -43,7 +43,8 @@ for _, mode in ipairs({ "n", "x" }) do
 end
 
 require("grug-far").setup({})
-vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
+-- vim.keymap.set("n", "<Leader>gr", ":GrugFar<CR>")
+vim.keymap.set("n", "<Leader>gr", function() require("grug-far").open() end)
 
 require("mini.align").setup({
     mappings = {
@@ -52,7 +53,7 @@ require("mini.align").setup({
     },
 })
 
-require("conform").setup({})
+-- require("conform").setup({})
 vim.keymap.set("n", "<leader>f", function()
     require("conform").format({ async = true, lsp_format = "fallback" })
     print("Formatted buffer")

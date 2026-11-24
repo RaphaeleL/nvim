@@ -61,7 +61,7 @@ keymap({ "n", "v" }, "L", "$", opts)             -- Move to the last character o
 
 -- Plugin Specific
 keymap("n", "<Leader>e", ":lua vim.diagnostic.open_float()<CR>", opts) -- Show diagnostic information in a floating window
-keymap("n", "<Leader>o", ":Oil --float<CR>", opts)        -- Open Oil file explorer
+keymap("n", "<Leader>o", ":Oil<CR>", opts)        -- Open Oil file explorer
 keymap("n", "<Leader>ts", ":InspectTree<CR>", opts) -- Open the Treesitter syntax tree inspector
 keymap("n", "<Leader>z", ":Lazy<CR>", opts)       -- Open Lazy plugin manager
 

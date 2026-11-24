@@ -2,7 +2,7 @@
 vim.opt.runtimepath:append(vim.fn.stdpath("config") .. "/ardo")
 vim.filetype.add({ extension = { ao = "ardo" } })
 
--- Ardo language server
+-- -- Ardo language server
 vim.lsp.config("ardo", {
     cmd = { "ardo", "--lsp" },
     filetypes = { "ardo" },
@@ -10,8 +10,8 @@ vim.lsp.config("ardo", {
 })
 vim.lsp.enable("ardo")
 
--- Ardo treesitter
+-- -- Ardo treesitter
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "ardo",
-  callback = function(ev) vim.treesitter.start(ev.buf, "ardo") end,
+    pattern = "ardo",
+    callback = function(ev) vim.treesitter.start(ev.buf, "ardo") end,
 })

@@ -1,4 +1,12 @@
-require("mason").setup()
+vim.api.nvim_create_autocmd("UIEnter", {
+    once = true,
+    callback = function()
+        vim.schedule(function()
+            require("mason").setup()
+        end)
+    end
+})
+
 require("mason-tool-installer").setup({
     ensure_installed = {
         -- C / C++ ecosystem
@@ -40,7 +48,7 @@ require("mason-tool-installer").setup({
         "shfmt",                          -- Shell formatting
         "stylua",                         -- Lua formatting
     },
-    run_on_start = true,
+    run_on_start = false,
     start_delay = 3000,
 })
 
