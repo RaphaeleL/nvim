@@ -111,6 +111,7 @@
 
 [
   "return"
+  "yield"
 ] @keyword.return
 
 [
@@ -123,7 +124,6 @@
 ] @keyword.conditional
 
 (fallback "else(" @keyword.exception)
-(fallback "else" @keyword.exception)
 
 [
   "for"
@@ -161,9 +161,10 @@
   (#any-of? @keyword
     "async" "await" "class" "impl" "module" "nil" "trait" "use" "yield"))
 
-; `some(v)` / `none`: optional values (ADR-158)
+; `none`: the missing value of a `!T` (ADR-199)
 ((identifier) @constant.builtin
-  (#any-of? @constant.builtin "some" "none"))
+  (#eq? @constant.builtin "none"))
+(optional_type "!" @operator)
 (function_declaration name: (identifier) @keyword.function
   (#eq? @keyword.function "deinit"))
 
@@ -186,6 +187,10 @@
   "#empty"
   "#borrow"
   "#go"
+  "#run"
+  "#todo"
+  "#here"
+  "#unreachable"
   "#unsafe"
   "is"
   "#require"
@@ -198,12 +203,12 @@
   "#fields"
 ] @keyword.directive
 
-; Attributes in front of a declaration: `#packed struct`, `#memo function`
+; Attributes in front of a declaration: `#packed struct`, `#decorate(f) function`
 (attribute) @attribute
 (attribute
   [
-    "#copy" "#autoinit" "#no_eq" "#value" "#flags" "#packed" "#c_callback" "#export" "#trace" "#time"
-    "#memo" "#retry" "#deprecated" "#align" "#extern"
+    "#copy" "#autoinit" "#no_eq" "#value" "#flags" "#packed" "#c_callback" "#export" "#decorate"
+    "#deprecated" "#no_trace" "#thread_local" "#align" "#extern"
   ] @keyword.directive)
 
 (variant_pattern name: (identifier) @keyword.exception
@@ -216,7 +221,6 @@
 (boolean_literal) @boolean
 (null_literal) @constant.builtin
 (default_value) @constant.builtin
-(trace_level (identifier) @constant)
 (char_literal) @character
 (wildcard_pattern) @character.special
 
@@ -238,13 +242,15 @@
 
 [
   "=" ":=" "+=" "-=" "*=" "/=" "%=" "+%=" "-%=" "*%=" "++" "--"
-  "+" "-" "*" "/" "%" "+%" "-%" "*%" "??" "?"
+  "+" "-" "*" "/" "%" "+%" "-%" "*%"
   "==" "!=" "<" "<=" ">" ">="
   "&" "|" "^" "~" "<<" ">>"
   ".."
 ] @operator
 
 (variadic_parameter) @operator
+(variadic_marker) @operator
+(spread_argument "..") @operator
 
 ; ---------------------------------------------------------------- punctuation
 
@@ -264,7 +270,6 @@
 ((block_comment) @comment.documentation
   (#lua-match? @comment.documentation "^/%*%*[^/]"))
 
-"compile_time" @keyword
 
 
 ; `case Shape.rect(h = hh)`: a named payload field (ADR-184)
@@ -273,3 +278,5 @@
 
 (bind_pattern name: (identifier) @variable)
 "@" @operator
+(rest_pattern name: (identifier) @variable)
+

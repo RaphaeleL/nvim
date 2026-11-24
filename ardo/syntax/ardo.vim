@@ -71,13 +71,13 @@ syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ e
 " ---------------------------------------------------------------------------
 " Directives: exactly the ones the lexer knows (`#` is never a comment)
 " ---------------------------------------------------------------------------
-syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|unsafe\|require\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|trace\|time\|memo\|retry\|deprecated\|fields\|autoinit\|no_eq\|value\|flags\|embed\|packed\|align\|bits\|if\|target\|empty\)\>/
+syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|run\|unsafe\|require\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|decorate\|deprecated\|no_trace\|thread_local\|fields\|autoinit\|no_eq\|value\|flags\|embed\|todo\|unreachable\|here\|packed\|align\|bits\|if\|target\|empty\)\>/
 syn match ardoConstName  /\<const\s\+\(#on\s\+\w\+\s\+\)\=\zs\w\+/
 
 " ---------------------------------------------------------------------------
 " Keywords, types, names
 " ---------------------------------------------------------------------------
-syn keyword ardoKeyword and as break case const continue compile_time default defer deinit else enum fails function for if in match not or pub return struct then to try until while xx
+syn keyword ardoKeyword and as break case const continue default defer deinit else enum fails func function for if in match not or pub return struct then to try until while xx
 " Contextual keywords: plain identifiers to the lexer, keywords where they appear.
 syn keyword ardoKeyword using union var is
 " `type Name = T;` / `distinct type Name = T;` only at the start of a declaration (`it.type` stays a name)
@@ -88,13 +88,15 @@ syn keyword ardoBuiltin alloc free sizeof alignof offset move_out assert volatil
 syn keyword ardoError error
 " `ok(v)` / `error(e)` patterns
 syn match ardoError /\<ok\ze\s*(/
-syn keyword ardoNull null some none
+syn keyword ardoNull null none
 syn keyword ardoSelf self it
 syn keyword ardoBuiltinType bool char byte short ushort int uint long ulong s8 s16 s32 s64 u8 u16 u32 u64 f32 f64 float double string
 
 syn match ardoType     /\<[A-Z]\w*\>/
 syn match ardoConstant /\<[A-Z][A-Z_0-9]\+\>/
 syn match ardoFunction /\<function\s\+\zs\w\+/
+" `name :: func(...)`, `name :: #on Type func(...)` (ADR-210, ADR-215)
+syn match ardoFunction /\<\w\+\ze\s*::\s*\%(#\w\+\%((.\{-})\)\=\s\+\)*\%(\w\|[.<>, ]\)*\s*\%(#\w\+\%((.\{-})\)\=\s\+\)*func\>/
 " `str(x)` is a builtin only when called: `str.concat` is the str module.
 syn match ardoBuiltin  /\<str\ze\s*(/
 
