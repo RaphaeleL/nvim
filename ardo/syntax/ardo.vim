@@ -64,6 +64,8 @@ syn region ardoString    start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=ardoEscape,
 syn region ardoString    start=/"""/ skip=/\\\\\|\\"/ end=/"""/ contains=ardoEscape,@Spell
 syn region ardoRawString start=/\<r"/ end=/"/ oneline contains=@Spell
 syn region ardoRawString start=/\<r"""/ end=/"""/ contains=@Spell
+" `#string END` here-string: verbatim up to the line starting with END.
+syn region ardoRawString matchgroup=ardoDirective start=/#string\s\+\z(\h\w*\)\s*$/ end=/^\s*\z1\>/ contains=@Spell
 
 syn region ardoFString start=/\<f"/ skip=/\\\\\|\\"/ end=/"/ contains=ardoEscape,ardoFStringEscape,ardoInterpolation,@Spell
 syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ end=/}/ contained contains=@ardoInterpContents
@@ -71,7 +73,7 @@ syn region ardoInterpolation matchgroup=ardoInterpolationDelim start=/\\\@<!{/ e
 " ---------------------------------------------------------------------------
 " Directives: exactly the ones the lexer knows (`#` is never a comment)
 " ---------------------------------------------------------------------------
-syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|run\|unsafe\|require\|call\|borrow\|copy\|on\|extern\|c_callback\|export\|decorate\|deprecated\|no_trace\|thread_local\|fields\|autoinit\|no_eq\|value\|flags\|embed\|todo\|unreachable\|here\|packed\|align\|bits\|if\|target\|empty\)\>/
+syn match ardoDirective /#\%(import\|load\|library\|c_import\|assert\|all\|char\|repeat\|type\|cast\|ignore\|error\|go\|run\|unsafe\|require\|call\|borrow\|maybe\|copy\|on\|extern\|c_callback\|export\|decorate\|deprecated\|no_trace\|inline\|noinline\|cold\|pre\|post\|likely\|unlikely\|thread_local\|fields\|autoinit\|no_eq\|value\|flags\|embed\|quote\|insert\|todo\|unreachable\|here\|packed\|align\|bits\|key\|if\|target\|empty\)\>/
 syn match ardoConstName  /\<const\s\+\(#on\s\+\w\+\s\+\)\=\zs\w\+/
 
 " ---------------------------------------------------------------------------

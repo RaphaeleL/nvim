@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- Language server: `ardo --lsp` (see docs/tools/lsp.md) for diagnostics while you
+-- Language server: `ardo --lsp` (see docs/guide/01_start.md) for diagnostics while you
 -- type, hover, go to definition, document symbols and completion. It starts
 -- for every ardo buffer when `ardo` is on PATH. Turn it off with
 -- `vim.g.ardo_lsp = false`, or point at another binary with

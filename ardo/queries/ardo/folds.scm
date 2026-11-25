@@ -8,6 +8,7 @@
   (dict_literal)
   (arguments)
   (parameters)
+  (closure_parameters)
   (block_comment)
   (multiline_string_literal)
 ] @fold

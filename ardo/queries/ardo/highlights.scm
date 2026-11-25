@@ -164,7 +164,7 @@
 ; `none`: the missing value of a `!T` (ADR-199)
 ((identifier) @constant.builtin
   (#eq? @constant.builtin "none"))
-(optional_type "!" @operator)
+(optional_type "#maybe" @keyword)
 (function_declaration name: (identifier) @keyword.function
   (#eq? @keyword.function "deinit"))
 
@@ -181,6 +181,8 @@
   "#all"
   "#char"
   "#embed"
+  "#quote"
+  "#insert"
   "#repeat"
   "#type"
   "#ignore"
@@ -192,6 +194,8 @@
   "#here"
   "#unreachable"
   "#unsafe"
+  "#likely"
+  "#unlikely"
   "is"
   "#require"
   "#call"
@@ -200,6 +204,7 @@
   "#if"
   "#target"
   "#bits"
+  "#key"
   "#fields"
 ] @keyword.directive
 
@@ -208,7 +213,7 @@
 (attribute
   [
     "#copy" "#autoinit" "#no_eq" "#value" "#flags" "#packed" "#c_callback" "#export" "#decorate"
-    "#deprecated" "#no_trace" "#thread_local" "#align" "#extern"
+    "#deprecated" "#no_trace" "#inline" "#noinline" "#cold" "#pre" "#post" "#thread_local" "#align" "#extern"
   ] @keyword.directive)
 
 (variant_pattern name: (identifier) @keyword.exception

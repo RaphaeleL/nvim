@@ -8,6 +8,7 @@
   (dict_literal)
   (arguments)
   (parameters)
+  (closure_parameters)
   (union_declaration)
 ] @indent.begin
 
