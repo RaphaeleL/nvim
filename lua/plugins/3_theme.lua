@@ -52,6 +52,7 @@ require("kanagawa").setup({
             StatusLineNC           = { bg = "NONE" },
             TabLineSel             = { bg = "NONE" },
             LineNr                 = { bg = "NONE" },
+            CursorLine             = { bg = "NONE" },
             CursorLineNr           = { bg = "NONE" },
             SignColumn             = { bg = "NONE" },
             GitSignsAdd            = { bg = "NONE" },
