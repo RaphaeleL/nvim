@@ -26,6 +26,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.cursorline = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = true
@@ -35,7 +36,6 @@ vim.opt.shortmess:append("c")
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.opt.iskeyword:append("-")
 vim.opt.shell = "/bin/zsh"
-vim.opt.relativenumber = true
 vim.opt.autochdir = false
 vim.opt.smoothscroll = true
 

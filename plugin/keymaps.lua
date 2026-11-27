@@ -18,6 +18,7 @@ keymap("n", "<Space>", "<NOP>", opts)            -- Disable the default Space be
 keymap("n", "<TAB>", ":bprev<CR>", opts)         -- Switch to the previous buffer
 keymap("n", "<S-TAB>", ":bnext<CR>", opts)       -- Switch to the next buffer
 keymap("n", "<Leader>bd", ":bd<CR>", opts)       -- Delete the current buffer
+keymap("n", "bd", ":bd<CR>", opts)               -- Delete the current buffer
 
 -- Window Splits
 keymap("n", "sv", ":vsplit<CR>", opts)           -- Create a vertical split
@@ -85,3 +86,11 @@ keymap("x", "<Leader>p", '"_d"0P', opts)         -- Replace selection with last 
 keymap("i", "<C-BS>", "<C-w>", opts)             -- Delete the word before the cursor in Insert mode
 keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)   -- Exit Terminal mode and enter Terminal-Normal mode
 
+local minimal_view = not vim.wo.number
+keymap("n", "<Leader><Esc>", function()
+    minimal_view = not minimal_view
+    vim.opt.relativenumber = minimal_view
+    vim.opt.number = minimal_view
+    vim.opt.wrap = minimal_view
+    vim.opt.signcolumn = not minimal_view and "no" or "yes"
+end, opts)
