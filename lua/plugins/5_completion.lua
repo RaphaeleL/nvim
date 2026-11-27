@@ -23,7 +23,7 @@ require("blink.cmp").setup({
             "fallback",
         },
     },
-    fuzzy = { implementation = 'lua' },
+    fuzzy = { implementation = "prefer_rust_with_warning" },
     completion = {
         list = { selection = { preselect = false, auto_insert = true } },
         menu = {
@@ -38,7 +38,7 @@ require("blink.cmp").setup({
         },
         documentation = {
             auto_show = true,
-            auto_show_delay_ms = 0,
+            auto_show_delay_ms = 200,
             window = {
                 border = "rounded",
                 winhighlight =
