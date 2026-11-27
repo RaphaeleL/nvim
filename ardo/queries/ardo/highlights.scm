@@ -45,7 +45,7 @@
   (#lua-match? @type "^[A-Z]")
   (#not-lua-match? @type "^[A-Z][A-Z0-9_]+$"))
 
-(const_declaration receiver: (type_identifier) @type) ; `const #on Point ORIGIN` (ADR-181)
+(const_declaration receiver: (_) @type) ; `Point.ORIGIN :: ...` (ADR-181)
 
 ; `Box<int>.of(1)`: the generic head of an associated call is a type (ADR-183)
 ((field_expression value: (generic_expression function: (identifier) @type))
@@ -101,13 +101,12 @@
   "struct"
   "enum"
   "union"
-  "const"
   "type"
   "distinct"
   "var"
 ] @keyword.type
 
-"function" @keyword.function
+"fn" @keyword.function
 
 [
   "return"
